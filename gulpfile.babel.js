@@ -126,13 +126,13 @@ gulp.task('scripts', () =>
 );
 
 // Scan your HTML for assets & optimize them
-gulp.task('html', () => {
-  return gulp.src('app/**/*.html')
+gulp.task('php', () => {
+  return gulp.src('app/**/*.php')
     .pipe($.useref({searchPath: '{.tmp,app}'}))
     // Remove any unused CSS
     .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html'
+      php: [
+        'app/index.php'
       ],
       // CSS Selectors for UnCSS to ignore
       ignore: []
@@ -143,7 +143,7 @@ gulp.task('html', () => {
     .pipe($.if('*.css', $.cssnano()))
 
     // Minify any HTML
-    .pipe($.if('*.html', $.htmlmin({
+    .pipe($.if('*.php', $.htmlmin({
       removeComments: true,
       collapseWhitespace: true,
       collapseBooleanAttributes: true,
@@ -155,7 +155,7 @@ gulp.task('html', () => {
       removeOptionalTags: true
     })))
     // Output files
-    .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
+    .pipe($.if('*.php', $.size({title: 'php', showFiles: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -178,7 +178,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
     port: 3000
   });
 
-  gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['app/**/*.php'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts']);
   gulp.watch(['app/images/**/*'], reload);
@@ -204,7 +204,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'php', 'scripts', 'images', 'copy'],
     'generate-service-worker',
     cb
   )
@@ -249,7 +249,7 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
       `${rootDir}/images/**/*`,
       `${rootDir}/scripts/**/*.js`,
       `${rootDir}/styles/**/*.css`,
-      `${rootDir}/*.{html,json}`
+      `${rootDir}/*.{php,json}`
     ],
     // Translates a static file path to the relative URL that it's served from.
     stripPrefix: path.join(rootDir, path.sep)
