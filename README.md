@@ -4,7 +4,7 @@
 
 Décrire le projet
 
-### Features
+## Features
 
 | Feature                                | Summary                                                                                                                                                                                                                                                     |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -17,7 +17,7 @@ Décrire comment l'installer
 
 ##Browser Support
 
-Nous supportons les differents navigateurs suivaznts ;
+Nous supportons les differents navigateurs suivants :
 
 * Chrome
 * Edge
@@ -26,13 +26,13 @@ Nous supportons les differents navigateurs suivaznts ;
 * Opera
 * Internet Explorer 9+
 
-Cela ne veut pas dire que les autres navigateurs ou les versions antérieurs des navigateurs listés ci-dessus ne fonctionnent pas, mais que les themes sont optimisés pour les navigateurs lités ci-dessus.
+Cela ne veut pas dire que les autres navigateurs ou les versions antérieurs des navigateurs listés ci-dessus ne fonctionnent pas, mais que les themes sont optimisés pour les navigateurs listés ci-dessus.
 
 ##Informations complémentaires
 
-*Ne pas oublier la BDD (database name = mooc)
-*Ne pas oublier d'activer le module apache : rewrite_module (Car utilisation du .htcaccess)
-*Supprimer les tables  (Cocher les cases puis faire supprimer et décocher "Vérification des clés étrangères : (Activée)")
+* Ne pas oublier la BDD (database name = mooc)
+* Ne pas oublier d'activer le module apache : rewrite_module (Car utilisation du .htcaccess)
+* Supprimer les tables  (Cocher les cases puis faire supprimer et décocher "Vérification des clés étrangères : (Activée)")
 
 ##Insipiration
 
