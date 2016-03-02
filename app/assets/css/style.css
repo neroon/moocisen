@@ -1,0 +1,49 @@
+.search{
+    display:block;
+    width:50%;
+    border-radius: 3px;
+    margin:auto;
+    margin-bottom:30px;
+    outline:0;
+    height:50px;
+    border:1px solid #217dbb;
+   /* background-color:#153a54; */
+    color :black;
+    font-size: 25px;
+    padding-left:15px;
+}
+
+/*
+.search::-webkit-input-placeholder {
+    color:black;
+}
+ 
+.search:-moz-placeholder {
+    color:black;
+}
+*/
+
+.hide{
+    display:none;
+}
+
+.show{
+    display:block;
+}
+
+.videocontainer{
+    margin:auto;
+}
+
+.trophyUnlock{
+    margin:auto;
+   display:block;
+}
+
+.trophyLock{
+    filter: grayscale(100%);
+   -webkit-filter: grayscale(100%);
+   -moz-filter: grayscale(100%);
+   margin:auto;
+   display:block;
+}

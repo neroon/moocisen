@@ -1,25 +1,33 @@
 {
   "version": "1.0.0",
-  "name": "Web Starter Kit",
+  "name": "Mooc Isen",
   "launch_path": "/index.html",
-  "description": "A front-end template that helps you build fast, modern mobile web apps.",
+  "description": "Massive Open Online Course pour l'ISEN",
   "icons": {
-    "128": "/images/touch/icon-128x128.png"
+    "128": "asssets/images/touch/icon-128x128.png"
   },
   "developer": {
-    "name": "",
+    "name": "Colombies Olivier",
+    "url": "",
+	"name": "Guiol Clement",
+    "url": "",
+	"name": "Kokorina Slavyana",
+    "url": "",
+	"name": "Perrichon Guillaume",
+    "url": "",
+	"name": "Schultz Olivier",
     "url": ""
   },
   "installs_allowed_from": [
     "*"
   ],
-  "default_locale": "en",
+  "default_locale": "fr",
   "permissions": {
   },
   "locales": {
-    "en": {
-      "name": "Web Starter Kit",
-      "description": "A front-end template that helps you build fast, modern mobile web apps."
+    "fr": {
+      "name": "Mooc Isen",
+      "description": "Massive Open Online Course pour l'ISEN"
     }
   }
 }

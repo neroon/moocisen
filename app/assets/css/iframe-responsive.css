@@ -1,0 +1,20 @@
+/* Avoir des vidéos responsive (+flash)*/
+.videocontainer{
+  width: 70%; /*  x0.30 */
+  height: 0;
+  padding-bottom: 39.25%; /* 9/16 x0.30 */
+  overflow: hidden;
+  position: relative;
+}
+/* pour les video carre*/
+.videocontainer.r1{
+  padding-bottom: 100%;
+}
+.videocontainer iframe, .videocontainer embed, .videocontainer object{
+  width: 100%!important; height: 100%!important;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+
+
