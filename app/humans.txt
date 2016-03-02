@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Colombies Olivier -- FrontEnd developpeur -- <twitter>
+  Guiol Clement -- BackEnd developpeur -- <twitter>
+  Kokorina Slavyana -- Chef de projet -- <twitter>
+  Perrichon Guillaume -- BackEnd developpeur -- <twitter>
+  Schultz Olivier -- FrontEnd developpeur -- <twitter>
+
+# THANKS
+
+  Berthelot Anthony -- Consultant developpement WEB -- <twitter>
+  Colonna Francçois-Marie -- Docteur en informatique -- <twitter>
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3, PHP,...
