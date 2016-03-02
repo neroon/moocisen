@@ -11,9 +11,9 @@
 
 # THANKS
 
-  Berthelot Anthony -- Consultant developpement WEB -- <twitter>
+  Berthelot Anthony (Faker)-- Consultant developpement WEB-- <twitter>
   Colonna Francçois-Marie -- Docteur en informatique -- <twitter>
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3, PHP, JS, SASS, NODEJS, Apache,...
+  HTML5, CSS3, PHP, JS, JQUERY, SASS, NODEJS, Apache,...
