@@ -5,6 +5,15 @@
 	include '../modeles/qcm.php';
 	include '../modeles/dragdrop.php';
 ?>
+<?php
+$idMooc;
+if(isset($_GET['idM'])) {
+	$idMooc = $_GET['idM'];	
+}else{
+	$valid = 0;
+	echo'erreur';
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -71,7 +80,9 @@
 				</div>
 				<div class="profile_info">
 					<span>MOOC,</span>
-					<h2>Comment faire un CV d'ingénieur</h2>
+					<?php
+						titreMooc($idMooc,$bdd);
+					?>
 				</div>
 			</div>
 			<!-- /menu prile quick info -->

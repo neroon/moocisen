@@ -1,5 +1,16 @@
 <?php
 	
+	function titreMooc($idMooc,$bdd)
+	{
+		$selectChap = $bdd->prepare("SELECT * FROM mooc");
+		$selectChap->execute();
+
+		$lignesChap = $selectChap->fetchAll();
+		
+		echo'<h2>'.$lignesChap[$idMooc-1]["nom_mooc"].'</h2>';
+		
+	}
+	
 	function creationWizardStep($idMooc,$numChap,$idChap,$bdd) {
 		try{
 			
@@ -123,20 +134,17 @@
 		try{
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
-			echo $idMooc;
 			$lignesChap = $selectChap->fetchAll();
 			
 			$selectExo = $bdd->prepare("SELECT * FROM exercice WHERE id_chapitre = $idChap");
 			$selectExo->execute();
-			echo $idChap;
 			
 			$lignesExo = $selectExo->fetchAll();
 			if(sizeof($lignesExo) != 0 && $numeroExo<sizeof($lignesExo))
 			{
 				//echo'<div><h3 class="name"> Exercice n°'.$lignesExo[$numeroExo]["numero"].' </h3></div>';
 				
-				$idExo = $lignesExo[$numeroExo]["id_exercice"];
-				echo $idExo;	
+				$idExo = $lignesExo[$numeroExo]["id_exercice"];	
 				
 				if(sizeof($lignesExo) != 0)
 				{	
