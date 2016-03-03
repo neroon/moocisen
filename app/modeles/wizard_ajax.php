@@ -47,12 +47,10 @@ if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
 
 
 if($meschoix == $solutions){
-	echo 'CORRECT <br> les réponses sont :'.$solutions."<br>info : ".$idm." ".$idc." ".$tabide;
+	echo 'CORRECT <br> les réponses sont :'.$solutions."<br><br>info débug : ".$idm." ".$idc." ".$tabide." ".$solutions;
 
 }else{
-	echo 'INCORRECT <br> les réponses sont :'.$solutions."<br>| ".$idm." ".$idc." ".$tabide;
-
-
+	echo 'INCORRECT <br> les réponses sont :'.$solutions."<br><br>info débug ".$idm." ".$idc." ".$tabide." ".$solutions;
 }
 exit();
 ?>

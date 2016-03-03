@@ -22,6 +22,7 @@ if(isset($_GET['idM'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
 
     <title>MOOC chapitre </title>
 
@@ -409,7 +410,6 @@ if(isset($_GET['idM'])) {
             //fonction si on click sur finish
             function onFinishCallback(){
 
-               
                 //nos choix
                 var selected = [];
                 $('#wizard input:checked').each(function() {
@@ -418,28 +418,17 @@ if(isset($_GET['idM'])) {
                 selected=JSON.stringify(selected);
                 console.log("Vos choix-->"+selected);
 
-                //réponse id=soluce
-               var soluce = [];
-                $('input#soluce').each(function() {
-                    soluce.push($(this).val());
-                });
-                 
-                 //alert($('input#soluce').val());
-                 soluce.pop(); //enleve le , à la fin
-                 console.log("Les Réponse-->"+soluce);
+                //récupération id=soluce 
+                var soluce = $('input#soluce').val();
+                //console.log("Les Réponse-->"+soluce); //A garder pour débug
 
-                // var barca = '{"dataForm":"'+soluce+'"}';
-                // var jsonbarca=$.parseJSON(barca);
-                // console.log("jsonbarca-->"+jsonbarca);
+                var jsonsoluce=JSON.stringify(soluce);
+                //console.log("dataForm-->"+selected+" dataForm2-->"+jsonsoluce); //A garder pour débug
 
-                 var jsonsoluce=JSON.stringify(soluce);
-                 //alert($('input:hidden[name=zyx]').val());
-                console.log("dataForm-->"+selected+" dataForm2-->"+jsonsoluce);
-
-                //idmooc
+                //récupération idmooc
                 var varidm = $('input#idm').val();
 
-                //idchap
+                //récupération idchap
                 var varidc = $('input#idc').val();
                 //var varidm=JSON.stringify(tabidm);
 
@@ -451,22 +440,18 @@ if(isset($_GET['idM'])) {
                 var jsontabide=JSON.stringify(tabide);
 
 
-
-                //$('#wizard').hide();
-                //ajax
+                //Requete Ajax sur wizard_ajax.php permettant de corrigé les réponse + insertion en bdd
                 $.ajax({
                     url: '../modeles/wizard_ajax.php',
                     type: 'POST', 
                     data: {
-                        dataForm: selected,
-                        dataForm2:jsonsoluce,
-                        dataidm:varidm,
-                        dataidc:varidc,
-                        dataide:jsontabide,
+                        dataForm: selected, //vos choix
+                        dataForm2:jsonsoluce, //les solutions
+                        dataidm:varidm, //variable id du mooc
+                        dataidc:varidc, //variable id du chapitre
+                        dataide:jsontabide, //tableau des id des exos
                     },
                     success: function(data) {
-                        //alert(data);
-                       
                         //var jsondata=$.parseJSON(data);  //jsondata c'est le callback de wizard.jss
                         var jsondata=data;  //jsondata c'est le callback de wizard.jss
                         ///console.log("jsondata-->"+jsondata);
@@ -486,8 +471,9 @@ if(isset($_GET['idM'])) {
                         }else{
                              $("#solucebox").append("<br><b>FAUX</b>"); 
                         }*/
-                        $("#solucebox").html(""); //Refresh
-                        $("#solucebox").append("<br><b>"+jsondata+"</b>");
+                        $("#solucebox").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
+                        $("#solucebox").append("<br>vos choix : <i>"+selected+"</i>"); //affiche les choix (full JQuery)
+                        $("#solucebox").append("<br><b>"+jsondata+"</b>");//affiche le réponse de wizard_ajax.php
                         /*
 						$("#solucebox").append("<br><b>Faux</b>, M. Clément GUIOL : il y a une mention “M.” avant le prénom");
 						$("#solucebox").append("<br><b>Vrai</b>, Olivier Garnier : le prénom est avant le nom; le nom n’a pas besoin d’être en lettres capitales, car ce ne peut pas être un prénom et il n’a pas de consonance étrangere");
@@ -511,13 +497,7 @@ if(isset($_GET['idM'])) {
                     }
                 });
 
-
-
-
-
-
-
-                alert('Finish Called id wizard');
+                console.log('Finish Called id wizard');
             }     
         });
     </script>
