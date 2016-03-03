@@ -1,6 +1,6 @@
 <?php
 	
-	function creationWizardStep($idMooc,$idChap,$bdd) {
+	function creationWizardStep($idMooc,$numChap,$idChap,$bdd) {
 		try{
 			
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
@@ -11,7 +11,7 @@
 			echo 'Aucun chapitre présent';
 			}
 			else{
-				$partie = $lignesChap[$idChap-1]["partie"];
+				$partie = $lignesChap[$numChap-1]["partie"];
 				$tabPartie = array();
 				$tabPartie = preg_split('[-]', $partie);
 					//var_dump($lignesExo);
@@ -32,7 +32,7 @@
 					
 					
 				$i = 0;
-				if ($idMooc !=0  && $idChap !=0)
+				if ($idMooc !=0  && $numChap !=0)
 				{
 					for($i = 0; $i < sizeof($tabPartie) ; $i++)
 					{
@@ -88,7 +88,7 @@
 						 echo' <ul class="nav child_menu" style="display: none">';
 								for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
 								{
-									echo '<li><a href="../../app/vues/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'"">'.$tabPartie[$ipart].'</a></li>';
+									echo '<li><a href="../../app/vues/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
 								}
 						echo'</ul></li>';
 				}
@@ -101,7 +101,7 @@
 		
 	}
 	
-	function nomChapitre($idMooc,$bdd,$idChap) 
+	function nomChapitre($idMooc,$bdd,$numChap) 
 	{
 		try{
 			
@@ -110,7 +110,7 @@
 
 			$lignesChap = $selectChap->fetchAll();
 			
-				echo '<h2> '.$lignesChap[$idChap-1]["titre"].' </h2>';
+				echo '<h2> '.$lignesChap[$numChap-1]["titre"].' </h2>';
 		}
 		catch (Exception $e){ 
 		echo $e->errorMessage();
@@ -123,11 +123,12 @@
 		try{
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
-
+			echo $idMooc;
 			$lignesChap = $selectChap->fetchAll();
 			
 			$selectExo = $bdd->prepare("SELECT * FROM exercice WHERE id_chapitre = $idChap");
 			$selectExo->execute();
+			echo $idChap;
 			
 			$lignesExo = $selectExo->fetchAll();
 			if(sizeof($lignesExo) != 0 && $numeroExo<sizeof($lignesExo))
@@ -135,6 +136,7 @@
 				//echo'<div><h3 class="name"> Exercice n°'.$lignesExo[$numeroExo]["numero"].' </h3></div>';
 				
 				$idExo = $lignesExo[$numeroExo]["id_exercice"];
+				echo $idExo;	
 				
 				if(sizeof($lignesExo) != 0)
 				{	

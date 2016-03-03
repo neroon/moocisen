@@ -20,7 +20,7 @@ $idChap;
 			<div class="x_panel">
 				<div class="x_title">
 				<?php
-					nomChapitre($idMooc,$bdd,$idChap);
+					nomChapitre($idMooc,$bdd,$numChap);
 				?>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -46,7 +46,7 @@ $idChap;
 					<h4>Exercices</h4>
 					<div id="wizard" class="form_wizard wizard_horizontal">
 						<?php
-							creationWizardStep($idMooc,$idChap,$bdd);
+							creationWizardStep($idMooc,$numChap,$idChap,$bdd);
 						?>
 					</div>
 					<!-- IMPORTANT AFFICHE LES SOLUTIONS -->

@@ -158,7 +158,8 @@
                 if(isset($_GET['idC']) && isset($_GET['idM'])) {
                    $idChap = $_GET['idC']; 
                    $idMooc = $_GET['idM'];                    
-                   include 'mooc/mooc'.$idMooc.'/chapitres/chapitre'.$idChap.'.php';
+                   $numChap = $_GET['numC'];                    
+                   include 'mooc/mooc'.$idMooc.'/chapitres/chapitre'.$numChap	.'.php';
                }
                else if(isset($_GET['idM'])){
                    $idMooc = $_GET['idM'];

@@ -2,8 +2,11 @@
 /*
 	Chapitre où l'eleve envoie son CV par mail au prof
 */
+
+
 $idMooc;
 $idChap;
+
 if (isset($_GET['idM']) && isset($_GET['idC'])) {
 	$idMooc = $_GET['idM'];
 	$idChap = $_GET['idC'];	
@@ -59,3 +62,4 @@ Le but n'est pas de tout dire mais noter ce qui peut intéresser. Informations r
 		</div>
 	</div>
 </div>
+

@@ -14,7 +14,7 @@ $idChap;
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="title_left">
         <?php
-			nomChapitre($idMooc,$bdd,$idChap);
+			nomChapitre($idMooc,$bdd,$numChap);
 		?>
     </div>
 </div>
@@ -98,7 +98,7 @@ $idChap;
 					
 					<div id="wizard" class="form_wizard wizard_horizontal">
 						<?php
-							creationWizardStep($idMooc,$idChap,$bdd);
+							creationWizardStep($idMooc,$numChap,$idChap,$bdd);
 						?>
 					</div>
 					<!-- IMPORTANT AFFICHE LES SOLUTIONS -->
