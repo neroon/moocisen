@@ -11,7 +11,7 @@
 
 # THANKS
 
-  Berthelot Anthony (Faker)-- Consultant developpement WEB-- <twitter>
+  Berthelot Anthony -- Consultant developpement WEB -- <twitter>
   Colonna François-Marie -- Docteur en informatique -- <twitter>
 
 # TECHNOLOGY COLOPHON
