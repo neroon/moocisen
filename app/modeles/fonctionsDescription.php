@@ -20,22 +20,31 @@ function getInfos()
 	    $select->execute();
 	    $lignes = $select->fetchAll();
 
-		echo'<div class="content">
+		echo'<div class="content col-md-6">
 				<div class="main">
-					<h3 class="name"> Type de Mooc : '.$lignes[0]["nom_mooc"].' </h3>
-					<h3 class="name"> Description : '.$lignes[0]["description"].' </h3>
+					<h3 class="name"> Nom : '.$lignes[0]["nom_mooc"].' </h3>
+					<h3 class="name"> Matière : '.$lignes[0]["matiere"].' </h3>
+					<h3 class="name text-justify"> Description : '.$lignes[0]["description"].' </h3>
 					<h3 class="name"> Prérequis : '.$lignes[0]["prerequis"].' </h3>
 					<h3 class="name"> Durée estimée: '.$lignes[0]["duree"].' heures </h3>
 					<h3 class="name"> Note : '.$lignes[0]["note"].' / 5 </h3>
-				
-					<div class="col-sm-4 col-sm-offset-4 animated zoomIn">
-						<div class="card-container manual-flip">
+				</div>
+			</div>
+			<div class="content col-md-6">
+				<div class="main">
+					<div class="videocontainer"> 
+                         <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+				</div>
+			</div>
 
-							<a href="mooc.php?idM='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-info">Accéder au cours</button> </a>
-						</div>
-					</div>
+			<div class="col-sm-4 col-sm-offset-4 animated zoomIn">
+				<div class="card-container manual-flip">
+					<a href="mooc.php?idM='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-info">Accéder au cours</button> </a>
 				</div>
 			</div>';
+
+			
 	} catch (Exception $e) { 
 		echo $e->errorMessage();
   		echo "->erreur getInfos()";

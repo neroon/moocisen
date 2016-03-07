@@ -590,15 +590,23 @@
 
                                     <?php // trophées débloqués par l'utilisateur
 
-                                        $trophy = $bdd->prepare('SELECT debloquer.date_obtention ,succes.nom_succes, succes.description_succes FROM succes INNER JOIN debloquer ON succes.id_succes = debloquer.id_succes INNER JOIN user ON user.id_user = debloquer.id_user WHERE debloquer.id_user = "'.$_SESSION['id_user'].'"');
+                                        $trophy = $bdd->prepare('SELECT debloquer.date_obtention ,succes.nom_succes, succes.description_succes, succes.type_succes FROM succes INNER JOIN debloquer ON succes.id_succes = debloquer.id_succes INNER JOIN user ON user.id_user = debloquer.id_user WHERE debloquer.id_user = "'.$_SESSION['id_user'].'"');
                                         $trophy->execute();
                                         $resuTrophy = $trophy->fetchAll();
 
-                                        
-                                         for($i = 0; $i<sizeof($resuTrophy); $i++){
+                                        for($i = 0; $i<sizeof($resuTrophy); $i++){
 
-                                            echo'<div class="col-md-3">
-                                                    <img src="../assets/images/trophy1.png" width="128" height="109" class="trophyUnlock" style="margin:auto;display:block">
+                                            echo'<div class="col-md-3">';
+                                                if($resuTrophy[$i]["type_succes"]=="G"){
+                                                    echo'<img src="../assets/images/trophyG2.png" width="128" height="109" class="trophyUnlock" style="margin:auto;display:block">';
+                                                }
+                                                else if($resuTrophy[$i]["type_succes"]=="S"){
+                                                    echo'<img src="../assets/images/trophyS2.png" width="128" height="109" class="trophyUnlock" style="margin:auto;display:block">';
+                                                }
+                                                else{
+                                                     echo'<img src="../assets/images/trophyB2.png" width="128" height="109" class="trophyUnlock" style="margin:auto;display:block">';
+                                                }
+                                                echo'    
                                                     <p class="text-center"><b>'.$resuTrophy[$i]["nom_succes"].'</b></p>
                                                     <p class="text-center">'.$resuTrophy[$i]["description_succes"].'</p>';
                                                      $date = date_create($resuTrophy[$i]["date_obtention"]);
@@ -631,7 +639,7 @@
                                          for($i = 0; $i<sizeof($resuTrophy1); $i++){
 
                                             echo'<div class="col-md-3">
-                                                    <img src="../assets/images/trophy1.png" width="128" height="109" class="trophyLock" style="margin:auto;display:block">
+                                                    <img src="../assets/images/trophyG.png" width="128" height="109" class="trophyLock" style="margin:auto;display:block">
                                                     <p class="text-center"><b>'.$resuTrophy1[$i]["nom_succes"].'</b></p>
                                                     <p class="text-center">'.$resuTrophy1[$i]["description_succes"].'</p> 
                                                 </div>';
