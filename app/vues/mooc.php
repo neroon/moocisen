@@ -4,6 +4,33 @@
 	include '../modeles/requeteMooc.php';
 	include '../modeles/qcm.php';
 	include '../modeles/dragdrop.php';
+
+    //inscrition au mooc (voir description.php car method get ->fonctionsDescription.php)
+    if(isset($_SESSION['login']) && isset($_GET['insert']) && isset($_GET['idM'])){
+        $unlockTrophy = $bdd->query('SELECT COUNT(id_user) AS cpt FROM suivre WHERE id_user= "'.$_SESSION['id_user'].'" AND id_mooc="'.$_GET['idM'].'"');
+        $donnees = $unlockTrophy->fetch();
+        $unlockTrophy->closeCursor();      
+       // echo $donnees['cpt'];
+        if($donnees['cpt']==0){
+
+            $iduser = $_SESSION['id_user'];
+            $idM = $_GET['idM'];
+
+
+            try { 
+                $requete_prepare= $bdd->prepare("INSERT INTO suivre(date_suivi,avancement,id_user,id_mooc) VALUES(current_date, 0,'$iduser', '$idM')"); // on prépare notre requête
+                $requete_prepare->execute();
+            echo "->OK inscrition au mooc";
+            } catch (Exception $e) { 
+                echo $e->errorMessage();
+                echo "->erreur";
+            }
+        }else{
+            echo 'deja inscrit';
+        }
+    }
+   
+
 ?>
 <?php
 $idMooc;
