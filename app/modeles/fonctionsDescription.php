@@ -1,5 +1,5 @@
 <?php
- 	//session start utilisé dans description.php
+ 
 
 $valid = 1;
  if (isset($_GET['idM'])) {
@@ -38,30 +38,11 @@ function getInfos()
 				</div>
 			</div>
 
-			<br>
-
-			
-			';
-
-			if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
-				echo'
-				<div class="col-sm-4 col-sm-offset-4 animated zoomIn">
-					<br>
-						<div class="">
-							<a href="mooc.php?idM='.$idMooc.'&insert='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-warning">Accéder au cours</button> </a>
-						</div>
-				</div>';
-			}else{
-				echo '
-				<div class="col-sm-4 col-sm-offset-4 animated zoomIn">
-				<br>
-					<div class="">
-						<a href="mooc.php?idM='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-info">Accéder au cours</button> </a>
-					</div>
+			<div class="col-sm-4 col-sm-offset-4 animated zoomIn">
+				<div class="card-container manual-flip">
+					<a href="mooc.php?idM='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-info">Accéder au cours</button> </a>
 				</div>
-				';
-
-			}
+			</div>';
 
 			
 	} catch (Exception $e) { 
