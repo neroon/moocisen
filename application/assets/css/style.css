@@ -47,3 +47,29 @@
    margin:auto;
    display:block;
 }
+
+
+
+/* MESSAGE POSSIBLE ABSOLUTE */
+/* 
+  <div class="alerts">
+      <div class="alert">alerting...</div>
+      <div class="alert alert-danger">alerting again...</div>
+      <div class="alert alert-success">alerting once more...</div>
+      <div class="alert alert-info">really buggin you with alerts...</div>
+    </div>
+     <div class="main">...
+*/
+
+.main {
+  height: 188px;
+  padding: 4px;
+  color: #f6f6f6;
+  background-color: #3269a0;
+}
+.alerts {
+  position: absolute;
+  top: 34px;
+  left: 20px;
+  right: 20px;
+}

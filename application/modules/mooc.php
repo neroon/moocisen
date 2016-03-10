@@ -447,10 +447,10 @@ if(isset($_GET['idM'])) {
 
                 //récupération id=soluce 
                 var soluce = $('input#soluce').val();
-                //console.log("Les Réponse-->"+soluce); //A garder pour débug
+                console.log("Les Réponse-->"+soluce); //A garder pour débug
 
                 var jsonsoluce=JSON.stringify(soluce);
-                //console.log("dataForm-->"+selected+" dataForm2-->"+jsonsoluce); //A garder pour débug
+                console.log("dataForm-->"+selected+" dataForm2-->"+jsonsoluce); //A garder pour débug
 
                 //récupération idmooc
                 var varidm = $('input#idm').val();
