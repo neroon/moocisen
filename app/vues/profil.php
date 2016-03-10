@@ -101,17 +101,12 @@
                                 try{
                                     //Affiche ou l'utilisateur est inscrit
                                     $selectMySub = $bdd->prepare("SELECT * FROM mooc NATURAL JOIN suivre WHERE suivre.id_user = ".$_SESSION["id_user"].""); 
-                                   // $selectMySub = $bdd->prepare("SELECT * FROM suivre WHERE id_user = ".$_SESSION["id_user"]);
+
                                     $selectMySub->execute();
                                     $lignesMySub = $selectMySub->fetchAll();
-                                    //var_dump($lignesMySub);
-                                    //echo "nb inscription".count($lignesMySub).'<br>';
+                                    
                                     
                                     for($i=0;$i<count($lignesMySub);$i++){
-                                        //echo 'id->'.$lignesMySub[$i]['id_user'].'<br>';
-                                        //echo $lignesMySub[$i]['nom_mooc'].'<br>';
-                                        //echo $lignesMySub[$i]['date_suivi'].'<br>';
-                                        //echo $lignesMySub[$i]['avancement'].'<br>';
                                         echo "
                                          <li><a><i class='glyphicon glyphicon-file'></i> ".$lignesMySub[$i]['nom_mooc']." <span class='fa fa-chevron-down'></span></a>
                                             <ul class='nav child_menu' style='display: none'>
@@ -209,7 +204,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Modifier mon profil <small>sub title</small></h2>
+                                    <h2>Modifier mon profil <small></small></h2>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
@@ -531,7 +526,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Modifier mot de passe <small>sub title</small></h2>
+                                    <h2>Modifier mot de passe <small></small></h2>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
@@ -569,13 +564,13 @@
                     <!-- /fin row -->
                     <?php  // count nombre trophées débloqués et nombre total de trophées
 
-                        $unlockTrophy = $bdd->query('SELECT COUNT(id_succes) AS cpt FROM debloquer WHERE id_user= "'.$_SESSION['id_user'].'"');
-                        $donnees = $unlockTrophy->fetch();
-                        $unlockTrophy->closeCursor();
+                        $countUnlockTrophy = $bdd->query('SELECT COUNT(id_succes) AS cpt FROM debloquer WHERE id_user= "'.$_SESSION['id_user'].'"');
+                        $donnees = $countUnlockTrophy->fetch();
+                        $countUnlockTrophy->closeCursor();
                   
-                        $allTrophy = $bdd->query('SELECT COUNT(id_succes) AS total FROM succes');
-                        $donnees1 = $allTrophy->fetch();
-                        $allTrophy->closeCursor();
+                        $countAllTrophy = $bdd->query('SELECT COUNT(id_succes) AS total FROM succes');
+                        $donnees1 = $countAllTrophy->fetch();
+                        $countAllTrophy->closeCursor();
 
                     ?>
 
@@ -653,11 +648,17 @@
                     </div>
                     <!-- /fin row -->
 
-                    <?php  // count nombre trophées débloqués et nombre total de trophées
+                    <?php  // count nombre de cours suivis
 
-                        $corseFollow = $bdd->query('SELECT COUNT(id_user) AS cpt2 FROM suivre WHERE id_user= "'.$_SESSION['id_user'].'"');
-                        $donnees2 = $corseFollow->fetch();
-                        $corseFollow->closeCursor();
+                        $countCorseFollow = $bdd->query('SELECT COUNT(id_user) AS cpt2 FROM suivre WHERE id_user= "'.$_SESSION['id_user'].'"');
+                        $donnees2 = $countCorseFollow->fetch();
+                        $countCorseFollow->closeCursor();
+
+                        // Permet d'avoir les renseignements sur les cours suivis
+
+                        $corseFollow = $bdd->query('SELECT avancement, date_suivi,nom_mooc FROM user NATURAL JOIN suivre NATURAL JOIN MOOC WHERE id_user= "'.$_SESSION['id_user'].'"');
+                        $corseFollow->execute();
+                        $donnees3 = $corseFollow->fetchAll();
                   
                     ?>
 
@@ -683,16 +684,16 @@
                                         </thead>
                                         <tbody>
 
-                                            <?php 
+                                            <?php // Affichage du tableau récapitulatif pour chaque projet
                                                 
                                                  for($i = 0; $i<sizeof($lignesMySub); $i++){
 
                                                     echo'<tr>
                                                         <td>#</td>
                                                         <td>
-                                                            <a href="description.php?idM='.$lignesMySub[$i]['id_mooc'].'">'.$lignesMySub[$i]['nom_mooc'].'</a>
+                                                            <a href="">'.$donnees3[$i]['nom_mooc'].'</a>
                                                             <br />
-                                                            <small>Inscrit le '.$lignesMySub[$i]["date_suivi"].'</small>
+                                                            <small>Inscrit le '.$donnees3[$i]["date_suivi"].'</small>
                                                         </td>
                                                         <td class="project_progress">
                                                             <div class="progress progress_sm">
@@ -704,7 +705,7 @@
                                                             <p class="text-center"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> 3300/10.000</p>
                                                         </td>
                                                         <td>
-                                                            <a href="mooc.php?idM='.$lignesMySub[$i]['id_mooc'].'&idC='.$lignesMySub[$i]['avancement'].'" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </a>
+                                                            <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </a>
                                                             <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Ne plus suivre </a>
                                                         </td>
                                                     </tr>';   
