@@ -654,12 +654,6 @@
                         $donnees2 = $countCorseFollow->fetch();
                         $countCorseFollow->closeCursor();
 
-                        // Permet d'avoir les renseignements sur les cours suivis
-
-                        $corseFollow = $bdd->query('SELECT avancement, date_suivi,nom_mooc FROM user NATURAL JOIN suivre NATURAL JOIN MOOC WHERE id_user= "'.$_SESSION['id_user'].'"');
-                        $corseFollow->execute();
-                        $donnees3 = $corseFollow->fetchAll();
-                  
                     ?>
 
 
@@ -685,8 +679,16 @@
                                         <tbody>
 
                                             <?php // Affichage du tableau récapitulatif pour chaque projet
-                                                
-                                                 for($i = 0; $i<sizeof($lignesMySub); $i++){
+
+
+                                             // Permet d'avoir les renseignements sur les cours suivis
+
+                                                $corseFollow = $bdd->query('SELECT avancement, date_suivi, id_mooc,nom_mooc FROM user NATURAL JOIN suivre NATURAL JOIN MOOC WHERE id_user= "'.$_SESSION['id_user'].'"');
+                                                $corseFollow->execute();
+                                                $donnees3 = $corseFollow->fetchAll();
+
+
+                                                 for($i = 0; $i<sizeof($donnees3); $i++){
 
                                                     echo'<tr>
                                                         <td>#</td>
@@ -700,9 +702,36 @@
                                                                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
                                                             </div>
                                                             <small>57% Complete</small>
-                                                        </td>
-                                                        <td>
-                                                            <p class="text-center"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> 3300/10.000</p>
+                                                        </td>';
+
+                                                        //Permet de calculer le score de l'utilisateur courant sur un mooc 
+
+                                                        $scoreMooc = $bdd->query('SELECT sum(score) AS score FROM faire WHERE id_user= "'.$_SESSION["id_user"].'" AND id_exercice IN (SELECT id_exercice FROM mooc INNER JOIN chapitre ON mooc.id_mooc = chapitre.id_mooc INNER JOIN exercice ON chapitre.id_chapitre=exercice.id_chapitre WHERE mooc.id_mooc = "'.$donnees3[$i]["id_mooc"].'")');
+                                                        $donnees4 = $scoreMooc->fetch();
+                                                        $scoreMooc->closeCursor();
+
+                                                        // Permet de calculer le score maximal possible en fonction des exercices réalisés par l'utilisateur pour ce MOOC
+
+                                                        $scoreTotalMooc = $bdd->query('SELECT sum(valeur_exo) AS total FROM mooc INNER JOIN chapitre ON mooc.id_mooc = chapitre.id_mooc INNER JOIN exercice ON chapitre.id_chapitre=exercice.id_chapitre WHERE mooc.id_mooc = "'.$donnees3[$i]["id_mooc"].'" AND id_exercice IN(SELECT id_exercice FROM faire WHERE id_user="'.$_SESSION["id_user"].'")');
+                                                        $donnees5 = $scoreTotalMooc->fetch();
+                                                        $scoreTotalMooc->closeCursor();
+                                                        
+                                                        echo'<td>
+                                                            <p class="text-center"><span class="glyphicon glyphicon-star" aria-hidden="true"> </span>';
+                                                        if($donnees4["score"]==NULL){
+                                                            echo'0';
+                                                        }
+                                                        else{
+                                                            echo $donnees4["score"];
+                                                        }
+                                                        echo'/';
+                                                        if($donnees5["total"]==NULL){
+                                                            echo'0';
+                                                        }
+                                                        else{
+                                                            echo $donnees5["total"];
+                                                        }
+                                                        echo'</p>
                                                         </td>
                                                         <td>
                                                             <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </a>

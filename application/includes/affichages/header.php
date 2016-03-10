@@ -29,7 +29,7 @@
                                         <a href='../../modules/profil.php'> <span class='glyphicon glyphicon-user' aria-hidden='true'></span> ".$_SESSION['pseudo']."</a>
                                     </li>
                                     <li>
-                                        <a href='../logout.php'> <span class='glyphicon glyphicon-off' aria-hidden='true'></span> Déconnexion </a> 
+                                        <a href='../includes/logout.php'> <span class='glyphicon glyphicon-off' aria-hidden='true'></span> Déconnexion </a> 
                                     </li>
                                     ");
                                 }

@@ -4,7 +4,7 @@
     $connect_pass= '';
     try
     {
-        $bdd= new PDO($connect_str, $connect_user, $connect_pass); 
+        $bdd= new PDO($connect_str, $connect_user, $connect_pass,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); 
         $utf8 = $bdd->prepare("SET NAMES UTF8");
         $utf8->execute();
     }
