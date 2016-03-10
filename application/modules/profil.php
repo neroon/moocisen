@@ -178,7 +178,7 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <!-- AFFICHAGE MENU -->
-                           <?php include 'affiche_notif_menu.php'; ?>
+                           <?php include '../includes/affichages/affiche_notif_menu.php'; ?>
 
                         </ul>
                     </nav>
