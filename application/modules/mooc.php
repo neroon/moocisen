@@ -459,6 +459,9 @@ if(isset($_GET['idM'])) {
                 var varidc = $('input#idc').val();
                 //var varidm=JSON.stringify(tabidm);
 
+                //récupération idexo
+                var varide = $('input#ide').val();
+
                 //idexo
                 var tabide = [];
                 $('input#ide').each(function() {
@@ -469,14 +472,15 @@ if(isset($_GET['idM'])) {
 
                 //Requete Ajax sur wizard_ajax.php permettant de corrigé les réponse + insertion en bdd
                 $.ajax({
-                    url: '../modeles/wizard_ajax.php',
+                    url: '../includes/wizard_ajax.php',
                     type: 'POST', 
                     data: {
                         dataForm: selected, //vos choix
                         dataForm2:jsonsoluce, //les solutions
                         dataidm:varidm, //variable id du mooc
                         dataidc:varidc, //variable id du chapitre
-                        dataide:jsontabide, //tableau des id des exos
+                        dataide:varide, //variable id du chapitre
+                        datatabide:jsontabide, //tableau des id des exos
                     },
                     success: function(data) {
                         //var jsondata=$.parseJSON(data);  //jsondata c'est le callback de wizard.jss

@@ -1,10 +1,12 @@
 <?php
-include 'connect.inc.php'; //connexion bdd
+session_start();
+
 $meschoix=$_POST["dataForm"]; //Mes choix
 $solutions=$_POST["dataForm2"]; //Les solutions
 $idm=$_POST["dataidm"]; //id mooc
 $idc=$_POST["dataidc"]; //id chap
-$tabide=$_POST["dataide"]; //id exo
+$ide=$_POST["dataide"]; //id exo
+$tabide=$_POST["datatabide"]; //id tab des partie exo
 
 /*
 $meschoix='["Monsieur Jeson Dupont","Jean Nicolas"]';
@@ -17,11 +19,12 @@ $solutions=str_replace(',]',"]",$solutions);
 
 
 
-function insertFaitToBDD($id_user,$score){
+function insertFaitToBDD($score,$id_user,$id_exercice){
+	include 'connect.inc.php'; //connexion bdd
 	try { 
-		$requete_prepare= $bdd->prepare("INSERT INTO faire(score,id_user,id_exercice) VALUES('$score', '$id_user', '$valPseudo')"); // on prépare notre requête
+		$requete_prepare= $bdd->prepare("INSERT INTO faire(score,id_user,id_exercice) VALUES('$score', '$id_user', '$id_exercice')"); // on prépare notre requête
 		$requete_prepare->execute();
-		var_dump($requete_prepare);
+		//var_dump($requete_prepare);
 		echo "->OK insertUsertoBDD";
 
 	} catch (Exception $e) { 
@@ -36,14 +39,15 @@ function insertFaitToBDD($id_user,$score){
 //$callback = $meschoix."<br>".$solutions;
 //echo $callback;
 //echo json_encode($callback);
-/*
+
 if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
 	//ok session
 	$id_user=$_SESSION['id_user'];
 	$score = 100;
-	insertFaitToBDD($id_user,$score);
+	insertFaitToBDD($score,$id_user,$ide);
+	//echo "passage en bdd";
 }
-*/
+
 
 
 if($meschoix == $solutions){
