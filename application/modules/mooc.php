@@ -69,6 +69,8 @@ if(isset($_GET['idM'])) {
     <script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery-ui.min.js"></script>
     <script src="../assets/js/jquery.validate.js"></script>
+
+    <link href="../assets/css/animate.css" rel="stylesheet">
     <!--<script src="../assets/js/nprogress.js"></script>-->
     <script>
         //NProgress.start();
@@ -449,7 +451,8 @@ if(isset($_GET['idM'])) {
                 var soluce = $('input#soluce').val();
                 console.log("Les Réponse-->"+soluce); //A garder pour débug
 
-                var jsonsoluce=JSON.stringify(soluce);
+                //var jsonsoluce=JSON.stringify(soluce);
+                var jsonsoluce=(soluce);
                 console.log("dataForm-->"+selected+" dataForm2-->"+jsonsoluce); //A garder pour débug
 
                 //récupération idmooc

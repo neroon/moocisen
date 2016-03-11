@@ -17,7 +17,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 <div class="row">
 
 
-		<div class="col-md-6 col-sm-12 col-xs-12">
+		<div class="col-md-6 col-sm-12 col-xs-12 animated slideInUp">
 			<div class="x_panel">
 				<div class="x_title">
 					<h2> Cours </h2>
@@ -99,7 +99,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 			</div>
 		</div>
 
-		<div class="col-md-6 col-sm-12 col-xs-12">
+		<div class="col-md-6 col-sm-12 col-xs-12 animated slideInRight">
 			<div class="x_panel">
 				<div class="x_title">
 					<h2> Exemple </h2>
@@ -115,18 +115,18 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 					<!-- Cours -->
 					<div class="col-sm-4 invoice-col">
                      <address>
-                           	<strong>Iron Admin, Inc.</strong>
-                           	<br>795 Freedom Ave, Suite 600
-                           	<br>New York, CA 94107
+                           	<strong>Shepard John ,Fondation Sirta</strong>
+                           	<br>La Citadelle, Présidium
+                           	<br>Nos Astra, Illium
                            	<br>Phone: 1 (804) 123-9876
-                           	<br>Email: ironadmin.com
+                           	<br>Email: JohnShepard@mail.com
                         </address>
                     </div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-6 col-sm-12 col-xs-12">
+		<div class="col-md-6 col-sm-12 col-xs-12 animated slideInRight">
 			<div class="x_panel">
 				<div class="x_title">
 				<?php

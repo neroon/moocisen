@@ -42,8 +42,8 @@
 			//var_dump($tabSolution);
 			//Type hidden qui correpond au reponse pour le qcm
 
-			$tabSolution=implode(",",$tabSolution);
-			//$tabSolution=json_encode($tabSolution);
+			//$tabSolution=implode(",",$tabSolution);
+			$tabSolution=json_encode($tabSolution);
 			//echo 'tab réponse='.$tabSolution;
 			//Réponse présent
 			echo "<input type='hidden' id='soluce' name='zyx' value='".$tabSolution."'/>";

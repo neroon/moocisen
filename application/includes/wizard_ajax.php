@@ -13,10 +13,10 @@ $meschoix='["Monsieur Jeson Dupont","Jean Nicolas"]';
 $solutions='["Olivier Garnier,Olivier SCHULTZ,Victor Gerard,PERRICHON Guillaume",""]';
 */
 //var_dump($saisie);
-$meschoix=str_replace('"',"",$meschoix);
+/*$meschoix=str_replace('"',"",$meschoix);
 $solutions=str_replace('"',"",$solutions);
 $solutions=str_replace(',]',"]",$solutions);
-
+*/
 
 //Insert le score sur l'exercice (score basé sur l'algorithme de levenshtein)
 //Remarque : une fois le score rentré impossible de réécrire dessus avec cette fonction
@@ -72,14 +72,39 @@ function similaire($str1, $str2) {
     }
     else
     	$lev=levenshtein($str1, $str2);
-
-
     $porcentage= -100*$lev/$max+100;
     /*if($porcentage>75)	
     	similar_text($str1,$str2,$porcentage);*/
-
  	return $porcentage;
 }
+
+
+//compare 2 chaine au format json
+function compareTab($strChoix, $strSoluce){
+    $strJsonChoix = json_decode($strChoix);
+    $strJsonSoluce= json_decode($strSoluce);
+    $compteur = 0;
+    $sizeArraySoluce = count($strJsonSoluce);
+    //echo '<br>taille'.$sizeArraySoluce;
+
+    foreach($strJsonChoix as $keyChoix){
+        //echo '+'.$keyChoix.'+';
+        foreach($strJsonSoluce as $keySoluce){
+            if($keyChoix==$keySoluce){
+                $compteur = $compteur + 1;
+            }
+        }
+    }
+    if($sizeArraySoluce==$compteur){
+        echo '100% juste';
+    }else if($sizeArraySoluce>$compteur){
+       // echo (intval($compteur/$sizeArraySoluce)*100).'% juste';
+        echo $compteur.' réponse(s) juste sur '.$sizeArraySoluce;
+    }else{
+        echo 'trop de réponse';
+    }
+}
+
 
 
 //Calcul du %
@@ -92,16 +117,16 @@ if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
 	insertFaitToBDDwithUpdate($score,$id_user,$ide); //Insertion en BDD
 	//echo "passage en bdd";
 }
-
-
+compareTab($meschoix,$solutions);
+echo '<br><br><br>Debug<br>';
 
 if($meschoix == $solutions){
-	echo '100% CORRECT <br> les réponses sont :'.$solutions."<br><br>info débug : ".$idm." ".$idc." ".$tabide." --- ".$solutions;
+	echo '100% CORRECT <br> les réponses sont :'.$solutions."<br><br>info débug : ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
 }else if($lepourcentage>70){ 
 	//il a plus de 70% juste donc on affiche les bonnes réponses
-	echo $lepourcentage.'% CORRECT <br> les réponses sont :'.$solutions."<br><br>info débug ".$idm." ".$idc." ".$tabide." --- ".$solutions;
+	echo $lepourcentage.'% CORRECT <br> les réponses sont :'.$solutions."<br><br>info débug ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
 }else{
-	echo $lepourcentage.'% CORRECT <br> les réponses sont : (avoir un score plus élevé)<br><br>info débug '.$idm." ".$idc." --- ".$tabide." ".$solutions;
+	echo $lepourcentage.'% CORRECT <br> les réponses sont : (avoir un score plus élevé)<br><br>info débug '.$idm."  ".$idc." --- ".$tabide." -solution ".$solutions." -choix".$meschoix;
 }
 exit();
 ?>
