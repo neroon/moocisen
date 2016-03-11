@@ -22,7 +22,7 @@ $idChap;
 <div class="row">
 
 
-	<div class="col-md-6 col-sm-12 col-xs-12">
+	<div class="col-md-2 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
 					<h2> Cours </h2>
@@ -45,11 +45,14 @@ $idChap;
 				</div>
 				<div class="x_content">
 					<!-- Cours -->
+					<div class="text-center">
+						<img class="img-circle" src="../assets/images/catloadcarre.gif" width="150px" alt="">
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-6 col-sm-12 col-xs-12">
+		<div class="col-md-10 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
 					<h2> Exemple </h2>
