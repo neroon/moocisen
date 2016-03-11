@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include "connect.inc.php";  /// Connection bdd
 
 //ok=1   ko=0

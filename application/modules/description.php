@@ -54,7 +54,6 @@
             include '../includes/fonctionsDescription.php'; //Utilisation ici de $_GET['idM']
 	
 			getInfos();
-			
         ?>
 
     </div>
