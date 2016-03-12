@@ -1,0 +1,46 @@
+ul.horizontal-slide {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+   
+}
+
+ul.horizontal-slide li[class*="col"] {
+    display: inline-block;
+    float: none;
+}
+
+ul.horizontal-slide li[class*="col"]:first-child {
+    margin-left: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+#avatars{
+  width:200px;
+  height: 300px;
+  overflow-y: auto;
+ 
+}
+.avatars > input{
+ 	display: none;
+
+}
+
+.avatars > input + img{
+  cursor: pointer;
+  border: 2px solid transparent;
+
+}
+
+.avatars > input:checked + img{
+ 	border: 4px solid #5A738E;
+  /*box-shadow: 0px 0px 8px #5A738E; */
+}
+
+.avatars input[type=radio]:checked + img, .avatars.active + img{
+  
+}
