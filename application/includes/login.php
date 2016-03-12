@@ -18,7 +18,7 @@ function formValid(){
 	 	$verif=0;
 	 }
 	 if (isset($_POST['password'])) {
-	 	echo $_POST['password'];
+	 	//echo $_POST['password'];
 	 }else{
 	 	$verif=0;
 	 }

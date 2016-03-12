@@ -57,7 +57,7 @@ function insertLogtoBDD(){
 			$requete_prepare->execute();
 			echo "->OK sans session";
 		} catch (Exception $e) { 
-	  		echo $e->errorMessage();
+	  		//echo $e->errorMessage();
 	  		echo "->erreur";
 		}
 	}else{
@@ -66,7 +66,7 @@ function insertLogtoBDD(){
 			$requete_prepare->execute();
 			echo "->OK avec session";
 		} catch (Exception $e) { 
-	  		echo $e->errorMessage();
+	  		//echo $e->errorMessage();
 	  		echo "->erreur";
 		}
  	}
