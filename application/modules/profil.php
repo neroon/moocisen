@@ -696,12 +696,36 @@
                                                             <a href="">'.$donnees3[$i]['nom_mooc'].'</a>
                                                             <br />
                                                             <small>Inscrit le '.$donnees3[$i]["date_suivi"].'</small>
-                                                        </td>
+                                                        </td>';
+
+
+                                                        //Permet de récuperer l'avancement d'un mooc pour l'utilisateur courant
+
+                                                        $avancementMooc = $bdd->query('SELECT avancement  AS avc FROM user INNER JOIN suivre ON user.id_user= suivre.id_user INNER JOIN mooc ON suivre.id_mooc=mooc.id_mooc WHERE user.id_user = "'.$_SESSION["id_user"].'" AND mooc.id_mooc = "'.$donnees3[$i]["id_mooc"].'"');
+                                                        $donnees6 = $avancementMooc->fetch();
+                                                        $avancementMooc->closeCursor();
+                        
+
+                                                        // Permet de récuperer le nombre de chapitre du MOOC
+
+                                                        $nbChapitreMooc = $bdd->query('SELECT nb_chap FROM mooc WHERE id_mooc ="'.$donnees3[$i]["id_mooc"].'"');
+                                                        $donnees7 = $nbChapitreMooc->fetch();
+                                                        $nbChapitreMooc->closeCursor();
+
+
+                                                        // Calcul du % d'avancement
+
+                                                        $tab = Array();
+                                                        $tab = preg_split('[-]', $donnees6["avc"]);
+                                                        $avancement = sizeof($tab)-1;
+                                                        $pourcentage = ceil($avancement/ $donnees7["nb_chap"]*100);
+
+                                                        echo'
                                                         <td class="project_progress">
                                                             <div class="progress progress_sm">
-                                                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
+                                                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="'.$pourcentage.'"></div>
                                                             </div>
-                                                            <small>57% Complete</small>
+                                                            <small>.'.$pourcentage.'% Complete</small>
                                                         </td>';
 
                                                         //Permet de calculer le score de l'utilisateur courant sur un mooc 
@@ -717,7 +741,7 @@
                                                         $scoreTotalMooc->closeCursor();
                                                         
                                                         echo'<td>
-                                                            <p class="text-center"><span class="glyphicon glyphicon-star" aria-hidden="true"> </span>';
+                                                            <p><span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
                                                         if($donnees4["score"]==NULL){
                                                             echo'0';
                                                         }
@@ -734,8 +758,8 @@
                                                         echo'</p>
                                                         </td>
                                                         <td>
-                                                            <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </a>
-                                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Ne plus suivre </a>
+                                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </a>
+                                                            <a href="#" class="btn btn-success btn-xs"><i class="fa fa-bar-chart"></i> Statistiques </a>
                                                         </td>
                                                     </tr>';   
                                             }
