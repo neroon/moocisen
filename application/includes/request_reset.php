@@ -37,6 +37,7 @@ function emailExist(){
 	return $verif;
 }
 
+$code =" ";
 //Fonction qui genere une chaine aléatoire
 function generateRandomString($length = 5) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -64,6 +65,7 @@ function updateIdResetPwd(){
   		echo $e->errorMessage();
   		echo "->erreur";
 	}
+	$code=$valEmailMd5;
 	return $valEmailMd5;
  }
 
@@ -77,7 +79,7 @@ function sendEmail($urlLink){
 	}
 	$name = "MOOC Mot de passe";
 	$url = 'http://'.$_SERVER['SERVER_NAME'];
-	$email_address = 'erozbliz@hotmail.com';
+	$email_address = $_POST['email']; //email de destination
 	$urlLink = $urlLink;
 	$message = "A Bientot";
 	//$email_address = '"$email_address"';
@@ -89,13 +91,14 @@ function sendEmail($urlLink){
 	 $email_body = '
      <html>
       <head>
-       <title>Voici votre le lien pour le nouveau mot de passe</title>
+       <title>Voici votre lien pour le nouveau mot de passe</title>
       </head>
       <body>
        <p>Voici votre le lien pour le nouveau mot de passe</p>
        Email : '.$email_address.'<br>
-       URL: <a href='.$url.'/moocisen/application/modules/reset_password.php?id='.$urlLink.'>'.$url.'/moocisen/application/modules/reset_password.php?'.$urlLink.'</a> <br>
+       URL: <a href='.$url.'/app/modules/reset_password.php?id='.$urlLink.'>'.$url.'/app/modules/reset_password.php?'.$urlLink.'</a> <br>
        '.$message.' <br>
+       Sinon vous pouvez vous rendre sur la page "mot de passe oublié" et rentrer le code : '.$code.'<br>
       </body>
      </html>
      ';

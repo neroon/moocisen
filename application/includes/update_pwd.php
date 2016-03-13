@@ -90,6 +90,7 @@ if(verifId()==0){
 }else if($verif==1){
 	updateIdResetPwd();
 	resetId();
+	header ("location: ../index.php?ok=mdp reinit success");
 }
 else{
 	echo '<br>wrong form';

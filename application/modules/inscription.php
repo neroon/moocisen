@@ -18,6 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="shortcut icon" href="../favicon.ico">
 
   <title>Mooc Isen</title>
 

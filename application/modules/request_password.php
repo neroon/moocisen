@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="shortcut icon" href="../favicon.ico">
 
   <title>Mooc Isen</title>
 
@@ -40,8 +41,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <h1>Inscription sur MOOCs</h1>
-              <p>Avant de pouvoir accéder à vos MOOCs préférés, veuillez remplir ce formulaire</p>
+              <h1>Réinitaliser mot de passe</h1>
+              <p></p>
           </div>
       </div>
   </div><br><br>
@@ -64,6 +65,7 @@
                               <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email">
                            </fieldset><br>
                            <button type="submit" class="btn btn-primary">Envoyer</button><br>
+                            <!--<a href="reset_password.php"><button type="button" class="btn btn-default btn-xs  pull-right"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Code déjà reçu</button></a>-->
                            <?php  if(isset($_GET['erreur'])) {
                                 echo $_GET['erreur'];
                             } ?>
