@@ -72,8 +72,10 @@ function updateUser(){
  	$pays = $_POST['selectPays'];
  	$email = $_POST['email'];
  	$selectJob = $_POST['selectJob'];
+ 	$avatar = $_POST['avatar'];
+ 	$_SESSION['avatar'] 	= $_POST['avatar'];
 	try { 
-		$requete_prepare= $bdd->prepare("UPDATE user SET nom='$name', prenom='$surname', pseudo='$pseudo', email='$email', pays='$pays', statut='$selectJob' WHERE id_user='$id'"); // on prépare notre requête
+		$requete_prepare= $bdd->prepare("UPDATE user SET nom='$name', prenom='$surname', pseudo='$pseudo', email='$email', pays='$pays', statut='$selectJob', avatar='$avatar' WHERE id_user='$id'"); // on prépare notre requête
 		$requete_prepare->execute();
 		echo "->OK user update";
 	} catch (Exception $e) { 
@@ -98,7 +100,7 @@ if($verifSession ==1){
 	}
 }else{
 	echo '<br>aucune session';
-	header ("location: ../modules/profil.php/?erreur=Erreur session");
+	header ("location: ../modules/profil.php?erreur=Erreur session");
 }
 
 

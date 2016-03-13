@@ -62,6 +62,7 @@ function formValid(){
         $_SESSION['grade'] 		= $result[0]['grade'];
         $_SESSION['nom'] 		= $result[0]['nom'];
         $_SESSION['prenom'] 	= $result[0]['prenom'];
+        $_SESSION['avatar'] 	= $result[0]['avatar'];
 
         //------HISTORIQUE DES CONNEXIONS --------
         include "insert_log.php";

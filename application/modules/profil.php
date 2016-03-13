@@ -2,7 +2,6 @@
     session_start();
     include '../includes/connect.inc.php';
     include '../includes/verif_session.php';
-
     try { 
         $select3 = $bdd->prepare("SELECT nom,prenom,email,pseudo,pays FROM user WHERE id_user = ".$_SESSION["id_user"]."");
         $select3->execute();
@@ -45,10 +44,15 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/progressbar/bootstrap-progressbar-3.3.0.css">
 
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/nprogress.js"></script>
-    <script>
-        NProgress.start();
-    </script>
+
+
+    <!-- slide horizontal img et avatar-->
+     <link rel="stylesheet" type="text/css" href="../assets/css/horizontal-slide.css">
+
+     <!-- animation full css -->
+    <link href="../assets/css/animate.css" rel="stylesheet">
+
+
     
     <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -79,6 +83,7 @@
                     <div class="clearfix"></div>
 
                     <!-- menu prile quick info -->
+                     <!--
                     <div class="profile">
                         <div class="profile_pic">
                             <img src="../assets/images/user.png" alt="..." class="img-circle profile_img">
@@ -87,15 +92,15 @@
                             <span>MOOC</span>
                         </div>
                     </div>
+                    -->
                     <!-- /menu prile quick info -->
 
-                    <br /><br>
 
-                    <!-- sidebar menu -->
+                    <!-- sidebar menu drawer-->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <br>
                         <div class="menu_section">
-                            <h3>Moocs inscription</h3>
+                            <h2>  &nbsp&nbsp<i class='glyphicon glyphicon-sort-by-alphabet' style='color:white'></i> <span style='color:white'>Moocs inscription</span></h2>
                             <ul class="nav side-menu">
                             <?php
                                 try{
@@ -112,7 +117,7 @@
                                             <ul class='nav child_menu' style='display: none'>
                                                 <li><a href='mooc.php?idM=".$lignesMySub[$i]['id_mooc']."'><span class='glyphicon glyphicon-calendar' aria-hidden='true'></span>  Inscrit = ".$lignesMySub[$i]['date_suivi']."</a>
                                                 </li>
-                                                <li><a href='mooc.php?idM=".$lignesMySub[$i]['id_mooc']."&idC=".$lignesMySub[$i]['avancement']."&numC=".$lignesMySub[$i]['avancement']."'><span class='glyphicon glyphicon-sort-by-attributes' aria-hidden='true'></span>  Avancement = ".$lignesMySub[$i]['avancement']."</a>
+                                                <li><a href='mooc.php?idM=".$lignesMySub[$i]['id_mooc']."&idC=0&numC=0'><span class='glyphicon glyphicon-sort-by-attributes' aria-hidden='true'></span>  Avancement = ".$lignesMySub[$i]['avancement']."</a>
                                                 </li>
                                             </ul>
                                         </li>";
@@ -209,9 +214,35 @@
                                 </div>
                                 <div class="x_content">
 
-                                    <form class="form-horizontal form-label-left"  action="../modeles/profil_update_user.php" method="post" id="myform1">
+                                    <form class="form-horizontal form-label-left"  action="../includes/profil_update_user.php" method="post" id="myform1">
 
                                         <!--<span class="section">Informations personnelles</span> -->
+                                        <!-- Photo d'avatar -->
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Avatar"> Avatar<span class="required"></span>
+                                            </label>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Avatar"> <span class="required"></span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                              <ul class="horizontal-slide">
+                                                <!-- Genration des images -->
+                                                <?php
+                                                    $dirname = "../assets/images/profil/";
+                                                    $images = glob($dirname."*.png");
+                                                    foreach($images as $image) {
+                                                    //echo '<img src="'.$image.'" /><br />';
+                                                    echo '<label class="avatars">';
+                                                    echo '<input type="radio" name="avatar" value="'.$image.'"/>';
+                                                    //echo '<li class="col-md-2"><img class="" width="" src="'.$image.'"/></li>';
+                                                    echo '<img class="img-circle" width="80px" src="'.$image.'"/>';
+                                                    echo '</label>';
+                                                    }
+                                                ?>
+                                                </ul>
+                                            </div>
+                                        </div> 
 
                                         <div class="item form-group"> 
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nom <span class="required">*</span>
@@ -509,10 +540,20 @@
                                               </select>
                                             </div>
                                         </div>
+                                        
                                         <div class="ln_solid"></div>
                                         <div class="form-group">
                                             <div class="col-md-6 col-md-offset-3">
                                                 <button id="send" type="submit" class="btn btn-success">Confirmer</button>
+                                                <?php  
+                                                    //erreur venant du traitement
+                                                    if(isset($_GET['erreur'])) {
+                                                        echo $_GET['erreur'];
+                                                    } 
+                                                    if(isset($_GET['ok'])) {
+                                                        echo $_GET['ok'];
+                                                    } 
+                                                ?>
                                             </div>
                                         </div>
                                     </form>
@@ -531,7 +572,7 @@
                                 </div>
                                 <div class="x_content">
 
-                                    <form class="form-horizontal form-label-left" action="../modeles/profil_update_password.php" method="post" id="myform2" novalidate>
+                                    <form class="form-horizontal form-label-left" action="../includes/profil_update_password.php" method="post" id="myform2" novalidate>
 
                                         <!-- <span class="section">Informations personnelles</span> -->
                                         
@@ -788,13 +829,14 @@
     </div>
 
     <!-- jQuery -->
-<script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/jquery.js"></script>
 
     <script src="../assets/js/bootstrap.min.js"></script>
 
     <!-- gauge js -->
-    <script type="text/javascript" src="../assets/js/gauge/gauge.min.js"></script>
+    <!--<script type="text/javascript" src="../assets/js/gauge/gauge.min.js"></script>
     <script type="text/javascript" src="../assets/js/gauge/gauge_demo.js"></script>
+    -->
     <!-- chart js -->
     <script src="../assets/js/chartjs/chart.min.js"></script>
     <!-- bootstrap progress js -->
@@ -979,30 +1021,6 @@ $.validator.addMethod("mailRegex", function(value, element) {
         });
     </script>
 
-    <!-- worldmap -->
-    <script type="text/javascript" src="../assets/js/maps/jquery-jvectormap-2.0.1.min.js"></script>
-    <script type="text/javascript" src="../assets/js/maps/gdp-data.js"></script>
-    <script type="text/javascript" src="../assets/js/maps/jquery-jvectormap-world-mill-en.js"></script>
-    <script type="text/javascript" src="../assets/js/maps/jquery-jvectormap-us-aea-en.js"></script>
-    <script>
-        $(function () {
-            $('#world-map-gdp').vectorMap({
-                map: 'world_mill_en',
-                backgroundColor: 'transparent',
-                zoomOnScroll: false,
-                series: {
-                    regions: [{
-                        values: gdpData,
-                        scale: ['#E6F2F0', '#149B7E'],
-                        normalizeFunction: 'polynomial'
-                    }]
-                },
-                onRegionTipShow: function (e, el, code) {
-                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-                }
-            });
-        });
-    </script>
     <!-- skycons -->
     <script src="../assets/js/skycons/skycons.js"></script>
     <script>
@@ -1149,9 +1167,7 @@ $.validator.addMethod("mailRegex", function(value, element) {
             });
         });
     </script>
-    <script>
-        NProgress.done();
-    </script>
+
     <!-- /datepicker -->
     <!-- /footer content -->
 </body>

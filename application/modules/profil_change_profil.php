@@ -50,9 +50,7 @@
 
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/nprogress.js"></script>
-    <script>
-        NProgress.start();
-    </script>
+
     
     <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -1154,9 +1152,7 @@ $.validator.addMethod("mailRegex", function(value, element) {
             });
         });
     </script>
-    <script>
-        NProgress.done();
-    </script>
+
     <!-- /datepicker -->
     <!-- /footer content -->
 </body>

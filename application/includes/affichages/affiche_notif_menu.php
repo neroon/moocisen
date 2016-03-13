@@ -24,14 +24,23 @@ A include dans :
     //Si Connecter
     ?>
     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <img src="../assets/images/user.png" alt="">
+        <?php 
+          
+            if ((isset($_SESSION['email'])) && (!empty($_SESSION['email']))){
+                $avatar=$_SESSION['avatar'];
+                echo '<img src="'.$avatar.'" alt="">';
+            }else{
+                echo '<img src="../assets/images/user.png" alt="">';
+            }
+        ?>
+        
          <?php 
          $short_string=  $_SESSION['email']; //On va afficher juste les 5 premiers pour regler le pb d'affichage sur mobile
          echo substr($short_string, 0, 10).".."; 
          ?>
         <span class=" fa fa-angle-down"></span>
-        <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-            <li><a href="../modules/profil.php">Profil</a>
+        <ul class="dropdown-menu dropdown-usermenu animated fadeIn pull-right">
+            <li><a href="../modules/profil.php"><i class="fa fa-user pull-right"></i>Profil</a>
             </li>
             <li><a href="../includes/logout.php"><i class="fa fa-sign-out pull-right"></i>Déconnexion</a>
             </li>
