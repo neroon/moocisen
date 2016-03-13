@@ -26,7 +26,7 @@ A include dans :
     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <?php 
           
-            if ((isset($_SESSION['email'])) && (!empty($_SESSION['email']))){
+            if ((isset($_SESSION['avatar'])) && (!empty($_SESSION['avatar']))){
                 $avatar=$_SESSION['avatar'];
                 echo '<img src="'.$avatar.'" alt="">';
             }else{
