@@ -720,14 +720,21 @@
                                         </thead>
                                         <tbody>
 
-                                            <?php // Affichage du tableau récapitulatif pour chaque projet
+                                            <?php 
+                                            // Affichage du tableau récapitulatif pour chaque projet
 
 
                                              // Permet d'avoir les renseignements sur les cours suivis
-
-                                                $corseFollow = $bdd->query('SELECT avancement, date_suivi, id_mooc,nom_mooc FROM user NATURAL JOIN suivre NATURAL JOIN MOOC WHERE id_user= "'.$_SESSION['id_user'].'"');
+                                            try{
+                                                $corseFollow = $bdd->query('SELECT avancement, date_suivi, id_mooc,nom_mooc FROM user NATURAL JOIN suivre NATURAL JOIN mooc WHERE id_user= "'.$_SESSION['id_user'].'"');
                                                 $corseFollow->execute();
                                                 $donnees3 = $corseFollow->fetchAll();
+       
+                                            }catch(Exception $Excep){
+                                                echo "->erreur donnees ";
+                                            }
+
+                                                
 
 
                                                  for($i = 0; $i<sizeof($donnees3); $i++){
