@@ -147,8 +147,6 @@ if(isset($_GET['idM'])) {
     							</li>
 							</ul>
 						</li>
-						<li><a><i class="fa fa-envelope"></i> Tchat <span class="label label-success pull-right">Coming Soon</span></a>
-						</li>
 					</ul>
 				</div>
 

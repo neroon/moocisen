@@ -14,7 +14,7 @@ $idChap;
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="title_left">
         <?php
-			nomChapitre($idMooc,$bdd,$numChap);
+			//nomChapitre($idMooc,$bdd,$numChap);
 		?>
     </div>
 </div>
@@ -25,18 +25,9 @@ $idChap;
 	<div class="col-md-2 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2> Cours </h2>
+					<h2> Cute </h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Settings 1</a>
-								</li>
-								<li><a href="#">Settings 2</a>
-								</li>
-							</ul>
 						</li>
 						<li><a class="close-link"><i class="fa fa-close"></i></a>
 						</li>
@@ -55,18 +46,9 @@ $idChap;
 		<div class="col-md-10 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2> Exemple </h2>
+					<h2> Chapitre 2 : Formation </h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Settings 1</a>
-								</li>
-								<li><a href="#">Settings 2</a>
-								</li>
-							</ul>
 						</li>
 						<li><a class="close-link"><i class="fa fa-close"></i></a>
 						</li>
@@ -74,8 +56,11 @@ $idChap;
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content">
-					<div class="col-sm-4 invoice-col">
+					<div class="col-sm-12">
                     	<!-- Cours -->
+                    	<h2>Vous remontez donc le temps, en commençant par votre expérience la plus récente.</h2><br>
+						<h2>Dans la rubrique dédiée à vos études, <b>certains diplômes n’ont peut-être pas leur place</b>. C’est le cas du Brevet des collèges si vous êtes titulaire d’un Baccalauréat, ou d’une première année de Master si vous possédez déjà le diplôme de Master 2.
+						En revanche, n’hésitez pas à détailler les projets pertinents développés au cours de cette formation (ateliers de création, réalisations collectives, mémoires, etc).</h2>
                     </div>
 				</div>
 			</div>
