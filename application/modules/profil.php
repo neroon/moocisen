@@ -713,7 +713,7 @@
                                             <tr>
                                                 <th style="width: 1%">#</th>
                                                 <th style="width: 20%">Nom du cours</th>
-                                                <th style="width: 40%">Avancement</th>
+                                                <th style="width: 30%">Avancement</th>
                                                 <th style="width: 10%">Score</th>
                                                 <th style="width: 20%">Actions</th>
                                             </tr>
@@ -774,7 +774,7 @@
                                                             <div class="progress progress_sm">
                                                                 <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="'.$pourcentage.'"></div>
                                                             </div>
-                                                            <small>.'.$pourcentage.'% Complete</small>
+                                                            <small>'.$pourcentage.'% Terminé</small>
                                                         </td>';
 
                                                         //Permet de calculer le score de l'utilisateur courant sur un mooc 

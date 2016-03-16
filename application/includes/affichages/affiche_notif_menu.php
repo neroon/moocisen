@@ -50,8 +50,8 @@ A include dans :
     <?php  
     //Si pas connecter
     }else{
-        echo "<a href='../../modules/inscription.php' class='user-profile dropdown-toggle'>";
-        echo "<img src='../../assets/images/user.png' alt=''/>";
+        echo "<a href='../modules/inscription.php' class='user-profile dropdown-toggle'>";
+        echo "<img src='../assets/images/loadpulseX60.gif' alt=''/>";
         echo "<span class=' fa fa-angle-down'></span>";
     echo "</a>";
     }

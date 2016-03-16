@@ -16,11 +16,10 @@
             $iduser = $_SESSION['id_user'];
             $idM = $_GET['idM'];
 
-
             try { 
                 $requete_prepare= $bdd->prepare("INSERT INTO suivre(date_suivi,avancement,id_user,id_mooc) VALUES(current_date, 0,'$iduser', '$idM')"); // on prépare notre requête
                 $requete_prepare->execute();
-            echo "->OK inscrition au mooc";
+                //echo "->OK inscrition au mooc";
             } catch (Exception $e) { 
                 echo $e->errorMessage();
                 echo "->erreur";
@@ -129,7 +128,7 @@ if(isset($_GET['idM'])) {
 						$idMooc;
 						if (isset($_GET['idM'])) {
 						  $idMooc = $_GET['idM'];	
-
+                          //requeteMooc.php
 						  chapitresplusSousPartie($idMooc,$bdd);							
 							//echo $idMooc;
 						}else{
@@ -338,31 +337,8 @@ if(isset($_GET['idM'])) {
         });
     </script>
 
-    <!-- worldmap 
-    <script type="text/javascript" src="../assets/js/maps/jquery-jvectormap-2.0.1.min.js"></script>
-    <script type="text/javascript" src="../assets/js/maps/gdp-data.js"></script>
-    <script type="text/javascript" src="../assets/js/maps/jquery-jvectormap-world-mill-en.js"></script>
-    <script type="text/javascript" src="../assets/js/maps/jquery-jvectormap-us-aea-en.js"></script>
-    -->
-    <script>
-      /*  $(function () {
-            $('#world-map-gdp').vectorMap({
-                map: 'world_mill_en',
-                backgroundColor: 'transparent',
-                zoomOnScroll: false,
-                series: {
-                    regions: [{
-                        values: gdpData,
-                        scale: ['#E6F2F0', '#149B7E'],
-                        normalizeFunction: 'polynomial'
-                    }]
-                },
-                onRegionTipShow: function (e, el, code) {
-                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-                }
-            });
-        });*/
-    </script>
+
+  
     <!-- skycons -->
     <script src="../assets/js/skycons/skycons.js"></script>
     <script>
@@ -636,51 +612,14 @@ if(isset($_GET['idM'])) {
         });
     </script>
 
- <script>
-    /*
-    //----------------REGEX ---------------------------
-    $.validator.addMethod("mailRegex", function(value, element) {
-      return this.optional(element) || /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(value);
+    <script>
+    $("#gobox1").click(function () {
+        //$('#my_step_box').data('daterangepicker').setOptions(optionSet1, cb);
+        $("#my_step_box").hide();
     });
-        
-    // --------------- Login JqueryValidator ---------
-    var login = $("#myform3");
-    login.validate({
-          //prendre le name
-          errorElement: 'span',
-          errorClass: 'help-block',
-          highlight: function(element, errorClass, validClass) {
-            $(element).closest('.form-group').addClass("has-error");
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).closest('.form-group').removeClass("has-error");
-        },
-        rules: {
-          name: {
-              required: true,
-              usernameRegex: true,
-              minlength: 2,
-          },
-          email: {
-              required: true,
-              mailRegex: true,
-              minlength: 3,
-          },
-          city:{
-          required: true,
-        },
-      },
-      messages: {
-        email: {
-            required: "email required",
-        },
-        name : {
-            required: "name required",
-        },
-     }
-    });*/
 
-   </script>
+
+    </script>
 
 
 
