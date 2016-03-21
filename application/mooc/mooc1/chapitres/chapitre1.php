@@ -106,7 +106,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 			</div>
 		</div>
 
-		<div class="col-md-6 col-sm-12 col-xs-12 animated slideInRight">
+		<div class="col-md-3 col-sm-12 col-xs-12 animated slideInRight">
 			<div class="x_panel">
 				<div class="x_title">
 					<h2> Exemple </h2>
@@ -120,7 +120,8 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 				</div>
 				<div class="x_content">
 					<!-- Cours -->
-					<div class="col-sm-4 invoice-col">
+					<br>
+					<div >
                      <address>
                            	<strong>Shepard John ,Fondation Sirta</strong>
                            	<br>La Citadelle, Présidium
@@ -129,6 +130,29 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
                            	<br>Email: JohnShepard@mail.com
                         </address>
                     </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 col-sm-12 col-xs-12 animated slideInRight">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2> Icônes gratuit </h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+						<li><a class="close-link"><i class="fa fa-close"></i></a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+					<!-- Cours -->
+					<strong>Voici un pack d'icônes en 512 pixels en png pour votre profil</strong> <br><br>
+					<div class="row">
+					  <div class="col-md-6"><img class="" src="../mooc/mooc1/chapitres/images/chapitre1.jpg" width="150px" alt=""></div>
+					  <div class="col-md-6"><br><div class="text-center"><a href="../mooc/mooc1/chapitres/images/chapitre1.7z" target="_blank"><button id="send" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-save-file"></span> Télécharger</button></a></div></div>
+					</div>
 				</div>
 			</div>
 		</div>
