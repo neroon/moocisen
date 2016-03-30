@@ -58,9 +58,16 @@ $idChap;
 				<div class="x_content">
 					<div class="col-sm-12">
                     	<!-- Cours -->
-                    	<h2>Vous remontez donc le temps, en commençant par votre expérience la plus récente.</h2><br>
-						<h2>Dans la rubrique dédiée à vos études, <b>certains diplômes n’ont peut-être pas leur place</b>. C’est le cas du Brevet des collèges si vous êtes titulaire d’un Baccalauréat, ou d’une première année de Master si vous possédez déjà le diplôme de Master 2.
-						En revanche, n’hésitez pas à détailler les projets pertinents développés au cours de cette formation (ateliers de création, réalisations collectives, mémoires, etc).</h2>
+						<p dir="ltr">
+						    Vous remontez donc le temps, en commençant par votre expérience la plus récente.
+						    <br/>
+						    Dans la rubrique dédiée à vos études, certains diplômes n’ont peut-être pas leur place. C’est le cas du Brevet des collèges si vous êtes titulaire d’un
+						    Baccalauréat, ou d’une première année de Master si vous possédez déjà le diplôme de Master 2.
+						</p>
+						<p>
+						    En revanche, n’hésitez pas à détailler les projets pertinents développés au cours de cette formation (ateliers de création, réalisations collectives,
+						    mémoires, etc).
+						</p>
                     </div>
 				</div>
 			</div>

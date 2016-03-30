@@ -7,7 +7,7 @@
 
 		$lignesChap = $selectChap->fetchAll();
 		
-		echo'<h2>'.$lignesChap[$idMooc-1]["nom_mooc"].'</h2>';
+		echo'<h2><a style="text-decoration:none; color:white;" href="../../application/modules/mooc.php?idM='.$idMooc.'">'.$lignesChap[$idMooc-1]["nom_mooc"].'</a></h2>';
 		
 	}
 	
