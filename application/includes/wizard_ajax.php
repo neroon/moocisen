@@ -83,8 +83,10 @@ function similaire($str1, $str2) {
 function compareTab($strChoix, $strSoluce){
     $strJsonChoix = json_decode($strChoix);
     $strJsonSoluce= json_decode($strSoluce);
-    $compteur = 0;
+    $compteur = 0; //nombre de bonne réponse
     $sizeArraySoluce = count($strJsonSoluce);
+    $sizeArrayChoix = count($strJsonChoix);
+    //$lePourcentage =
     //echo '<br>taille'.$sizeArraySoluce;
 
     foreach($strJsonChoix as $keyChoix){
@@ -95,29 +97,38 @@ function compareTab($strChoix, $strSoluce){
             }
         }
     }
-    if($sizeArraySoluce==$compteur){
+
+    if($sizeArraySoluce==$compteur &&  $sizeArraySoluce==$sizeArrayChoix){
         echo '100% juste';
+    }else if($sizeArraySoluce==$compteur){
+       echo 'juste mais trop de réponse';
     }else if($sizeArraySoluce>$compteur){
-       // echo (intval($compteur/$sizeArraySoluce)*100).'% juste';
         echo $compteur.' réponse(s) juste sur '.$sizeArraySoluce;
     }else{
         echo 'trop de réponse';
     }
+
+
+
 }
 
 
+compareTab($meschoix,$solutions);
 
 //Calcul du %
 $lepourcentage=similaire($meschoix,$solutions);
 $lepourcentage=intval($lepourcentage); //Cast en entier
 if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
-	//ok session
-	$id_user=$_SESSION['id_user'];
-	$score = $lepourcentage;
-	insertFaitToBDDwithUpdate($score,$id_user,$ide); //Insertion en BDD
-	//echo "passage en bdd";
+    //ok session
+    $id_user=$_SESSION['id_user'];
+    $score = $lepourcentage;
+    insertFaitToBDDwithUpdate($score,$id_user,$ide); //Insertion en BDD
+    //echo "passage en bdd";
 }
-compareTab($meschoix,$solutions);
+
+
+
+
 echo '<br><br><br>Debug<br>';
 
 if($meschoix == $solutions){

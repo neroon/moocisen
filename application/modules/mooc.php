@@ -405,7 +405,7 @@ if(isset($_GET['idM'])) {
             });
 
         });*/
-
+        var appData=window.App || {}; //variable globale
         //  Wizard 
          $(document).ready(function () {
             //$("#solucebox").html('okok');
@@ -462,6 +462,7 @@ if(isset($_GET['idM'])) {
                     success: function(data) {
                         //var jsondata=$.parseJSON(data);  //jsondata c'est le callback de wizard.jss
                         var jsondata=data;  //jsondata c'est le callback de wizard.jss
+                        appData=data;
                         ///console.log("jsondata-->"+jsondata);
                         //$("#solucebox").prepend("Voici vos choix : "+jsondata+"<br> Les réponse de l'exo: "+jsonsoluce); 
                         //car les array ne sont pas pareil
