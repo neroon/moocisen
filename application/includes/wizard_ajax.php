@@ -86,7 +86,7 @@ function compareTab($strChoix, $strSoluce){
     $compteur = 0; //nombre de bonne réponse
     $sizeArraySoluce = count($strJsonSoluce);
     $sizeArrayChoix = count($strJsonChoix);
-    //$lePourcentage =
+    $lePourcentage = 0;
     //echo '<br>taille'.$sizeArraySoluce;
 
     foreach($strJsonChoix as $keyChoix){
@@ -100,13 +100,26 @@ function compareTab($strChoix, $strSoluce){
 
     if($sizeArraySoluce==$compteur &&  $sizeArraySoluce==$sizeArrayChoix){
         echo '100% juste';
-    }else if($sizeArraySoluce==$compteur){
+        $lePourcentage = 100;
+    }else if($sizeArraySoluce==$compteur && $sizeArraySoluce<$sizeArrayChoix){
+        //100% juste mais 
        echo 'juste mais trop de réponse';
+       $lePourcentage = ($sizeArraySoluce/$sizeArrayChoix)*100;
+    }else if($sizeArraySoluce==$compteur && $sizeArraySoluce>$sizeArrayChoix){
+        //100% juste mais 
+       echo 'juste mais trop de réponse';
+       $lePourcentage = ($sizeArrayChoix/$sizeArraySoluce)*100;
     }else if($sizeArraySoluce>$compteur){
         echo $compteur.' réponse(s) juste sur '.$sizeArraySoluce;
+        $lePourcentage = (($compteur/$sizeArraySoluce)*100)/(($sizeArrayChoix/$sizeArraySoluce)); //sort 100 si aucun choix different
+        if($lePourcentage==100){
+            $lePourcentage = (($sizeArrayChoix/$sizeArraySoluce)*100);
+        }
     }else{
         echo 'trop de réponse';
+        $lePourcentage = ($sizeArraySoluce/$compteur)*100;
     }
+    echo '<br>score inserer :'.$lePourcentage;
 
 
 
@@ -114,8 +127,10 @@ function compareTab($strChoix, $strSoluce){
 
 
 compareTab($meschoix,$solutions);
+echo '<br><br><br>Debug<br> les réponses sont :'.$solutions."<br>info débug : ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
 
 //Calcul du %
+/*
 $lepourcentage=similaire($meschoix,$solutions);
 $lepourcentage=intval($lepourcentage); //Cast en entier
 if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
@@ -125,6 +140,7 @@ if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
     insertFaitToBDDwithUpdate($score,$id_user,$ide); //Insertion en BDD
     //echo "passage en bdd";
 }
+
 
 
 
@@ -140,4 +156,5 @@ if($meschoix == $solutions){
 	echo $lepourcentage.'% CORRECT <br> les réponses sont : (avoir un score plus élevé)<br><br>info débug '.$idm."  ".$idc." --- ".$tabide." -solution ".$solutions." -choix".$meschoix;
 }
 exit();
+*/
 ?>
