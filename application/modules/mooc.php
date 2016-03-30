@@ -387,24 +387,8 @@ if(isset($_GET['idM'])) {
     <!-- /dashbord linegraph -->
 	 <!-- form wizard -->
     <script type="text/javascript" src="../assets/js/wizard/jquery.smartWizard.js"></script>
+
     <script type="text/javascript">
-        /*$(document).ready(function () {
-            // Smart Wizard 	
-            $('#wizard').smartWizard();
-
-            function onFinishCallback() {
-                $('#wizard').smartWizard('showMessage', 'Finish Clicked');
-                //alert('Finish Clicked');
-            }
-        });*/
-
-        /*$(document).ready(function () {
-            // Smart Wizard	
-            $('#wizard_verticle').smartWizard({
-                transitionEffect: 'slide'
-            });
-
-        });*/
         var appData=window.App || {}; //variable globale
         //  Wizard 
          $(document).ready(function () {
@@ -422,12 +406,19 @@ if(isset($_GET['idM'])) {
                 console.log("Vos choix-->"+selected);
 
                 //récupération id=soluce 
-                var soluce = $('input#soluce').val();
-                console.log("Les Réponse-->"+soluce); //A garder pour débug
+                //var soluce = $('input.soluce').val();
+                //console.log("Les Réponse-->"+soluce); //A garder pour débug
+                var tabsoluce = [];
+                $('.soluce').each(function(index, obj){
+                    tabsoluce.push($(this).val());
+                });
+
+                tabsoluce=JSON.stringify(tabsoluce);
+                console.log("Les Réponse--->"+tabsoluce); //A garder pour débug
 
                 //var jsonsoluce=JSON.stringify(soluce);
-                var jsonsoluce=(soluce);
-                console.log("dataForm-->"+selected+" dataForm2-->"+jsonsoluce); //A garder pour débug
+                //var jsonsoluce=(soluce);
+                console.log("dataForm-->"+selected+" dataForm2-->"+tabsoluce); //A garder pour débug
 
                 //récupération idmooc
                 var varidm = $('input#idm').val();
@@ -453,7 +444,7 @@ if(isset($_GET['idM'])) {
                     type: 'POST', 
                     data: {
                         dataForm: selected, //vos choix
-                        dataForm2:jsonsoluce, //les solutions
+                        dataForm2:tabsoluce, //les solutions
                         dataidm:varidm, //variable id du mooc
                         dataidc:varidc, //variable id du chapitre
                         dataide:varide, //variable id du chapitre
@@ -462,7 +453,7 @@ if(isset($_GET['idM'])) {
                     success: function(data) {
                         //var jsondata=$.parseJSON(data);  //jsondata c'est le callback de wizard.jss
                         var jsondata=data;  //jsondata c'est le callback de wizard.jss
-                        appData=data;
+                        appData=jsondata;
                         ///console.log("jsondata-->"+jsondata);
                         //$("#solucebox").prepend("Voici vos choix : "+jsondata+"<br> Les réponse de l'exo: "+jsonsoluce); 
                         //car les array ne sont pas pareil

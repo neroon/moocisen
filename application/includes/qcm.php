@@ -43,10 +43,10 @@
 			//Type hidden qui correpond au reponse pour le qcm
 
 			//$tabSolution=implode(",",$tabSolution);
-			$tabSolution=json_encode($tabSolution);
+			//$tabSolution=json_encode($tabSolution);
 			//echo 'tab réponse='.$tabSolution;
 			//Réponse présent
-			echo "<input type='hidden' id='soluce' name='zyx' value='".$tabSolution."'/>";
+			echo "<input type='hidden' class='soluce' name='zyx' value='".implode(",", $tabSolution)."'/>";
 			//echo "<input type='hidden' id='idexo' name='nameexo' value='".$tabSolution."'/>";
 			//echo '<div id="solucebox"></div>'; //affichage sur show
 			/*if(isset($idMooc) && isset($_GET['idC'])){

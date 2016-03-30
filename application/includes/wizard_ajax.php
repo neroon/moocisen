@@ -81,8 +81,15 @@ function similaire($str1, $str2) {
 
 //compare 2 chaine au format json
 function compareTab($strChoix, $strSoluce){
+    $strSoluce=str_replace(',','","',$strSoluce);//car la structure du json n'est pas pareil
+    $strSoluce=str_replace('"",""','","',$strSoluce);//car la structure du json n'est pas pareil
+    //var_dump($strChoix);
+    //var_dump($strSoluce);
+
     $strJsonChoix = json_decode($strChoix);
     $strJsonSoluce= json_decode($strSoluce);
+
+
     $compteur = 0; //nombre de bonne réponse
     $sizeArraySoluce = count($strJsonSoluce);
     $sizeArrayChoix = count($strJsonChoix);
@@ -111,6 +118,8 @@ function compareTab($strChoix, $strSoluce){
        $lePourcentage = ($sizeArrayChoix/$sizeArraySoluce)*100;
     }else if($sizeArraySoluce>$compteur){
         echo $compteur.' réponse(s) juste sur '.$sizeArraySoluce;
+        if($sizeArrayChoix==0)
+            $sizeArrayChoix=0.1;
         $lePourcentage = (($compteur/$sizeArraySoluce)*100)/(($sizeArrayChoix/$sizeArraySoluce)); //sort 100 si aucun choix different
         if($lePourcentage==100){
             $lePourcentage = (($sizeArrayChoix/$sizeArraySoluce)*100);
