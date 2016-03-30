@@ -55,6 +55,7 @@
 			echo "<input type='hidden' id='idm' name='idm' value='".$idMooc."'/>";
 			echo "<input type='hidden' id='idc' name='idc' value='".$idChap."'/>";
 			echo "<input type='hidden' id='ide' name='ide' value='".$idExo."'/>";
+			echo "<input type='hidden' id='indice' class='".$idExo."' name='indice' value='".$lignesQcm[0]["indice_qcm"]."'/>";//indice
 
 
 			//affichage du QCM
@@ -80,7 +81,10 @@
 										</div>';
 										//echo 'ok';	
 								}
+
 				echo' </div><br>';
+				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
+
 			
 				
 				//}

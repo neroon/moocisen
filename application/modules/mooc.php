@@ -500,6 +500,33 @@ if(isset($_GET['idM'])) {
                 console.log('Finish Called id wizard');
             }     
         });
+
+
+    /* INDICE */
+    $("button.myindice").click(function(){
+        var idmysoluce = $(this).val();
+        //alert (idmysoluce);
+        var varmysoluce = $('input.'+idmysoluce).val(); //indice
+         alert (varmysoluce);
+        //alert ($(this).prop("value"));
+       /* $.ajax({
+            url: '../includes/wizard_ajax.php',
+            type: 'POST', 
+            data: {
+                dataForm: idmysoluce, //vos choix
+                dataForm2:tabsoluce, //les solutions
+            },
+            success: function(data) {
+
+            },
+            error: function(json) {
+                alert('false');
+                //$('.alert-danger').show();
+            }
+        });*/
+    });
+
+    
     </script>
     <!-- datepicker -->
     <script type="text/javascript">
