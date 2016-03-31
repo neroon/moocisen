@@ -149,9 +149,14 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 				<div class="x_content">
 					<!-- Cours -->
 					<strong>Voici un pack d'icônes en 512 pixels en png pour votre profil</strong> <br><br>
+					<!--<div class="row">
+					  <div class="col-md-6 col-xs-6"><img class="" src="../mooc/mooc1/chapitres/images/chapitre1.jpg" width="150px" alt=""></div>
+					  <div class="col-md-6 col-xs-6"><a href="../mooc/mooc1/chapitres/images/chapitre1.7z" target="_blank"><button id="send" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-save-file"></span> Télécharger</button></a></div>
+					</div>-->
+
 					<div class="row">
-					  <div class="col-md-6"><img class="" src="../mooc/mooc1/chapitres/images/chapitre1.jpg" width="150px" alt=""></div>
-					  <div class="col-md-6"><br><div class="text-center"><a href="../mooc/mooc1/chapitres/images/chapitre1.7z" target="_blank"><button id="send" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-save-file"></span> Télécharger</button></a></div></div>
+					    <div class="left"><img class="" src="../mooc/mooc1/chapitres/images/chapitre1.jpg" width="150px" alt=""></div>
+						<div class="right"><br><div class="text-center"><a href="../mooc/mooc1/chapitres/images/chapitre1.7z" target="_blank"><button id="send" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-save-file"></span> Télécharger</button></a></div></div>
 					</div>
 				</div>
 			</div>
