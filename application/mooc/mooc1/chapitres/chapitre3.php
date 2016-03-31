@@ -57,6 +57,8 @@ $idChap;
 							creationWizardStep($idMooc,$numChap,$idChap,$bdd);
 						?>
 					</div>
+					<!-- IMPORTANT AFFICHE LES INDICE -->
+					<div id="indicebox"></div>
 					<!-- IMPORTANT AFFICHE LES SOLUTIONS -->
 					<div id="solucebox"></div>
 				</div>

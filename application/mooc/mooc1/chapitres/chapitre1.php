@@ -186,17 +186,18 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 							creationWizardStep($idMooc,$numChap,$idChap,$bdd);
 						?>
 					</div>
+					<!-- IMPORTANT AFFICHE LES INDICE -->
+					<div id="indicebox"></div>
 					<!-- IMPORTANT AFFICHE LES SOLUTIONS -->
 					<div id="solucebox"></div>
 					<!-- IMPORTANT POUR LES REPONSE AU QCM -->
 					<?php 
-					/*if(isset($_GET['idM']) && isset($_GET['idC'])) {
-						//$idMooc = $_GET['idM'];
-						echo '<div id="'.$_GET['idM'].'"></div>';
-						$idChap = $_GET['idC'];	
-					}*/
-
-				?>
+						/*if(isset($_GET['idM']) && isset($_GET['idC'])) {
+							//$idMooc = $_GET['idM'];
+							echo '<div id="'.$_GET['idM'].'"></div>';
+							$idChap = $_GET['idC'];	
+						}*/
+					?>
 				</div>
 			</div>
 		</div>

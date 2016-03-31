@@ -390,6 +390,11 @@ if(isset($_GET['idM'])) {
 
     <script type="text/javascript">
         var appData=window.App || {}; //variable globale
+        var malus=window.App || {}; //variable globale
+        malus=0;
+
+
+
         //  Wizard 
          $(document).ready(function () {
             //$("#solucebox").html('okok');
@@ -449,6 +454,7 @@ if(isset($_GET['idM'])) {
                         dataidc:varidc, //variable id du chapitre
                         dataide:varide, //variable id du chapitre
                         datatabide:jsontabide, //tableau des id des exos
+                        datamalus:malus,
                     },
                     success: function(data) {
                         //var jsondata=$.parseJSON(data);  //jsondata c'est le callback de wizard.jss
@@ -505,18 +511,24 @@ if(isset($_GET['idM'])) {
     /* INDICE */
     $("button.myindice").click(function(){
         var idmysoluce = $(this).val();
-        //alert (idmysoluce);
         var varmysoluce = $('input.'+idmysoluce).val(); //indice
-         alert (varmysoluce);
-        //alert ($(this).prop("value"));
-       /* $.ajax({
-            url: '../includes/wizard_ajax.php',
+        malus=10;
+        $("#indicebox").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
+        $("#indicebox").append("<br>Indice : <i>"+varmysoluce+"</i>"); //affiche les choix (full JQuery)
+        //alert (malus);
+        //alert (varmysoluce);
+       /* //A garder
+       $.ajax({
+            url: '../includes/indice_ajax.php',
             type: 'POST', 
             data: {
-                dataForm: idmysoluce, //vos choix
-                dataForm2:tabsoluce, //les solutions
+                dataSoluce: varmysoluce, //la solution
+                dataId: idmysoluce, //id soluce
+                //dataide:varide, //variable id du chapitre
             },
             success: function(data) {
+                var jsondata=data;  //jsondata c'est le callback de wizard.jss
+                alert (data);
 
             },
             error: function(json) {

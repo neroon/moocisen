@@ -7,6 +7,7 @@ $idm=$_POST["dataidm"]; //id mooc
 $idc=$_POST["dataidc"]; //id chap
 $ide=$_POST["dataide"]; //id exo
 $tabide=$_POST["datatabide"]; //id tab des partie exo
+$malus=$_POST["datamalus"]; //id tab des partie exo
 
 /*
 $meschoix='["Monsieur Jeson Dupont","Jean Nicolas"]';
@@ -130,30 +131,38 @@ function compareTab($strChoix, $strSoluce){
     }
     echo '<br>score inserer :'.$lePourcentage;
 
-
+    return $lePourcentage;
 
 }
 
 
-compareTab($meschoix,$solutions);
+$lepourcentage=compareTab($meschoix,$solutions);
 echo '<br><br><br>Debug<br> les réponses sont :'.$solutions."<br>info débug : ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
 
 //Calcul du %
-/*
-$lepourcentage=similaire($meschoix,$solutions);
 $lepourcentage=intval($lepourcentage); //Cast en entier
+//Utilisation du malus
+if(($lepourcentage-$malus)<0){
+    $lepourcentage = 0;
+}else{
+    $lepourcentage = $lepourcentage-$malus;
+}
+
+
 if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
     //ok session
     $id_user=$_SESSION['id_user'];
     $score = $lepourcentage;
     insertFaitToBDDwithUpdate($score,$id_user,$ide); //Insertion en BDD
     //echo "passage en bdd";
+}else{
+    echo '<br>test hors-ligne';
 }
 
 
 
 
-
+/*
 echo '<br><br><br>Debug<br>';
 
 if($meschoix == $solutions){
