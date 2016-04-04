@@ -90,7 +90,7 @@ body{
     /*height: 100%;*/
     /*overflow-x: hidden;*/ /* Pour désactiver le scroll vertical */ 
     /*margin-right: -14px !important;*/
-    overflow-x: hidden !important;
+   
     overflow-x: scroll;
 
 
