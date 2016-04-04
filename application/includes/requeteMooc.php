@@ -26,7 +26,7 @@
 				$tabPartie = array();
 				$tabPartie = preg_split('[-]', $partie);
 					//var_dump($lignesExo);
-					echo'<ul class="wizard_steps">';
+					echo'<ul class="wizard_steps" style="padding-left: 0px;">';
 							for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
 							{
 								echo '<li>

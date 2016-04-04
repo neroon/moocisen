@@ -61,6 +61,7 @@ if(isset($_GET['idM'])) {
 
     <!-- Custom styling plus plugins -->
     <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
    <!--  <link rel="stylesheet" type="text/css" href="../assets/css/maps/jquery-jvectormap-2.0.1.css" />-->
     <link href="../assets/css/icheck/flat/green.css" rel="stylesheet" />
     <link href="../assets/css/floatexamples.css" rel="stylesheet" type="text/css" />
@@ -92,10 +93,10 @@ if(isset($_GET['idM'])) {
 
     <div class="container body">
 
-<div class="main_container">
+<div class="main_container ">
 
-	<div class="col-md-3 left_col">
-		<div class="left_col scroll-view">
+	<div class="col-md-3 left_col ">
+		<div class="left_col mygrid-wrapper-div">
 
 			<div class="navbar nav_title" style="border: 0;">
 				<a href="../index.php" class="site_title"><i class="glyphicon glyphicon-education"></i> <span>MOOCs</span></a>
@@ -119,10 +120,10 @@ if(isset($_GET['idM'])) {
 			<br />
 
 			<!-- sidebar menu -->
-			<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-				<div class="menu_section">
+			<div id="sidebar-menu" class="main_menu_side hidden-print main_menu ">
+				<div class="menu_section ">
 					<h3>Chapitres</h3>
-					<ul class="nav side-menu">
+					<ul class="nav side-menu ">
 						<?php
 						$valid = 1;
 						$idMooc;
@@ -140,7 +141,7 @@ if(isset($_GET['idM'])) {
 				<div class="menu_section">
 					<h3>Menu</h3>
 					<ul class="nav side-menu">
-						<li><a><i class="fa fa-wrench"></i> Paramètres <span class="fa fa-chevron-down"></span></a>
+						<li><a><i class="fa fa-wrench"></i> Paramètres<span class="fa fa-chevron-down"></span></a>
 							<ul class="nav child_menu" style="display: none">
     							<li><a href="profil.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Profil</a>
     							</li>
@@ -215,14 +216,14 @@ if(isset($_GET['idM'])) {
 
                 <!-- footer content -->
 
-                <footer>
+                <!--<footer>
                     <div class="">
                         <p class="pull-right">MOOCs <a>Isen</a>. |
                             <span class="lead"> <i class="glyphicon glyphicon-education"></i> MOOCs</span>
                         </p>
                     </div>
                     <div class="clearfix"></div>
-                </footer>
+                </footer> -->
                 <!-- /footer content -->
             </div>
             <!-- /page content -->
@@ -277,6 +278,18 @@ if(isset($_GET['idM'])) {
     <script type="text/javascript" src="../assets/js/flot/curvedLines.js"></script>
     <script type="text/javascript" src="../assets/js/flot/jquery.flot.resize.js"></script>
     <script>
+
+    /** Remove button hamburger on large screen*/
+    $(document).resize(function() {
+      if ($(this).width() > 1024) {
+        $('#menu_toggle').hide();
+      } else {
+        $('#menu_toggle').show();
+        }
+    });
+
+
+
         $(document).ready(function () {
             // [17, 74, 6, 39, 20, 85, 7]
             //[82, 23, 66, 9, 99, 6, 2]
@@ -656,6 +669,7 @@ if(isset($_GET['idM'])) {
 
 
     <script>
+    
        // NProgress.done();
     </script>
     <!-- /datepicker -->

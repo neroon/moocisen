@@ -4,6 +4,7 @@ body.nav-sm .container.body .left_col {
     position: fixed;
     height: 100%;
     z-index: 200;
+    
 }
 
 body.nav-sm .container.body .right_col {
@@ -66,10 +67,10 @@ body.nav-sm .nav.side-menu li a i {
 
 body.nav-sm ul.nav.child_menu {
     left: 100%;
-    position: absolute;
+   /* position: absolute;// -------------------------------------------------------------------*/
     top: 0;
-    padding: 10px;
-    width: 210px;
+    padding: 5px;
+   /* width: 210px;// -------------------------------------------------------------------*/
     z-index: 4000;
     background: #3E5367;
     display: none;
@@ -189,6 +190,7 @@ body.nav-sm .menu_section h3 {
     float: left;
     /*background: #F4F6F9;
     border-bottom: 1px solid #E6E9ED;*/
+
     
     background: #EDEDED;
     border-bottom: 1px solid #D9DEE4;
@@ -200,6 +202,7 @@ body.nav-md .container.body .col-md-3.left_col {
     width: 230px;
     padding: 0;
     position: absolute;
+
     display: flex;
 }
 
@@ -228,6 +231,7 @@ body.nav-md .container.body .right_col {
     }
     body.nav-md .container.body .col-md-3.left_col {
         display: none;
+
     }
     body.nav-md .container.body .right_col {
         width: 100%;
