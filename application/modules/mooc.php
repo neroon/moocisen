@@ -528,6 +528,7 @@ if(isset($_GET['idM'])) {
         malus=10;
         $("#indicebox").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
         $("#indicebox").append("<br>Indice : <i>"+varmysoluce+"</i>"); //affiche les choix (full JQuery)
+
         //alert (malus);
         //alert (varmysoluce);
        /* //A garder
@@ -669,7 +670,52 @@ if(isset($_GET['idM'])) {
 
 
     <script>
+
+    var _myCpt=window.App || {}; //variable globale compteur pour hide/show apres chaque validation
+    _myCpt=1;//correspond au bloc 0
+
+    /* ************* Montre étapes pas étapes pour les cours*************** */
+    function showOne(id) {
+        console.log('showOne-->'+id);
+        $('.box1').show();
+        $('.box1').not('#' + id).hide();
+    }
+
+    function showAll() {
+        console.log('showall');
+        $('.box1').show();
+    }
+    showOne(1);
     
+
+    $(document).on('click', '.myBtnBack' ,function() {
+        _myCpt=_myCpt-1;
+        if(_myCpt<1)
+            _myCpt=1;
+        showOne(_myCpt);
+     });
+
+    $(document).on('click', '.myBtnNext' ,function() {
+        _myCpt=_myCpt+1;
+        if ($("#"+_myCpt)[0]){
+            // Do something if class exists
+        } else {
+            // Do something if class does not exist
+            _myCpt=1;
+        }
+        showOne(_myCpt);
+     });
+
+    $(document).on('click', '.myBtnAll' ,function() {
+        showAll();
+     });
+
+    /*$(document).ajaxComplete(function() {
+            console.log("!IMPORTANT hide after load");
+            showOne('idBox1');
+       
+    });*/
+
        // NProgress.done();
     </script>
     <!-- /datepicker -->
