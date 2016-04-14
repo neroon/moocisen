@@ -66,15 +66,24 @@ if(isset($_GET['idM'])) {
     <link href="../assets/css/icheck/flat/green.css" rel="stylesheet" />
     <link href="../assets/css/floatexamples.css" rel="stylesheet" type="text/css" />
 
+
     <script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery-ui.min.js"></script>
     <script src="../assets/js/jquery.validate.js"></script>
 
+    <!-- Jquery UI -->
+    <!--<script src="../assets/js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+    <script src="../assets/js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script> -->
+ <!--
+    <link href="../assets/js/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../assets/js/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" rel="stylesheet" /> -->
+
+     <script src="../assets/js/jquery-sortable.js"></script>
+    
+
     <link href="../assets/css/animate.css" rel="stylesheet">
     <!--<script src="../assets/js/nprogress.js"></script>-->
-    <script>
-        //NProgress.start();
-    </script>
+
     
     <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -238,8 +247,10 @@ if(isset($_GET['idM'])) {
         <div id="notif-group" class="tabbed_notifications"></div>
     </div>
 
-        <!-- jQuery -->
-<script src="../assets/js/jquery.js"></script>
+    <!-- jQuery -->
+    <script src="../assets/js/jquery.js"></script>
+    <!-- ********************** jQuery UI DRAG AND DROP ********************** -->
+    <script src="../assets/js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 
     <script src="../assets/js/bootstrap.min.js"></script>
 
@@ -671,6 +682,7 @@ if(isset($_GET['idM'])) {
 
     <script>
 
+     /* ************* SCRIPT COURS WIZARD *************** */
     var _myCpt=window.App || {}; //variable globale compteur pour hide/show apres chaque validation
     _myCpt=1;//correspond au bloc 0
 
@@ -710,13 +722,52 @@ if(isset($_GET['idM'])) {
         showAll();
      });
 
-    /*$(document).ajaxComplete(function() {
-            console.log("!IMPORTANT hide after load");
-            showOne('idBox1');
-       
-    });*/
 
-       // NProgress.done();
+    </script>
+
+  
+
+
+
+    <script>
+     /* ************* DRAG AND DROP *************** */
+    var adjustment;
+
+$("ol.simple_with_animation").sortable({
+  group: 'simple_with_animation',
+  pullPlaceholder: false,
+  // animation on drop
+  onDrop: function  ($item, container, _super) {
+    var $clonedItem = $('<li/>').css({height: 0});
+    $item.before($clonedItem);
+    $clonedItem.animate({'height': $item.height()});
+
+    $item.animate($clonedItem.position(), function  () {
+      $clonedItem.detach();
+      _super($item, container);
+    });
+  },
+
+  // set $item relative to cursor position
+  onDragStart: function ($item, container, _super) {
+    var offset = $item.offset(),
+        pointer = container.rootGroup.pointer;
+
+    adjustment = {
+      left: pointer.left - offset.left,
+      top: pointer.top - offset.top
+    };
+
+    _super($item, container);
+  },
+  onDrag: function ($item, position) {
+    $item.css({
+      left: position.left - adjustment.left,
+      top: position.top - adjustment.top
+    });
+  }
+});
+
     </script>
     <!-- /datepicker -->
     <!-- /footer content -->
