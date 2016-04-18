@@ -49,10 +49,10 @@ Cela ne veut pas dire que les autres navigateurs ou les versions antérieurs des
 
 ## Docs
 
-* [phpDocumentor2](hhttps://github.com/neroon/moocisen/blob/master/documentations/phpDocumentor2.md) - Generation de la documentation
-* [File Appendix](https://github.com/neroon/moocisen/blob/master/documentations/file-appendix.md) - Fonctionnalitée de chaque fichiers
-* [Utilisé Material Design Lite](https://github.com/neroon/moocisen/blob/master/documentations/mdl.md) - Material Design Lite
-* [Guide de déploiement](https://github.com/neroon/moocisen/blob/master/documentations/deploy.md) -  Deploiement avec un serveur Apache
+* [phpDocumentor2](https://github.com/neroon/moocisen/blob/master/docs/phpDocumentor2.md) - Generation de la documentation
+* [File Appendix](https://github.com/neroon/moocisen/blob/master/docs/file-appendix.md) - Fonctionnalitée de chaque fichiers
+* [Utilisé Material Design Lite](https://github.com/neroon/moocisen/blob/master/docs/mdl.md) - Material Design Lite
+* [Guide de déploiement](https://github.com/neroon/moocisen/blob/master/docs/deploy.md) -  Deploiement avec un serveur Apache
 
 ## Insipiration
 
