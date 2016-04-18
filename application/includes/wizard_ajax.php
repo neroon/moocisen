@@ -50,6 +50,43 @@ function insertFaitToBDDwithUpdate($score,$id_user,$id_exercice){
 	}
 }
 
+function updateSuivreChap($id_user,$id_chap,$id_mooc){
+    include 'connect.inc.php'; //connexion bdd
+    try { 
+        $select = $bdd->prepare("SELECT * FROM suivre WHERE id_user = '$id_user' AND id_mooc = '$id_mooc'");
+        $select->execute();
+        $lignes = $select->fetchAll();
+        //var_dump($lignes);
+        $stringAvancement = $lignes[0]["avancement"];
+       // echo "avancement -> ".$stringAvancement;
+    } catch (Exception $e) { 
+        echo $e->errorMessage();
+        echo "->erreur<br>";
+    }
+
+
+    if (strpos($stringAvancement, $id_chap) !== false) {
+        //valeur deja présente
+        $stringAvancement = $stringAvancement; //ajout du nouveau chapitre
+    }else{
+        $stringAvancement = $stringAvancement."-".$id_chap; //ajout du nouveau chapitre
+    }
+   // echo "avancement -> ".$stringAvancement;
+
+    try { 
+        //$requete_prepare= $bdd->prepare("INSERT INTO suivre(avancement) VALUES '$stringAvancement' "); // on prépare notre requête
+        $requete_prepare= $bdd->prepare("UPDATE suivre SET avancement='$stringAvancement' WHERE id_user = '$id_user' AND id_mooc = '$id_mooc'"); // on prépare notre requête
+        $requete_prepare->execute();
+        //var_dump($requete_prepare);
+        echo "->updateSuivreChap<br>";
+    } catch (Exception $e) { 
+        echo $e->errorMessage();
+        echo "->erreur<br>";
+    }
+
+
+}
+
 
 //Fonction permettant de calculer la similitude entre 2 chaines (algorithme de levenshtein)
 //Attention il y une limite pour la longueur de la chaine
@@ -154,6 +191,7 @@ if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
     $id_user=$_SESSION['id_user'];
     $score = $lepourcentage;
     insertFaitToBDDwithUpdate($score,$id_user,$ide); //Insertion en BDD
+    updateSuivreChap($_SESSION['id_user'],$idc,$idm);
     //echo "passage en bdd";
 }else{
     echo '<br>test hors-ligne';

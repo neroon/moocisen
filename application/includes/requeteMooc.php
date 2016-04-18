@@ -78,6 +78,33 @@
 	
 	function chapitresplusSousPartie($idMooc,$bdd)
 	{
+		//var_dump($idMooc);
+
+		if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
+			$user=$_SESSION['id_user'];
+			//var_dump($user);
+			try { 
+		        $select = $bdd->prepare("SELECT * FROM suivre WHERE id_user = '$user' AND id_mooc = '$idMooc'");
+		        $select->execute();
+		        $lignes = $select->fetchAll();
+		        //var_dump($lignes);
+		         $stringAvancement = $lignes[0]["avancement"];
+		       // echo "avancement -> ".$stringAvancement;
+		    } catch (Exception $e) { 
+		        echo $e->errorMessage();
+		        echo "->erreur<br>";
+		    }
+		}
+
+		//$id_chap_tiret = '-'.$id_chap.'-';
+		/*if (strpos($stringAvancement, $id_chap_tiret) !== false) {
+	        //valeur deja présente
+	        $stringAvancement = $stringAvancement; //ajout du nouveau chapitre
+	    }else{
+	        $stringAvancement = $stringAvancement."-".$id_chap; //ajout du nouveau chapitre
+	    }*/
+
+
 		try{
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
@@ -85,29 +112,47 @@
 			$lignesChap = $selectChap->fetchAll();
 
 			if(sizeof($lignesChap) == 0){
-			echo 'Aucun chapitre présent';
+				echo 'Aucun chapitre présent';
 			}
 			else
 			{
 				for($i = 0; $i<sizeof($lignesChap); $i++)
 				{
-					echo '<li><a><i class="fa fa-book"></i>'.$lignesChap[$i]["titre"].'<br><span class="fa fa-chevron-down"></span><br></a>';
-					$partie = $lignesChap[$i]["partie"];
-					$tabPartie = array();
-					$tabPartie = preg_split('[-]', $partie);
-						//var_dump($lignesExo);
-						 echo' <ul class="nav child_menu" style="display: none">';
-								for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
-								{
-									echo '<li><a href="../../application/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
-								}
-						echo'</ul></li>';
+					$id_chap_tiret = '-'.($i+1);
+					//var_dump($stringAvancement);
+					//var_dump($id_chap_tiret);
+					if (strpos($stringAvancement, $id_chap_tiret) !== false) {
+						echo '<li><a style=""  ><i class="fa fa-check-circle"></i>'.$lignesChap[$i]["titre"].'<br><span class="fa fa-chevron-down"></span><br></a>';
+						$partie = $lignesChap[$i]["partie"];
+						$tabPartie = array();
+						$tabPartie = preg_split('[-]', $partie);
+							//var_dump($lignesExo);
+							 echo' <ul class="nav child_menu" style="display: none">';
+									for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
+									{
+										echo '<li><a href="../../application/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
+									}
+							echo'</ul></li>';
+					}else{
+						echo '<li><a><i class="fa fa-book"></i>'.$lignesChap[$i]["titre"].'<br><span class="fa fa-chevron-down"></span><br></a>';
+						$partie = $lignesChap[$i]["partie"];
+						$tabPartie = array();
+						$tabPartie = preg_split('[-]', $partie);
+							//var_dump($lignesExo);
+							 echo' <ul class="nav child_menu" style="display: none">';
+									for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
+									{
+										echo '<li><a href="../../application/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
+									}
+							echo'</ul></li>';
+
+					}
 				}
 			}
 		}
 		catch (Exception $e) { 
-		echo $e->errorMessage();
-  		echo "->erreur chapitresplusSousPartie()";
+			echo $e->errorMessage();
+  			echo "->erreur chapitresplusSousPartie()";
 		}
 		
 	}
