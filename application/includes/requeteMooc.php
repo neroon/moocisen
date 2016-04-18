@@ -7,7 +7,7 @@
 
 		$lignesChap = $selectChap->fetchAll();
 		
-		echo'<h2><a style="text-decoration:none; color:white;" href="../../application/modules/mooc.php?idM='.$idMooc.'">'.$lignesChap[$idMooc-1]["nom_mooc"].'</a></h2>';
+		echo'<h2><a style="text-decoration:none; color:white;" href="../../app/modules/mooc.php?idM='.$idMooc.'">'.$lignesChap[$idMooc-1]["nom_mooc"].'</a></h2>';
 		
 	}
 	
@@ -99,7 +99,7 @@
 						 echo' <ul class="nav child_menu" style="display: none">';
 								for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
 								{
-									echo '<li><a href="../../application/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
+									echo '<li><a href="../../app/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
 								}
 						echo'</ul></li>';
 				}

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 10 Mars 2016 à 09:09
+-- Généré le :  Mer 16 Mars 2016 à 11:58
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -34,18 +34,24 @@ CREATE TABLE IF NOT EXISTS `chapitre` (
   `id_mooc` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_chapitre`),
   KEY `FK_chapitre_id_mooc` (`id_mooc`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `chapitre`
 --
 
 INSERT INTO `chapitre` (`id_chapitre`, `numero`, `titre`, `partie`, `id_mooc`) VALUES
-(1, 1, 'Identité', 'Nom-Prenom-Ville-Pays-Etudes', 1),
-(2, 2, 'Présentation', 'Formation-Objectifs-Diplôme', 1),
-(3, 3, 'Expérience professionelle', 'Ecole d''ingénieur-Entreprise-Stage technique-Contrat professionel', 1),
+(1, 1, 'Identité', 'Nom prénom-Adresse-Téléphone-Mails-Date de naissance et âge-Nationalité-Réseau social', 1),
+(2, 2, 'Formation', 'Date anti-chronologiques-Intitulé-Sigles-Lieu-Spécialités-Autres informations', 1),
+(3, 3, 'Projets', 'Date-Intitulé-Fonction-Résultat/Objectifs-Nombres de personne par équipe', 1),
 (4, 1, 'Jonction PN', 'Jonction P-Jonction N-Jonction PN', 2),
-(5, 2, 'Equations insolite', 'Équation Type 1-Équation Type 2-Équation Type 3-Équation Type 4', 2);
+(5, 2, 'Equations insolite', 'Équation Type 1-Équation Type 2-Équation Type 3-Équation Type 4', 2),
+(6, 4, 'Compétences', 'Electronique-Informatique-Shes-Autres', 1),
+(7, 5, 'Langues', 'Type-Niveau-Certification-Année de pratique-Voyage', 1),
+(8, 6, 'Expériences professionnelles', 'Dates-Intitulé-fonction-Nom entreprise-Résultats/Objectifs-Références', 1),
+(9, 7, 'Expériences extra professionnelle', 'Date-Intitulé-Fonction-Nom entreprise/Associations-Résultats/Objectifs-Références', 1),
+(10, 8, 'Centre d''intérêts', 'Sport/Art-Niveau-Nombred''années-Compétition', 1),
+(11, 9, 'Autres informations', 'Format papier-Mots-clés-Vidéo CV-Carte de visite CV-CV en ligne-CV Européen-CV anglais-Autres CV étrangers', 1);
 
 -- --------------------------------------------------------
 
@@ -143,8 +149,8 @@ INSERT INTO `exercice` (`id_exercice`, `numero`, `valeur_exo`, `id_chapitre`) VA
 (5, 5, 100, 3),
 (6, 5, 100, 3),
 (7, 1, 100, 4),
-(8, 2, 120, 5),
-(9, 5, 51, 5);
+(8, 2, 100, 5),
+(9, 5, 100, 5);
 
 -- --------------------------------------------------------
 
@@ -159,6 +165,46 @@ CREATE TABLE IF NOT EXISTS `faire` (
   PRIMARY KEY (`id_user`,`id_exercice`),
   KEY `FK_faire_id_exercice` (`id_exercice`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `faire`
+--
+
+INSERT INTO `faire` (`score`, `id_user`, `id_exercice`) VALUES
+(50, 1, 7),
+(100, 1, 8),
+(100, 1, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `log`
+--
+
+CREATE TABLE IF NOT EXISTS `log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) DEFAULT NULL,
+  `connect_time` varchar(50) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `ip` varchar(50) DEFAULT NULL,
+  `lien` varchar(100) DEFAULT NULL,
+  `dernierlien` varchar(300) DEFAULT NULL,
+  `pays` varchar(100) DEFAULT NULL,
+  `browser` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+
+--
+-- Contenu de la table `log`
+--
+
+INSERT INTO `log` (`id`, `id_user`, `connect_time`, `email`, `ip`, `lien`, `dernierlien`, `pays`, `browser`) VALUES
+(24, 1, '10-03-2016 17:49', 'clement.guiol@gmail.com', '::1', 'http://localhost/moocisen/moocisen/application/includes/login.php', '/moocisen/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36'),
+(25, 1, '10-03-2016 17:49', 'clement.guiol@gmail.com', '::1', 'http://localhost/moocisen/moocisen/application/includes/login.php', '/moocisen/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36'),
+(26, 1, '13-03-2016 16:49', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.26 Safari/537.36'),
+(27, 1, '13-03-2016 17:56', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.26 Safari/537.36'),
+(28, 1, '13-03-2016 18:02', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.26 Safari/537.36'),
+(29, 1, '13-03-2016 18:14', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0');
 
 -- --------------------------------------------------------
 
@@ -249,7 +295,7 @@ INSERT INTO `succes` (`id_succes`, `type_succes`, `nom_succes`, `description_suc
 
 CREATE TABLE IF NOT EXISTS `suivre` (
   `date_suivi` date DEFAULT NULL,
-  `avancement` int(11) DEFAULT NULL,
+  `avancement` varchar(100) DEFAULT '0',
   `id_user` int(11) NOT NULL,
   `id_mooc` int(11) NOT NULL,
   PRIMARY KEY (`id_user`,`id_mooc`),
@@ -261,9 +307,9 @@ CREATE TABLE IF NOT EXISTS `suivre` (
 --
 
 INSERT INTO `suivre` (`date_suivi`, `avancement`, `id_user`, `id_mooc`) VALUES
-('2016-02-26', 1, 1, 1),
-('2016-03-01', 1, 1, 2),
-('2016-03-07', 0, 1, 3);
+('2016-02-26', '0-6-2', 1, 1),
+('2016-03-01', '0-3-1-2', 1, 2),
+('2016-03-07', '0-2', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -283,6 +329,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `grade` int(11) DEFAULT NULL,
   `professeur` int(11) DEFAULT NULL,
   `reset_password` varchar(8000) DEFAULT NULL,
+  `avatar` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
@@ -290,12 +337,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nom`, `prenom`, `pseudo`, `email`, `password`, `pays`, `statut`, `grade`, `professeur`, `reset_password`) VALUES
-(1, 'Guiol', 'Clément', 'CleMenTus', 'clement.guiol@gmail.com', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 0, NULL),
-(2, 'Rolland', 'Jean-Michel', 'JMR', 'jean-michel.rolland@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL),
-(3, 'Bescond', 'Marc', 'MB', 'marc.bescond@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL),
-(4, 'Patrone', 'Lionel', 'LP', 'lionel.patrone@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL),
-(5, 'Perony', 'Christine', 'CP', 'christine.perony@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL);
+INSERT INTO `user` (`id_user`, `nom`, `prenom`, `pseudo`, `email`, `password`, `pays`, `statut`, `grade`, `professeur`, `reset_password`, `avatar`) VALUES
+(1, 'Guiol', 'Clément', 'CleMenTus', 'clement.guiol@gmail.com', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 0, NULL, '../assets/images/profil/0user.png'),
+(2, 'Rolland', 'Jean-Michel', 'JMR', 'jean-michel.rolland@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL),
+(3, 'Bescond', 'Marc', 'MB', 'marc.bescond@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL),
+(4, 'Patrone', 'Lionel', 'LP', 'lionel.patrone@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL),
+(5, 'Perony', 'Christine', 'CP', 'christine.perony@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL);
 
 --
 -- Contraintes pour les tables exportées
