@@ -14,7 +14,6 @@ Mooc Isen utilise les technologies suivantes:
 * jQuery 1.9.1
 * ...
 
-
 ## Prérequis
 
 * Un serveur web avec PHP 5.2 Recommandé: Apache2
@@ -22,7 +21,7 @@ Mooc Isen utilise les technologies suivantes:
 * Une base de données MySQL avec phpMyAdmin
 
 
-##Installation
+## Installation
 
 1. Importer le fichier `mooc.sql` dans MySQL. La base de données sera créé automatiquement.
 
@@ -30,12 +29,12 @@ Mooc Isen utilise les technologies suivantes:
 ## Features
 
 | Feature                                | Summary                                                                                                                                                                                                                                                     |
-|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Responsive boilerplate | Un responsive boilerplate optimisé pour les applications web multi écrans |
-| fonctionnalités...                         | Description... |
+|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Responsive boilerplate 				 | Un responsive boilerplate optimisé pour les applications web multi écrans |
+| Material Design Lite                   | Material Design de Google Android adapté pour les applications web 		 |
 
 
-##Browser Support
+## Browser Support
 
 Nous supportons les navigateurs suivants :
 
@@ -48,17 +47,18 @@ Nous supportons les navigateurs suivants :
 
 Cela ne veut pas dire que les autres navigateurs ou les versions antérieurs des navigateurs ne fonctionnent pas, mais que l'application web est optimisée pour les navigateurs listés ci-dessus.
 
+## Docs
 
-##Insipiration
+* [phpDocumentor2](hhttps://github.com/neroon/moocisen/blob/master/documentations/phpDocumentor2.md) - Generation de la documentation
+* [File Appendix](https://github.com/neroon/moocisen/blob/master/documentations/file-appendix.md) - Fonctionnalitée de chaque fichiers
+* [Utilisé Material Design Lite](https://github.com/neroon/moocisen/blob/master/documentations/mdl.md) - Material Design Lite
+* [Guide de déploiement](https://github.com/neroon/moocisen/blob/master/documentations/deploy.md) -  Deploiement avec un serveur Apache
 
-Powered by [HTML5 Boilerplate](https://html5boilerplate.com/)
+## Insipiration
 
+Inspirer de [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
 
-## Documentation
+## Licence
 
-La documentation technique est incluse dans le code source. Pour générer la documentation, vous devez installer [phpDocumentor2](http://www.phpdoc.org).
-
-
-## License
-
-Mooc Isen est libre et gratuit. Il est distribué dans les termes de la license [GNU GPL v3](http://www.gnu.org/licenses/gpl.html). Pour plus d'information, lisez le fichier LICENSE.
+Apache 2.0  
+Copyright 2016 ISEN Inc
