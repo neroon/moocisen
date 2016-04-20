@@ -1,18 +1,34 @@
 <!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Une plateform pour apprendre gratuitement.">
-    <meta name="keywords" content="mooc,isen">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta property="og:title" content="Mooc Isen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Une plateform pour apprendre gratuitement des cours de l'ISEN.">
+
+	<meta property="og:title" content="Mooc Isen">
     <meta property="og:image" content="">
     <meta property="og:url" content="http://colombies.com/app">
-    <meta property="og:description" content="Une plateform pour apprendre gratuitement.">
-    <meta property="robots" content="noindex, nofollow">
-	<title>Mooc Isen</title>
-
+    <meta property="og:description" content="Une plateforme pour apprendre gratuitement des cours de l'ISEN.">
+    <meta property="robots" content="">
+	
+	<!-- Title -->
+	<title>Mooc Isen</title>    
+   
     <!-- favicon.ico -->
     <link rel="shortcut icon" href="favicon.ico">
 
@@ -35,70 +51,25 @@
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
 
     <!-- Color the status bar on mobile devices -->
-    <meta name="theme-color" content="#2F3BA2">
-    
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
+    <meta name="theme-color" content="#FFFFFF">
 
-    <!-- Material Design icons -->
+	<!-- Material Design Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+
+    <!-- Material Design Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- Material Design Lite page styles -->
+    <!-- Material Design Lite -->
     <link rel="stylesheet" href="styles/material.min.css">
 
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-            <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span class="mdl-layout-title">Mooc Isen</span>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation. We hide it in small screens. -->
-                <nav class="mdl-navigation mdl-layout--large-screen-only" >
-                    <a class="mdl-navigation__link mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" href="">Catalogue</a>
-                    <a class="mdl-navigation__link mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" href="">Connexion</a>
-                    <a class="mdl-navigation__link mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" href="">Inscription</a>
-                </nav>
-
-                <!-- Right aligned menu below button -->
-                <button id="demo-menu-lower-right"
-                        class="mdl-button mdl-js-button mdl-button--icon mdl-layout--small-screen-only">
-                    <i class="material-icons">more_vert</i>
-                </button>
-
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                    for="demo-menu-lower-right">
-                  <li class="mdl-menu__item">Catalogue</li>
-                  <li class="mdl-menu__item">Connexion</li>
-                  <li class="mdl-menu__item">Inscription</li>
-                </ul>
-            </div>
-        </header>
-      <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here --></div>
-      </main>
-    </div>
-
-    <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">Title</div>
-            <ul class="mdl-mini-footer__link-list">
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Privacy & Terms</a></li>
-            </ul>
-        </div>
-    </footer>
-
+	
 	<script src="scripts/material.min.js"></script>
     <script src="scripts/main.js"></script>
 

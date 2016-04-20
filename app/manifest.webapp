@@ -1,21 +1,21 @@
 {
-  "version": "2.1.3",
+  "version": "3.1.5",
   "name": "Mooc Isen",
   "launch_path": "/index.php",
-  "description": "Une plateforme pour permettre d'apprendre gratuitement.",
+  "description": "Une plateforme pour permettre d'apprendre gratuitement des cours de l'ISEN.",
   "icons": {
     "128": "/images/touch/icon-128x128.png"
   },
   "developer": {
     "name": "Colombies Olivier",
     "url": "",
-	"name": "Guiol Clement",
+	  "name": "Guiol Clement",
     "url": "",
-	"name": "Kokorina Slavyana",
+	  "name": "Kokorina Slavyana",
     "url": "",
-	"name": "Perrichon Guillaume",
+	  "name": "Perrichon Guillaume",
     "url": "",
-	"name": "Schultz Olivier",
+    "name": "Schultz Olivier",
     "url": ""
   },
   "installs_allowed_from": [
@@ -27,7 +27,7 @@
   "locales": {
     "fr": {
       "name": "Mooc Isen",
-      "description": "Une plateforme pour permettre d'apprendre gratuitement."
+      "description": "Une plateforme pour permettre d'apprendre gratuitement des cours de l'ISEN."
     }
   }
 }
