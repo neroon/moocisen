@@ -25,7 +25,7 @@
                 echo "->erreur";
             }
         }else{
-            echo 'deja inscrit';
+           // echo 'deja inscrit';
         }
     }
    

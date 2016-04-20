@@ -79,6 +79,7 @@
 	function chapitresplusSousPartie($idMooc,$bdd)
 	{
 		//var_dump($idMooc);
+		$stringAvancement=''; //contient les chapitre fais par un user
 
 		if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
 			$user=$_SESSION['id_user'];
@@ -118,7 +119,7 @@
 			{
 				for($i = 0; $i<sizeof($lignesChap); $i++)
 				{
-					$id_chap_tiret = '-'.($i+1);
+					$id_chap_tiret = '-'.($i+1); //verifie la présence
 					//var_dump($stringAvancement);
 					//var_dump($id_chap_tiret);
 					if (strpos($stringAvancement, $id_chap_tiret) !== false) {
