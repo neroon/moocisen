@@ -28,6 +28,23 @@
            // echo 'deja inscrit';
         }
     }
+
+
+    /** Function qui insere le score */
+    function insertSuccess($bdd, $id_succes){
+        if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user'])))
+        {
+            //session ok
+            $myid=$_SESSION['id_user'];
+            try { 
+                $requete_prepare= $bdd->prepare("INSERT INTO `mooc`.`debloquer` (`date_obtention`, `id_succes`, `id_user`) VALUES (current_date, '$id_succes', '$myid')"); // on prépare notre requête
+                $requete_prepare->execute();
+            } catch (Exception $e) { 
+                //echo $e->errorMessage();
+            }
+        }
+    }
+
    
 
 ?>

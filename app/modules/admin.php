@@ -6,21 +6,24 @@
 
   function afficheHistorique($bdd){
      try { 
-        $select3 = $bdd->prepare("SELECT * FROM log");
+        //$select3 = $bdd->prepare("SELECT * FROM log");
+        $select3 = $bdd->prepare("select email, ip, connect_time, id_user from log group by id_user");
         $select3->execute();
         $lignes3 = $select3->fetchAll();
         for($i = 0; $i < sizeof($lignes3) ; $i++){
           echo '<li class="mdl-list__item mdl-list__item--three-line">
           <span class="mdl-list__item-primary-content">
-            <i class="material-icons mdl-list__item-avatar">person</i>
             <span>'.$lignes3[$i]["email"].'</span>
             <span class="mdl-list__item-text-body">
               '.$lignes3[$i]["ip"].'  '.$lignes3[$i]["connect_time"].'
             </span>
           </span>
-          <span class="mdl-list__item-secondary-content">
-            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+          <span class="mdl-list__item-secondary-content ">
+            <button id="tt3" class="mdl-button mdl-button--icon mdl-button--accent"><i class="material-icons mdl-color-text--grey-600">remove_red_eyes</i></button>
           </span>
+          <div class="mdl-tooltip" for="tt3">
+            Upload <strong>file.zip</strong>
+            </div>
         </li>';
         }
         
@@ -28,6 +31,81 @@
         echo $e->errorMessage();
         echo "->erreur";
     }
+  }
+
+
+  function afficheMesInfo($bdd){
+
+    if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
+      $myid = $_SESSION['id_user'];
+     try { 
+        //$select3 = $bdd->prepare("SELECT * FROM log");
+        $select3 = $bdd->prepare("SELECT * from user WHERE id_user=$myid");
+        $select3->execute();
+        $lignes3 = $select3->fetchAll();
+        
+        echo '
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title v2 mdl-card--expand mdl-color--blue-400">
+                <h2 class="mdl-card__title-text">'.$lignes3[0]["pseudo"].'</h2>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+
+                <ul class="demo-list-icon mdl-list">
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">personn</i>
+                    '.$lignes3[0]["nom"].'  '.$lignes3[0]["prenom"].'
+                </span>
+                  </li>
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">mail</i>
+                            '.$lignes3[0]["email"].'
+                  </span>
+                  </li>
+
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">lock</i>
+                    ***********
+                  </span>
+                  </li>
+
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">gps_fixed</i>
+                            '.$lignes3[0]["pays"].'
+                  </span>
+                  </li>
+
+                </ul>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Modifier</a>
+              </div>
+            </div>
+            ';
+      } catch (Exception $e) { 
+          echo $e->errorMessage();
+          echo "->erreur";
+      } 
+    }else{
+      echo '
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title v2 mdl-card--expand mdl-color--teal-300">
+                <h2 class="mdl-card__title-text">Hors Connexion</h2>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                Veuillez vous connecter
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Connexion</a>
+              </div>
+            </div>
+            ';
+    }
+
   }
 
 ?>
@@ -38,7 +116,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
+    <title>MoocISEN Admin</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -50,6 +128,7 @@
     <meta name="apple-mobile-web-app-title" content="Material Design Lite">
     <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
+
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
@@ -60,6 +139,8 @@
     <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
+
+    <!-- <link href="../assets/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -138,24 +219,39 @@
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content">
-          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-grid ">
+
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid">
             <!-- liste ip et utilisateur  -->
             <ul class="demo-list-two mdl-list">
               <?php 
                 afficheHistorique($bdd)
               ?>
-    
             </ul>
           </div>
-          <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+          <!--<div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
             <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
               <use xlink:href="#chart" />
             </svg>
             <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
               <use xlink:href="#chart" />
             </svg>
+          </div>-->
+          <div class="demo-cards mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
+                <h2 class="mdl-card__title-text">Updates</h2>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Read More</a>
+              </div>
+            </div>
           </div>
+
+
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
@@ -168,48 +264,25 @@
                 <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Read More</a>
               </div>
             </div>
-            <div class="demo-separator mdl-cell--1-col"></div>
-            <div class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
-              <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
-                <h3>View options</h3>
-                <ul>
-                  <li>
-                    <label for="chkbox1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                      <input type="checkbox" id="chkbox1" class="mdl-checkbox__input">
-                      <span class="mdl-checkbox__label">Click per object</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="chkbox2" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                      <input type="checkbox" id="chkbox2" class="mdl-checkbox__input">
-                      <span class="mdl-checkbox__label">Views per object</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="chkbox3" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                      <input type="checkbox" id="chkbox3" class="mdl-checkbox__input">
-                      <span class="mdl-checkbox__label">Objects selected</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="chkbox4" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                      <input type="checkbox" id="chkbox4" class="mdl-checkbox__input">
-                      <span class="mdl-checkbox__label">Objects viewed</span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50">Change location</a>
-                <div class="mdl-layout-spacer"></div>
-                <i class="material-icons">location_on</i>
-              </div>
-            </div>
           </div>
+
+
+           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+           
+              <?php 
+                afficheMesInfo($bdd)
+              ?>
+          </div>
+
+
+
+
+
+
         </div>
       </main>
     </div>
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
+      <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
         <defs>
           <mask id="piemask" maskContentUnits="objectBoundingBox">
             <circle cx=0.5 cy=0.5 r=0.49 fill="white" />
@@ -255,7 +328,7 @@
             </g>
           </g>
         </defs>
-      </svg>
+      </svg>-->
       <a href="https://github.com/google/material-design-lite/blob/master/templates/dashboard/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>
     <script src="../scripts/material.min.js"></script>
   </body>

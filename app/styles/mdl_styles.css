@@ -191,6 +191,12 @@ _:-ms-input-placeholder, :root .demo-graph {
   background-position: 90% 100%;
   background-repeat: no-repeat;
 }
+.demo-updates .mdl-card__title.v2{
+  min-height: 200px;
+  background-image: url('../images/people.png');
+  background-position: 90% 100%;
+  background-repeat: no-repeat;
+}
 .demo-cards .mdl-card__actions a {
   color: #00BCD4;
   text-decoration: none;
