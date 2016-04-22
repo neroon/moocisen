@@ -87,6 +87,8 @@ if(isset($_GET['idM'])) {
     <script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery-ui.min.js"></script>
     <script src="../assets/js/jquery.validate.js"></script>
+	
+
 
     <!-- Jquery UI -->
     <!--<script src="../assets/js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>

@@ -71,15 +71,39 @@
 				
 				 echo'<div class="form-group">
 					<h2 class="StepTitle center">'.$lignesQcm[$i]["question"].'</h2><br>';
+					$i = 0;
 								for($itab = 0; $itab < sizeof($tab) ; $itab++)
-								{
-									echo '<div class="checkbox center">
+								{ 
+									if($tab[$itab] == "oui" || $tab[$itab] == "non")
+									{
+										if($i == 0)
+										{
+										echo'<div id="ck-button">
+											   <label>
+												  <input type="checkbox" name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
+											   </label>
+											</div>';
+											$i++;
+										}
+										if($i == 1)
+										{
+										echo'<div id="ck-button">
+											   <label>
+												  <input type="checkbox"name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
+											   </label>
+											</div><br>';
+											$i++;
+										}
+									}
+									else{
+										echo '<div class="checkbox center">
 											<label class="hover">
 												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.$tab[$itab].'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
 												'.$tab[$itab].'<br>
 											</label>
 										</div>';
-										//echo 'ok';	
+										//echo 'ok';
+									}										
 								}
 
 				echo' </div><br>';
