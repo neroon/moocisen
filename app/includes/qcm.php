@@ -46,7 +46,8 @@
 			//$tabSolution=json_encode($tabSolution);
 			//echo 'tab réponse='.$tabSolution;
 			//Réponse présent
-			echo "<input type='hidden' class='soluce' name='zyx' value='".implode(",", $tabSolution)."'/>";
+			//echo "<input type='hidden' class='soluce' name='zyx' value='".implode(",", $tabSolution)."'/>";
+			echo '<input type="hidden" class="soluce" name="zyx" value="'.implode(",", $tabSolution).'"/>';
 			//echo "<input type='hidden' id='idexo' name='nameexo' value='".$tabSolution."'/>";
 			//echo '<div id="solucebox"></div>'; //affichage sur show
 			/*if(isset($idMooc) && isset($_GET['idC'])){
@@ -55,8 +56,8 @@
 			echo "<input type='hidden' id='idm' name='idm' value='".$idMooc."'/>";
 			echo "<input type='hidden' id='idc' name='idc' value='".$idChap."'/>";
 			echo "<input type='hidden' id='ide' name='ide' value='".$idExo."'/>";
-			echo "<input type='hidden' id='indice' class='".$idExo."' name='indice' value='".$lignesQcm[0]["indice_qcm"]."'/>";//indice
-
+			//echo "<input type='hidden' id='indice' class='".$idExo."' name='indice' value='".htmlspecialchars(stripslashes($lignesQcm[0]["indice_qcm"]))."'/>";//indice
+			echo '<input type="hidden" id="indice" class="'.$idExo.'" name="indice" value="' . htmlspecialchars(stripslashes($lignesQcm[0]["indice_qcm"])) . '" />';
 
 			//affichage du QCM
 				$ouinon = 0;
@@ -77,23 +78,21 @@
 								{ 
 									if($tab[$itab] == "oui" || $tab[$itab] == "non")
 									{
-										if($ouinon == 0)
+										if($tab[$itab] == "oui")
 										{
 										echo'<div id="ck-button">
 											   <label>
 												  <input type="checkbox" name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div>';
-											$ouinon++;
 										}
-										else if($ouinon == 1)
+										else if($tab[$itab] == "non")
 										{
 										echo'<div id="ck-button">
 											   <label>
 												  <input type="checkbox"name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div><br>';
-											$ouinon++;
 										}
 									}
 									else{
