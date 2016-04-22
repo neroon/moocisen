@@ -59,6 +59,7 @@
 
 
 			//affichage du QCM
+				$ouinon = 0;
 			for($i = 0; $i < sizeof($lignesQcm) ; $i++)
 			{
 				$reponse = $lignesQcm[$i]["reponse_qcm"];
@@ -71,28 +72,28 @@
 				
 				 echo'<div class="form-group">
 					<h2 class="StepTitle center">'.$lignesQcm[$i]["question"].'</h2><br>';
-					$i = 0;
+				
 								for($itab = 0; $itab < sizeof($tab) ; $itab++)
 								{ 
 									if($tab[$itab] == "oui" || $tab[$itab] == "non")
 									{
-										if($i == 0)
+										if($ouinon == 0)
 										{
 										echo'<div id="ck-button">
 											   <label>
 												  <input type="checkbox" name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div>';
-											$i++;
+											$ouinon++;
 										}
-										if($i == 1)
+										else if($ouinon == 1)
 										{
 										echo'<div id="ck-button">
 											   <label>
 												  <input type="checkbox"name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div><br>';
-											$i++;
+											$ouinon++;
 										}
 									}
 									else{
