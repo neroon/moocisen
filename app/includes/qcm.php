@@ -1,11 +1,9 @@
 <?php
-
 	function exoQcm($idMooc,$idChap,$idExo,$bdd,$numeroExo)
 	{
 		try{
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
-
 			$lignesChap = $selectChap->fetchAll();
 			
 			$selectExo = $bdd->prepare("SELECT * FROM exercice WHERE id_chapitre = $idChap");
@@ -18,7 +16,6 @@
 			$selectqcm->execute();
 			
 			$lignesQcm = $selectqcm->fetchAll();
-
 			//Reponse du qcm
 			$tabHint = array();
 			$tabSolution = array();
@@ -29,7 +26,6 @@
 			{
 				$solution = $lignesQcm[$i]["solution"];
 				$tabHint = preg_split('[-]', $solution);
-
 				for($itab = 0; $itab < sizeof($tabHint) ; $itab++)
 				{
 					//var_dump($tabHint);
@@ -41,7 +37,6 @@
 			}
 			//var_dump($tabSolution);
 			//Type hidden qui correpond au reponse pour le qcm
-
 			//$tabSolution=implode(",",$tabSolution);
 			//$tabSolution=json_encode($tabSolution);
 			//echo 'tab réponse='.$tabSolution;
@@ -56,8 +51,6 @@
 			echo "<input type='hidden' id='idc' name='idc' value='".$idChap."'/>";
 			echo "<input type='hidden' id='ide' name='ide' value='".$idExo."'/>";
 			echo "<input type='hidden' id='indice' class='".$idExo."' name='indice' value='".$lignesQcm[0]["indice_qcm"]."'/>";//indice
-
-
 			//affichage du QCM
 				$ouinon = 0;
 			for($i = 0; $i < sizeof($lignesQcm) ; $i++)
@@ -66,7 +59,6 @@
 				$tab = array();
 				$tab = preg_split('[-]', $reponse);
 				//var_dump($lignesExo);
-
 				
 				
 				
@@ -106,16 +98,12 @@
 										//echo 'ok';
 									}										
 								}
-
 				echo' </div><br>';
 				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
-
 			
 				
 				//}
 			}
-
-
 		}
 		catch (Exception $e) { 
 		echo $e->errorMessage();
@@ -123,5 +111,4 @@
 		}
 		
 	}
-
 ?>
