@@ -101,11 +101,10 @@
       </ul>
     </nav>
     <div class="site-header__cta site-header__cta--mobile">
-      <a href="modules/not-connected/catalogue.php">
-        <button id="get-app--large" class="mdl-button mdl-button--raised mdl-button--colored mdl-color--teal js-get-app-button mdl-js-button mdl-js-ripple-effect">
-            Catalogue
-        </button>
-      </a>
+      <button id="get-app--large" class="mdl-button mdl-button--raised mdl-button--colored mdl-color--teal js-get-app-button mdl-js-button mdl-js-ripple-effect" onclick="location.replace('modules/not-connected/catalogue.php');">
+        Catalogue
+      </button>
+    </div>
   </header>
 
   <!-- banniere -->
@@ -265,6 +264,7 @@
       <h1 class="mdl-mega-footer__heading">MOOC Isen</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="modules/not-connected/aPropos.php">A propos</a></li>
+        <li><a href="modules/not-connected/actualitees.php">Actualitées</a></li>
         <li><a href="modules/not-connected/temoignages.php">Témoignages</a></li>
       </ul>
     </div>
