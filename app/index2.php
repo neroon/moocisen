@@ -75,7 +75,7 @@
   <div class="aux cf">
     <h2 class="site-header__title">
       <a class="site-header__root-link" href="index2.php">
-        <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/mooc-logo.png">
+        <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/header/mooc-logo.png">
       </a>
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
@@ -168,10 +168,10 @@
         --><div class="section__image grid__item palm--one-whole lap--one-half desk--one-half">
           <picture>
             <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="images/section2/notifications-desktop.png" media="(min-width: 769px)">
-            <source srcset="images/section2/notifications-mobile.png" media="(max-width: 768px)">
+            <source srcset="images/index/notifications-desktop.png" media="(min-width: 769px)">
+            <source srcset="images/index/notifications-mobile.png" media="(max-width: 768px)">
             <!--[if IE 9]></video><![endif]-->
-            <img srcset="images/section2/notifications-desktop.png" alt="">
+            <img srcset="images/index/notifications-desktop.png" alt="">
           </picture>
         </div>
       </div>
@@ -192,10 +192,10 @@
         --><div class="section__image grid__item palm--one-whole lap--one-half desk--one-half">
           <picture>
             <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="images/section3/safety-desktop.png" media="(min-width: 481px)">
-            <source srcset="images/section3/safety-mobile.png" media="(max-width: 480px)">
+            <source srcset="images/index/safety-desktop.png" media="(min-width: 481px)">
+            <source srcset="images/index/safety-mobile.png" media="(max-width: 480px)">
             <!--[if IE 9]></video><![endif]-->
-            <img srcset="images/section3/safety-desktop.png" alt="">
+            <img srcset="images/index/safety-desktop.png" alt="">
           </picture>
         </div>
       </div>
@@ -223,7 +223,7 @@
   <div class="mdl-mega-footer__middle-section">
 
     <div class="mdl-mega-footer__drop-down-section" style="top:30px">
-      <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/logo-footer.png">
+      <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/footer/logo-footer.png">
       <ul class="mdl-mega-footer__link-list">
         <li>
           <h4>Apprendre avec l'ISEN</h4>
