@@ -36,7 +36,7 @@
   <meta name="msapplication-tap-highlight" content="no">
 
   <!-- Web Application Manifest -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="../../manifest.json">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -75,24 +75,24 @@
   <div class="aux cf">
     <h2 class="site-header__title">
       <a class="site-header__root-link" href="index2.php">
-        <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/mooc-logo.png">
+        <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/mooc-logo.png">
       </a>
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
       <ul>
         <li>
-          <a class="nav-link" href="modules/not-connected/connexion.php">
+          <a class="nav-link" href="connexion.php">
             Connexion
           </a>
         </li>
         <li>
-          <a class="nav-link" href="modules/not-connected/inscription.php">
+          <a class="nav-link" href="inscription.php">
             Inscription
           </a>
         </li>
         <li>
           <div class="site-header__cta site-header__cta--desktop">
-            <a href="modules/not-connected/catalogue.php">
+            <a href="catalogue.php">
               <button id="header-cta" class="mdl-button mdl-button--raised mdl-button--accent mdl-color--teal mdl-js-button mdl-js-ripple-effect">
                 Catalogue
               </button>
@@ -101,39 +101,13 @@
       </ul>
     </nav>
     <div class="site-header__cta site-header__cta--mobile">
-      <button id="get-app--large" class="mdl-button mdl-button--raised mdl-button--colored mdl-color--teal js-get-app-button mdl-js-button mdl-js-ripple-effect" onclick="location.replace('modules/not-connected/catalogue.php');">
+      <button id="get-app--large" class="mdl-button mdl-button--raised mdl-button--colored mdl-color--teal js-get-app-button mdl-js-button mdl-js-ripple-effect" onclick="location.replace('catalogue.php');">
         Catalogue
       </button>
     </div>
   </header>
 
-  <!-- banniere -->
-  <div class="hero hero--home">
-    <div class="hero__bg-container">
-      <div class="hero__bg-container-overlay">
-        <h1>ALL IS DIGITAL</h1>
-        <div class="hero__get-app">
-          <a href="modules/not-connected/catalogue.php">
-            <button id="get-app--hero__button" class="get-app hero__btn mdl-button mdl-js-button mdl-color--teal mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-              Catalogue
-            </button>
-          </a>
-        </div>
-        <a href="modules/not-connected/inscription.php" class="hero__video-btn mdl-button mdl-js-button">
-          Inscription
-        </a>
-      </div>
-      <li class="page-scroll">
-        <a href="#welcome">
-          <button class="hero__fab mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--4dp">
-            <i class="material-icons">&#xE313;</i>
-        </button>
-        </a>
-      </li>
-    </div>
-  </div>
-
-  <!-- section 1 -->
+  <!-- section -->
   <section id="welcome" class="section section--welcome section--text-left section--rev section--align-image-bottom">
     <div class="aux">
       <div class="grid grid--bottom">
@@ -154,95 +128,31 @@
     </div>
   </section>
 
-  <!-- section 2 -->
-  <section class="section section--notifications section--grey section--align-image-bottom">
-    <div class="aux">
-      <div class="grid grid--middle">
-        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
-          <header class="section__header">
-            <h2 class="section__title">Lorem ipsum dolor<br>sit amet</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </header>
-        </div><!--
-        --><div class="section__image grid__item palm--one-whole lap--one-half desk--one-half">
-          <picture>
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="images/section2/notifications-desktop.png" media="(min-width: 769px)">
-            <source srcset="images/section2/notifications-mobile.png" media="(max-width: 768px)">
-            <!--[if IE 9]></video><![endif]-->
-            <img srcset="images/section2/notifications-desktop.png" alt="">
-          </picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- section3 -->
-  <section class="section section--safety section--rev">
-    <div class="aux">
-      <div class="grid grid--middle">
-        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
-          <header class="section__header">
-            <h2 class="section__title">Lorem ipsum dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </header>
-        </div><!--
-        --><div class="section__image grid__item palm--one-whole lap--one-half desk--one-half">
-          <picture>
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="images/section3/safety-desktop.png" media="(min-width: 481px)">
-            <source srcset="images/section3/safety-mobile.png" media="(max-width: 480px)">
-            <!--[if IE 9]></video><![endif]-->
-            <img srcset="images/section3/safety-desktop.png" alt="">
-          </picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- section4 -->
-  <section class="section section--support section--grey">
-    <div class="aux">
-      <div class="grid">
-        <div class="help-item grid__item one-whole lap--one-half desk--one-half">
-          <h3>Questions?</h3>
-          <p>Visiter le <a href="modules/not-connected/faq.php">FAQs</a>.</p>
-        </div><!--
-     --><div class="help-item grid__item one-whole lap--one-half desk--one-half">
-          <h3>Besoin d'aide?</h3>
-          <p>Aller à <a href="modules/not-connected/faq.php">Aide</a>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- footer -->
   <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__middle-section">
 
     <div class="mdl-mega-footer__drop-down-section" style="top:30px">
-      <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/logo-footer.png">
+      <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/logo-footer.png">
       <ul class="mdl-mega-footer__link-list">
         <li>
           <h4>Apprendre avec l'ISEN</h4>
         </li>
         <li>
           <a href="https://www.youtube.com/user/isentoulon" target="_blank">
-            <img class="site-header__wallet-logo" alt="YouTube" src="images/social/youtube.png">
+            <img class="site-header__wallet-logo" alt="YouTube" src="../../images/social/youtube.png">
           </a>
           <a href="https://twitter.com/isentoulon?lang=fr" target="_blank">
-            <img class="site-header__wallet-logo" alt="Twitter" src="images/social/twitter-white.png">
+            <img class="site-header__wallet-logo" alt="Twitter" src="../../images/social/twitter-white.png">
           </a>
           <a href="https://www.facebook.com/ISEN.Toulon" target="_blank">
-            <img class="site-header__wallet-logo" alt="Facebook" src="images/social/facebook-white.png">
+            <img class="site-header__wallet-logo" alt="Facebook" src="../../images/social/facebook-white.png">
           </a>
           <a href="https://www.instagram.com/isen.fr/" target="_blank">
-            <img class="site-header__wallet-logo" alt="Instagram" src="images/social/instagram-white.png">
+            <img class="site-header__wallet-logo" alt="Instagram" src="../../images/social/instagram-white.png">
           </a>
           <a href="https://plus.google.com/104791520528769416386/about" target="_blank">
-            <img class="site-header__wallet-logo" alt="Google+" src="images/social/google-white.png">
+            <img class="site-header__wallet-logo" alt="Google+" src="../../images/social/google-white.png">
           </a>
         </li>
         </br>
@@ -253,9 +163,9 @@
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
       <h1 class="mdl-mega-footer__heading"> Ressources</h1>
       <ul class="mdl-mega-footer__link-list">
-        <li><a href="modules/not-connected/faq.php">Aide & FAQ</a></li>
-        <li><a href="modules/not-connected/catalogue.php">Catalogue</a></li>
-        <li><a href="modules/not-connected/proposerCours.php">Proposer un MOOC</a></li>
+        <li><a href="faq.php">Aide & FAQ</a></li>
+        <li><a href="catalogue.php">Catalogue</a></li>
+        <li><a href="proposerCours.php">Proposer un MOOC</a></li>
       </ul>
     </div>
 
@@ -263,9 +173,9 @@
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
       <h1 class="mdl-mega-footer__heading">MOOC Isen</h1>
       <ul class="mdl-mega-footer__link-list">
-        <li><a href="modules/not-connected/aPropos.php">A propos</a></li>
-        <li><a href="modules/not-connected/actualitees.php">Actualitées</a></li>
-        <li><a href="modules/not-connected/temoignages.php">Témoignages</a></li>
+        <li><a href="aPropos.php">A propos</a></li>
+        <li><a href="actualitees.php">Actualitées</a></li>
+        <li><a href="temoignages.php">Témoignages</a></li>
       </ul>
     </div>
 
@@ -273,7 +183,7 @@
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
-        <li><a href="modules/not-connected/contact.php">Contact</a></li>
+        <li><a href="contact.php">Contact</a></li>
       </ul>
     </div>
 
@@ -282,25 +192,25 @@
   <div class="mdl-mega-footer__bottom-section">
     <ul class="mdl-mega-footer__link-list">
       <li>
-        <a href="modules/not-connected/politique.php">Politique de confidentialité</a> 
+        <a href="politique.php">Politique de confidentialité</a> 
         | 
-        <a href="modules/not-connected/modalites.php">Modalités</a> 
+        <a href="modalites.php">Modalités</a> 
       </li>
     </ul>
   </div>
 
   <!-- Material Design lite -->
-  <script src="scripts/material.min.js"></script>
-  
+  <script src="../../scripts/material.min.js"></script>
+
   <!-- jQuery -->
   <script src="scripts/jquery.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <!-- Validation -->
+  <script src="../../scripts/jqueryvalidate/jquery.validate.min.js"></script>
+  <script src="../../scripts/jqueryvalidate/additional-methods.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="scripts/not-connected/main.js"></script>
-  <script src="scripts/not-connected/scroll-down-button.js"></script>
+  <script src="../../scripts/not-connected/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>

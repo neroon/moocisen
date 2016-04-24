@@ -147,7 +147,7 @@
         --><div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
           <!-- iframe-responsive.css full css -->
           <div class="videocontainer"> 
-            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4?modestbranding=0&autohide=0&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe
+            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4?modestbranding=0&autohide=0&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </div>

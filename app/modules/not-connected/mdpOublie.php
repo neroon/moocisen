@@ -16,23 +16,23 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
 
-  <meta property="og:title" content="Mooc Isen">
+	<meta property="og:title" content="Mooc Isen">
   <meta property="og:image" content="">
   <meta property="og:url" content="http://colombies.com/app">
   <meta property="og:description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
   <meta property="robots" content="">
-  
-  <!-- Title -->
-  <title>Mooc Isen</title>    
+	
+	<!-- Title -->
+  <title>Mot de passe oublié | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
 
-  <!-- Disable tap highlight on IE -->
+	<!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
   <!-- Web Application Manifest -->
@@ -56,8 +56,8 @@
   <!-- Color the status bar on mobile devices -->
   <meta name="theme-color" content="#457871">
 
-  <!-- Material Design Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+	<!-- Material Design Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
 
   <!-- Material Design Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -121,12 +121,37 @@
         --><div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
           <!-- iframe-responsive.css full css -->
           <div class="videocontainer"> 
-            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4?modestbranding=0&autohide=0&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4?modestbranding=0&autohide=0&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- section 2 -->
+  <section class="section section--notifications section--grey section--align-image-bottom">
+    <div class="aux">
+      <div class="grid grid--middle">
+        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
+          <header class="section__header">
+            <h2 class="section__title">Lorem ipsum dolor<br>sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </header>
+        </div><!--
+        --><div class="section__image grid__item palm--one-whole lap--one-half desk--one-half">
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="images/section2/notifications-desktop.png" media="(min-width: 769px)">
+            <source srcset="images/section2/notifications-mobile.png" media="(max-width: 768px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="images/section2/notifications-desktop.png" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- footer -->
   <footer class="mdl-mega-footer">
@@ -201,13 +226,6 @@
 
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>
-
-  <!-- jQuery -->
-  <script src="scripts/jquery.js"></script>
-
-  <!-- Validation -->
-  <script src="../../scripts/jqueryvalidate/jquery.validate.min.js"></script>
-  <script src="../../scripts/jqueryvalidate/additional-methods.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
   <script src="../../scripts/not-connected/main.js"></script>
