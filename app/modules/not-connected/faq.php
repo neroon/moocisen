@@ -80,8 +80,8 @@
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
       <ul>
-        <li>
-          <a class="nav-link" href="connexion.php">
+        <li class="">
+          <a class="nav-link " href="connexion.php">
             Connexion
           </a>
         </li>
@@ -412,7 +412,7 @@
       <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/logo-footer.png">
       <ul class="mdl-mega-footer__link-list">
         <li>
-          <h4>Apprendre avec l'ISEN</h4>
+          <h4 style="color: #AFAFAF;">Apprendre avec l'ISEN</h4>
         </li>
         <li>
           <a href="https://www.youtube.com/user/isentoulon" target="_blank">
