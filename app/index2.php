@@ -27,7 +27,7 @@
   <meta property="robots" content="">
 	
 	<!-- Title -->
-  <title>Mooc Isen</title>    
+  <title>Accueil | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="favicon.ico">
@@ -274,6 +274,7 @@
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="modules/not-connected/contact.php">Contact</a></li>
+        <li><a href="modules/not-connected/politique.php">Légales</a></li>
       </ul>
     </div>
 

@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="../../styles/material.min.css">
 
   <!-- Your styles -->
-  <link rel="stylesheet" href="../../styles/not-connected/faq/main.css">
+  <link rel="stylesheet" href="../../styles/not-connected/faq.css">
 </head>
 <body>
 
@@ -75,7 +75,7 @@
   <div class="aux cf">
     <h2 class="site-header__title">
       <a class="site-header__root-link" href="../../index2.php">
-        <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/mooc-logo.png">
+        <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
@@ -409,7 +409,7 @@
   <div class="mdl-mega-footer__middle-section">
 
     <div class="mdl-mega-footer__drop-down-section" style="top:30px">
-      <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/logo-footer.png">
+      <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/footer/logo-footer.png">
       <ul class="mdl-mega-footer__link-list">
         <li>
           <h4 style="color: #AFAFAF;">Apprendre avec l'ISEN</h4>
@@ -460,6 +460,7 @@
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="contact.php">Contact</a></li>
+        <li><a href="politique.php">Légales</a></li>
       </ul>
     </div>
 
