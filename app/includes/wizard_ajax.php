@@ -166,7 +166,7 @@ function compareTab($strChoix, $strSoluce){
         echo 'trop de réponse';
         $lePourcentage = ($sizeArraySoluce/$compteur)*100;
     }
-    echo '<br>score inserer :'.$lePourcentage;
+    echo '<br>score inseré :'.$lePourcentage;
 
     return $lePourcentage;
 
