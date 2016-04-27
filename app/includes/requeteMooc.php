@@ -97,15 +97,6 @@
 		    }
 		}
 
-		//$id_chap_tiret = '-'.$id_chap.'-';
-		/*if (strpos($stringAvancement, $id_chap_tiret) !== false) {
-	        //valeur deja présente
-	        $stringAvancement = $stringAvancement; //ajout du nouveau chapitre
-	    }else{
-	        $stringAvancement = $stringAvancement."-".$id_chap; //ajout du nouveau chapitre
-	    }*/
-
-
 		try{
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();

@@ -46,7 +46,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 				<div class="x_content">
 					<!-- Cours -->
 					<div class="col-sm-4 invoice-col">
-        				Physique
+        				Physique 
                     </div>
 				</div>
 			</div>
