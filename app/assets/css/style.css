@@ -92,6 +92,7 @@ body{
     /*margin-right: -14px !important;*/
    
     overflow-x: scroll;
+    overflow-x: hidden; /* hide scrollbar horizontal */
 
 
 
