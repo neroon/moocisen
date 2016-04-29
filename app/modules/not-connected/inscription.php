@@ -16,23 +16,23 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
 
-	<meta property="og:title" content="Mooc Isen">
+  <meta property="og:title" content="Mooc Isen">
   <meta property="og:image" content="">
   <meta property="og:url" content="http://colombies.com/app">
   <meta property="og:description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
   <meta property="robots" content="">
-	
-	<!-- Title -->
-  <title>Mooc Isen</title>    
+  
+  <!-- Title -->
+  <title>Inscription | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
 
-	<!-- Disable tap highlight on IE -->
+  <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
   <!-- Web Application Manifest -->
@@ -56,8 +56,8 @@
   <!-- Color the status bar on mobile devices -->
   <meta name="theme-color" content="#457871">
 
-	<!-- Material Design Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+  <!-- Material Design Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
 
   <!-- Material Design Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -75,7 +75,7 @@
   <div class="aux cf">
     <h2 class="site-header__title">
       <a class="site-header__root-link" href="index2.php">
-        <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/mooc-logo.png">
+        <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
@@ -108,32 +108,13 @@
   </header>
 
   <!-- section -->
-  <section id="welcome" class="section section--welcome section--text-left section--rev section--align-image-bottom">
-    <div class="aux">
-      <div class="grid grid--bottom">
-        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
-          <header class="recesection__header">
-            <h2 class="section__title">Lorem ipsum dolor<br>sit amet</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </header>
-        </div><!--
-        --><div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
-          <!-- iframe-responsive.css full css -->
-          <div class="videocontainer"> 
-            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4?modestbranding=0&autohide=0&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- footer -->
   <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__middle-section">
 
     <div class="mdl-mega-footer__drop-down-section" style="top:30px">
-      <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/logo-footer.png">
+      <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/footer/logo-footer.png">
       <ul class="mdl-mega-footer__link-list">
         <li>
           <h4>Apprendre avec l'ISEN</h4>
@@ -184,6 +165,7 @@
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="contact.php">Contact</a></li>
+        <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
 
@@ -192,22 +174,15 @@
   <div class="mdl-mega-footer__bottom-section">
     <ul class="mdl-mega-footer__link-list">
       <li>
-        <a href="politique.php">Politique de confidentialité</a> 
+        <a href="legales.php">Politique de confidentialité</a> 
         | 
-        <a href="modalites.php">Modalités</a> 
+        <a href="legales.php">Modalités</a> 
       </li>
     </ul>
   </div>
 
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>
-
-  <!-- jQuery -->
-  <script src="scripts/jquery.js"></script>
-
-  <!-- Validation -->
-  <script src="../../scripts/jqueryvalidate/jquery.validate.min.js"></script>
-  <script src="../../scripts/jqueryvalidate/additional-methods.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
   <script src="../../scripts/not-connected/main.js"></script>

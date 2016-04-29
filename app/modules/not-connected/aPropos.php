@@ -27,7 +27,7 @@
   <meta property="robots" content="">
   
   <!-- Title -->
-  <title>Mooc Isen</title>    
+  <title>A propos | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -74,8 +74,8 @@
   <header class="site-header">
   <div class="aux cf">
     <h2 class="site-header__title">
-      <a class="site-header__root-link" href="../../index2.php">
-        <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/mooc-logo.png">
+      <a class="site-header__root-link" href="index2.php">
+        <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
@@ -108,32 +108,13 @@
   </header>
 
   <!-- section -->
-  <section id="welcome" class="section section--welcome section--text-left section--rev section--align-image-bottom">
-    <div class="aux">
-      <div class="grid grid--bottom">
-        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
-          <header class="recesection__header">
-            <h2 class="section__title">Lorem ipsum dolor<br>sit amet</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </header>
-        </div><!--
-        --><div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
-          <!-- iframe-responsive.css full css -->
-          <div class="videocontainer"> 
-            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4?modestbranding=0&autohide=0&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- footer -->
   <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__middle-section">
 
     <div class="mdl-mega-footer__drop-down-section" style="top:30px">
-      <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/logo-footer.png">
+      <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/footer/logo-footer.png">
       <ul class="mdl-mega-footer__link-list">
         <li>
           <h4>Apprendre avec l'ISEN</h4>
@@ -184,6 +165,7 @@
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="contact.php">Contact</a></li>
+        <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
 
@@ -192,9 +174,9 @@
   <div class="mdl-mega-footer__bottom-section">
     <ul class="mdl-mega-footer__link-list">
       <li>
-        <a href="politique.php">Politique de confidentialité</a> 
+        <a href="legales.php">Politique de confidentialité</a> 
         | 
-        <a href="modalites.php">Modalités</a> 
+        <a href="legales.php">Modalités</a> 
       </li>
     </ul>
   </div>

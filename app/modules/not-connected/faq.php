@@ -460,7 +460,7 @@
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="politique.php">Légales</a></li>
+        <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
 
@@ -469,9 +469,9 @@
   <div class="mdl-mega-footer__bottom-section">
     <ul class="mdl-mega-footer__link-list">
       <li>
-        <a href="politique.php">Politique de confidentialité</a> 
+        <a href="legales.php">Politique de confidentialité</a> 
         | 
-        <a href="modalites.php">Modalités</a> 
+        <a href="legales.php">Modalités</a> 
       </li>
     </ul>
   </div>

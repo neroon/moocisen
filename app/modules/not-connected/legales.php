@@ -27,7 +27,7 @@
   <meta property="robots" content="">
   
   <!-- Title -->
-  <title>Connexion | Mooc Isen</title>    
+  <title>Légales | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">

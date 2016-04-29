@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include '../includes/connect.inc.php';
+  include '../../includes/connect.inc.php';
 
 
 
@@ -196,7 +196,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
-    <link rel="stylesheet" href="../styles/connected/mdl_styles.css">
+    <link rel="stylesheet" href="../../styles/connected/admin.css">
     <style>
     #view-source {
       position: fixed;
@@ -385,6 +385,6 @@
         </defs>
       </svg>-->
       <a href="https://github.com/google/material-design-lite/blob/master/templates/dashboard/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>
-    <script src="../scripts/material.min.js"></script>
+    <script src="../../scripts/material.min.js"></script>
   </body>
 </html>

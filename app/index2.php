@@ -274,7 +274,7 @@
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="modules/not-connected/contact.php">Contact</a></li>
-        <li><a href="modules/not-connected/politique.php">Légales</a></li>
+        <li><a href="modules/not-connected/legales.php">Légales</a></li>
       </ul>
     </div>
 
@@ -283,9 +283,9 @@
   <div class="mdl-mega-footer__bottom-section">
     <ul class="mdl-mega-footer__link-list">
       <li>
-        <a href="modules/not-connected/politique.php">Politique de confidentialité</a> 
+        <a href="modules/not-connected/legales.php">Politique de confidentialité</a> 
         | 
-        <a href="modules/not-connected/modalites.php">Modalités</a> 
+        <a href="modules/not-connected/legales.php">Modalités</a> 
       </li>
     </ul>
   </div>

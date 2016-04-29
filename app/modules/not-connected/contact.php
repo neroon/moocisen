@@ -29,7 +29,7 @@
   <!-- Title -->
   <title>Contact | Mooc Isen</title>    
    
-  <!-- favicon.ic o -->
+  <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
 
   <!-- Disable tap highlight on IE -->
@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="../../styles/material.min.css">
 
   <!-- Your styles -->
-  <link rel="stylesheet" href="../../styles/not-connected/faq.css">
+  <link rel="stylesheet" href="../../styles/not-connected/main.css">
 </head>
 <body>
 
@@ -74,14 +74,14 @@
   <header class="site-header">
   <div class="aux cf">
     <h2 class="site-header__title">
-      <a class="site-header__root-link" href="../../index2.php">
+      <a class="site-header__root-link" href="index2.php">
         <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
       <ul>
-        <li class="">
-          <a class="nav-link " href="connexion.php">
+        <li>
+          <a class="nav-link" href="connexion.php">
             Connexion
           </a>
         </li>
@@ -107,7 +107,7 @@
     </div>
   </header>
 
-  <!-- Contact -->
+  <!-- section -->
 
   <!-- footer -->
   <footer class="mdl-mega-footer">
@@ -117,7 +117,7 @@
       <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/footer/logo-footer.png">
       <ul class="mdl-mega-footer__link-list">
         <li>
-          <h4 style="color: #AFAFAF;">Apprendre avec l'ISEN</h4>
+          <h4>Apprendre avec l'ISEN</h4>
         </li>
         <li>
           <a href="https://www.youtube.com/user/isentoulon" target="_blank">
@@ -165,7 +165,7 @@
       <h1 class="mdl-mega-footer__heading">Informations</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="politique.php">Légales</a></li>
+        <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
 
@@ -174,9 +174,9 @@
   <div class="mdl-mega-footer__bottom-section">
     <ul class="mdl-mega-footer__link-list">
       <li>
-        <a href="politique.php">Politique de confidentialité</a> 
+        <a href="legales.php">Politique de confidentialité</a> 
         | 
-        <a href="modalites.php">Modalités</a> 
+        <a href="legales.php">Modalités</a> 
       </li>
     </ul>
   </div>
@@ -186,10 +186,6 @@
 
   <!-- Custom Theme JavaScript -->
   <script src="../../scripts/not-connected/main.js"></script>
-
-  <script>
-    wallet.init('faq');
-  </script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
