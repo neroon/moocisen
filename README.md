@@ -8,11 +8,13 @@ Mooc Isen permet de consulter gratuitement des cours en ligne proposés par les 
 
 Mooc Isen utilise les technologies suivantes:
 
+* HTML5 / CSS3
+* JavaScript
+* jQuery 1.9.1
 * PHP 5
 * MySQL
-* HTML5 / CSS3
-* jQuery 1.9.1
-* ...
+* Serveur Apache 2
+
 
 ## Prérequis
 
