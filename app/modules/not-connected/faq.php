@@ -1,3 +1,10 @@
+<?php
+  session_start();
+
+  if((isset($_SESSION['id_user']))) {
+    header ("location: ../connected/faq.php");
+  }
+?>
 <!DOCTYPE html>
 <!--
   Material Design Lite
@@ -480,7 +487,7 @@
   <script src="../../scripts/material.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="../../scripts/not-connected/main.js"></script>
+  <script src="../../scripts/not-connected/faq.js"></script>
 
   <script>
     wallet.init('faq');

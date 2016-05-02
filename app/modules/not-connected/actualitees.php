@@ -1,3 +1,10 @@
+<?php
+  session_start();
+
+  if((isset($_SESSION['id_user']))) {
+    header ("location: ../connected/actualitees.php");
+  }
+?>
 <!DOCTYPE html>
 <!--
   Material Design Lite
@@ -66,7 +73,7 @@
   <link rel="stylesheet" href="../../styles/material.min.css">
 
   <!-- Your styles -->
-  <link rel="stylesheet" href="../../styles/not-connected/main.css">
+  <link rel="stylesheet" href="../../styles/not-connected/actualitees.css">
 </head>
 <body>
 
@@ -185,7 +192,7 @@
   <script src="../../scripts/material.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="../../scripts/not-connected/main.js"></script>
+  <script src="../../scripts/not-connected/actualitees.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>

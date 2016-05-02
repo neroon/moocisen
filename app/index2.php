@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="styles/material.min.css">
 
   <!-- Your styles -->
-  <link rel="stylesheet" href="styles/not-connected/main.css">
+  <link rel="stylesheet" href="styles/not-connected/index.css">
 </head>
 <body>
 
@@ -294,13 +294,13 @@
   <script src="scripts/material.min.js"></script>
   
   <!-- jQuery -->
-  <script src="scripts/jquery.js"></script>
+  <script src="scripts/jquery/jquery.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="scripts/not-connected/main.js"></script>
+  <script src="scripts/not-connected/index.js"></script>
   <script src="scripts/not-connected/scroll-down-button.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

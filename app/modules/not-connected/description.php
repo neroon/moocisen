@@ -2,7 +2,7 @@
   session_start();
 
   if((isset($_SESSION['id_user']))) {
-    header ("location: ../connected/aPropos.php");
+    header ("location: ../connected/description.php");
   }
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@
   <meta property="robots" content="">
   
   <!-- Title -->
-  <title>A propos | Mooc Isen</title>    
+  <title>Proposer un MOOC | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -73,7 +73,7 @@
   <link rel="stylesheet" href="../../styles/material.min.css">
 
   <!-- Your styles -->
-  <link rel="stylesheet" href="../../styles/not-connected/aPropos.css">
+  <link rel="stylesheet" href="../../styles/not-connected/proposerCours.css">
 </head>
 <body>
 
@@ -192,7 +192,7 @@
   <script src="../../scripts/material.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="../../scripts/not-connected/aPropos.js"></script>
+  <script src="../../scripts/not-connected/proposerCours.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
