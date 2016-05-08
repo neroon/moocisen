@@ -11,7 +11,7 @@
         $select3->execute();
         $lignes3 = $select3->fetchAll();
         for($i = 0; $i < sizeof($lignes3) ; $i++){
-          echo '<li class="mdl-list__item mdl-list__item--three-line">
+         /* echo '<li class="mdl-list__item mdl-list__item--three-line">
           <span class="mdl-list__item-primary-content">
             <span>'.$lignes3[$i]["email"].'</span>
             <span class="mdl-list__item-text-body">
@@ -24,7 +24,21 @@
           <div class="mdl-tooltip" for="tt3">
             Upload <strong>file.zip</strong>
             </div>
-        </li>';
+        </li>';*/
+        echo '   <ul class="demo-list-three mdl-list">
+                      <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                          <i class="material-icons mdl-list__item-avatar">person</i>
+                          <span>'.$lignes3[$i]["nom"].'</span>
+                          <span class="mdl-list__item-text-body">
+                             '.$lignes3[$i]["ip"].'  '.$lignes3[$i]["connect_time"].'
+                          </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                      </li>
+                    </ul>';
         }
         
     } catch (Exception $e) { 
@@ -294,15 +308,21 @@
           </div>-->
           <div class="demo-cards mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
-              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
-                <h2 class="mdl-card__title-text">Updates</h2>
-              </div>
-              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                Non dolore elit adipisicing ea reprehenderit consectetur culpa.
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Read More</a>
-              </div>
+                    <ul class="demo-list-three mdl-list">
+                      <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                          <i class="material-icons mdl-list__item-avatar">person</i>
+                          <span>Bryan Cranston</span>
+                          <span class="mdl-list__item-text-body">
+                            Bryan Cranston played the role of Walter in Breaking Bad. He is also known
+                            for playing Hal in Malcom in the Middle.
+                          </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                      </li>
+                    </ul>
             </div>
           </div>
 
