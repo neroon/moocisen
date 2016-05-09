@@ -16,10 +16,9 @@
         //var_dump($lignes2);
         $ipAndNbCon = " ";
         for($i = 0; $i < sizeof($lignes2) ; $i++){
-          $ipAndNbCon = $ipAndNbCon.'   '.$lignes2[$i][0].'<span class="mdl-badge" data-badge="'.$lignes2[$i][1].'"></span>';
+          $ipAndNbCon = $ipAndNbCon.'<ul class="demo-list-icon mdl-list"><li class="mdl-list__item"><span class="mdl-badge" data-badge="x'.$lignes2[$i][1].'">'.$lignes2[$i][0].'</span></li>';
         }
-        //var_dump($ipAndNbCon);
-
+  
         $select3 = $bdd->prepare("SELECT * from user WHERE id_user=$myid");
         $select3->execute();
         $lignes3 = $select3->fetchAll();
@@ -31,7 +30,6 @@
                 <h2 class="mdl-card__title-text">'.$lignes3[0]["pseudo"].'</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-
                 <ul class="demo-list-icon mdl-list">
                   <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
@@ -62,7 +60,7 @@
                    <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
                     <i class="material-icons mdl-list__item-icon">vpn_lock</i>
-                            Nombre de connexion : <br>'. $ipAndNbCon.'
+                            '. $ipAndNbCon.'
                   </span>
                   </li>
 
@@ -381,15 +379,11 @@
 
 
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">Acceuil</i>Home</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Updates</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Promos</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
+
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
@@ -399,9 +393,9 @@
 
 
               <?php 
-                afficheDetail($bdd);
                 afficheMesInfo($bdd);
                 afficheHistorique($bdd);
+                afficheDetail($bdd);
               ?>
       
           <!--<div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
