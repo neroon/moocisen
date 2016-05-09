@@ -3,11 +3,23 @@
   include '../../includes/connect.inc.php';
 
 
+  /**  AFFICHE LE DETAIL D'UNE PERSONNE BASE SUR  URL GET */
   function afficheDetail($bdd){
      if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user'])) && (isset($_GET['id']))){
       $myid =  $_GET['id'];
      try { 
-        //$select3 = $bdd->prepare("SELECT * FROM log");
+
+        //$select2 = $bdd->prepare("SELECT count(id_user), ip FROM log WHERE id_user=$myid");
+        $select2 = $bdd->prepare("SELECT ip, COUNT(id_user) FROM log WHERE id_user=$myid GROUP BY ip ORDER BY ip");
+        $select2->execute();
+        $lignes2 = $select2->fetchAll();
+        //var_dump($lignes2);
+        $ipAndNbCon = " ";
+        for($i = 0; $i < sizeof($lignes2) ; $i++){
+          $ipAndNbCon = $ipAndNbCon.'   '.$lignes2[$i][0].'<span class="mdl-badge" data-badge="'.$lignes2[$i][1].'"></span>';
+        }
+        //var_dump($ipAndNbCon);
+
         $select3 = $bdd->prepare("SELECT * from user WHERE id_user=$myid");
         $select3->execute();
         $lignes3 = $select3->fetchAll();
@@ -45,6 +57,12 @@
                     <span class="mdl-list__item-primary-content">
                     <i class="material-icons mdl-list__item-icon">gps_fixed</i>
                             '.$lignes3[0]["pays"].'
+                  </span>
+                  </li>
+                   <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">vpn_lock</i>
+                            Nombre de connexion : <br>'. $ipAndNbCon.'
                   </span>
                   </li>
 
