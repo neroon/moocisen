@@ -3,55 +3,9 @@
   include '../../includes/connect.inc.php';
 
 
-
-  function afficheHistorique($bdd){
-     try { 
-        //$select3 = $bdd->prepare("SELECT * FROM log");
-        $select3 = $bdd->prepare("select email, ip, connect_time, id_user from log group by id_user");
-        $select3->execute();
-        $lignes3 = $select3->fetchAll();
-        for($i = 0; $i < sizeof($lignes3) ; $i++){
-         /* echo '<li class="mdl-list__item mdl-list__item--three-line">
-          <span class="mdl-list__item-primary-content">
-            <span>'.$lignes3[$i]["email"].'</span>
-            <span class="mdl-list__item-text-body">
-              '.$lignes3[$i]["ip"].'  '.$lignes3[$i]["connect_time"].'
-            </span>
-          </span>
-          <span class="mdl-list__item-secondary-content ">
-            <button id="tt3" class="mdl-button mdl-button--icon mdl-button--accent"><i class="material-icons mdl-color-text--grey-600">remove_red_eyes</i></button>
-          </span>
-          <div class="mdl-tooltip" for="tt3">
-            Upload <strong>file.zip</strong>
-            </div>
-        </li>';*/
-        echo '   <ul class="demo-list-three mdl-list">
-                      <li class="mdl-list__item mdl-list__item--three-line">
-                        <span class="mdl-list__item-primary-content">
-                          <i class="material-icons mdl-list__item-avatar">person</i>
-                          <span>'.$lignes3[$i]["nom"].'</span>
-                          <span class="mdl-list__item-text-body">
-                             '.$lignes3[$i]["ip"].'  '.$lignes3[$i]["connect_time"].'
-                          </span>
-                        </span>
-                        <span class="mdl-list__item-secondary-content">
-                          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                        </span>
-                      </li>
-                    </ul>';
-        }
-        
-    } catch (Exception $e) { 
-        echo $e->errorMessage();
-        echo "->erreur";
-    }
-  }
-
-
-  function afficheMesInfo($bdd){
-
-    if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
-      $myid = $_SESSION['id_user'];
+  function afficheDetail($bdd){
+     if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user'])) && (isset($_GET['id']))){
+      $myid =  $_GET['id'];
      try { 
         //$select3 = $bdd->prepare("SELECT * FROM log");
         $select3 = $bdd->prepare("SELECT * from user WHERE id_user=$myid");
@@ -59,6 +13,7 @@
         $lignes3 = $select3->fetchAll();
         
         echo '
+        <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__title v2 mdl-card--expand mdl-color--blue-400">
                 <h2 class="mdl-card__title-text">'.$lignes3[0]["pseudo"].'</h2>
@@ -99,6 +54,7 @@
                 <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Modifier</a>
               </div>
             </div>
+            </div>
             ';
       } catch (Exception $e) { 
           echo $e->errorMessage();
@@ -106,6 +62,7 @@
       } 
     }else{
       echo '
+       <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__title v2 mdl-card--expand mdl-color--grey-300">
                 <h2 class="mdl-card__title-text">Hors Connexion</h2>
@@ -117,6 +74,138 @@
                 <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Connexion</a>
               </div>
             </div>
+            </div>
+            ';
+    }
+
+  }
+
+
+
+  function afficheHistorique($bdd){
+    if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
+      $myid = $_SESSION['id_user'];
+       try { 
+          //$select3 = $bdd->prepare("SELECT * FROM log");
+          $select3 = $bdd->prepare("select email, ip, connect_time, id_user from log group by id_user");
+          $select3->execute();
+          $lignes3 = $select3->fetchAll();
+
+
+          echo '
+          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop ">
+             <ul class="demo-list-icon mdl-list mdl-color--grey-300">
+                <li class="mdl-list__item ">
+                  <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">info</i>
+                    Historique des connexions
+                  </span>
+                </li>
+              </ul>';
+              for($i = 0; $i < sizeof($lignes3) ; $i++){
+              echo '     <ul class="demo-list-three mdl-list">
+                          <li class="mdl-list__item mdl-list__item--three-line">
+                            <span class="mdl-list__item-primary-content">
+                              <i class="material-icons mdl-list__item-avatar">person</i>
+                              <span>'.$lignes3[$i]["connect_time"].'</span>
+                              <span class="mdl-list__item-text-body">
+                                '.$lignes3[$i]["ip"].'  '.$lignes3[$i]["email"].'
+                              </span>
+                            </span>
+
+                            <span class="mdl-list__item-secondary-content">
+                              <a class="mdl-list__item-secondary-action mdl-navigation__link" href="?id='.$lignes3[$i]["id_user"].'"><i class="material-icons">star</i></a>
+                            </span>
+                          </li>
+                        </ul>';
+              } //fin for
+          echo ' 
+            </div>
+          </div>';
+          
+      } catch (Exception $e) { 
+          echo $e->errorMessage();
+          echo "->erreur";
+      }
+    }
+  }
+
+
+
+  function afficheMesInfo($bdd){
+
+    if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
+      $myid = $_SESSION['id_user'];
+     try { 
+        //$select3 = $bdd->prepare("SELECT * FROM log");
+        $select3 = $bdd->prepare("SELECT * from user WHERE id_user=$myid");
+        $select3->execute();
+        $lignes3 = $select3->fetchAll();
+        
+        echo '
+          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title v3 mdl-card--expand mdl-color--orange-400">
+                <h2 class="mdl-card__title-text">'.$lignes3[0]["pseudo"].'</h2>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+
+                <ul class="demo-list-icon mdl-list">
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">personn</i>
+                    '.$lignes3[0]["nom"].'  '.$lignes3[0]["prenom"].'
+                </span>
+                  </li>
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">mail</i>
+                            '.$lignes3[0]["email"].'
+                  </span>
+                  </li>
+
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">lock</i>
+                    ***********
+                  </span>
+                  </li>
+
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-icon">gps_fixed</i>
+                            '.$lignes3[0]["pays"].'
+                  </span>
+                  </li>
+
+                </ul>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Modifier</a>
+              </div>
+            </div>
+          </div>
+            ';
+      } catch (Exception $e) { 
+          echo $e->errorMessage();
+          echo "->erreur";
+      } 
+    }else{
+      echo '
+          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title v2 mdl-card--expand mdl-color--grey-300">
+                <h2 class="mdl-card__title-text">Hors Connexion</h2>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                Veuillez vous connecter
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Connexion</a>
+              </div>
+            </div>
+          </div>
             ';
     }
 
@@ -135,7 +224,7 @@
         
         echo '
         <header class="demo-drawer-header">
-          <img src="../images/user.jpg" class="demo-avatar">
+          <img src="../'.$lignes3[0]["avatar"].'" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span>'.$lignes3[0]["email"].'</span>
             <div class="mdl-layout-spacer"></div>
@@ -185,7 +274,7 @@
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+    <link rel="icon" sizes="192x192" href="../../favicon.ico">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -290,14 +379,13 @@
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid ">
 
-          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid">
-            <!-- liste ip et utilisateur  -->
-            <ul class="demo-list-two mdl-list">
+
               <?php 
-                afficheHistorique($bdd)
+                afficheDetail($bdd);
+                afficheMesInfo($bdd);
+                afficheHistorique($bdd);
               ?>
-            </ul>
-          </div>
+      
           <!--<div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
             <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
               <use xlink:href="#chart" />
@@ -306,25 +394,7 @@
               <use xlink:href="#chart" />
             </svg>
           </div>-->
-          <div class="demo-cards mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
-            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
-                    <ul class="demo-list-three mdl-list">
-                      <li class="mdl-list__item mdl-list__item--three-line">
-                        <span class="mdl-list__item-primary-content">
-                          <i class="material-icons mdl-list__item-avatar">person</i>
-                          <span>Bryan Cranston</span>
-                          <span class="mdl-list__item-text-body">
-                            Bryan Cranston played the role of Walter in Breaking Bad. He is also known
-                            for playing Hal in Malcom in the Middle.
-                          </span>
-                        </span>
-                        <span class="mdl-list__item-secondary-content">
-                          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                        </span>
-                      </li>
-                    </ul>
-            </div>
-          </div>
+
 
 
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
@@ -342,12 +412,10 @@
           </div>
 
 
-           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
-           
-              <?php 
-                afficheMesInfo($bdd)
-              ?>
-          </div>
+
+            <?php 
+              
+            ?>
 
 
 
@@ -404,7 +472,7 @@
           </g>
         </defs>
       </svg>-->
-      <a href="https://github.com/google/material-design-lite/blob/master/templates/dashboard/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>
+      <a href="" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Profil</a>
     <script src="../../scripts/material.min.js"></script>
   </body>
 </html>
