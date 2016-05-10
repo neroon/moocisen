@@ -83,20 +83,6 @@
                     </div>
                     <div class="clearfix"></div>
 
-                    <!-- menu prile quick info -->
-                     <!--
-                    <div class="profile">
-                        <div class="profile_pic">
-                            <img src="../assets/images/user.png" alt="..." class="img-circle profile_img">
-                        </div>
-                        <div class="profile_info">
-                            <span>MOOC</span>
-                        </div>
-                    </div>
-                    -->
-                    <!-- /menu prile quick info -->
-
-
                     <!-- sidebar menu drawer-->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <br>
@@ -807,8 +793,8 @@
                                                         echo'</p>
                                                         </td>
                                                         <td>
-                                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </a>
-                                                            <a href="#" class="btn btn-success btn-xs"><i class="fa fa-bar-chart"></i> Statistiques </a>
+                                                           <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </button>
+                                                           <button onclick="callGraph(this.name);" type="button" name="'.$donnees3[$i]['id_mooc'].'" class="btn btn-success btn-xs"><i class="fa fa-bar-chart"></i> Statistiques </button>
                                                         </td>
                                                     </tr>';   
                                             }
@@ -822,6 +808,22 @@
                         </div>
                     </div>
                     <!-- /fin row -->
+
+                     <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Statistiques<small></small></h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="removechart">
+                                        <canvas id="myChart" height="200" width="400" ></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             <!-- /page content -->
@@ -846,7 +848,7 @@
     <script type="text/javascript" src="../assets/js/gauge/gauge_demo.js"></script>
     -->
     <!-- chart js -->
-    <script src="../assets/js/chartjs/chart.min.js"></script>
+    <script src="../assets/js/chartjs/Chart.js"></script>
     <!-- bootstrap progress js -->
     <script src="../assets/js/progressbar/bootstrap-progressbar.min.js"></script>
     <script src="../assets/js/nicescroll/jquery.nicescroll.min.js"></script>
@@ -970,213 +972,76 @@ $.validator.addMethod("mailRegex", function(value, element) {
     <script type="text/javascript" src="../assets/js/flot/curvedLines.js"></script>
     <script type="text/javascript" src="../assets/js/flot/jquery.flot.resize.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            // [17, 74, 6, 39, 20, 85, 7]
-            //[82, 23, 66, 9, 99, 6, 2]
-            var data1 = [[gd(2012, 1, 1), 17], [gd(2012, 1, 2), 74], [gd(2012, 1, 3), 6], [gd(2012, 1, 4), 39], [gd(2012, 1, 5), 20], [gd(2012, 1, 6), 85], [gd(2012, 1, 7), 7]];
-            var data2 = [[gd(2012, 1, 1), 82], [gd(2012, 1, 2), 23], [gd(2012, 1, 3), 66], [gd(2012, 1, 4), 9], [gd(2012, 1, 5), 119], [gd(2012, 1, 6), 6], [gd(2012, 1, 7), 9]];
-            $("#canvas_dahs").length && $.plot($("#canvas_dahs"), [
-                data1, data2
-            ], {
-                series: {
-                    lines: {
-                        show: false,
-                        fill: true
+              <script>
+             /* window.onload = function(){
+                 var ctx = document.getElementById("myChart");
+                    var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                        datasets: [{
+                            label: '% de réussite',
+                            data: [12, 19, 3, 5, 2, 3]
+                        }]
                     },
-                    splines: {
-                        show: true,
-                        tension: 0.4,
-                        lineWidth: 1,
-                        fill: 0.4
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+              }*/
+
+
+function callGraph(idmooc){
+    alert(idmooc);
+    var ctx = document.getElementById("myChart");
+    $.ajax({
+                 type: "POST",
+                 url: "../includes/requestgraph.php",
+                 data: { data:idmooc },
+                 success: function(data) {
+                    alert("success");
+
+                    //Get context with jQuery - using jQuery's .get() method.
+                    $(".removechart").html('<canvas id="myChart" height="200" width="400" ></canvas>');
+                    // reinit canvas
+                   
+                    var ctx = $("#myChart");
+                     
+                    //This will get the first returned node in the jQuery collection.
+                     var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                        datasets: [{
+                            label: '% de réussite',
+                            data: data
+                        }]
                     },
-                    points: {
-                        radius: 0,
-                        show: true
-                    },
-                    shadowSize: 2
-                },
-                grid: {
-                    verticalLines: true,
-                    hoverable: true,
-                    clickable: true,
-                    tickColor: "#d5d5d5",
-                    borderWidth: 1,
-                    color: '#fff'
-                },
-                colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
-                xaxis: {
-                    tickColor: "rgba(51, 51, 51, 0.06)",
-                    mode: "time",
-                    tickSize: [1, "day"],
-                    //tickLength: 10,
-                    axisLabel: "Date",
-                    axisLabelUseCanvas: true,
-                    axisLabelFontSizePixels: 12,
-                    axisLabelFontFamily: 'Verdana, Arial',
-                    axisLabelPadding: 10
-                        //mode: "time", timeformat: "%m/%d/%y", minTickSize: [1, "day"]
-                },
-                yaxis: {
-                    ticks: 8,
-                    tickColor: "rgba(51, 51, 51, 0.06)",
-                },
-                tooltip: false
-            });
-            function gd(year, month, day) {
-                return new Date(year, month - 1, day).getTime();
-            }
-        });
-    </script>
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
 
-    <!-- skycons -->
-    <script src="../assets/js/skycons/skycons.js"></script>
-    <script>
-        var icons = new Skycons({
-                "color": "#73879C"
-            }),
-            list = [
-                "clear-day", "clear-night", "partly-cloudy-day",
-                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                "fog"
-            ],
-            i;
-        for (i = list.length; i--;)
-            icons.set(list[i], list[i]);
-        icons.play();
-    </script>
+                } 
+              
+            });
+}
+              
+   
+        </script>
 
-    <!-- dashbord linegraph -->
-    <script>
-        var doughnutData = [
-            {
-                value: 30,
-                color: "#455C73"
-            },
-            {
-                value: 30,
-                color: "#9B59B6"
-            },
-            {
-                value: 60,
-                color: "#BDC3C7"
-            },
-            {
-                value: 100,
-                color: "#26B99A"
-            },
-            {
-                value: 120,
-                color: "#3498DB"
-            }
-    ];
-        //var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
-    </script>
-    <!-- /dashbord linegraph -->
-
-
-  <script>
-        // initialize the validator function
-        validator.message['date'] = 'not a real date';
-        // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-        $('form')
-            .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-            .on('change', 'select.required', validator.checkField)
-            .on('keypress', 'input[required][pattern]', validator.keypress);
-        $('.multi.required')
-            .on('keyup blur', 'input', function () {
-                validator.checkField.apply($(this).siblings().last()[0]);
-            });
-        // bind the validation to the form submit event
-        //$('#send').click('submit');//.prop('disabled', true);
-        /* Mis en commenataire car utilisation de jqueryvalidator
-        $('form').submit(function (e) {
-            e.preventDefault();
-            var submit = true;
-            // evaluate the form using generic validaing
-            if (!validator.checkAll($(this))) {
-                submit = false;
-            }
-            if (submit)
-                this.submit();
-            return false;
-        });*/
-    
-    </script>
-
-    <!-- datepicker -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var cb = function (start, end, label) {
-                console.log(start.toISOString(), end.toISOString(), label);
-                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                //alert("Callback has fired: [" + start.format('MMMM D, YYYY') + " to " + end.format('MMMM D, YYYY') + ", label = " + label + "]");
-            }
-            var optionSet1 = {
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment(),
-                minDate: '01/01/2012',
-                maxDate: '12/31/2015',
-                dateLimit: {
-                    days: 60
-                },
-                showDropdowns: true,
-                showWeekNumbers: true,
-                timePicker: false,
-                timePickerIncrement: 1,
-                timePicker12Hour: true,
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                },
-                opens: 'left',
-                buttonClasses: ['btn btn-default'],
-                applyClass: 'btn-small btn-primary',
-                cancelClass: 'btn-small',
-                format: 'MM/DD/YYYY',
-                separator: ' to ',
-                locale: {
-                    applyLabel: 'Submit',
-                    cancelLabel: 'Clear',
-                    fromLabel: 'From',
-                    toLabel: 'To',
-                    customRangeLabel: 'Custom',
-                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                    firstDay: 1
-                }
-            };
-            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
-            $('#reportrange').daterangepicker(optionSet1, cb);
-            $('#reportrange').on('show.daterangepicker', function () {
-                console.log("show event fired");
-            });
-            $('#reportrange').on('hide.daterangepicker', function () {
-                console.log("hide event fired");
-            });
-            $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
-                console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
-            });
-            $('#reportrange').on('cancel.daterangepicker', function (ev, picker) {
-                console.log("cancel event fired");
-            });
-            $('#options1').click(function () {
-                $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
-            });
-            $('#options2').click(function () {
-                $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
-            });
-            $('#destroy').click(function () {
-                $('#reportrange').data('daterangepicker').remove();
-            });
-        });
-    </script>
-
-    <!-- /datepicker -->
     <!-- /footer content -->
 </body>
 
