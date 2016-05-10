@@ -997,48 +997,61 @@ $.validator.addMethod("mailRegex", function(value, element) {
               }*/
 
 
-function callGraph(idmooc){
-    alert(idmooc);
-    var ctx = document.getElementById("myChart");
-    $.ajax({
-                 type: "POST",
-                 url: "../includes/requestgraph.php",
-                 data: { data:idmooc },
-                 success: function(data) {
-                    alert("success");
+    function callGraph(idmooc){
+    //alert(idmooc);
+        var ctx = document.getElementById("myChart");
+        $.ajax({
+                     type: "POST",
+                     url: "../includes/requestgraph.php",
+                     dataType: 'json',
+                     data: { data:idmooc },
+                     success: function(data) {
+                        alert("success");
+                        //alert(data);
+                        console.log(data); // REGARDER DEBUG
+                        console.log(data[0]['titre']); // EXEMPLE
+                        
+                        //http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
+                        //http://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
 
-                    //Get context with jQuery - using jQuery's .get() method.
-                    $(".removechart").html('<canvas id="myChart" height="200" width="400" ></canvas>');
-                    // reinit canvas
-                   
-                    var ctx = $("#myChart");
-                     
-                    //This will get the first returned node in the jQuery collection.
-                     var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                        datasets: [{
-                            label: '% de réussite',
-                            data: data
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero:true
-                                }
+
+
+                        //Get context with jQuery - using jQuery's .get() method.
+                        $(".removechart").html('<canvas id="myChart" height="200" width="400" ></canvas>');
+                        // reinit canvas
+                       
+                        var ctx = $("#myChart");
+                         
+                        //This will get the first returned node in the jQuery collection.
+                         var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                            datasets: [{
+                                label: '% de réussite',
+                                data: data
                             }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero:true
+                                    }
+                                }]
+                            }
                         }
-                    }
-                });
+                    });
 
-                } 
-              
-            });
-}
-              
+                    } 
+                  
+                });
+    }
+
+
+
+
+     
    
         </script>
 
