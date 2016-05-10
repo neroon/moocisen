@@ -81,7 +81,7 @@
   <header class="site-header">
   <div class="aux cf">
     <h2 class="site-header__title">
-      <a class="site-header__root-link" href="index2.php">
+      <a class="site-header__root-link" href="../../index2.php">
         <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>
@@ -504,7 +504,7 @@
   <script src="../../scripts/not-connected/inscription.js"></script>
 
   <!-- jquery -->
-  <script src="../../scripts/jquery.js"></script>
+  <script src="../../scripts/jquery/jquery.js"></script>
 
   <!-- Validation -->
   <script src="../../scripts/jqueryvalidate/jquery.validate.min.js"></script>
@@ -513,8 +513,7 @@
   <script type="text/javascript">
 
     // --------------- REGEX --------------------
-    $.validator.addMethod("usernameRegex", function(value, element) {
-      return this.optional(element) || /^[a-z\u00E0-\u00FC_.+-]+$/i.test(value);
+    $.validator.addMethod("usernameRegex", function(value, element){return this.optional(element) || /^[a-z\u00E0-\u00FC_.+-]+$/i.test(value);
     });
 
     $.validator.addMethod("mailRegex", function(value, element) {
