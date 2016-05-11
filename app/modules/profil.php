@@ -975,7 +975,7 @@ $.validator.addMethod("mailRegex", function(value, element) {
     <script>
     
     function callGraph(idmooc){
-    //alert(idmooc);
+        //alert(idmooc);
         var ctx = document.getElementById("myChart");
         $.ajax({
                      type: "POST",
@@ -985,7 +985,7 @@ $.validator.addMethod("mailRegex", function(value, element) {
                      success: function(data) {
                         alert("success");
                         //alert(data);
-                        //console.log(data); // REGARDER DEBUG
+                        console.log(data); // REGARDER DEBUG
                         console.log(data[0]['titre']); // EXEMPLE
                         var titles = new Array();
                         data.forEach(function(elem,index){
@@ -994,8 +994,6 @@ $.validator.addMethod("mailRegex", function(value, element) {
                         
                         //http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
                         //http://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
-
-
 
                         //Get context with jQuery - using jQuery's .get() method.
                         $(".removechart").html('<canvas id="myChart" height="200" width="400" ></canvas>');
