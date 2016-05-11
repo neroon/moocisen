@@ -972,31 +972,8 @@ $.validator.addMethod("mailRegex", function(value, element) {
     <script type="text/javascript" src="../assets/js/flot/curvedLines.js"></script>
     <script type="text/javascript" src="../assets/js/flot/jquery.flot.resize.js"></script>
 
-              <script>
-             /* window.onload = function(){
-                 var ctx = document.getElementById("myChart");
-                    var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                        datasets: [{
-                            label: '% de réussite',
-                            data: [12, 19, 3, 5, 2, 3]
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero:true
-                                }
-                            }]
-                        }
-                    }
-                });
-              }*/
-
-
+    <script>
+    
     function callGraph(idmooc){
     //alert(idmooc);
         var ctx = document.getElementById("myChart");
@@ -1008,8 +985,12 @@ $.validator.addMethod("mailRegex", function(value, element) {
                      success: function(data) {
                         alert("success");
                         //alert(data);
-                        console.log(data); // REGARDER DEBUG
+                        //console.log(data); // REGARDER DEBUG
                         console.log(data[0]['titre']); // EXEMPLE
+                        var titles = new Array();
+                        data.forEach(function(elem,index){
+                            titles[index] = elem.titre;
+                        })
                         
                         //http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
                         //http://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
@@ -1026,7 +1007,7 @@ $.validator.addMethod("mailRegex", function(value, element) {
                          var myChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                            labels: titles,
                             datasets: [{
                                 label: '% de réussite',
                                 data: data
