@@ -67,7 +67,7 @@
                 </ul>
               </div>
               <div class="mdl-card__actions mdl-card--border">
-                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Modifier</a>
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect"></a>
               </div>
             </div>
             </div>
@@ -81,10 +81,10 @@
        <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__title v2 mdl-card--expand mdl-color--grey-300">
-                <h2 class="mdl-card__title-text">Hors Connexion</h2>
+                <h2 class="mdl-card__title-text">Détails</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                Veuillez vous connecter
+                Selectionner une personne
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Connexion</a>
@@ -118,9 +118,13 @@
                     Historique des connexions
                   </span>
                 </li>
-              </ul>';
-              for($i = 0; $i < sizeof($lignes3) ; $i++){
-              echo '     <ul class="demo-list-three mdl-list">
+              </ul><div id="" style="overflow-y: scroll; height:500px;">'; //debut scrool
+              for($i = 0; $i < sizeof($lignes3); $i++){
+              echo '     
+
+
+
+              <ul class="demo-list-three mdl-list">
                           <li class="mdl-list__item mdl-list__item--three-line">
                             <span class="mdl-list__item-primary-content">
                               <i class="material-icons mdl-list__item-avatar">person</i>
@@ -134,9 +138,10 @@
                               <a class="mdl-list__item-secondary-action mdl-navigation__link" href="?id='.$lignes3[$i]["id_user"].'"><i class="material-icons">star</i></a>
                             </span>
                           </li>
-                        </ul>';
+                        </ul>
+                        ';
               } //fin for
-          echo ' 
+          echo ' </div> 
             </div>
           </div>';
           
@@ -249,7 +254,7 @@
               <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                 <a class="mdl-navigation__link" href="../includes/logout.php"><li class="mdl-menu__item">Déconnexion<i class="material-icons">add</i></li></a>
+                 <a class="mdl-navigation__link" href="../includes/logout.php"><li class="mdl-menu__item">Déconnexion<i class="material-icons">exit_to_app</i></li></a>
             </ul>
           </div>
         </header>
@@ -336,7 +341,7 @@
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Home</span>
+          <span class="mdl-layout-title">Dashboard</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -379,10 +384,9 @@
 
 
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">Acceuil</i>Home</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
+          <a class="mdl-navigation__link" href="../../"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Accueil</a>
+          <a class="mdl-navigation__link" href="../catalogue.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Catalogue</a>
+          <a class="mdl-navigation__link" href="../profil.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profil</a>
 
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
@@ -408,7 +412,7 @@
           </div>-->
 
 
-
+<!--
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
@@ -420,6 +424,13 @@
               <div class="mdl-card__actions mdl-card--border">
                 <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Read More</a>
               </div>
+            </div>
+          </div>
+-->
+
+          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <canvas id="myChart" width="400" height="400"></canvas>
             </div>
           </div>
 
@@ -485,6 +496,59 @@
         </defs>
       </svg>-->
       <a href="" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Profil</a>
+    
+     <!-- jQuery -->
+    <script src="../../assets/js/jquery.js"></script>
+    <!-- chart js -->
+    <script src="../../assets/js/chartjs/Chart.js"></script>
     <script src="../../scripts/material.min.js"></script>
+
+
+
+    <script type="text/javascript">
+    var ctx = document.getElementById("myChart");
+
+    var mydata = {
+        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        datasets: [
+            {
+                label: "My First dataset",
+                backgroundColor: "rgba(179,181,198,0.2)",
+                borderColor: "rgba(179,181,198,1)",
+                pointBackgroundColor: "rgba(179,181,198,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(179,181,198,1)",
+                data: [65, 59, 90, 81, 56, 55, 40]
+            },
+            {
+                label: "My Second dataset",
+                backgroundColor: "rgba(255,99,132,0.2)",
+                borderColor: "rgba(255,99,132,1)",
+                pointBackgroundColor: "rgba(255,99,132,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(255,99,132,1)",
+                data: [28, 48, 40, 19, 96, 27, 100]
+            }
+        ]
+    };
+
+
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: mydata,
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+
+    </script>
   </body>
 </html>
