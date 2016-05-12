@@ -234,16 +234,12 @@
 	function afficheChapitreExos($idMooc,$idChapitre,$bdd,$numeroExercice)
 	{
 		try{
-			//$idChapitre = idParNumeroChapitre($idMooc,$bdd,0); // indice 0 pour le premier chapitre
 			if($idChapitre != -1) // -1 signifie que le chapitre n'existe pas
 			{	
 				$idExercice = idParNumeroExo($idMooc,$idChapitre,$bdd,$numeroExercice); // -1 signifie que l'exercice n'existe pas
 				if($idExercice != -1)
 				{
 					exoQcm($idMooc,$idChapitre,$idExercice,$bdd,$numeroExercice);
-					exoDragDrop($idMooc,$idChapitre,$idExercice,$bdd,$numeroExercice);
-					
-					
 				}
 				else{
 					return -1;
