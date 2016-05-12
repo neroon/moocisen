@@ -90,7 +90,6 @@ body{
     /*height: 100%;*/
     /*overflow-x: hidden;*/ /* Pour désactiver le scroll vertical */ 
     /*margin-right: -14px !important;*/
-   
     overflow-x: scroll;
     overflow-x: hidden; /* hide scrollbar horizontal */
 
@@ -105,8 +104,7 @@ div label input {
 body {
     font-family:sans-serif;
 }
-
-#ck-button {
+.ck-button {
     margin:4px;
     background-color:#EFEFEF;
     border-radius:4px;
@@ -114,34 +112,28 @@ body {
     overflow:auto;
     float:left;
 }
-
-#ck-button label {
+.ck-button label {
     float:left;
     width:4.0em;
 }
-
-#ck-button label span {
+.ck-button label span {
     text-align:center;
     padding:3px 0px;
     display:block;
     border-radius:4px;
 }
-
-#ck-button label input {
+.ck-button label input {
     position:absolute;
     top:-20px;
 }
-
-#ck-button input:hover + span {
-    background-color:#efE0E0;
+.ck-button input:hover + span {
+    background-color:#2c3e50;
 }
-
-#ck-button input:checked + span {
-    background-color:#911;
+.ck-button input:checked + span {
+    background-color:#2c3e50;
     color:#fff;
 }
-
-#ck-button input:checked:hover + span {
-    background-color:#c11;
+.ck-button input:checked:hover + span {
+    background-color:#2c3e50;
     color:#fff;
 }

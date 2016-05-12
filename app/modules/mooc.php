@@ -73,6 +73,7 @@ if(isset($_GET['idM'])) {
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
+
     <link href="../assets/fonts/css/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/animate.min.css" rel="stylesheet">
 
@@ -366,7 +367,7 @@ if(isset($_GET['idM'])) {
                     axisLabel: "Date",
                     axisLabelUseCanvas: true,
                     axisLabelFontSizePixels: 12,
-                    axisLabelFontFamily: 'Verdana, Arial',
+                    axisLabelFontFamily: 'Verdana',
                     axisLabelPadding: 10
                         //mode: "time", timeformat: "%m/%d/%y", minTickSize: [1, "day"]
                 },
@@ -791,6 +792,8 @@ $("ol.simple_with_animation").sortable({
 });
 
     </script>
+
+
     <!-- /datepicker -->
     <!-- /footer content -->
 </body>

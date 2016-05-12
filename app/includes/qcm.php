@@ -35,7 +35,21 @@
 					//var_dump($tabHint);
 					//echo sizeof($tabHint);
 					//echo "**".$tabHint[$itab];
-					$tabSolution[$numCaseTab]=$tabHint[$itab];
+					//print_r("**".$tabHint[$itab]);
+					//obligatoire si plusieurs reponse de meme nom
+					$lowercase = strtolower($tabHint[$itab]);
+					if($lowercase == 'oui'){
+						$tabSolution[$numCaseTab]=$tabHint[$itab].$i; //rajoute $i si doublon
+						//print_r("+*".$tabSolution[$numCaseTab]);
+					}else if($lowercase == 'non'){
+						$tabSolution[$numCaseTab]=$tabHint[$itab].$i; //rajoute $i si doublon
+						//print_r("-*".$tabSolution[$numCaseTab]);
+					}
+					else{
+						$tabSolution[$numCaseTab]=$tabHint[$itab];
+						//print_r("-*".$tabSolution[$numCaseTab]);
+					}
+						
 					$numCaseTab++;
 				}
 			}
@@ -50,7 +64,7 @@
 			//echo 'tab réponse='.$tabSolution;
 			//Réponse présent
 			//echo "<input type='hidden' class='soluce' name='zyx' value='".implode(",", $tabSolution)."'/>";
-			echo '<input type="hidden" class="soluce" name="zyx" value="'.implode(",", $temp).'"/>';
+			echo '<input type="input" class="soluce" name="zyx" value="'.implode(",", $temp).'"/>';
 			//echo "<input type='hidden' id='idexo' name='nameexo' value='".$tabSolution."'/>";
 			//echo '<div id="solucebox"></div>'; //affichage sur show
 			/*if(isset($idMooc) && isset($_GET['idC'])){
@@ -79,21 +93,21 @@
 				
 								for($itab = 0; $itab < sizeof($tab) ; $itab++)
 								{ 
-									if($tab[$itab] == "oui" || $tab[$itab] == "non")
+									if( strtolower($tab[$itab]) == "oui" ||  strtolower($tab[$itab]) == "non")
 									{
-										if($tab[$itab] == "oui")
+										if( strtolower($tab[$itab]) == "oui")
 										{
-										echo'<div id="ck-button">
+										echo'<div class="ck-button">
 											   <label>
-												  <input type="checkbox" name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
+												  <input type="checkbox" name="'.$tab[$itab].$i.'" value=""><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div>';
 										}
-										else if($tab[$itab] == "non")
+										else if( strtolower($tab[$itab]) == "non")
 										{
-										echo'<div id="ck-button">
+										echo'<div class="ck-button">
 											   <label>
-												  <input type="checkbox"name="'.$tab[$itab].'" value="1"><span>'.$tab[$itab].'</span> 
+												  <input type="checkbox"name="'.$tab[$itab].$i.'" value=""><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div><br>';
 										}

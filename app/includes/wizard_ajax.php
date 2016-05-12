@@ -129,8 +129,8 @@ function compareTab($strChoix, $strSoluce){
 
 
     $compteur = 0; //nombre de bonne réponse
-    $sizeArraySoluce = count($strJsonSoluce);
-    $sizeArrayChoix = count($strJsonChoix);
+    $sizeArraySoluce = count($strJsonSoluce); //nb de solution
+    $sizeArrayChoix = count($strJsonChoix);  //nb de choix
     $lePourcentage = 0;
     //echo '<br>taille'.$sizeArraySoluce;
 
@@ -143,7 +143,9 @@ function compareTab($strChoix, $strSoluce){
         }
     }
 
-    if($sizeArraySoluce==$compteur &&  $sizeArraySoluce==$sizeArrayChoix){
+    if($sizeArrayChoix==0){
+          echo 'aucun choix';
+    }else if($sizeArraySoluce==$compteur &&  $sizeArraySoluce==$sizeArrayChoix){
         echo '100% juste';
         $lePourcentage = 100;
     }else if($sizeArraySoluce==$compteur && $sizeArraySoluce<$sizeArrayChoix){
@@ -156,12 +158,22 @@ function compareTab($strChoix, $strSoluce){
        $lePourcentage = ($sizeArrayChoix/$sizeArraySoluce)*100;
     }else if($sizeArraySoluce>$compteur){
         echo $compteur.' réponse(s) juste sur '.$sizeArraySoluce;
-        if($sizeArrayChoix==0)
+       /*if($sizeArrayChoix==0)
             $sizeArrayChoix=0.1;
-        $lePourcentage = (($compteur/$sizeArraySoluce)*100)/(($sizeArrayChoix/$sizeArraySoluce)); //sort 100 si aucun choix different
+            $lePourcentage = (($compteur/$sizeArraySoluce)*100)/(($sizeArrayChoix/$sizeArraySoluce)); //sort 100 si aucun choix different
+            echo 'ici';
         if($lePourcentage==100){
             $lePourcentage = (($sizeArrayChoix/$sizeArraySoluce)*100);
-        }
+        }*/
+
+      // $lePourcentage=(($compteur*100)/$sizeArraySoluce);
+       if($compteur!=$sizeArrayChoix){
+            //malus 1 réponse fausse = (100*le nb de faux) / nb de soulution
+            $lePourcentage=(($compteur*100)/$sizeArraySoluce) - (100*($sizeArrayChoix-$compteur)/$sizeArraySoluce); 
+       }else{
+            //pas de reponse fausse
+            $lePourcentage=(($compteur*100)/$sizeArraySoluce);
+       }
     }else{
         echo 'trop de réponse';
         $lePourcentage = ($sizeArraySoluce/$compteur)*100;
