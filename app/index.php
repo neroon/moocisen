@@ -130,8 +130,8 @@
                         <h1>Présentation</h1>
                         <p>Voici une vidéo de présentation de ce notre site</p>
                         <!-- iframe-responsive.css full css -->
-                        <div class="videocontainer"> 
-                         <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" allowfullscreen></iframe>
+                        <div class="videocontainer r1"> 
+                            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

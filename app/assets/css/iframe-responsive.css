@@ -10,6 +10,12 @@
 .videocontainer.r1{
   padding-bottom: 100%;
 }
+
+/* pour les video lg-6*/
+.videocontainer.lg6{
+	width: 100%;
+  	padding: 30%;
+}
 .videocontainer iframe, .videocontainer embed, .videocontainer object{
   width: 100%!important; height: 100%!important;
   position: absolute;
