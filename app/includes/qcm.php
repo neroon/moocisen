@@ -41,13 +41,16 @@
 			}
 			//var_dump($tabSolution);
 			//Type hidden qui correpond au reponse pour le qcm
+			//$temp = $tabSolution;
+			$temp = preg_replace("/\s+/","", $tabSolution );
+			//print_r($temp);
 
 			//$tabSolution=implode(",",$tabSolution);
 			//$tabSolution=json_encode($tabSolution);
 			//echo 'tab réponse='.$tabSolution;
 			//Réponse présent
 			//echo "<input type='hidden' class='soluce' name='zyx' value='".implode(",", $tabSolution)."'/>";
-			echo '<input type="hidden" class="soluce" name="zyx" value="'.implode(",", $tabSolution).'"/>';
+			echo '<input type="hidden" class="soluce" name="zyx" value="'.implode(",", $temp).'"/>';
 			//echo "<input type='hidden' id='idexo' name='nameexo' value='".$tabSolution."'/>";
 			//echo '<div id="solucebox"></div>'; //affichage sur show
 			/*if(isset($idMooc) && isset($_GET['idC'])){
@@ -98,7 +101,7 @@
 									else{
 										echo '<div class="checkbox center">
 											<label class="hover">
-												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.$tab[$itab].'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
+												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.preg_replace("/\s+/","",$tab[$itab]).'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
 												'.$tab[$itab].'<br>
 											</label>
 										</div>';
