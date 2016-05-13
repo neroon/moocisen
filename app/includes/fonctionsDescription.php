@@ -109,6 +109,7 @@ function getInfos()
 					<br>
 						<div class="">
 							<a href="mooc.php?idM='.$idMooc.'&insert='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-warning">Accéder au cours</button> </a>
+							
 						</div>
 				</div>';
 			}else{
@@ -118,6 +119,8 @@ function getInfos()
 					<div class="">
 						<a href="mooc.php?idM='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-info">Accéder au cours</button> </a>
 					</div>
+
+					
 				</div>
 				';
 
@@ -191,17 +194,17 @@ function getInfo3MDL(){
                         </div>
                     </div>';
 
-                    if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
+            if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
 				echo'
-					<div class="mdl-card__actions mdl-card--border">
-            			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent"  href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'" data-upgraded=",MaterialButton,MaterialRipple">Inscription au cours<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 231.167px; height: 231.167px; transform: translate(-50%, -50%) translate(61px, 7px);"></span></span></a>
-        			</div>
+    			 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="height: 80px;">
+				  			<a href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'">Inscription au cours</a>
+					</button>
 				';
 			}else{
 				echo '
-					<div class="mdl-card__actions mdl-card--border">
-                		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="../mooc.php?idM='.$idMooc.'" data-upgraded=",MaterialButton,MaterialRipple">Accéder au cours<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 231.167px; height: 231.167px; transform: translate(-50%, -50%) translate(61px, 7px);"></span></span></a>
-            		</div>
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="height: 80px;">
+					  		<a href="../mooc.php?idM='.$idMooc.'">Inscription au cours</a>
+					</button>
 				';
 
 			}
