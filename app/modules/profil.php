@@ -984,12 +984,17 @@ $.validator.addMethod("mailRegex", function(value, element) {
                      data: { data:idmooc },
                      success: function(data) {
                         alert("success");
-                        //alert(data);
-                        console.log(data); // REGARDER DEBUG
-                        console.log(data[0]['titre']); // EXEMPLE
+                        //console.log(data); // REGARDER DEBUG
+                        console.log(data[0][0]["titre"]); // EXEMPLE
+                        console.log(data[1][0]); // EXEMPLE
                         var titles = new Array();
-                        data.forEach(function(elem,index){
+                        data[0].forEach(function(elem,index){
                             titles[index] = elem.titre;
+                        })
+
+                        var pourcentage = new Array();
+                        data[1].forEach(function(elem,index){
+                            pourcentage[index] = elem;
                         })
                         
                         //http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
@@ -1008,7 +1013,7 @@ $.validator.addMethod("mailRegex", function(value, element) {
                             labels: titles,
                             datasets: [{
                                 label: '% de réussite',
-                                data: data
+                                data: pourcentage
                             }]
                         },
                         options: {
