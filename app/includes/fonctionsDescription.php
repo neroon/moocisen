@@ -10,7 +10,67 @@ $valid = 1;
 	echo'erreur methode GET';
 }
  
- 
+function afficheClassementMooc($idMooc,$bdd)
+	{
+		try{
+			$findUser = $bdd->prepare('SELECT suivre.id_user,pseudo FROM suivre INNER JOIN user ON user.id_user=suivre.id_user WHERE id_mooc = "'.$idMooc.'"');
+            $findUser->execute();
+            $resufindUser = $findUser->fetchAll();
+
+            $classement = array();
+
+            for($j=0;$j<sizeof($resufindUser);$j++){
+            	 $scoreMooc = $bdd->query('SELECT sum(score) AS score FROM faire WHERE id_user= "'.$resufindUser[$j]["id_user"].'" AND id_exercice IN (SELECT id_exercice FROM mooc INNER JOIN chapitre ON mooc.id_mooc = chapitre.id_mooc INNER JOIN exercice ON chapitre.id_chapitre=exercice.id_chapitre WHERE mooc.id_mooc = "'.$idMooc.'")');
+                $donnees4 = $scoreMooc->fetch();
+                $scoreMooc->closeCursor();
+
+                $classement[$j][0] = $donnees4["score"];
+                $classement[$j][1] = $resufindUser[$j]["pseudo"];
+            }
+
+            rsort($classement);
+
+            echo 'Classement <br> <br>';
+
+            if(sizeof($resufindUser) <=5){
+
+	            for($i=0;$i<sizeof($classement);$i++){
+
+	            	echo $classement[$i][1];
+	                echo '  ';
+	                if($classement[$i][0]==NULL){
+	                	echo'0';
+	                }
+	                else {
+	                	echo $classement[$i][0];
+	                }
+	                echo '<br><br>';
+	            }
+        	}
+        	else{
+
+        		for($i=0;$i<5;$i++){
+
+	            	echo $classement[$i][1];
+	                echo '  ';
+	                if($classement[$i][0]==NULL){
+	                	echo'0';
+	                }
+	                else {
+	                	echo $classement[$i][0];
+	                }
+	                echo '<br><br>';
+	            }
+        	}
+
+		}
+		catch (Exception $e) { 
+			echo $e->errorMessage();
+  			echo "->erreur afficheClassementMooc()";
+		}
+		
+	}
+
 function getInfos()
 {
 	global $idMooc;
@@ -97,4 +157,5 @@ if($valid==1){
 	getInfos2();
 	//echo "okok";
 }
+
 ?>

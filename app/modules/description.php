@@ -1,6 +1,18 @@
 <?php
     session_start();
     include '../includes/connect.inc.php';
+
+    $idMooc;
+
+if(isset($_GET['idM'])){
+    $idMooc = $_GET['idM'];
+
+    //afficheChapitreExos($idMooc,$idChap,$bdd,0);                                                  
+    //echo $idMooc;
+}else{
+    $valid = 0;
+    echo'erreur';
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -54,6 +66,7 @@
             include '../includes/fonctionsDescription.php'; //Utilisation ici de $_GET['idM']
 	
 			getInfos();
+            afficheClassementMooc($idMooc,$bdd);
         ?>
 
     </div>
