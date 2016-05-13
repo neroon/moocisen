@@ -115,7 +115,11 @@
   </header>
 
   <!-- section -->
-
+  <hgroup>
+    <h1>En construction</h1>
+  </hgroup>
+  <div class="container gears-d3-canvas"></div>
+  
   <!-- footer -->
   <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__middle-section">
@@ -192,6 +196,8 @@
   <script src="../../scripts/material.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.3/d3.min.js'></script>
+  <script src='https://cdn.rawgit.com/liabru/gears-d3-js/master/gears.d3.js'></script>
   <script src="../../scripts/not-connected/contact.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
