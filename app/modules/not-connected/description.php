@@ -1,9 +1,12 @@
 <?php
   session_start();
+  include '../../includes/connect.inc.php';
 
-  if((isset($_SESSION['id_user']))) {
+  /*if((isset($_SESSION['id_user']))) {
     header ("location: ../connected/description.php");
-  }
+  }*/
+
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -34,7 +37,7 @@
   <meta property="robots" content="">
   
   <!-- Title -->
-  <title>Proposer un MOOC | Mooc Isen</title>    
+  <title>Description un MOOC | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -73,7 +76,7 @@
   <link rel="stylesheet" href="../../styles/material.min.css">
 
   <!-- Your styles -->
-  <link rel="stylesheet" href="../../styles/not-connected/proposerCours.css">
+  <link rel="stylesheet" href="../../styles/not-connected/description.css">
 </head>
 <body>
 
@@ -115,6 +118,13 @@
   </header>
 
   <!-- section -->
+
+  <?php
+      include '../../includes/fonctionsDescription.php'; //Utilisation ici de $_GET['idM']
+  ?>
+
+
+
 
   <!-- footer -->
   <footer class="mdl-mega-footer">

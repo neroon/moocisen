@@ -1,10 +1,49 @@
 <?php
   session_start();
+  include '../../includes/connect.inc.php';
 
-  if((isset($_SESSION['id_user']))) {
+  /*if((isset($_SESSION['id_user']))) {
     header ("location: ../connected/catalogue.php");
-  }
-?>
+  }*/
+
+function generateCard($bdd){
+  $id_mooc;
+        $select = $bdd->prepare("SELECT * FROM mooc");
+        $select->execute();
+        $lignes = $select->fetchAll();
+         //echo '+--------';
+        if(sizeof($lignes) == 0){
+            echo 'Aucun MOOC présent';
+        }else{
+          for($i = 0; $i<sizeof($lignes); $i++){
+              $id_mooc = $lignes[$i]["id_mooc"];
+              $select2 = $bdd->prepare("SELECT nom,prenom FROM user INNER JOIN creer ON user.id_user = creer.id_user INNER JOIN mooc ON mooc.id_mooc = creer.id_mooc WHERE creer.id_mooc = $id_mooc");
+              $select2->execute();
+              $lignes2 = $select2->fetchAll();
+
+               echo '
+                 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                    <div class="mdl-card__media mdl-color--teal-400" >
+                        <img class="article-image" src="../../images/employee.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">'.$lignes[$i]["nom_mooc"].'</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        '.$lignes[$i]["matiere"].'
+                        '.$lignes[$i]["description"].'
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent " href="description.php?idM='.$lignes[$i]["id_mooc"].'" data-upgraded=",MaterialButton,MaterialRipple">Description<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+                    </div>
+                </div>
+                ';
+            }
+                
+        }
+    }
+?>  
+
 <!DOCTYPE html>
 <!--
   Material Design Lite
@@ -76,9 +115,6 @@
   <link rel="stylesheet" href="../../styles/not-connected/catalogue.css">
 
 
-  <!-- CSS  -->
-    <link href="../../styles/not-connected/min/plugin-min.css" type="text/css" rel="stylesheet">
-    <link href="../../styles/not-connected/min/custom-min.css" type="text/css" rel="stylesheet" >
 </head>
 <body>
 
@@ -120,104 +156,13 @@
   </header>
 
   <!-- section -->
+  <div class="mdl-grid portfolio-max-width">
+        <!-- boite -->
+        <?php generateCard($bdd); ?>
+         <!--  -->   
+  </div>
 
-  <div class="section scrollspy" id="work">
-    <div class="container">
-        <h2 class="header text_b">Work </h2>
-        <div class="row">
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/project1.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/project2.jpeg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/project3.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/project4.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/project5.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/project6.jpeg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Project Title <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+  
 
   
 
@@ -309,8 +254,5 @@
       ga('send', 'pageview');
   </script>
 
-  <!--  Scripts-->
-    <script src="../../styles/not-connected/min/plugin-min.js"></script>
-    <script src="../../styles/not-connected/min/custom-min.js"></script>
 </body>
 </html>

@@ -153,8 +153,73 @@ function getInfos2()
 	
 }
 
+function getInfo3MDL(){
+	global $idMooc;
+	include 'connect.inc.php';
+	try { 
+		$select = $bdd->prepare("SELECT * FROM mooc WHERE id_mooc = $idMooc ");
+	    $select->execute();
+	    $lignes = $select->fetchAll();
+
+		$scope_nom = $lignes[0]["nom_mooc"];
+		$scope_description = $lignes[0]["description"];
+		$scope_prerequis = $lignes[0]["prerequis"];
+		$scope_duree = $lignes[0]["duree"];
+		$scope_note = $lignes[0]["note"];
+
+		echo '
+		<div class="mdl-grid portfolio-max-width">
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Description</h2>
+                    </div>
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="../../images/promo2.JPG" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        
+                    </div>
+                    <div class="mdl-grid portfolio-copy">
+                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction : '.$scope_nom.'</h3>
+                        <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding">
+                            <p>
+                            '.$scope_description.' '.$scope_prerequis.' '.$scope_duree.'
+                            </p>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <img class="article-image" src="../../images/mooc.png" width="400px" border="0" alt="">
+                        </div>
+                    </div>';
+
+                    if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
+				echo'
+					<div class="mdl-card__actions mdl-card--border">
+            			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent"  href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'" data-upgraded=",MaterialButton,MaterialRipple">Inscription au cours<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 231.167px; height: 231.167px; transform: translate(-50%, -50%) translate(61px, 7px);"></span></span></a>
+        			</div>
+				';
+			}else{
+				echo '
+					<div class="mdl-card__actions mdl-card--border">
+                		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="../mooc.php?idM='.$idMooc.'" data-upgraded=",MaterialButton,MaterialRipple">Accéder au cours<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 231.167px; height: 231.167px; transform: translate(-50%, -50%) translate(61px, 7px);"></span></span></a>
+            		</div>
+				';
+
+			}
+               echo'
+                </div>
+                
+            </div>
+            ';
+	} catch (Exception $e) { 
+		echo $e->errorMessage();
+  		echo "->erreur getInfos2()";
+	}
+	
+
+}
+
 if($valid==1){
-	getInfos2();
+	getInfo3MDL();
 	//echo "okok";
 }
 
