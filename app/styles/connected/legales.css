@@ -1,0 +1,47 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+Note: any .css or .scss files included in the 'styles' directory
+will be correctly compiled during `gulp serve` and `gulp`
+ */
+
+hgroup { 
+	text-align:center;
+	margin-top: 4em;
+}
+
+h1, h3 { font-weight: 300; }
+
+h1 { color: #009688; }
+
+h3 { color: #009688; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.gears-d3-canvas svg {
+  max-width: 100%;
+  max-height: 768px;
+}
+
+.style-0 path { fill: #00A0B0; }
+.style-1 path { fill: #6A4A3C; }
+.style-2 path { fill: #CC333F; }
+.style-3 path { fill: #EB6841; }
+.style-4 path { fill: #EDC951; }
