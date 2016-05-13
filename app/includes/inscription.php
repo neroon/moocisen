@@ -4,7 +4,6 @@ include "connect.inc.php";  /// Connection bdd
 //echo "inscription.php";
 
 
-
 //ok=1   ko=0
 function formValid(){
 	$verif = 1;
@@ -122,7 +121,7 @@ $verifMail = emailExist();
 $verif = formValid();
 if($verifMail==1){
 	echo '<br>Mail déjà present';
-	header("Location: ../modules/inscription.php?erreur mail deja present");
+	header("Location: ../modules/not-connected/inscription.php?erreur=mail deja present");
 }else if($verif==1){
 	insertUsertoBDD();
 	//Mettre startSession();
@@ -131,7 +130,7 @@ if($verifMail==1){
 }
 else{
 	echo '<br>wrong form';
-	header("Location: ../modules/inscription.php?erreur formulaire");
+	header("Location: ../modules/not-connected/inscription.php?erreur= erreur formulaire");
 }
 
 ?>

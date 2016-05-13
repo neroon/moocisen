@@ -1,15 +1,6 @@
 <?php
-include "connect.inc.php";  /// Connection bdd
+include "connect.inc.php";
 
-
-/*
-	Page Login lance la session 
-	$_SESSION['login'] = $result[0]['email'];
-    $_SESSION['pseudo'] = $result[0]['pseudo'];
-    $_SESSION['id_user'] = $result[0]['id_user'];
-*/
-
-//ok=1   ko=0
 function formValid(){
 	$verif = 1;
 	if (isset($_POST['email'])) {
@@ -51,7 +42,7 @@ function formValid(){
 
 
 	if (empty($result)) {
-  		header ("location: ../modules/inscription.php?erreur=Aucun compte");
+  		header ("location: ../modules/not-connected/connexion.php?erreur=Aucun compte");
 	}else if($result[0]['email']==$email && $result[0]['password']==$valPassword){
 		session_start();
         $_SESSION['login'] 		= $result[0]['email'];
@@ -68,11 +59,11 @@ function formValid(){
         include "insert_log.php";
         //--------------------------------------
 
-      	header('location: ../connected/index.php');
+      	header('location: ..modules/connected/catalogue.php');
 	}else if($result[0]['email']==$email && $result[0]['password']!=$valPassword){
-		header ("location: ../modules/inscription.php?erreur=Mot de passe faux");
+		header ("location: ../modules/not-connected/connexion.php?erreur=Mot de passe faux");
 	}else{
-		header ("location: inscription.php?erreur=Erreur de saisie");
+		header ("location: ../modules/not-connected/connexion.php?erreur=Erreur de saisie");
 	}
 	
 

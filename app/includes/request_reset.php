@@ -96,7 +96,7 @@ function sendEmail($urlLink){
       <body>
        <p>Voici votre le lien pour le nouveau mot de passe</p>
        Email : '.$email_address.'<br>
-       URL: <a href='.$url.'/app/modules/reset_password.php?id='.$urlLink.'>'.$url.'/app/modules/reset_password.php?'.$urlLink.'</a> <br>
+       URL: <a href='.$url.'/app/modules/not-connected/reset_password.php?id='.$urlLink.'>'.$url.'/app/modules/not-connected/reset_password.php?'.$urlLink.'</a> <br>
        '.$message.' <br>
        Sinon vous pouvez vous rendre sur la page "mot de passe oublié" et rentrer le code : '.$code.'<br>
       </body>
@@ -125,7 +125,7 @@ if($verifMail==0){
 	echo '<br>Mail inconnu';
 }else if($verif==1){
 	$urlResetPwd=updateIdResetPwd();
-	echo '<br>Url a envoyer = '.$url.'/moocisen/app/modules/reset_password.php?id='.$urlResetPwd;
+	echo '<br>Url a envoyer = '.$url.'/moocisen/app/modules/not-connected/reset_password.php?id='.$urlResetPwd;
 	sendEmail($urlResetPwd); // envoie de l'email
 	header ("location: ../index.php?ok=mdp envoye");
 }
