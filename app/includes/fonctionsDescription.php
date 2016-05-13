@@ -171,7 +171,7 @@ function getInfo3MDL(){
 		$scope_note = $lignes[0]["note"];
 
 		echo '
-		<div class="mdl-grid portfolio-max-width">
+		<div class="mdl-grid portfolio-max-width animated slideInUp">
                 <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Description</h2>
@@ -185,9 +185,12 @@ function getInfo3MDL(){
                     <div class="mdl-grid portfolio-copy">
                         <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction : '.$scope_nom.'</h3>
                         <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding">
-                            <p>
-                            '.$scope_description.' '.$scope_prerequis.' '.$scope_duree.'
-                            </p>
+                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">  <i class="material-icons">info_outline</i> Description : </h3>
+                            <p>'.$scope_description.'</p>
+                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">  <i class="material-icons">extension</i> Prérequis : </h3>
+                        	 <p>'.$scope_prerequis.'</p>
+						<h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline"> <i class="material-icons">alarm</i> Durée : </h3>
+						 <p>'.$scope_duree.'</p>
                         </div>
                         <div class="mdl-cell mdl-cell--6-col">
                             <img class="article-image" src="../../images/mooc.png" width="400px" border="0" alt="">
@@ -196,19 +199,19 @@ function getInfo3MDL(){
 
             if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
 				echo'
-				<a href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'" style="color: white;">
+				<a href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'" style="margin: 50px;">
     			 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--teal" style="height: 80px;">
-				  			Inscription au cours
+				  			<p style="color: white;">Inscription au cours</p>
 					</button>
-					</a>
+				</a>
 				';
 			}else{
 				echo '
-				<a href="../mooc.php?idM='.$idMooc.'" style="color: white;">
+				<a href="../mooc.php?idM='.$idMooc.'" style="margin: 50px;">
 					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--teal" style="height: 80px;">
-					  		Inscription au cours
+					  		<p style="color: white;">Acceder au cours</p>
 					</button>
-					</a>
+				</a>
 				';
 
 			}

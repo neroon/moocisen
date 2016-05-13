@@ -28,6 +28,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
 
   <meta property="og:title" content="Mooc Isen">
@@ -77,6 +78,9 @@
 
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/not-connected/description.css">
+
+  <!-- animate -->
+  <link rel="stylesheet" href="../../assets/css/animate.css">
 </head>
 <body>
 

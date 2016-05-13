@@ -6,6 +6,24 @@
     header ("location: ../connected/catalogue.php");
   }*/
 
+  function imgCard($string1){
+    $string1 = strtolower($string1);
+
+    //$pos = strpos($string1, $string2); //false = string trouvé dans string
+    if(strpos($string1, "physique")!== false){
+      $nameImg = 'atom.png';
+    }else if(strpos($string1, "cv")!== false){
+      $nameImg = 'doc.png';
+    }else if(strpos($string1, "shell")!== false){
+      $nameImg = 'shell.png';
+    }else if(strpos($string1, "PMI")!== false){
+      $nameImg = 'diploma.png';
+    }else{
+      $nameImg = 'other.png';
+    }
+    return $nameImg;
+  }
+
 function generateCard($bdd){
   $id_mooc;
         $select = $bdd->prepare("SELECT * FROM mooc");
@@ -21,10 +39,12 @@ function generateCard($bdd){
               $select2->execute();
               $lignes2 = $select2->fetchAll();
 
+
+
                echo '
-                 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card animated zoomIn">
                     <div class="mdl-card__media mdl-color--teal-400" >
-                        <img class="article-image" src="../../images/employee.png" border="0" alt="">
+                        <img class="article-image" src="../../images/'.imgCard($lignes[$i]["nom_mooc"]).'" border="0" width="120px" alt="" style="margin: 20px;">
                     </div>
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">'.$lignes[$i]["nom_mooc"].'</h2>
@@ -34,7 +54,7 @@ function generateCard($bdd){
                         '.$lignes[$i]["description"].'
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent " href="description.php?idM='.$lignes[$i]["id_mooc"].'" data-upgraded=",MaterialButton,MaterialRipple">Description<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="description.php?idM='.$lignes[$i]["id_mooc"].'" data-upgraded=",MaterialButton,MaterialRipple">  Description<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
                     </div>
                 </div>
                 ';
@@ -114,6 +134,9 @@ function generateCard($bdd){
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/not-connected/catalogue.css">
 
+    <!-- animate -->
+  <link rel="stylesheet" href="../../assets/css/animate.css">
+
 
 </head>
 <body>
@@ -156,7 +179,7 @@ function generateCard($bdd){
   </header>
 
   <!-- section -->
-  <div class="mdl-grid portfolio-max-width">
+  <div class="mdl-grid portfolio-max-width ">
         <!-- boite -->
         <?php generateCard($bdd); ?>
          <!--  -->   
