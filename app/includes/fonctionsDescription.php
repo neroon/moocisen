@@ -108,7 +108,7 @@ function getInfos()
 				<div class="col-sm-4 col-sm-offset-4 animated zoomIn">
 					<br>
 						<div class="">
-							<a href="mooc.php?idM='.$idMooc.'&insert='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-warning">Accéder au cours</button> </a>
+							<a href="mooc.php?idM='.$idMooc.'&insert='.$idMooc.'"><button name="id" class="btn btn-block btn-md btn-warning">Accéder au cours</button> </a>
 							
 						</div>
 				</div>';
@@ -117,7 +117,7 @@ function getInfos()
 				<div class="col-sm-4 col-sm-offset-4 animated zoomIn">
 				<br>
 					<div class="">
-						<a href="mooc.php?idM='.$idMooc.'"<button name="id" class="btn btn-block btn-md btn-info">Accéder au cours</button> </a>
+						<a href="mooc.php?idM='.$idMooc.'"><button name="id" class="btn btn-block btn-md btn-info">Accéder au cours</button> </a>
 					</div>
 
 					
@@ -176,7 +176,7 @@ function getInfo3MDL(){
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Description</h2>
                     </div>
-                    <div class="mdl-card__media">
+                    <div class="mdl-card__media mdl-color--white">
                         <img class="article-image" src="../../images/promo2.JPG" border="0" alt="">
                     </div>
                     <div class="mdl-card__supporting-text">
@@ -196,15 +196,19 @@ function getInfo3MDL(){
 
             if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
 				echo'
-    			 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="height: 80px;">
-				  			<a href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'">Inscription au cours</a>
+				<a href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'" style="color: white;">
+    			 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--teal" style="height: 80px;">
+				  			Inscription au cours
 					</button>
+					</a>
 				';
 			}else{
 				echo '
-					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="height: 80px;">
-					  		<a href="../mooc.php?idM='.$idMooc.'">Inscription au cours</a>
+				<a href="../mooc.php?idM='.$idMooc.'" style="color: white;">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--teal" style="height: 80px;">
+					  		Inscription au cours
 					</button>
+					</a>
 				';
 
 			}
