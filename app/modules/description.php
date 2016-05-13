@@ -7,8 +7,6 @@
 if(isset($_GET['idM'])){
     $idMooc = $_GET['idM'];
 
-    //afficheChapitreExos($idMooc,$idChap,$bdd,0);                                                  
-    //echo $idMooc;
 }else{
     $valid = 0;
     echo'erreur';
