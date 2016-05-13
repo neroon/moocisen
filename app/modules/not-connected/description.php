@@ -192,7 +192,7 @@
   <script src="../../scripts/material.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="../../scripts/not-connected/proposerCours.js"></script>
+  <script src="../../scripts/not-connected/description.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
