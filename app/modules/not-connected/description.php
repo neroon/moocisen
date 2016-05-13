@@ -34,7 +34,7 @@
   <meta property="robots" content="">
   
   <!-- Title -->
-  <title>Proposer un MOOC | Mooc Isen</title>    
+  <title>Description | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">

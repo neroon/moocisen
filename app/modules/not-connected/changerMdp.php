@@ -34,7 +34,7 @@
   <meta property="robots" content="">
   
   <!-- Title -->
-  <title>Connexion | Mooc Isen</title>    
+  <title>Reinitialiser mot de passe | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -73,7 +73,7 @@
   <link rel="stylesheet" href="../../styles/material.min.css">
 
   <!-- Your styles -->
-  <link rel="stylesheet" href="../../styles/not-connected/connexion.css">
+  <link rel="stylesheet" href="../../styles/not-connected/changerMdp.css">
 </head>
 <body>
 
@@ -116,31 +116,30 @@
 
   <!-- section -->
   <div class="form-box">
-    <div class="head">Connexion</div>   
+    <div class="head">Mot de passe</div>   
 	
-    <form action="../../includes/login.php" method="post" id="myLogin">
+    <form action="../../includes/update_pwd.php" method="post" id="myLogin">
+		<?php 
+			if(isset($_GET['id'])){
+				$id=$_GET['id'];
+				echo ('<span class="label label-default pull-right"><span class="glyphicon glyphicon-lock"></span>  '.$id.'</span>');
+				echo ('<input type="hidden" name="id" value="'.$id.'">'); 
+			} 
+        ?>
         <main class="mdl-layout__content">
-         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input type="email" class="mdl-textfield__input" id="exampleInputEmail1" name="email"/>
-            <label class="mdl-textfield__label" for="exampleInputEmail1">Email</label>
-            <span class="mdl-textfield__error">Email incorrecte</span>
+         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="requestPwd">
+            <input type="password" class="mdl-textfield__input" id="exampleInputPassword1" name="password"/>
+            <label class="mdl-textfield__label" for="exampleInputPassword1">Nouveau mot de passe</label>
+            <span class="mdl-textfield__error">Mot de passe requiert</span>
           </div>
         </main>
 
-        <main class="mdl-layout__content">
-         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input type="password" class="mdl-textfield__input" id="exampleInputPassword1" name="password"/>
-            <label class="mdl-textfield__label" for="exampleInputPassword1">Mot de passe</label>
-            <span class="mdl-textfield__error">Mot de passe requiert</span>
-         </div>
-        </main>
-        <input type="submit" class="btn" value="Connexion"/>
+        <input type="submit" class="btn" value="Modifier"/>
     </form>
-	<p class="text-p"><a href="mdpOublie.php">Mot de passe oublié ?</a></p>
   </div>
   
   </br></br></br></br>
-  
+
   <!-- footer -->
   <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__middle-section">
@@ -215,16 +214,9 @@
 
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>
-  
-  <!-- jquery -->
-  <script src="../../scripts/jquery/jquery.js"></script>
-
-  <!-- Validation -->
-  <script src="../../scripts/jqueryvalidate/jquery.validate.min.js"></script>
-  <script src="../../scripts/jqueryvalidate/additional-methods.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="../../scripts/not-connected/connexion.js"></script>
+  <script src="../../scripts/not-connected/changerMdp.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>

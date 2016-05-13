@@ -61,115 +61,114 @@ V.prototype.collapse=function(a,b){var c=F(this.a,Dc);a=ca(a)?a:!0;b=ca(b)?a:!0;
 V.prototype.expand=function(a,b){var c=F(this.a,Dc);a=ca(a)?a:!0;b=ca(b)?a:!0;this.f&&(this.c.D=E(document.documentElement,"click",p(this.g,this)));I(this.b,W);G(this.b,K);a&&c?U[c].expand(this.a,K,W):(I(this.a,W),G(this.a,K));c=tb(this.a);wc(this.a,c);b&&mb("toggle",Fc,F(this.b,yc))};function Ac(a){a=F(a.a,Gc)||"";var b=wb(window).width;return oa(a.split(" "),function(a){return(a=Hc[String(a).toUpperCase()])&&b>a})}function Ic(){var a=J(Jc);r(a,function(a){new V(a)})}
 var W="is-collapsed",K="is-expanded",Jc="js-toggle",Ec="closed",Fc="open",Dc="toggleAnimation",Bc="hashId",zc="toggleId",yc="toggleTarget",Gc="initiallyExpanded",Hc={PALM:480,TABLET:768,DESKTOP:1024};function Kc(a){nb();Ic();var b={card:kc,faq:uc,home:jc};"undefined"!==typeof a&&b[a]&&b[a].s()}var Lc=["wallet","init"],Z=k;Lc[0]in Z||!Z.execScript||Z.execScript("var "+Lc[0]);for(var Mc;Lc.length&&(Mc=Lc.shift());)Lc.length||void 0===Kc?Z[Mc]?Z=Z[Mc]:Z=Z[Mc]={}:Z[Mc]=Kc;})();
 
-
 // --------------- REGEX --------------------
 $.validator.addMethod("usernameRegex", function(value, element) {
-  return this.optional(element) || /^[a-z\u00E0-\u00FC_.+-]+$/i.test(value);
+	return this.optional(element) || /^[a-z\u00E0-\u00FC_.+-]+$/i.test(value);
 });
 
 $.validator.addMethod("mailRegex", function(value, element) {
-  return this.optional(element) || /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(value);
+	return this.optional(element) || /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i.test(value);
 });
 
 
 // --------------- Formulaire JqueryValidator ---------
 var form = $("#myform");
-form.validate({
-      //prendre le name
-      errorElement: 'span',
-      errorClass: 'help-block',
-      highlight: function(element, errorClass, validClass) {
-        $(element).closest('.form-group').addClass("has-error");
-    },
-    unhighlight: function(element, errorClass, validClass) {
-        $(element).closest('.form-group').removeClass("has-error");
-    },
-    rules: {
-        name: {
-          required: true,
-          usernameRegex: true,
-          minlength: 2,
+    form.validate({
+		//prendre le name
+		errorElement: 'span',
+		errorClass: 'help-block',
+		highlight: function(element, errorClass, validClass) {
+			$(element).closest('.form-group').addClass("has-error");
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).closest('.form-group').removeClass("has-error");
+        },
+        rules: {
+            name: {
+              required: true,
+              usernameRegex: true,
+              minlength: 2,
+          },
+          surname: {
+              required: true,
+              usernameRegex: true,
+              minlength: 2,
+          },
+          pseudo: {
+              required: true,
+              minlength: 2,
+          },
+          password : {
+              required: true,
+              minlength: 4,
+          },
+          city:{
+              required: true,
+          },
+          name: {
+              required: true,
+              usernameRegex: true,
+              minlength: 3,
+          },
+          email: {
+              required: true,
+              mailRegex: true,
+              minlength: 3,
+          },
       },
-      surname: {
-          required: true,
-          usernameRegex: true,
-          minlength: 2,
-      },
-      pseudo: {
-          required: true,
-          minlength: 2,
-      },
-      password : {
-          required: true,
-          minlength: 4,
-      },
-      city:{
-          required: true,
+      messages: {
+        username: {
+          required: "Username required",
       },
       name: {
-          required: true,
-          usernameRegex: true,
-          minlength: 3,
-      },
-      email: {
-          required: true,
-          mailRegex: true,
-          minlength: 3,
-      },
-  },
-  messages: {
-    username: {
-      required: "Username required",
-  },
-  name: {
-      required: "name required",
-  },
-  password : {
-      required: "Password required",
-  },
-  name: {
-      required: "Name required",
-  },
-  email: {
-      required: "Email required",
-  },
-}
-});
-
-// --------------- Login JqueryValidator ---------
-var login = $("#myLogin");
-login.validate({
-      //prendre le name
-      errorElement: 'span',
-      errorClass: 'help-block',
-      highlight: function(element, errorClass, validClass) {
-        $(element).closest('.form-group').addClass("has-error");
-    },
-    unhighlight: function(element, errorClass, validClass) {
-        $(element).closest('.form-group').removeClass("has-error");
-    },
-    rules: {
-        name: {
-          required: true,
-          usernameRegex: true,
-          minlength: 2,
+          required: "name required",
       },
       password : {
-          required: true,
-          minlength: 4,
+          required: "Password required",
+      },
+      name: {
+          required: "Name required",
       },
       email: {
-          required: true,
-          mailRegex: true,
-          minlength: 3,
+          required: "Email required",
       },
-  },
-  messages: {
-    password : {
-        required: "Password required",
-    },
-    email: {
-        required: "Email required",
-    },
- }
-});
+    }
+    });
+
+    // --------------- Login JqueryValidator ---------
+    var login = $("#myLogin");
+    login.validate({
+          //prendre le name
+          errorElement: 'span',
+          errorClass: 'help-block',
+          highlight: function(element, errorClass, validClass) {
+            $(element).closest('.form-group').addClass("has-error");
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).closest('.form-group').removeClass("has-error");
+        },
+        rules: {
+            name: {
+              required: true,
+              usernameRegex: true,
+              minlength: 2,
+          },
+          password : {
+              required: true,
+              minlength: 4,
+          },
+          email: {
+              required: true,
+              mailRegex: true,
+              minlength: 3,
+          },
+      },
+      messages: {
+        password : {
+            required: "Password required",
+        },
+        email: {
+            required: "Email required",
+        },
+     }
+    });

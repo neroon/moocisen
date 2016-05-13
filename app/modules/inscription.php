@@ -108,7 +108,7 @@
                            <fieldset class="form-group">
                               <label for="exampleSelect1">Pays</label>
                               <select class="form-control" id="exampleSelect1" name="selectPays">
-                                 <option value="AF">Afghanistan</option>
+                                  <option value="AF">Afghanistan</option>
                                   <option value="AX">Åland Islands</option>
                                   <option value="AL">Albania</option>
                                   <option value="DZ">Algeria</option>

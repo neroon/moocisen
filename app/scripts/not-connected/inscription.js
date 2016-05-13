@@ -61,43 +61,6 @@ V.prototype.collapse=function(a,b){var c=F(this.a,Dc);a=ca(a)?a:!0;b=ca(b)?a:!0;
 V.prototype.expand=function(a,b){var c=F(this.a,Dc);a=ca(a)?a:!0;b=ca(b)?a:!0;this.f&&(this.c.D=E(document.documentElement,"click",p(this.g,this)));I(this.b,W);G(this.b,K);a&&c?U[c].expand(this.a,K,W):(I(this.a,W),G(this.a,K));c=tb(this.a);wc(this.a,c);b&&mb("toggle",Fc,F(this.b,yc))};function Ac(a){a=F(a.a,Gc)||"";var b=wb(window).width;return oa(a.split(" "),function(a){return(a=Hc[String(a).toUpperCase()])&&b>a})}function Ic(){var a=J(Jc);r(a,function(a){new V(a)})}
 var W="is-collapsed",K="is-expanded",Jc="js-toggle",Ec="closed",Fc="open",Dc="toggleAnimation",Bc="hashId",zc="toggleId",yc="toggleTarget",Gc="initiallyExpanded",Hc={PALM:480,TABLET:768,DESKTOP:1024};function Kc(a){nb();Ic();var b={card:kc,faq:uc,home:jc};"undefined"!==typeof a&&b[a]&&b[a].s()}var Lc=["wallet","init"],Z=k;Lc[0]in Z||!Z.execScript||Z.execScript("var "+Lc[0]);for(var Mc;Lc.length&&(Mc=Lc.shift());)Lc.length||void 0===Kc?Z[Mc]?Z=Z[Mc]:Z=Z[Mc]={}:Z[Mc]=Kc;})();
 
-$(window, document, undefined).ready(function() {
-
-  $('input').blur(function() {
-    var $this = $(this);
-    if ($this.val())
-      $this.addClass('used');
-    else
-      $this.removeClass('used');
-  });
-
-  var $ripples = $('.ripples');
-
-  $ripples.on('click.Ripples', function(e) {
-
-    var $this = $(this);
-    var $offset = $this.parent().offset();
-    var $circle = $this.find('.ripplesCircle');
-
-    var x = e.pageX - $offset.left;
-    var y = e.pageY - $offset.top;
-
-    $circle.css({
-      top: y + 'px',
-      left: x + 'px'
-    });
-
-    $this.addClass('is-active');
-
-  });
-
-  $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
-  	$(this).removeClass('is-active');
-  });
-
-});
-
-
 // --------------- REGEX --------------------
 $.validator.addMethod("usernameRegex", function(value, element) {
 	return this.optional(element) || /^[a-z\u00E0-\u00FC_.+-]+$/i.test(value);

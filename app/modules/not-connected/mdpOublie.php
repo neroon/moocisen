@@ -34,7 +34,7 @@
   <meta property="robots" content="">
   
   <!-- Title -->
-  <title>Mot de passe oublié| Mooc Isen</title>    
+  <title>Mot de passe oublié | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -115,6 +115,23 @@
   </header>
 
   <!-- section -->
+  <div class="form-box">
+    <div class="head">Mot de passe</div>   
+	
+    <form action="../../includes/request_reset.php" method="post" id="myLogin">
+        <main class="mdl-layout__content">
+         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="requestPwd">
+            <input type="email" class="mdl-textfield__input" id="exampleInputEmail1" name="email"/>
+            <label class="mdl-textfield__label" for="exampleInputEmail1">Email</label>
+            <span class="mdl-textfield__error">Email incorrecte</span>
+          </div>
+        </main>
+
+        <input type="submit" class="btn" value="Envoyer"/>
+    </form>
+  </div>
+  
+  </br></br></br></br>
 
   <!-- footer -->
   <footer class="mdl-mega-footer">
