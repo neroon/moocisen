@@ -61,8 +61,9 @@ function generateCard($bdd){
             }
                 
         }
-    }
-?>  
+  }
+  
+?>
 
 <!DOCTYPE html>
 <!--
@@ -145,22 +146,33 @@ function generateCard($bdd){
   <header class="site-header">
   <div class="aux cf">
     <h2 class="site-header__title">
-      <a class="site-header__root-link" href="../../index2.php">
+      <a class="site-header__root-link" href="../../index.php">
         <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
       <ul>
-        <li>
-          <a class="nav-link" href="connexion.php">
-            Connexion
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="inscription.php">
-            Inscription
-          </a>
-        </li>
+        <?php  
+            if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
+              echo '<li>
+                      <a class="nav-link" href="../connected/admin.php">
+                        '.$_SESSION['pseudo'].'
+                      </a>
+                    </li>';
+            }else{
+              echo '<li>
+                      <a class="nav-link" href="modules/not-connected/connexion.php">
+                        Connexion
+                      </a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="modules/not-connected/inscription.php">
+                        Inscription
+                      </a>
+                    </li>
+                    <li>';
+            }
+          ?>
         <li>
           <div class="site-header__cta site-header__cta--desktop">
             <a href="catalogue.php">

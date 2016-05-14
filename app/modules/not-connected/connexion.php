@@ -81,7 +81,7 @@
   <header class="site-header">
   <div class="aux cf">
     <h2 class="site-header__title">
-      <a class="site-header__root-link" href="../../index2.php">
+      <a class="site-header__root-link" href="../../index.php">
         <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>

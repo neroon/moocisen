@@ -59,7 +59,7 @@ function formValid(){
         include "insert_log.php";
         //--------------------------------------
 
-      	header('location: ..modules/connected/catalogue.php');
+      	header('location: ../modules/connected/catalogue.php');
 	}else if($result[0]['email']==$email && $result[0]['password']!=$valPassword){
 		header ("location: ../modules/not-connected/connexion.php?erreur=Mot de passe faux");
 	}else{

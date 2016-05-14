@@ -1,5 +1,5 @@
 <?php
- 	//session start utilisé dans description.php
+ //session start utilisé dans description.php
 
 $valid = 1;
  if (isset($_GET['idM'])) {
@@ -171,8 +171,7 @@ function getInfo3MDL(){
 		$scope_note = $lignes[0]["note"];
 
 		echo '
-		<div class="mdl-grid portfolio-max-width animated slideInUp">
-                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+		
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Description</h2>
                     </div>
@@ -193,7 +192,7 @@ function getInfo3MDL(){
 						 <p>'.$scope_duree.'</p>
                         </div>
                         <div class="mdl-cell mdl-cell--6-col">
-                            <img class="article-image" src="../../images/mooc.png" width="400px" border="0" alt="">
+                            <img class="article-image" src="../../images/social.jpg" width="400px" border="0" alt="">
                         </div>
                     </div>';
 
@@ -201,7 +200,7 @@ function getInfo3MDL(){
 				echo'
 				<a href="../mooc.php?idM='.$idMooc.'&insert='.$idMooc.'" style="margin: 50px;">
     			 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--teal" style="height: 80px;">
-				  			<p style="color: white;">Inscription au cours</p>
+				  			<p style="color: white;padding-top: 10px;">Inscription au cours</p>
 					</button>
 				</a>
 				';
@@ -209,17 +208,13 @@ function getInfo3MDL(){
 				echo '
 				<a href="../mooc.php?idM='.$idMooc.'" style="margin: 50px;">
 					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--teal" style="height: 80px;">
-					  		<p style="color: white;">Acceder au cours</p>
+					  		<p style="color: white;padding-top: 10px;">Acceder au cours</p>
 					</button>
 				</a>
 				';
 
 			}
-               echo'
-                </div>
-                
-            </div>
-            ';
+               
 	} catch (Exception $e) { 
 		echo $e->errorMessage();
   		echo "->erreur getInfos2()";
@@ -228,9 +223,24 @@ function getInfo3MDL(){
 
 }
 
-if($valid==1){
-	getInfo3MDL();
-	//echo "okok";
+
+
+
+function callGetInfo3MDL(){
+	$valid2 = 1;
+	 if (isset($_GET['idM'])) {
+		$idMooc = $_GET['idM'];
+		//echo $idMooc;
+	}else{
+		$valid2 = 0;
+		echo'erreur methode GET';
+	}
+
+	if($valid2==1){
+		getInfo3MDL(); //<------------ voir en haut
+		//echo "okok";
+	}
+
 }
 
 ?>
