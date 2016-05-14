@@ -177,6 +177,8 @@ if(isset($_GET['idM'])) {
 							<ul class="nav child_menu" style="display: none">
     							<li><a href="profil.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Profil</a>
     							</li>
+                                <li><a href="connected/admin.php"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>  Dashboard</a>
+                                </li>
 							</ul>
 						</li>
 					</ul>
