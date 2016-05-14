@@ -254,7 +254,7 @@
               <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                 <a class="mdl-navigation__link" href="../includes/logout.php"><li class="mdl-menu__item">Déconnexion<i class="material-icons">exit_to_app</i></li></a>
+                 <a class="mdl-navigation__link" href="../../includes/logout.php"><li class="mdl-menu__item">Déconnexion<i class="material-icons">exit_to_app</i></li></a>
             </ul>
           </div>
         </header>
@@ -349,16 +349,15 @@
             </label>
             <div class="mdl-textfield__expandable-holder">
               <input class="mdl-textfield__input" type="text" id="search">
-              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+              <label class="mdl-textfield__label" for="search">Rechercher...</label>
             </div>
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">About</li>
-            <li class="mdl-menu__item">Contact</li>
-            <li class="mdl-menu__item">Legal information</li>
+            <li class="mdl-menu__item">A propos</li>
+            <li class="mdl-menu__item">Accueil</li>
           </ul>
         </div>
       </header>

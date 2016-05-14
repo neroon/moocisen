@@ -64,7 +64,7 @@
 			//echo 'tab réponse='.$tabSolution;
 			//Réponse présent
 			//echo "<input type='hidden' class='soluce' name='zyx' value='".implode(",", $tabSolution)."'/>";
-			echo '<input type="input" class="soluce" name="zyx" value="'.implode(",", $temp).'"/>';
+			echo '<input type="hidden" class="soluce" name="zyx" value="'.implode(",", $temp).'"/>';
 			//echo "<input type='hidden' id='idexo' name='nameexo' value='".$tabSolution."'/>";
 			//echo '<div id="solucebox"></div>'; //affichage sur show
 			/*if(isset($idMooc) && isset($_GET['idC'])){

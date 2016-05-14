@@ -186,7 +186,7 @@ if(isset($_GET['idM'])) {
 			<!-- /sidebar menu -->
 
 			<!-- /menu footer buttons -->
-			<div class="sidebar-footer hidden-small">
+			<!--<div class="sidebar-footer hidden-small">
 				<a href='profil.php' data-toggle="tooltip" data-placement="top" title="Paramètre">
 					<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 				</a>
@@ -199,7 +199,7 @@ if(isset($_GET['idM'])) {
 				<a href='../includes/logout' data-toggle="tooltip" data-placement="top" title="Déconnexion">
 					<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
 				</a>
-			</div>
+			</div> -->
 			<!-- /menu footer buttons -->
 		</div>
 	</div>	

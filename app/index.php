@@ -2,367 +2,315 @@
     include 'includes/connect.inc.php';
     session_start();
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="favicon.ico">
-	<title>Mooc Isen</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
+
+  <meta property="og:title" content="Mooc Isen">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="http://colombies.com/app">
+  <meta property="og:description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
+  <meta property="robots" content="">
+	
+	<!-- Title -->
+  <title>Accueil | Mooc Isen</title>    
+   
+  <!-- favicon.ico -->
+  <link rel="shortcut icon" href="favicon.ico">
 
 	<!-- Disable tap highlight on IE -->
-    <meta name="msapplication-tap-highlight" content="no">
+  <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- Web Application Manifest -->
-    <link rel="manifest" href="manifest.json">
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Mooc Isen">
-    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Mooc Isen">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Mooc Isen">
-    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Mooc Isen">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#457871">
 
-    <!-- Color the status bar on mobile devices -->
-    <meta name="theme-color" content="#2F3BA2">
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#457871">
 
-	<!-- Material Design Lite page styles -->
-    <link rel="stylesheet" href="">
+	<!-- Material Design Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
 
-    <!-- Material Design icons -->
-    <link rel="stylesheet" href="">
+  <!-- Material Design Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- Your styles -->
-    <link rel="stylesheet" href="">
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="styles/material.min.css">
 
-	<!-- Bootstrap Core CSS -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- Custom CSS -->
-	<link href="assets/css/icheck/flat/blue.css" rel="stylesheet">
-	<link href="assets/css/logo-nav.css" rel="stylesheet">
-	<link href="assets/css/animate.css" rel="stylesheet">
-	<link href="assets/css/iframe-responsive.css" rel="stylesheet">
-     
-	<!-- Boite pour rotation -->
-	<link href="assets/css/rotating-card.css" rel="stylesheet" />
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="assets/css/style.css" rel="stylesheet">
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
+  <!-- Your styles -->
+  <link rel="stylesheet" href="styles/not-connected/index.css">
 </head>
 <body>
-            <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container ">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">
-                        <img src="assets/images/logo.png" width="60px" alt="">
-                    </a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="index.php" > Liste des MOOCs</a>
-                        </li>                
-                                <?php  
-                               if ((isset($_SESSION['login'])) && (!empty($_SESSION['login'])))
-                                {
-                                    echo 
-                                    ("
-                                    <li>
-                                        <a href='modules/profil.php'> <span class='glyphicon glyphicon-user' aria-hidden='true'></span> ".$_SESSION['pseudo']."</a>
-                                    </li>
-                                    <li>
-                                        <a href='includes/logout.php'> <span class='glyphicon glyphicon-off' aria-hidden='true'></span> Déconnexion </a> 
-                                    </li>
-                                    ");
-                                }
-                                else
-                                {
-                                    echo 
-                                    ("
-                                    <li>
-                                        <a href='modules/inscription.php'> <span class='glyphicon glyphicon-log-in' aria-hidden='true'></span> Connexion</a>
-                                    </li>
-                                    ");
-                                }
-                                   
-                                ?>
-                        <li>
-                            <a href="index.php">A Propos</a>
-                        </li>
-                            
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
 
-               <!-- Page Content -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Présentation</h1>
-                        <p>Voici une vidéo de présentation de ce notre site</p>
-                        <!-- iframe-responsive.css full css -->
-                        <div class="videocontainer r1"> 
-                            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div><br>
+  <!-- header -->
+  <header class="site-header">
+  <div class="aux cf">
+    <h2 class="site-header__title">
+      <a class="site-header__root-link" href="index2.php">
+        <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/header/mooc-logo.png">
+      </a>
+    </h2>
+    <nav class="site-header__main-nav" id="HeaderNav">
+      <ul>
+          <?php  
+            if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
+              echo '<li>
+                      <a class="nav-link" href="modules/connected/admin.php">
+                        '.$_SESSION['pseudo'].'
+                      </a>
+                    </li>';
+            }else{
+              echo '<li>
+                      <a class="nav-link" href="modules/not-connected/connexion.php">
+                        Connexion
+                      </a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="modules/not-connected/inscription.php">
+                        Inscription
+                      </a>
+                    </li>
+                    <li>';
+            }
+          ?>
+          <div class="site-header__cta site-header__cta--desktop">
+            <a href="modules/not-connected/catalogue.php">
+              <button id="header-cta" class="mdl-button mdl-button--raised mdl-button--accent mdl-color--teal mdl-js-button mdl-js-ripple-effect">
+                Catalogue
+              </button>
+            </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="site-header__cta site-header__cta--mobile">
+      <button id="get-app--large" class="mdl-button mdl-button--raised mdl-button--colored mdl-color--teal js-get-app-button mdl-js-button mdl-js-ripple-effect" onclick="location.replace('modules/not-connected/catalogue.php');">
+        Catalogue
+      </button>
+    </div>
+  </header>
 
-            <!-- Page Content -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Bienvenue sur MOOCs</h1>
-                        <p>Voici des MOOCs destinés aux étudiants </p>
-                    </div>
-                </div>
-            </div><br>
-            <!-- /.container -->
-            <div class="container">
-                <div>
-                    <input class="search form-control" type="search" placeholder=" Rechercher un cours" onkeyup="filter()" />
-                    <label>
-                        <input type="radio" class="flat" checked  id="nom" onclick="Chkbox(this.id);filter();"> Nom
-                    </label>
-                    <label>
-                        <input type="radio" class="flat"  id="matiere" onclick="Chkbox(this.id);filter();"> Matière
-                    </label>
-                </div>
-
-                
-
-            <div class="col-md-12 ">
-
-            <?php
-                //include '_include/header.php';
-                $id_mooc;
-                $select = $bdd->prepare("SELECT * FROM mooc");
-                $select->execute();
-                $lignes = $select->fetchAll();
-                if(sizeof($lignes) == 0){
-                    echo 'Aucun MOOC présent';
-                }
-                else{
-                    for($i = 0; $i<sizeof($lignes); $i++){
-                        $id_mooc = $lignes[$i]["id_mooc"];
-                        $select2 = $bdd->prepare("SELECT nom,prenom FROM user INNER JOIN creer ON user.id_user = creer.id_user INNER JOIN mooc ON mooc.id_mooc = creer.id_mooc WHERE creer.id_mooc = $id_mooc");
-                        $select2->execute();
-                        $lignes2 = $select2->fetchAll();
-                        echo '<div class="col-md-4 col-sm-6 animated zoomIn">
-                                <div class="card-container manual-flip">
-                                    <div class="card">
-                                        <div class="front">
-                                            <div class="cover">
-                                                <img src="assets/images/rotating_card_thumb1.jpg">
-                                            </div>
-                                            <div class="user">
-                                                <img class="img-circle" src="assets/images/cvr.png">
-                                            </div>
-                                            <div class="content">
-                                                <div class="main">
-                                                    <h3 class="name">'.$lignes[$i]["nom_mooc"].'</h3>
-                                                    <p class="profession">ISEN Toulon</p>
-                                                    <p class="matiere">'.$lignes[$i]["matiere"].'</p>
-    						
-                                                    <a href="modules/description.php?idM='.$lignes[$i]["id_mooc"].'"<button name="id" class="btn btn-block btn-md btn-info">Description du cours</button> </a>
-                    
-                                                </div>
-                                                <div class="footer">
-                                                    <button class="btn btn-simple" onclick="rotateCard(this)">
-                                                        <i class="fa fa-mail-forward"></i> Informations
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end front panel -->
-                                        <div class="back">
-                                            <div class="header">
-                                                <h3 class="motto">'.$lignes[$i]["nom_mooc"].'</h3>
-                                            </div> 
-                                            <div class="content">
-                                                <div class="main">
-                                                    <p>
-                                                        <strong>Description : </strong>
-                                                        <span class="text-center text-justify">'.$lignes[$i]["description"].'</span><br><br>
-                                                        <strong>Durée : </strong>
-                                                        <span class="text-center">'.$lignes[$i]["duree"].' heures</span><br><br>
-                                                        <strong>Nombre de chapitres : </strong>
-                                                        <span class="text-center">'.$lignes[$i]["nb_chap"].'</span><br><br>
-                                                        <strong>Prérequis : </strong>
-                                                        <span class="text-center">'.$lignes[$i]["prerequis"].'</span><br><br>
-                                                        <strong>Professeur : </strong>';
-                                                        for($j=0;$j<sizeof($lignes2);$j++){
-                                                            echo'<span class="text-center">'.$lignes2[$j]["prenom"].' '.$lignes2[$j]["nom"].'</span><br>';
-                                                        }
-                                                        echo'<br><br>
-                                                        <strong>Matière : </strong>
-                                                        <span class="text-center">'.$lignes[$i]["note"].'/5</span><br><br>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="footer">
-                                                <button class="btn btn-simple" rel="tooltip" title="" onclick="rotateCard(this)" data-original-title="Flip Card">
-                                                    <i class="fa fa-reply"></i> Retour
-                                                </button>
-                                                <div class="social-links text-center">
-                                                    <a href="http://www.isen.fr/toulon/accueil/" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                                    <a href="http://www.isen.fr/toulon/accueil/" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                                                    <a href="http://www.isen.fr/toulon/accueil/" class="linkedin"><i class="fa fa-linkedin fa-fw"></i></a>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div> 
-                                </div>
-                            </div>';
-                        }
-                    }
-            ?>
-                    
-            </div>
+  <!-- banniere -->
+  <div class="hero hero--home">
+    <div class="hero__bg-container">
+      <div class="hero__bg-container-overlay">
+        <!-- <img src="images/allisdigital.png"> -->
+        <h1>ALL IS DIGITAL</h1>
+        <div class="hero__get-app">
+          <a href="modules/not-connected/catalogue.php">
+            <button id="get-app--hero__button" class="get-app hero__btn mdl-button mdl-js-button mdl-color--teal mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+              Catalogue
+            </button>
+          </a>
         </div>
-        <br>
-        <!--<div class="container">
-            <div class="well">
-                <div id="disqus_thread"></div>
-            </div>
-        </div>-->
-            <script>
-                /**
-                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-                 */
-                
-                var disqus_config = function () {
-                    //alert(window.location.href);
-                    this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                
-                (function() {  // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    
-                    s.src = '//mooccv.disqus.com/embed.js';
-                    
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>;</noscript>
+        <a href="modules/not-connected/inscription.php" class="hero__video-btn mdl-button mdl-js-button">
+          Inscription
+        </a>
+      </div>
+      <li class="page-scroll">
+        <a href="#welcome">
+          <button class="hero__fab mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--4dp">
+            <i class="material-icons">&#xE313;</i>
+        </button>
+        </a>
+      </li>
+    </div>
+  </div>
 
-        <!-- jQuery -->
-        <script src="assets/js/jquery.js"></script>
+  <!-- section 1 -->
+  <section id="welcome" class="section section--welcome section--text-left section--rev section--align-image-bottom">
+    <div class="aux">
+      <div class="grid grid--bottom">
+        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
+          <header class="recesection__header" >
+            <h2 class="section__title">Bienvenue sur la plateforme MoocISEN</h2>
+            <p> La plateforme héberge des MOOCs destinés aux étudiants</p>
+            <p>Notre site sera accessible à un grand nombre de personnes que ce soit des élèves ingénieurs, des étudiants en faculté supérieure, des lycéens ou même des entreprises qui souhaitent former leurs employés à de nouvelles technologies.</p>
+          </header>
+        </div><!--
+        --><div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
+          <!-- iframe-responsive.css full css -->
+          <div class="videocontainer" > 
+            <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4?modestbranding=0&autohide=0&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="assets/js/bootstrap.min.js"></script>
+  <!-- section 2 -->
+  <section class="section section--notifications section--grey section--align-image-bottom">
+    <div class="aux">
+      <div class="grid grid--middle">
+        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
+          <header class="section__header">
+            <h2 class="section__title">Accessible sur mobile<br></h2>
+            <p> </p>
+          </header>
+        </div><!--
+        --><div class="section__image grid__item palm--one-whole lap--one-half desk--one-half">
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="images/index/notifications-desktop.png" media="(min-width: 769px)">
+            <source srcset="images/index/notifications-mobile.png" media="(max-width: 768px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="images/index/notifications-desktop.png" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <script type="text/javascript">
-            function rotateCard(btn){
-                var $card = $(btn).closest('.card-container');
-                console.log($card);
-                if($card.hasClass('hover')){
-                    $card.removeClass('hover');
-                } else {
-                    $card.addClass('hover');
-                }
-            }
-            function Chkbox(id){
-                switch(id){
-                    case "nom" :
-                        document.getElementById("nom").checked = true;
-                        document.getElementById("matiere").checked = false;
-                    break;
-                    case "matiere" :
-                        document.getElementById("nom").checked = false;
-                        document.getElementById("matiere").checked = true;
-                    break;
-                }
-            }
-            function filter(){
-                var chaine = $(".search").val().toLowerCase();
-                console.log(chaine);
-                if(chaine.length == 0){
-                    $(".name").each(function(){
-                        $(this).parents(".col-md-4").removeClass("hide").addClass("show");
-                    });
-                }
-                if (chaine.length > 1){
-                    if(document.getElementById("nom").checked == true){
-                        $(".name").each(function(){
-                            
-                            var n = $(this).text().toLowerCase().search(chaine);
-                            if(n != -1){
-                                $(this).parents(".col-md-4").removeClass("hide").addClass("show");
-                            }
-                            else{
-                                $(this).parents(".col-md-4").removeClass("show").addClass("hide");
-                                console.log($(this).text().toLowerCase());
-                            }
-                        });
-                    }
-                    else{
-                        $(".matiere").each(function(){
-                            
-                            var n = $(this).text().toLowerCase().search(chaine);
-                            if(n != -1){
-                                $(this).parents(".col-md-4").removeClass("hide").addClass("show");
-                            }
-                            else{
-                                $(this).parents(".col-md-4").removeClass("show").addClass("hide");
-                                console.log($(this).text().toLowerCase());
-                            }
-                        });
-                    }
-                }
-            }
-            $('input').focusin(function(){
-                $(this).removeAttr('placeholder');
-            });
-            $('input').focusout(function(){
-                $(this).attr('placeholder','Rechercher un cours');
-            });
-            
-        </script>
+  <!-- section3 -->
+  <section class="section section--safety section--rev">
+    <div class="aux">
+      <div class="grid grid--middle">
+        <div class="section__content grid__item palm--one-whole lap--one-half desk--one-half">
+          <header class="section__header">
+            <h2 class="section__title">MOOC accessible sans compte</h2>
+            <p>Inscrition permettra de suivre votre avancement et votre score</p>
+            <p>Page admin pour suivre l'avancement de tous les comptes</p>
+          </header>
+        </div><!--
+        --><div class="section__image grid__item palm--one-whole lap--one-half desk--one-half">
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="images/index/safety-desktop.png" media="(min-width: 481px)">
+            <source srcset="images/index/safety-mobile.png" media="(max-width: 480px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="images/index/safety-desktop.png" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <!-- section4 -->
+  <section class="section section--support section--grey">
+    <div class="aux">
+      <div class="grid">
+        <div class="help-item grid__item one-whole lap--one-half desk--one-half">
+          <h3>Questions?</h3>
+          <p>Visiter le <a href="modules/not-connected/faq.php">FAQs</a>.</p>
+        </div><!--
+     --><div class="help-item grid__item one-whole lap--one-half desk--one-half">
+          <h3>Besoin d'aide?</h3>
+          <p>Aller à <a href="modules/not-connected/faq.php">Aide</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="scripts/main.js"></script>
+  <!-- footer -->
+  <footer class="mdl-mega-footer">
+  <div class="mdl-mega-footer__middle-section">
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    <div class="mdl-mega-footer__drop-down-section" style="top:30px">
+      <img class="site-header__wallet-logo" alt="Mooc Isen" src="images/footer/logo-footer.png">
+      <ul class="mdl-mega-footer__link-list">
+        <li>
+          <h4>Apprendre avec l'ISEN</h4>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/user/isentoulon" target="_blank">
+            <img class="site-header__wallet-logo" alt="YouTube" src="images/social/youtube.png">
+          </a>
+          <a href="https://twitter.com/isentoulon?lang=fr" target="_blank">
+            <img class="site-header__wallet-logo" alt="Twitter" src="images/social/twitter-white.png">
+          </a>
+          <a href="https://www.facebook.com/ISEN.Toulon" target="_blank">
+            <img class="site-header__wallet-logo" alt="Facebook" src="images/social/facebook-white.png">
+          </a>
+          <a href="https://www.instagram.com/isen.fr/" target="_blank">
+            <img class="site-header__wallet-logo" alt="Instagram" src="images/social/instagram-white.png">
+          </a>
+          <a href="https://plus.google.com/104791520528769416386/about" target="_blank">
+            <img class="site-header__wallet-logo" alt="Google+" src="images/social/google-white.png">
+          </a>
+        </li>
+        </br>
+      </ul>
+    </div>
+
+    <div class="mdl-mega-footer__drop-down-section">
+      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      <h1 class="mdl-mega-footer__heading"> Ressources</h1>
+      <ul class="mdl-mega-footer__link-list">
+        <li><a href="modules/not-connected/faq.php">Aide & FAQ</a></li>
+        <li><a href="modules/not-connected/catalogue.php">Catalogue</a></li>
+        <li><a href="modules/not-connected/proposerCours.php">Proposer un MOOC</a></li>
+      </ul>
+    </div>
+
+    <div class="mdl-mega-footer__drop-down-section">
+      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      <h1 class="mdl-mega-footer__heading">MOOC Isen</h1>
+      <ul class="mdl-mega-footer__link-list">
+        <li><a href="modules/not-connected/aPropos.php">A propos</a></li>
+        <li><a href="modules/not-connected/actualitees.php">Actualitées</a></li>
+        <li><a href="modules/not-connected/temoignages.php">Témoignages</a></li>
+      </ul>
+    </div>
+
+    <div class="mdl-mega-footer__drop-down-section">
+      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      <h1 class="mdl-mega-footer__heading">Informations</h1>
+      <ul class="mdl-mega-footer__link-list">
+        <li><a href="modules/not-connected/contact.php">Contact</a></li>
+        <li><a href="modules/not-connected/legales.php">Légales</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="mdl-mega-footer__bottom-section">
+    <ul class="mdl-mega-footer__link-list">
+      <li>
+        <a href="modules/not-connected/legales.php">Politique de confidentialité</a> 
+        | 
+        <a href="modules/not-connected/legales.php">Modalités</a> 
+      </li>
+    </ul>
+  </div>
+
+  <!-- Material Design lite -->
+  <script src="scripts/material.min.js"></script>
+  
+  <!-- jQuery -->
+  <script src="scripts/jquery/jquery.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="scripts/jqueryeasing/jquery.easing.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="scripts/not-connected/index.js"></script>
+  <script src="scripts/not-connected/scroll-down-button.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-XXXXX-X', 'auto');
       ga('send', 'pageview');
-    </script>
+  </script>
 </body>
 </html>
