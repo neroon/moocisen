@@ -104,6 +104,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="../../styles/connected/admin.css">
+
+    <!-- animate -->
+    <link rel="stylesheet" href="../../assets/css/animate.css">
     <style>
     #view-source {
       position: fixed;
