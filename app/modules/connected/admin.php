@@ -337,6 +337,7 @@
           afficheMyNavLink();//viens de include_connected.php drawer de gauche
         ?>
 
+
         
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
@@ -357,6 +358,12 @@
               <use xlink:href="#chart" />
             </svg>
           </div>-->
+          <!-- snackbar -->
+           <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+              <div class="mdl-snackbar__text"></div>
+              <button type="button" class="mdl-snackbar__action"></button>
+          </div>
+
 
 
 <!--
@@ -375,11 +382,7 @@
           </div>
 -->
 
-          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
-            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
-              <canvas id="myChart" width="400" height="400"></canvas>
-            </div>
-          </div>
+        
 
 
 
@@ -446,9 +449,48 @@
     
      <!-- jQuery -->
     <script src="../../assets/js/jquery.js"></script>
+
+
     <!-- chart js -->
     <script src="../../assets/js/chartjs/Chart.js"></script>
     <script src="../../scripts/material.min.js"></script>
+     <script>
+       //$get avec js
+       function $_GET(param) {
+          var vars = {};
+          window.location.href.replace( location.hash, '' ).replace( 
+            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+            function( m, key, value ) { // callback
+              vars[key] = value !== undefined ? value : '';
+            }
+          );
+
+          if ( param ) {
+            return vars[param] ? vars[param] : null;  
+          }
+          return vars;
+        }
+          
+       //snackbar
+        $(document).ready(function(){
+          var deco_var = decodeURI( $_GET('ok'));
+
+
+          if(deco_var!=='null'){
+            setTimeout(function(){
+                    var notification = document.querySelector('.mdl-js-snackbar');
+                      var data = {
+                        message: deco_var,
+                        actionHandler: function(event) {},
+                        actionText: ' ',
+                        timeout: 5000
+                      };
+                    notification.MaterialSnackbar.showSnackbar(data);
+            }, 1000);
+          }
+            
+        });
+      </script>
 
 
 
@@ -549,5 +591,8 @@
     });
 
     </script>
+
+
+    
   </body>
 </html>

@@ -138,6 +138,12 @@
     </form>
 	<p class="text-p"><a href="mdpOublie.php">Mot de passe oublié ?</a></p>
   </div>
+
+  <!-- snackbar -->
+   <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button type="button" class="mdl-snackbar__action"></button>
+  </div>
   
   </br></br></br></br>
   
@@ -225,6 +231,45 @@
 
   <!-- Custom Theme JavaScript -->
   <script src="../../scripts/not-connected/connexion.js"></script>
+
+
+    <script>
+       //$get avec js
+       function $_GET(param) {
+          var vars = {};
+          window.location.href.replace( location.hash, '' ).replace( 
+            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+            function( m, key, value ) { // callback
+              vars[key] = value !== undefined ? value : '';
+            }
+          );
+
+          if ( param ) {
+            return vars[param] ? vars[param] : null;  
+          }
+          return vars;
+        }
+          
+       //snackbar
+        $(document).ready(function(){
+          var deco_var = decodeURI( $_GET('erreur'));
+
+
+          if(deco_var!=='null'){
+            setTimeout(function(){
+                    var notification = document.querySelector('.mdl-js-snackbar');
+                      var data = {
+                        message: deco_var,
+                        actionHandler: function(event) {},
+                        actionText: ' ',
+                        timeout: 5000
+                      };
+                    notification.MaterialSnackbar.showSnackbar(data);
+            }, 1000);
+          }
+            
+        });
+      </script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
