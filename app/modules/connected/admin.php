@@ -455,6 +455,58 @@
     <script type="text/javascript">
     var ctx = document.getElementById("myChart");
 
+
+
+     function callGraph(idmooc){
+        //alert(idmooc);
+        var ctx = document.getElementById("myChart");
+        $.ajax({
+                     type: "POST",
+                     url: "../includes/requestgraph.php",
+                     dataType: 'json',
+                     data: { data:idmooc },
+                     success: function(data) {
+                        alert("success");
+                        //console.log(data); // REGARDER DEBUG
+                        console.log(data[0][0]["titre"]); // EXEMPLE
+                        console.log(data[1][0]); // EXEMPLE
+                        var titles = new Array();
+                        data[0].forEach(function(elem,index){
+                            titles[index] = elem.titre;
+                        })
+
+                        var pourcentage = new Array();
+                        data[1].forEach(function(elem,index){
+                            pourcentage[index] = elem;
+                        })
+
+                        //Get context with jQuery - using jQuery's .get() method.
+                        $(".removechart").html('<canvas id="myChart" height="200" width="400" ></canvas>');
+                        // reinit canvas
+                       
+                        var ctx = $("#myChart");
+                         
+                        //This will get the first returned node in the jQuery collection.
+                        
+                        var myChart = new Chart(ctx, {
+                            type: 'radar',
+                            data: mydata,
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+
+                    } 
+                  
+                });
+    }
+
     var mydata = {
         labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
         datasets: [
