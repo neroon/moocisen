@@ -99,7 +99,7 @@
 										{
 										echo'<div class="ck-button">
 											   <label>
-												  <input type="checkbox" name="'.$tab[$itab].$i.'" value=""><span>'.$tab[$itab].'</span> 
+												  <input type="checkbox" name="'.$tab[$itab].$i.'" value="" style="display:none;"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div>';
 										}
@@ -107,7 +107,7 @@
 										{
 										echo'<div class="ck-button">
 											   <label>
-												  <input type="checkbox"name="'.$tab[$itab].$i.'" value=""><span>'.$tab[$itab].'</span> 
+												  <input type="checkbox"name="'.$tab[$itab].$i.'" value="" style="display:none;"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div><br>';
 										}
