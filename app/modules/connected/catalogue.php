@@ -44,7 +44,7 @@
                         <img class="article-image" src="../../images/'.imgCard($lignes[$i]["nom_mooc"]).'" border="0" width="120px" alt="" style="margin: 20px;">
                     </div>
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">'.$lignes[$i]["nom_mooc"].'</h2>
+                        <h2 class="namesearch mdl-card__title-text">'.$lignes[$i]["nom_mooc"].'</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
                         '.$lignes[$i]["matiere"].'
@@ -134,7 +134,7 @@
               <i class="material-icons">search</i>
             </label>
             <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search">
+              <input class="search mdl-textfield__input" type="text" id="search" onkeyup="filter()">
               <label class="mdl-textfield__label" for="search">Rechercher...</label>
             </div>
           </div>
@@ -185,6 +185,63 @@
     <!-- chart js -->
     <script src="../../assets/js/chartjs/Chart.js"></script>
     <script src="../../scripts/material.min.js"></script>
+
+  <script type="text/javascript">
+
+        $(document).keydown(function(e) {
+          //console.log("---------"+e.which);
+          var retour =e.which;
+          if(retour==8){
+          //  $(".mdl-cell").css('width', '30%');
+            $(".mdl-cell").show();
+          }
+        });
+
+     function filter(){
+     }
+
+
+      function filter2(){
+                var chaine = $(".search").val().toLowerCase();
+                //console.log(chaine);
+                if(chaine.length == 0){
+                    $(".namesearch").each(function(){
+                        $(this).parents(".mdl-cell").removeClass("hide").addClass("show");
+                    });
+                }
+                if (chaine.length > 1){
+                    if(true == true){
+                       //$(".mdl-cell").show();
+                        $(".namesearch").each(function(){
+                            var n = $(this).text().toLowerCase().search(chaine);
+                            if(n != -1){
+                                $(this).parent().parent().show();    
+
+                            }
+                            else{    
+                                //$(this).parent().parent().css('width', '10px');                          
+                                $(this).parent().parent(".mdl-cell").hide();
+
+                            }
+                         
+                        });
+                    }
+                   /* else{
+                        $(".matiere").each(function(){
+                            
+                            var n = $(this).text().toLowerCase().search(chaine);
+                            if(window.greeting == 8){
+                                $(this).parents(".mdl-cell").removeClass("hide").addClass("show");
+                            }
+                            else{
+                                $(this).parents(".mdl-cell").removeClass("show").addClass("hide");
+                                console.log($(this).text().toLowerCase());
+                            }
+                        });
+                    }*/
+                }
+            }
+     </script>
 
 
   </body>
