@@ -75,12 +75,6 @@
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
   
-  <!-- Material Design Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-
-  <!-- Material Design Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/connected/faq.css">
   

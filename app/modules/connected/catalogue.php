@@ -9,25 +9,25 @@
 	include '../../includes/include_connected.php'; // drawer
 
 	function imgCard($string1){
-    $string1 = strtolower($string1);
+		$string1 = strtolower($string1);
 
-    //$pos = strpos($string1, $string2); //false = string trouvé dans string
-    if(strpos($string1, "physique")!== false){
-      $nameImg = 'atom.png';
-    }else if(strpos($string1, "cv")!== false){
-      $nameImg = 'doc.png';
-    }else if(strpos($string1, "shell")!== false){
-      $nameImg = 'shell.png';
-    }else if(strpos($string1, "PMI")!== false){
-      $nameImg = 'diploma.png';
-    }else{
-      $nameImg = 'other.png';
-    }
-    return $nameImg;
+		//$pos = strpos($string1, $string2); //false = string trouvé dans string
+		if(strpos($string1, "physique")!== false){
+		  $nameImg = 'atom.png';
+		}else if(strpos($string1, "cv")!== false){
+		  $nameImg = 'doc.png';
+		}else if(strpos($string1, "shell")!== false){
+		  $nameImg = 'shell.png';
+		}else if(strpos($string1, "PMI")!== false){
+		  $nameImg = 'diploma.png';
+		}else{
+		  $nameImg = 'other.png';
+		}
+		return $nameImg;
   }
 
-  function generateCard($bdd){
-  $id_mooc;
+	function generateCard($bdd){
+		$id_mooc;
         $select = $bdd->prepare("SELECT * FROM mooc");
         $select->execute();
         $lignes = $select->fetchAll();
@@ -61,7 +61,6 @@
                 </div>
                 ';
             }
-                
         }
   }
 ?>
@@ -132,12 +131,6 @@
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
   
-  <!-- Material Design Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-
-  <!-- Material Design Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
   <!-- animate -->
   <link rel="stylesheet" href="../../assets/css/animate.css">
 	
@@ -205,12 +198,6 @@
 			</div>
 		</main>
     </div>
-
-	<!-- jQuery -->
-    <script src="../../assets/js/jquery.js"></script>
-	
-	<!-- chart js -->
-    <script src="../../assets/js/chartjs/Chart.js"></script>
 	
 	<!-- Material Design lite -->
 	<script src="../../scripts/material.min.js"></script>

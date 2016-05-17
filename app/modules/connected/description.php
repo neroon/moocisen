@@ -1,9 +1,13 @@
 <?php
-  session_start();
-  include '../../includes/connect.inc.php';
-  include '../../includes/include_connected.php'; // drawer
+	session_start();
+	include '../../includes/connect.inc.php';
+	include '../../includes/include_connected.php'; // drawer
 
-   function imgCard($string1){
+	if((!isset($_SESSION['id_user']))) {
+		header ("location: ../../index.php");
+	}
+
+	function imgCard($string1){
     $string1 = strtolower($string1);
 
     //$pos = strpos($string1, $string2); //false = string trouvé dans string
@@ -75,46 +79,66 @@
   limitations under the License
 -->
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>MoocISEN Catalogue</title>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="../../favicon.ico">
+  <meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+  <meta property="og:title" content="Mooc Isen">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="http://colombies.com/app">
+  <meta property="og:description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
+  <meta property="robots" content="">
+  
+  <!-- Title -->
+  <title>Description d'un MOOC | Mooc Isen</title>    
+   
+  <!-- favicon.ico -->
+  <link rel="shortcut icon" href="../../favicon.ico">
 
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="../../manifest.json">
 
-    <link rel="shortcut icon" href="../favicon.ico">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Mooc Isen">
+  <link rel="icon" sizes="192x192" href="../../images/touch/chrome-touch-icon-192x192.png">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Mooc Isen">
+  <link rel="apple-touch-icon" href="../../images/touch/apple-touch-icon.png">
 
-    <!-- <link href="../assets/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="../../images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#457871">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
-    <link rel="stylesheet" href="../../styles/connected/admin.css">
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#457871">
 
-    <!-- animate -->
-    <link rel="stylesheet" href="../../assets/css/animate.css">
-    <style>
+  <!-- Material Design Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+
+  <!-- Material Design Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
+  
+  <!-- animate -->
+  <link rel="stylesheet" href="../../assets/css/animate.css">
+	
+  <!-- Your styles -->
+  <link rel="stylesheet" href="../../styles/connected/description.css">
+  
+  <style>
     #view-source {
       position: fixed;
       display: block;
@@ -124,17 +148,13 @@
       margin-bottom: 40px;
       z-index: 900;
     }
-    </style>
-  </head>
-  <body>
-    <?php
-      //afficheHistorique($bdd);
-
-    ?>
+  </style>
+</head>
+<body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Catalogue</span>
+          <span class="mdl-layout-title">Description d'un MOOC</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -149,26 +169,22 @@
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">A propos</li>
-            <li class="mdl-menu__item">Accueil</li>
+            <li class="mdl-menu__item"><a style="text-decoration: none; color: grey;" href="aPropos.php">A propos</a></li>
+            <li class="mdl-menu__item"><a style="text-decoration: none; color: grey;" href="contact.php">Contact</a></li>
+			<li class="mdl-menu__item"><a style="text-decoration: none; color: grey;" href="legales.php">Modalités</a></li>
           </ul>
         </div>
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-
 
         <?php 
           afficheMyProfilHeader($bdd);//viens de include_connected.php  drawer de gauche
           afficheMyNavLink();//viens de include_connected.php drawer de gauche
         ?>
 
-
-        
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid ">
-
-
                <!-- section -->
                 <div class="mdl-grid portfolio-max-width animated slideInUp">
                     <div class="mdl-cell mdl-cell--2-col ">
@@ -183,18 +199,24 @@
                        <!--  -->   
                     </div>
                 </div>
-
-
-
-
         </div>
       </main>
     </div>
-
-     <!-- jQuery -->
-    <script src="../../assets/js/jquery.js"></script>
-    <!-- chart js -->
-    <script src="../../assets/js/chartjs/Chart.js"></script>
-    <script src="../../scripts/material.min.js"></script>
-  </body>
+	
+	<!-- Material Design lite -->
+	<script src="../../scripts/material.min.js"></script>
+	
+	<!-- Custom Theme JavaScript -->
+    <script src="../../scripts/connected/description.js"></script>
+	
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-XXXXX-X', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
 </html>
