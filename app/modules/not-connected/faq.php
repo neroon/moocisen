@@ -1,7 +1,9 @@
 <?php
   session_start();
 
-  
+  if((isset($_SESSION['id_user']))) {
+    header ("location: ../connected/catalogue.php");
+  }
 ?>
 <!DOCTYPE html>
 <!--
@@ -79,7 +81,7 @@
   <header class="site-header">
   <div class="aux cf">
     <h2 class="site-header__title">
-      <a class="site-header__root-link" href="../../index2.php">
+      <a class="site-header__root-link" href="../../index.php">
         <img class="site-header__wallet-logo" alt="Mooc Isen" src="../../images/header/mooc-logo.png">
       </a>
     </h2>
@@ -468,18 +470,18 @@
         <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
-
+	
   </div>
-
-  <div class="mdl-mega-footer__bottom-section">
-    <ul class="mdl-mega-footer__link-list">
-      <li>
-        <a href="legales.php">Politique de confidentialité</a> 
-        | 
-        <a href="legales.php">Modalités</a> 
-      </li>
-    </ul>
-  </div>
+	
+	<div class="mdl-mega-footer__bottom-section">
+		<ul class="mdl-mega-footer__link-list">
+			<li>
+				<a href="legales.php">Politique de confidentialité</a> 
+				| 
+				<a href="legales.php">Modalités</a> 
+			</li>
+		</ul>
+	</div>
 
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>

@@ -1,12 +1,9 @@
 <?php
   session_start();
-  include '../../includes/connect.inc.php';
 
-  /*if((isset($_SESSION['id_user']))) {
-    header ("location: ../connected/description.php");
-  }*/
-
-
+  if((isset($_SESSION['id_user']))) {
+    header ("location: ../connected/catalogue.php");
+  }
 ?>
 <!DOCTYPE html>
 <!--
@@ -78,9 +75,6 @@
 
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/not-connected/description.css">
-
-  <!-- animate -->
-  <link rel="stylesheet" href="../../assets/css/animate.css">
 </head>
 <body>
 
@@ -94,27 +88,16 @@
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
       <ul>
-        <?php  
-            if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
-              echo '<li>
-                      <a class="nav-link" href="../connected/admin.php">
-                        '.$_SESSION['pseudo'].'
-                      </a>
-                    </li>';
-            }else{
-              echo '<li>
-                      <a class="nav-link" href="modules/not-connected/connexion.php">
-                        Connexion
-                      </a>
-                    </li>
-                    <li>
-                      <a class="nav-link" href="modules/not-connected/inscription.php">
-                        Inscription
-                      </a>
-                    </li>
-                    <li>';
-            }
-          ?>
+        <li>
+          <a class="nav-link" href="connexion.php">
+            Connexion
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="inscription.php">
+            Inscription
+          </a>
+        </li>
         <li>
           <div class="site-header__cta site-header__cta--desktop">
             <a href="catalogue.php">
@@ -133,17 +116,14 @@
   </header>
 
   <!-- section -->
-
-  <div class="mdl-grid portfolio-max-width animated slideInUp">
-    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
-      <?php
-          include '../../includes/fonctionsDescription.php'; //Utilisation ici de $_GET['idM']
-          callGetInfo3MDL();
-      ?>
-    </div>
+  <div class="mdl-grid portfolio-max-width">
+	  <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+		<?php
+			include '../../includes/fonctionsDescription.php'; //Utilisation ici de $_GET['idM']
+			callGetInfo3MDL();
+		?>
+	  </div>
   </div>
-
-
 
   <!-- footer -->
   <footer class="mdl-mega-footer">
@@ -204,18 +184,18 @@
         <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
-
+	
   </div>
-
-  <div class="mdl-mega-footer__bottom-section">
-    <ul class="mdl-mega-footer__link-list">
-      <li>
-        <a href="legales.php">Politique de confidentialité</a> 
-        | 
-        <a href="legales.php">Modalités</a> 
-      </li>
-    </ul>
-  </div>
+	
+	<div class="mdl-mega-footer__bottom-section">
+		<ul class="mdl-mega-footer__link-list">
+			<li>
+				<a href="legales.php">Politique de confidentialité</a> 
+				| 
+				<a href="legales.php">Modalités</a> 
+			</li>
+		</ul>
+	</div>
 
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>

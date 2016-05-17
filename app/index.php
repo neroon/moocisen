@@ -1,6 +1,9 @@
 <?php
-    include 'includes/connect.inc.php';
-    session_start();
+  session_start();
+
+  if((isset($_SESSION['id_user']))) {
+    header ("location: modules/connected/catalogue.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,14 +18,14 @@
   <meta property="og:url" content="http://colombies.com/app">
   <meta property="og:description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
   <meta property="robots" content="">
-	
-	<!-- Title -->
+  
+  <!-- Title -->
   <title>Accueil | Mooc Isen</title>    
    
   <!-- favicon.ico -->
   <link rel="shortcut icon" href="favicon.ico">
 
-	<!-- Disable tap highlight on IE -->
+  <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
   <!-- Web Application Manifest -->
@@ -46,8 +49,8 @@
   <!-- Color the status bar on mobile devices -->
   <meta name="theme-color" content="#457871">
 
-	<!-- Material Design Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+  <!-- Material Design Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
 
   <!-- Material Design Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -70,27 +73,17 @@
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
       <ul>
-          <?php  
-            if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
-              echo '<li>
-                      <a class="nav-link" href="modules/connected/admin.php">
-                        '.$_SESSION['pseudo'].'
-                      </a>
-                    </li>';
-            }else{
-              echo '<li>
-                      <a class="nav-link" href="modules/not-connected/connexion.php">
-                        Connexion
-                      </a>
-                    </li>
-                    <li>
-                      <a class="nav-link" href="modules/not-connected/inscription.php">
-                        Inscription
-                      </a>
-                    </li>
-                    <li>';
-            }
-          ?>
+        <li>
+          <a class="nav-link" href="modules/not-connected/connexion.php">
+            Connexion
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="modules/not-connected/inscription.php">
+            Inscription
+          </a>
+        </li>
+        <li>
           <div class="site-header__cta site-header__cta--desktop">
             <a href="modules/not-connected/catalogue.php">
               <button id="header-cta" class="mdl-button mdl-button--raised mdl-button--accent mdl-color--teal mdl-js-button mdl-js-ripple-effect">
@@ -279,18 +272,16 @@
     </div>
 
   </div>
-
-  <div class="mdl-mega-footer__bottom-section">
-    <ul class="mdl-mega-footer__link-list">
-      <li>
-        <a href="modules/not-connected/legales.php">Politique de confidentialité</a> 
-        | 
-        <a href="modules/not-connected/legales.php">Modalités</a> 
-      </li>
-    </ul>
-  </div>
-
-
+  
+	<div class="mdl-mega-footer__bottom-section">
+		<ul class="mdl-mega-footer__link-list">
+			<li>
+				<a href="modules/not-connected/legales.php">Politique de confidentialité</a> 
+				| 
+				<a href="modules/not-connected/legales.php">Modalités</a> 
+			</li>
+		</ul>
+	</div>
 
   <!-- Material Design lite -->
   <script src="scripts/material.min.js"></script>
@@ -314,8 +305,5 @@
       ga('create', 'UA-XXXXX-X', 'auto');
       ga('send', 'pageview');
   </script>
-
-
-  
 </body>
 </html>

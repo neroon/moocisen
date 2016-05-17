@@ -2,9 +2,9 @@
   session_start();
   include '../../includes/connect.inc.php';
 
-  /*if((isset($_SESSION['id_user']))) {
+  if((isset($_SESSION['id_user']))) {
     header ("location: ../connected/catalogue.php");
-  }*/
+  }
 
   function imgCard($string1){
     $string1 = strtolower($string1);
@@ -58,11 +58,9 @@ function generateCard($bdd){
                     </div>
                 </div>
                 ';
-            }
-                
+            }   
         }
   }
-  
 ?>
 
 <!DOCTYPE html>
@@ -134,11 +132,6 @@ function generateCard($bdd){
 
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/not-connected/catalogue.css">
-
-    <!-- animate -->
-  <link rel="stylesheet" href="../../assets/css/animate.css">
-
-
 </head>
 <body>
 
@@ -152,27 +145,16 @@ function generateCard($bdd){
     </h2>
     <nav class="site-header__main-nav" id="HeaderNav">
       <ul>
-        <?php  
-            if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
-              echo '<li>
-                      <a class="nav-link" href="../connected/admin.php">
-                        '.$_SESSION['pseudo'].'
-                      </a>
-                    </li>';
-            }else{
-              echo '<li>
-                      <a class="nav-link" href="modules/not-connected/connexion.php">
-                        Connexion
-                      </a>
-                    </li>
-                    <li>
-                      <a class="nav-link" href="modules/not-connected/inscription.php">
-                        Inscription
-                      </a>
-                    </li>
-                    <li>';
-            }
-          ?>
+        <li>
+          <a class="nav-link" href="connexion.php">
+            Connexion
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="inscription.php">
+            Inscription
+          </a>
+        </li>
         <li>
           <div class="site-header__cta site-header__cta--desktop">
             <a href="catalogue.php">
@@ -192,15 +174,13 @@ function generateCard($bdd){
 
   <!-- section -->
   <div class="mdl-grid portfolio-max-width ">
-        <!-- boite -->
-        <?php generateCard($bdd); ?>
-         <!--  -->   
+	<!-- boite -->
+	<?php generateCard($bdd); ?>
+	<!--  -->   
   </div>
-
   
-
+  </br></br></br></br></br></br></br>
   
-
   <!-- footer -->
   <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__middle-section">
@@ -260,18 +240,18 @@ function generateCard($bdd){
         <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
-
+	
   </div>
-
-  <div class="mdl-mega-footer__bottom-section">
-    <ul class="mdl-mega-footer__link-list">
-      <li>
-        <a href="legales.php">Politique de confidentialité</a> 
-        | 
-        <a href="legales.php">Modalités</a> 
-      </li>
-    </ul>
-  </div>
+	
+	<div class="mdl-mega-footer__bottom-section">
+		<ul class="mdl-mega-footer__link-list">
+			<li>
+				<a href="legales.php">Politique de confidentialité</a> 
+				| 
+				<a href="legales.php">Modalités</a> 
+			</li>
+		</ul>
+	</div>
 
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>

@@ -6,6 +6,20 @@
   }
 ?>
 <!DOCTYPE html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -60,9 +74,6 @@
 
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/not-connected/inscription.css">
-  
-  <!--getmdl-select-->
-  <link rel="stylesheet" href="getmdl-select.min.css">
 </head>
 <body>
 
@@ -479,18 +490,18 @@
         <li><a href="legales.php">Légales</a></li>
       </ul>
     </div>
-
+	
   </div>
-
-  <div class="mdl-mega-footer__bottom-section">
-    <ul class="mdl-mega-footer__link-list">
-      <li>
-        <a href="legales.php">Politique de confidentialité</a> 
-        | 
-        <a href="legales.php">Modalités</a> 
-      </li>
-    </ul>
-  </div>
+	
+	<div class="mdl-mega-footer__bottom-section">
+		<ul class="mdl-mega-footer__link-list">
+			<li>
+				<a href="legales.php">Politique de confidentialité</a> 
+				| 
+				<a href="legales.php">Modalités</a> 
+			</li>
+		</ul>
+	</div>
 
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>
@@ -504,9 +515,6 @@
 
   <!-- Custom Theme JavaScript -->
   <script src="../../scripts/not-connected/inscription.js"></script>
-  
-  <!--getmdl-select-->
-  <script src="getmdl-select.min.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
