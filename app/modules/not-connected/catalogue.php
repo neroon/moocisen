@@ -230,7 +230,7 @@ function generateCard($bdd){
       <h1 class="mdl-mega-footer__heading">MOOC Isen</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="aPropos.php">A propos</a></li>
-        <li><a href="actualitees.php">Actualitées</a></li>
+        <li><a href="actualitees.php">Actualités</a></li>
         <li><a href="temoignages.php">Témoignages</a></li>
       </ul>
     </div>
