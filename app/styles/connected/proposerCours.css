@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-/*
-Note: any .css or .scss files included in the 'styles' directory
-will be correctly compiled during `gulp serve` and `gulp`
- */
-
 hgroup { 
 	text-align:center;
 	margin-top: 4em;

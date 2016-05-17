@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-/*
-Note: any .css or .scss files included in the 'styles' directory
-will be correctly compiled during `gulp serve` and `gulp`
- */
-
 .portfolio-max-width {
     max-width: 1100px;
     margin: auto;
