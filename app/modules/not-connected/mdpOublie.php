@@ -208,6 +208,13 @@
   <!-- Material Design lite -->
   <script src="../../scripts/material.min.js"></script>
 
+  <!-- jquery -->
+  <script src="../../scripts/jquery/jquery.js"></script>
+
+  <!-- Validation -->
+  <script src="../../scripts/jqueryvalidate/jquery.validate.min.js"></script>
+  <script src="../../scripts/jqueryvalidate/additional-methods.min.js"></script>
+  
   <!-- Custom Theme JavaScript -->
   <script src="../../scripts/not-connected/mdpOublie.js"></script>
 

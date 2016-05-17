@@ -1,7 +1,7 @@
 <?php
-    session_start();
+	session_start();
 	
-  include '../includes/connect.inc.php';
+	include '../includes/connect.inc.php';
 	include '../includes/requeteMooc.php';
 	include '../includes/qcm.php';
 	include '../includes/dragdrop.php';
@@ -181,7 +181,7 @@
 							<ul class="nav side-menu">
 								<li><a><i class="fa fa-wrench"></i> Paramètres<span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href=" connected/profil.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil</a>
+										<li><a href="connected/profil.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil</a>
 										</li>
 										<li><a href="connected/admin.php"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>  Dashboard</a>
 										</li>
@@ -248,7 +248,7 @@
 	<script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery-sortable.js"></script>
 	
-    <!-- ********************** jQuery UI DRAG AND DROP ********************** -->
+    <!-- jQuery UI DRAG AND DROP-->
     <script src="../assets/js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 
     <script src="../assets/js/bootstrap.min.js"></script>
@@ -267,8 +267,8 @@
     <script src="../assets/js/icheck/icheck.min.js"></script>
 	
     <!-- daterangepicker -->
-    <script type="text/javascript" src="../assets/js/moment.min.js"></script>
-    <script type="text/javascript" src="../assets/js/datepicker/daterangepicker.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/js/datepicker/daterangepicker.js"></script>
 
     <script src="../assets/js/custom.js"></script>
 
@@ -281,15 +281,15 @@
 
     <!-- flot js -->
     <!--[if lte IE 8]><script type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
-    <script type="text/javascript" src="../assets/js/flot/jquery.flot.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/jquery.flot.pie.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/jquery.flot.orderBars.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/jquery.flot.time.min.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/date.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/jquery.flot.spline.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/jquery.flot.stack.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/curvedLines.js"></script>
-    <script type="text/javascript" src="../assets/js/flot/jquery.flot.resize.js"></script>
+    <script src="../assets/js/flot/jquery.flot.js"></script>
+    <script src="../assets/js/flot/jquery.flot.pie.js"></script>
+    <script src="../assets/js/flot/jquery.flot.orderBars.js"></script>
+    <script src="../assets/js/flot/jquery.flot.time.min.js"></script>
+    <script src="../assets/js/flot/date.js"></script>
+    <script src="../assets/js/flot/jquery.flot.spline.js"></script>
+    <script src="../assets/js/flot/jquery.flot.stack.js"></script>
+    <script src="../assets/js/flot/curvedLines.js"></script>
+    <script src="../assets/js/flot/jquery.flot.resize.js"></script>
 	
 	<!-- skycons -->
     <script src="../assets/js/skycons/skycons.js"></script>
