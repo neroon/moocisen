@@ -50,6 +50,28 @@ function insertFaitToBDDwithUpdate($score,$id_user,$id_exercice){
 	}
 }
 
+
+function insertFaitToBDDwithUpdateTabExo($score,$id_user,$tabide){
+    include 'connect.inc.php'; //connexion bdd
+    $tabide=json_decode($tabide);
+   // var_dump(count($tabide));
+    for($i=0;$i<count($tabide);$i++){
+        $id_exercice = $tabide[$i];
+      try { 
+            $requete_prepare= $bdd->prepare("INSERT INTO faire(score,id_user,id_exercice) VALUES('$score', '$id_user', '$id_exercice') ON DUPLICATE KEY UPDATE score='$score',id_user='$id_user',id_exercice='$id_exercice'"); // on prépare notre requête
+            $requete_prepare->execute();
+            //var_dump($requete_prepare);
+            echo ".";
+        } catch (Exception $e) { 
+            echo $e->errorMessage();
+            echo "->erreur<br>";
+        }
+        //echo "----".$tabide[$i];
+    }
+    echo "<br>->Sauvegarde du score<br>";
+    
+}
+
 function updateSuivreChap($id_user,$id_chap,$id_mooc){
     include 'connect.inc.php'; //connexion bdd
     try { 
@@ -180,6 +202,10 @@ function compareTab($strChoix, $strSoluce){
     }
     echo '<br>score inseré :'.$lePourcentage;
 
+    if($lePourcentage<0){
+        $lePourcentage=0;
+    }
+
     return $lePourcentage;
 
 }
@@ -203,6 +229,7 @@ if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
     $id_user=$_SESSION['id_user'];
     $score = $lepourcentage;
     insertFaitToBDDwithUpdate($score,$id_user,$ide); //Insertion en BDD
+    insertFaitToBDDwithUpdateTabExo($score,$id_user,$tabide);
     updateSuivreChap($_SESSION['id_user'],$idc,$idm);
     //echo "passage en bdd";
 }else{

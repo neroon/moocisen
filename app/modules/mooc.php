@@ -1,7 +1,7 @@
 <?php
     session_start();
 	
-    include '../includes/connect.inc.php';
+  include '../includes/connect.inc.php';
 	include '../includes/requeteMooc.php';
 	include '../includes/qcm.php';
 	include '../includes/dragdrop.php';
