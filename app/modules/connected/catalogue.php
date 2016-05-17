@@ -135,7 +135,7 @@
   <link rel="stylesheet" href="../../assets/css/animate.css">
 	
   <!-- Your styles -->
-  <link rel="stylesheet" href="../../styles/connected/admin.css">
+  <link rel="stylesheet" href="../../styles/connected/catalogue.css">
   
   <style>
     #view-source {
@@ -178,7 +178,6 @@
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
 
-
         <?php 
           afficheMyProfilHeader($bdd);//viens de include_connected.php  drawer de gauche
           afficheMyNavLink();//viens de include_connected.php drawer de gauche
@@ -203,6 +202,6 @@
 	<script src="../../scripts/material.min.js"></script>
   
 	<!-- Custom Theme JavaScript -->
-  <script src="../../scripts/connected/catalogue.js"></script>
+    <script src="../../scripts/connected/catalogue.js"></script>
 </body>
 </html>

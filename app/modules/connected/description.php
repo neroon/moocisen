@@ -1,11 +1,12 @@
 <?php
 	session_start();
-	include '../../includes/connect.inc.php';
-	include '../../includes/include_connected.php'; // drawer
-
+	
 	if((!isset($_SESSION['id_user']))) {
 		header ("location: ../../index.php");
 	}
+	
+	include '../../includes/connect.inc.php';
+	include '../../includes/include_connected.php'; // drawer
 
 	function imgCard($string1){
     $string1 = strtolower($string1);
