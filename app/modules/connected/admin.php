@@ -1,5 +1,6 @@
 <?php
   session_start();
+  
   include '../../includes/connect.inc.php';
   include '../../includes/include_connected.php'; // drawer
 

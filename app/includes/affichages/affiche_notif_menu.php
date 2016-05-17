@@ -40,7 +40,7 @@ A include dans :
          ?>
         <span class=" fa fa-angle-down"></span>
         <ul class="dropdown-menu dropdown-usermenu animated fadeIn pull-right">
-            <li><a href="../modules/profil.php"><i class="fa fa-user pull-right"></i>Profil</a>
+            <li><a href=" connected/profil.php"><i class="fa fa-user pull-right"></i>Profil</a>
             </li>
             <li><a href="../includes/logout.php"><i class="fa fa-sign-out pull-right"></i>Déconnexion</a>
             </li>

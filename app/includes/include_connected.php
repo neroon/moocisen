@@ -1,5 +1,4 @@
  <?php
-
   function afficheMyProfilHeader($bdd){
 
      if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
@@ -21,7 +20,7 @@
               <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                 <a class="mdl-navigation__link" href="../../includes/logout.php"><li class="mdl-menu__item">Déconnexion<i class="material-icons">exit_to_app</i></li></a>
+                 <a class="mdl-navigation__link" href="../../includes/logout.php"><li class="mdl-menu__item">Se deconnecter<i class="material-icons">exit_to_app</i></li></a>
             </ul>
           </div>
         </header>
@@ -33,7 +32,7 @@
     }else{
       echo '
         <header class="demo-drawer-header">
-          <img src="../images/user.jpg" class="demo-avatar">
+          <img src="../../images/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span>Hors ligne</span>
             <div class="mdl-layout-spacer"></div>
@@ -52,13 +51,15 @@
   function afficheMyNavLink(){
     echo '
       <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-        <a class="mdl-navigation__link" href="../../"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Accueil</a>
-        <a class="mdl-navigation__link" href="admin.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
-        <a class="mdl-navigation__link" href="catalogue.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Catalogue</a>
-        <a class="mdl-navigation__link" href="../profil.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profil</a>
+		<a class="mdl-navigation__link" href="profil.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profil</a>
+		<a class="mdl-navigation__link" href="admin.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Admin</a>
+		<a class="mdl-navigation__link" href="catalogue.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Catalogue</a>
+		<a class="mdl-navigation__link" href="actualitees.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Actualitées</a>
+		<a class="mdl-navigation__link" href="temoignages.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Témoignages</a>
+		<a class="mdl-navigation__link" href="proposerCours.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Proposer un MOOC</a>
 
         <div class="mdl-layout-spacer"></div>
-        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+        <a class="mdl-navigation__link" href="faq.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>Aide & FAQ</a>
       </nav>';
   }
 

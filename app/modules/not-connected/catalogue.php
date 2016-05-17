@@ -1,5 +1,6 @@
 <?php
   session_start();
+  
   include '../../includes/connect.inc.php';
 
   if((isset($_SESSION['id_user']))) {
@@ -62,7 +63,6 @@ function generateCard($bdd){
         }
   }
 ?>
-
 <!DOCTYPE html>
 <!--
   Material Design Lite
@@ -129,6 +129,9 @@ function generateCard($bdd){
 
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="../../styles/material.min.css">
+  
+  <!-- animate -->
+  <link rel="stylesheet" href="../../assets/css/animate.css">
 
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/not-connected/catalogue.css">

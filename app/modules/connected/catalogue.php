@@ -1,9 +1,14 @@
 <?php
-  session_start();
-  include '../../includes/connect.inc.php';
-  include '../../includes/include_connected.php'; // drawer
+	session_start();
+  
+	if((!isset($_SESSION['id_user']))) {
+		header ("location: ../../index.php");
+	}
+  
+	include '../../includes/connect.inc.php';
+	include '../../includes/include_connected.php'; // drawer
 
-   function imgCard($string1){
+	function imgCard($string1){
     $string1 = strtolower($string1);
 
     //$pos = strpos($string1, $string2); //false = string trouvé dans string
@@ -59,55 +64,87 @@
                 
         }
   }
-
-
- 
-
-
-
-
 ?>
-<!doctype html>
-<html lang="en">
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<!DOCTYPE html>
+
+<html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>MoocISEN Catalogue</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="../../favicon.ico">
+  <meta property="og:title" content="Mooc Isen">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="http://colombies.com/app">
+  <meta property="og:description" content="Une plateforme pour apprendre gratuitement des cours d'ingénieur à l'ISEN.">
+  <meta property="robots" content="">
+  
+  <!-- Title -->
+  <title>Catalogue | Mooc Isen</title>    
+   
+  <!-- favicon.ico -->
+  <link rel="shortcut icon" href="../../favicon.ico">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
 
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="../../manifest.json">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Mooc Isen">
+  <link rel="icon" sizes="192x192" href="../../images/touch/chrome-touch-icon-192x192.png">
 
-    <link rel="shortcut icon" href="../favicon.ico">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Mooc Isen">
+  <link rel="apple-touch-icon" href="../../images/touch/apple-touch-icon.png">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="../../images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#457871">
 
-    <!-- <link href="../assets/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#457871">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
-    <link rel="stylesheet" href="../../styles/connected/admin.css">
+  <!-- Material Design Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 
-    <!-- animate -->
-    <link rel="stylesheet" href="../../assets/css/animate.css">
-    <style>
+  <!-- Material Design Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
+  
+  <!-- Material Design Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+
+  <!-- Material Design Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <!-- animate -->
+  <link rel="stylesheet" href="../../assets/css/animate.css">
+	
+  <!-- Your styles -->
+  <link rel="stylesheet" href="../../styles/connected/admin.css">
+  
+  <style>
     #view-source {
       position: fixed;
       display: block;
@@ -117,13 +154,11 @@
       margin-bottom: 40px;
       z-index: 900;
     }
-    </style>
-  </head>
-  <body>
-    <?php
-      //afficheHistorique($bdd);
+  </style>
+</head>
+<body>
 
-    ?>
+	<!-- header -->
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -142,8 +177,9 @@
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">A propos</li>
-            <li class="mdl-menu__item">Accueil</li>
+            <li class="mdl-menu__item"><a style="text-decoration: none; color: grey;" href="aPropos.php">A propos</a></li>
+            <li class="mdl-menu__item"><a style="text-decoration: none; color: grey;" href="contact.php">Contact</a></li>
+			<li class="mdl-menu__item"><a style="text-decoration: none; color: grey;" href="legales.php">Modalités</a></li>
           </ul>
         </div>
       </header>
@@ -155,94 +191,31 @@
           afficheMyNavLink();//viens de include_connected.php drawer de gauche
         ?>
 
-
-        
       </div>
-      <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid ">
-
-
-               <!-- section -->
-                <div class="mdl-grid portfolio-max-width ">
-                      <!-- boite -->
-                      <?php 
-                      generateCard($bdd); 
-                      ?>
-                       <!--  -->   
-                </div>
-
-
-
-
-        </div>
-      </main>
+		<main class="mdl-layout__content mdl-color--grey-100">
+			<div class="mdl-grid ">
+			<!-- section -->
+				<div class="mdl-grid portfolio-max-width ">
+					<!-- boite -->
+					<?php 
+						generateCard($bdd); 
+					?>
+					<!--  -->   
+				</div>
+			</div>
+		</main>
     </div>
 
-      <a href="" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Profil</a>
-    
-     <!-- jQuery -->
+	<!-- jQuery -->
     <script src="../../assets/js/jquery.js"></script>
-    <!-- chart js -->
+	
+	<!-- chart js -->
     <script src="../../assets/js/chartjs/Chart.js"></script>
-    <script src="../../scripts/material.min.js"></script>
-
-  <script type="text/javascript">
-
-        $(document).keydown(function(e) {
-          //console.log("---------"+e.which);
-          var retour =e.which;
-          if(retour==8){
-          //  $(".mdl-cell").css('width', '30%');
-            $(".mdl-cell").show();
-          }
-        });
-
-     function filter(){
-     }
-
-
-      function filter2(){
-                var chaine = $(".search").val().toLowerCase();
-                //console.log(chaine);
-                if(chaine.length == 0){
-                    $(".namesearch").each(function(){
-                        $(this).parents(".mdl-cell").removeClass("hide").addClass("show");
-                    });
-                }
-                if (chaine.length > 1){
-                    if(true == true){
-                       //$(".mdl-cell").show();
-                        $(".namesearch").each(function(){
-                            var n = $(this).text().toLowerCase().search(chaine);
-                            if(n != -1){
-                                $(this).parent().parent().show();    
-
-                            }
-                            else{    
-                                //$(this).parent().parent().css('width', '10px');                          
-                                $(this).parent().parent(".mdl-cell").hide();
-
-                            }
-                         
-                        });
-                    }
-                   /* else{
-                        $(".matiere").each(function(){
-                            
-                            var n = $(this).text().toLowerCase().search(chaine);
-                            if(window.greeting == 8){
-                                $(this).parents(".mdl-cell").removeClass("hide").addClass("show");
-                            }
-                            else{
-                                $(this).parents(".mdl-cell").removeClass("show").addClass("hide");
-                                console.log($(this).text().toLowerCase());
-                            }
-                        });
-                    }*/
-                }
-            }
-     </script>
-
-
-  </body>
+	
+	<!-- Material Design lite -->
+	<script src="../../scripts/material.min.js"></script>
+  
+	<!-- Custom Theme JavaScript -->
+  <script src="../../scripts/connected/catalogue.js"></script>
+</body>
 </html>
