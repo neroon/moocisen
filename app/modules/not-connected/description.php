@@ -1,9 +1,12 @@
 <?php
-  session_start();
-
-  if((isset($_SESSION['id_user']))) {
-    header ("location: ../connected/catalogue.php");
-  }
+	session_start();
+  
+	if((!isset($_SESSION['id_user']))) {
+		header ("location: ../../index.php");
+	}
+	
+	include '../../includes/connect.inc.php';
+	include '../../includes/include_connected.php';
 ?>
 <!DOCTYPE html>
 <!--

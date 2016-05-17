@@ -4,6 +4,9 @@
 	if((!isset($_SESSION['id_user']))) {
 		header ("location: ../../index.php");
 	}
+	
+	include '../../includes/connect.inc.php';
+	include '../../includes/include_connected.php';
 ?>
 <!--
   Material Design Lite
