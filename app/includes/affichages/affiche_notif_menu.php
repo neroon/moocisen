@@ -28,9 +28,9 @@ A include dans :
           
             if ((isset($_SESSION['avatar'])) && (!empty($_SESSION['avatar']))){
                 $avatar=$_SESSION['avatar'];
-                echo '<img src="'.$avatar.'" alt="">';
+                echo '<img src="../'.$avatar.'" alt="">';
             }else{
-                echo '<img src="../assets/images/user.png" alt="">';
+                echo '<img src="../../assets/images/user.png" alt="">';
             }
         ?>
         
@@ -42,7 +42,7 @@ A include dans :
         <ul class="dropdown-menu dropdown-usermenu animated fadeIn pull-right">
             <li><a href=" connected/profil.php"><i class="fa fa-user pull-right"></i>Profil</a>
             </li>
-            <li><a href="../includes/logout.php"><i class="fa fa-sign-out pull-right"></i>Déconnexion</a>
+            <li><a href="../../includes/logout.php"><i class="fa fa-sign-out pull-right"></i>Déconnexion</a>
             </li>
         </ul>
         
@@ -50,8 +50,8 @@ A include dans :
     <?php  
     //Si pas connecter
     }else{
-        echo "<a href='../modules/inscription.php' class='user-profile dropdown-toggle'>";
-        echo "<img src='../assets/images/loadpulseX60.gif' alt=''/>";
+        echo "<a href='../../modules/not-connected/inscription.php' class='user-profile dropdown-toggle'>";
+        echo "<img src='../../assets/images/loadpulseX60.gif' alt=''/>";
         echo "<span class=' fa fa-angle-down'></span>";
     echo "</a>";
     }

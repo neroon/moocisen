@@ -94,7 +94,7 @@ function callGraph(idmooc){
         var ctx = document.getElementById("myChart");
         $.ajax({
                      type: "POST",
-                     url: "../includes/requestgraph.php",
+                     url: "../../includes/requestgraph.php",
                      dataType: 'json',
                      data: { data:idmooc },
                      success: function(data) {
@@ -127,7 +127,7 @@ function callGraph(idmooc){
                         data: {
                             labels: titles,
                             datasets: [{
-                                label: '% de réussite',
+                                label: '% de rÃ©ussite',
                                 data: pourcentage
                             }]
                         },

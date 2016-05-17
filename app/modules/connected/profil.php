@@ -3,6 +3,7 @@
 	
     include '../../includes/connect.inc.php';
     include '../../includes/verif_session.php';
+	
     try { 
         $select3 = $bdd->prepare("SELECT nom,prenom,email,pseudo,pays FROM user WHERE id_user = ".$_SESSION["id_user"]."");
         $select3->execute();
