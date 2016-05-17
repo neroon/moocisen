@@ -298,6 +298,6 @@
 	<script src="../assets/js/wizard/jquery.smartWizard.js"></script>
 	
 	<!-- Custom JS -->
-    <script src="../scripts/mooc.js></script>
+    <script src="../scripts/mooc.js"></script>
 </body>
 </html>
