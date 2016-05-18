@@ -166,8 +166,46 @@
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
-                            <!-- AFFICHAGE MENU -->
-                           <?php include '../../includes/affichages/affiche_notif_menu.php'; ?>
+							<!-- AFFICHAGE MENU -->
+							<li class="">
+								<?php  
+								if ((isset($_SESSION['email'])) && (!empty($_SESSION['email']))){
+								//Si Connecter
+								?>
+								<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<?php 
+									  
+										if ((isset($_SESSION['avatar'])) && (!empty($_SESSION['avatar']))){
+											$avatar=$_SESSION['avatar'];
+											echo '<img src="../'.$avatar.'" alt="">';
+										}else{
+											echo '<img src="../../assets/images/user.png" alt="">';
+										}
+									?>
+									
+									 <?php 
+									 $short_string=  $_SESSION['email']; //On va afficher juste les 5 premiers pour regler le pb d'affichage sur mobile
+									 echo substr($short_string, 0, 10).".."; 
+									 ?>
+									<span class=" fa fa-angle-down"></span>
+									<ul class="dropdown-menu dropdown-usermenu animated fadeIn pull-right">
+										<li><a href="profil.php"><i class="fa fa-user pull-right"></i>Profil</a>
+										</li>
+										<li><a href="../../includes/logout.php"><i class="fa fa-sign-out pull-right"></i>Déconnexion</a>
+										</li>
+									</ul>
+									
+								</a>
+								<?php  
+								//Si pas connecter
+								}else{
+									echo "<a href='../not-connected/inscription.php' class='user-profile dropdown-toggle'>";
+									echo "<img src='../../assets/images/loadpulseX60.gif' alt=''/>";
+									echo "<span class=' fa fa-angle-down'></span>";
+								echo "</a>";
+								}
+								?>
+							</li>
                         </ul>
                     </nav>
                 </div>
@@ -840,17 +878,27 @@
 
     <!-- flot js -->
     <!--[if lte IE 8]><script type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
-    <script type="text/javascript" src="../../assets/js/flot/jquery.flot.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/jquery.flot.pie.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/jquery.flot.orderBars.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/jquery.flot.time.min.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/date.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/jquery.flot.spline.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/jquery.flot.stack.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/curvedLines.js"></script>
-    <script type="text/javascript" src="../../assets/js/flot/jquery.flot.resize.js"></script>
+    <script src="../../assets/js/flot/jquery.flot.js"></script>
+    <script src="../../assets/js/flot/jquery.flot.pie.js"></script>
+    <script src="../../assets/js/flot/jquery.flot.orderBars.js"></script>
+    <script src="../../assets/js/flot/jquery.flot.time.min.js"></script>
+    <script src="../../assets/js/flot/date.js"></script>
+    <script src="../../assets/js/flot/jquery.flot.spline.js"></script>
+    <script src="../../assets/js/flot/jquery.flot.stack.js"></script>
+    <script src="../../assets/js/flot/curvedLines.js"></script>
+    <script src="../../assets/js/flot/jquery.flot.resize.js"></script>
 	
 	<!-- Custom JS-->
 	<script src="../../scripts/connected/profil.js"></script>
+	
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-XXXXX-X', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>

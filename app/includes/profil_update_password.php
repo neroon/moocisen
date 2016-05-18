@@ -102,18 +102,18 @@ if($verifSession==1){
 		$verifId = verifId();
 		if($verifId==0){
 			echo "->id n'existe pas";
-			header ("location: ../modules/profil.php?erreur=Erreur mdp");
+			header ("location: ../modules/connected/profil.php?erreur=Erreur mdp");
 		}else if($verifId==1){
 			echo "->mdp ne corresponde pas";
-			header ("location: ../modules/profil.php?erreur=mdp non identique");
+			header ("location: ../modules/connected/profil.php?erreur=mdp non identique");
 		}else if($verif==1){
 			updateIdResetPwd();
-			header ("location: ../modules/profil.php?ok=success");
+			header ("location: ../modules/connected/profil.php?ok=success");
 		}
 	}
 	else{
 		echo '<br>wrong form';
-		header ("location: ../modules/profil.php?erreur=Erreur formulaire");
+		header ("location: ../modules/connected/profil.php?erreur=Erreur formulaire");
 	}
 }else{
 	echo '<br>aucune session';

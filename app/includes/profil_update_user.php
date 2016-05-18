@@ -92,15 +92,15 @@ $verifSession = sessionValid();
 if($verifSession ==1){
 	if($verif==1){
 		updateUser();
-		header ("location: ../modules/profil.php?ok=success");
+		header ("location: ../modules/connected/profil.php?ok=success");
 	}
 	else{
 		echo '<br>wrong form';
-		header ("location: ../modules/profil.php?erreur=Erreur formulaire");
+		header ("location: ../modules/connected/profil.php?erreur=Erreur formulaire");
 	}
 }else{
 	echo '<br>aucune session';
-	header ("location: ../modules/profil.php?erreur=Erreur session");
+	header ("location: ../modules/connected/profil.php?erreur=Erreur session");
 }
 
 
