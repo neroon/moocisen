@@ -177,7 +177,7 @@
 									  
 										if ((isset($_SESSION['avatar'])) && (!empty($_SESSION['avatar']))){
 											$avatar=$_SESSION['avatar'];
-											echo '<img src="../'.$avatar.'" alt="">';
+											echo '<img src="'.$avatar.'" alt="">';
 										}else{
 											echo '<img src="../../assets/images/user.png" alt="">';
 										}

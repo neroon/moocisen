@@ -198,6 +198,9 @@
 		</main>
     </div>
 	
+	<!-- jquery -->
+	<script src="../../scripts/jquery/jquery.js"></script>
+  
 	<!-- Material Design lite -->
 	<script src="../../scripts/material.min.js"></script>
   
