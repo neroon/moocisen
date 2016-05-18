@@ -123,7 +123,7 @@ $verifMail = emailExist();
 $verif = formValid();
 if($verifMail==0){
 	//echo '<br>Mail inconnu';
-	header ("location: ../index.php?erreur=Mail inconnu");
+	header ("location: ../modules/not-connected/mdpOublie.php?erreur=Mail inconnu");
 }else if($verif==1){
 	$urlResetPwd=updateIdResetPwd();
 	echo '<br>Url a envoyer = '.$url.'/moocisen/app/modules/not-connected/changerMdp.php?id='.$urlResetPwd;
@@ -132,7 +132,7 @@ if($verifMail==0){
 }
 else{
 	//echo '<br>wrong form';
-	header ("location: #?erreur=Formulaire erreur");
+	header ("location:  ../modules/not-connected/mdpOublie.php?erreur=Formulaire erreur");
 }
 
 ?>

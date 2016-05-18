@@ -80,13 +80,16 @@ function updateIdResetPwd(){
 
 $verif = formValid();
 if(verifId()==0){
-	echo "->id n'existe pas (Lien déja utilisé)";
+	//header ("location: ../index.php?erreur=id n'existe pas (Lien déja utilisé)");
+	header ("location: ../modules/not-connected/changerMdp.php?erreur=id n'existe pas (Lien déja utilisé)");
+	//echo "->id n'existe pas (Lien déja utilisé)";
 }else if($verif==1){
 	updateIdResetPwd();
 	resetId();
 	header ("location: ../index.php?ok=mdp reinit success");
 }
 else{
-	echo '<br>wrong form';
+	header ("location: ../modules/not-connected/changerMdp.php?erreur=Formulaire erreur");
+	//header ("location: ../index.php?erreur=formulaire erreur");
 }
 ?>

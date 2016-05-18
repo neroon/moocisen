@@ -119,13 +119,7 @@
     <div class="head">Mot de passe</div>   
 	
     <form action="../../includes/update_pwd.php" method="post" id="myLogin">
-		<?php 
-			if(isset($_GET['id'])){
-				$id=$_GET['id'];
-				echo ('<span class="label label-default pull-right"><span class="glyphicon glyphicon-lock"></span>  '.$id.'</span>');
-				echo ('<input type="hidden" name="id" value="'.$id.'">'); 
-			} 
-        ?>
+
         <main class="mdl-layout__content">
          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="requestPwd">
             <input type="password" class="mdl-textfield__input" id="exampleInputPassword1" name="password"/>
@@ -134,7 +128,15 @@
           </div>
         </main>
 
+
         <input type="submit" class="btn" value="Modifier"/>
+            <?php 
+              if(isset($_GET['id'])){
+                $id=$_GET['id'];
+                echo ('<span class="label label-default pull-right"><span class="glyphicon glyphicon-lock"></span>  '.$id.'</span>');
+                echo ('<input type="hidden" name="id" value="'.$id.'">'); 
+              } 
+        ?>
     </form>
   </div>
   <!-- snackbar -->
