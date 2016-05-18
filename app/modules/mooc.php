@@ -142,7 +142,7 @@
 					<!-- menu prile quick info -->
 					<div class="profile">
 						<div class="profile_pic">
-							<img src="../assets/images/gradsm.png" style="margin: 10px;" alt="..." class="img-circle profile_img">
+							<img src="../assets/images/user.png" style="margin: 10px;" alt="..." class="img-circle profile_img">
 						</div>
 						<div class="profile_info">
 							<span>MOOC,</span>
