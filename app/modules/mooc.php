@@ -13,10 +13,8 @@
         $unlockTrophy->closeCursor();      
        // echo $donnees['cpt'];
         if($donnees['cpt']==0){
-
             $iduser = $_SESSION['id_user'];
             $idM = $_GET['idM'];
-
             try { 
                 $requete_prepare= $bdd->prepare("INSERT INTO suivre(date_suivi,avancement,id_user,id_mooc) VALUES(current_date, 0,'$iduser', '$idM')"); // on prépare notre requête
                 $requete_prepare->execute();

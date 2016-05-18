@@ -48,6 +48,7 @@ function formValid(){
         $_SESSION['email'] 		= $result[0]['email'];
         $_SESSION['pays'] 		= $result[0]['pays'];
         $_SESSION['grade'] 		= $result[0]['grade'];
+        $_SESSION['professeur'] = $result[0]['professeur'];
         $_SESSION['nom'] 		= $result[0]['nom'];
         $_SESSION['prenom'] 	= $result[0]['prenom'];
         $_SESSION['avatar'] 	= $result[0]['avatar'];

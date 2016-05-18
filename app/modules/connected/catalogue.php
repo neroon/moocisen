@@ -44,7 +44,7 @@
 
 
                echo '
-                 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card animated zoomIn">
+                 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card ">
                     <div class="mdl-card__media mdl-color--teal-400" >
                         <img class="article-image" src="../../images/'.imgCard($lignes[$i]["nom_mooc"]).'" border="0" width="120px" alt="" style="margin: 20px;">
                     </div>
@@ -190,7 +190,9 @@
 				<div class="mdl-grid portfolio-max-width ">
 					<!-- boite -->
 					<?php 
-						generateCard($bdd); 
+
+						generateCard($bdd);
+
 					?>
 					<!--  -->   
 				</div>
@@ -205,7 +207,7 @@
 	<script src="../../scripts/material.min.js"></script>
   
 	<!-- Custom Theme JavaScript -->
-    <script src="../../scripts/connected/catalogue.js"></script>
+  <script src="../../scripts/connected/catalogue.js"></script>
 	
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 	<script>

@@ -48,17 +48,38 @@
   }
   
   function afficheMyNavLink(){
-    echo '
-      <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-		<a class="mdl-navigation__link" href="profil.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profil</a>
-		<a class="mdl-navigation__link" href="admin.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Admin</a>
-		<a class="mdl-navigation__link" href="catalogue.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Catalogue</a>
-		<a class="mdl-navigation__link" href="actualitees.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Actualitées</a>
-		<a class="mdl-navigation__link" href="temoignages.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Témoignages</a>
-		<a class="mdl-navigation__link" href="proposerCours.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Proposer un MOOC</a>
 
-        <div class="mdl-layout-spacer"></div>
-        <a class="mdl-navigation__link" href="faq.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>Aide & FAQ</a>
-      </nav>';
+      if(($_SESSION['professeur'])==1) {
+        
+    echo '
+            <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="profil.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profil</a>
+          <a class="mdl-navigation__link" href="admin.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Admin</a>
+          <a class="mdl-navigation__link" href="catalogue.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Catalogue</a>
+          <a class="mdl-navigation__link" href="actualitees.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Actualitées</a>
+          <a class="mdl-navigation__link" href="temoignages.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Témoignages</a>
+          <a class="mdl-navigation__link" href="proposerCours.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Proposer un MOOC</a>
+
+              <div class="mdl-layout-spacer"></div>
+              <a class="mdl-navigation__link" href="faq.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>Aide & FAQ</a>
+            </nav>';
+      }else{
+
+          echo '
+            <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="profil.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profil</a>
+          <a class="mdl-navigation__link" href="catalogue.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Catalogue</a>
+          <a class="mdl-navigation__link" href="actualitees.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Actualitées</a>
+          <a class="mdl-navigation__link" href="temoignages.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Témoignages</a>
+          <a class="mdl-navigation__link" href="proposerCours.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Proposer un MOOC</a>
+
+              <div class="mdl-layout-spacer"></div>
+              <a class="mdl-navigation__link" href="faq.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>Aide & FAQ</a>
+            </nav>';
+
+      }
+  
+
+
   }
 ?>

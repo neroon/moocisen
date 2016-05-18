@@ -7,6 +7,10 @@
 	if((!isset($_SESSION['id_user']))) {
 		header ("location: ../../index.php");
 	}
+
+	if(($_SESSION['professeur'])!=1) {
+		header ("location: profil.php");
+	}
 	
 	/**  AFFICHE LE DETAIL D'UNE PERSONNE BASE SUR  URL GET */
 	function afficheDetail($bdd){
@@ -363,8 +367,7 @@
      <!-- jQuery -->
     <script src="../../assets/js/jquery.js"></script>
 
-    <!-- chart js -->
-    <script src="../../assets/js/chartjs/Chart.js"></script>
+
 	
 	<!-- Material Design lite -->
     <script src="../../scripts/material.min.js"></script>
