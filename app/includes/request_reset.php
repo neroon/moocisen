@@ -96,7 +96,8 @@ function sendEmail($urlLink){
       <body>
        <p>Voici votre le lien pour le nouveau mot de passe</p>
        Email : '.$email_address.'<br>
-       URL: <a href='.$url.'/app/modules/not-connected/reset_password.php?id='.$urlLink.'>'.$url.'/app/modules/not-connected/changerMdp.php?id='.$urlLink.'</a> <br>
+       Lien: <a href='.$url.'/app/modules/not-connected/changerMdp.php?id='.$urlLink.'>'.$url.'/app/modules/not-connected/changerMdp.php?id='.$urlLink.'</a> <br>
+       URL: '.$url.'/app/modules/not-connected/changerMdp.php?id='.$urlLink.'</a> <br>
        '.$message.' <br>
        Sinon vous pouvez vous rendre sur la page "mot de passe oublié" et rentrer le code : '.$code.'<br>
       </body>
