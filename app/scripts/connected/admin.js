@@ -17,3 +17,133 @@
  *
  */
  
+/** $get avec js */
+       function $_GET(param) {
+          var vars = {};
+          window.location.href.replace( location.hash, '' ).replace( 
+            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+            function( m, key, value ) { // callback
+              vars[key] = value !== undefined ? value : '';
+            }
+          );
+
+          if ( param ) {
+            return vars[param] ? vars[param] : null;  
+          }
+          return vars;
+        }
+          
+       //snackbar
+        $(document).ready(function(){
+          var deco_var = decodeURI( $_GET('ok'));
+
+
+          if(deco_var!=='null'){
+            setTimeout(function(){
+                    var notification = document.querySelector('.mdl-js-snackbar');
+                      var data = {
+                        message: deco_var,
+                        actionHandler: function(event) {},
+                        actionText: ' ',
+                        timeout: 5000
+                      };
+                    notification.MaterialSnackbar.showSnackbar(data);
+            }, 1000);
+          }
+            
+        });
+		
+
+/** chart js */
+    var ctx = document.getElementById("myChart");
+
+	function callGraph(idmooc){
+        //alert(idmooc);
+        var ctx = document.getElementById("myChart");
+        $.ajax({
+                     type: "POST",
+                     url: "../includes/requestgraph.php",
+                     dataType: 'json',
+                     data: { data:idmooc },
+                     success: function(data) {
+                        alert("success");
+                        //console.log(data); // REGARDER DEBUG
+                        console.log(data[0][0]["titre"]); // EXEMPLE
+                        console.log(data[1][0]); // EXEMPLE
+                        var titles = new Array();
+                        data[0].forEach(function(elem,index){
+                            titles[index] = elem.titre;
+                        })
+
+                        var pourcentage = new Array();
+                        data[1].forEach(function(elem,index){
+                            pourcentage[index] = elem;
+                        })
+
+                        //Get context with jQuery - using jQuery's .get() method.
+                        $(".removechart").html('<canvas id="myChart" height="200" width="400" ></canvas>');
+                        // reinit canvas
+                       
+                        var ctx = $("#myChart");
+                         
+                        //This will get the first returned node in the jQuery collection.
+                        
+                        var myChart = new Chart(ctx, {
+                            type: 'radar',
+                            data: mydata,
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+
+                    } 
+                  
+                });
+    }
+
+    var mydata = {
+        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        datasets: [
+            {
+                label: "My First dataset",
+                backgroundColor: "rgba(179,181,198,0.2)",
+                borderColor: "rgba(179,181,198,1)",
+                pointBackgroundColor: "rgba(179,181,198,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(179,181,198,1)",
+                data: [65, 59, 90, 81, 56, 55, 40]
+            },
+            {
+                label: "My Second dataset",
+                backgroundColor: "rgba(255,99,132,0.2)",
+                borderColor: "rgba(255,99,132,1)",
+                pointBackgroundColor: "rgba(255,99,132,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(255,99,132,1)",
+                data: [28, 48, 40, 19, 96, 27, 100]
+            }
+        ]
+    };
+
+
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: mydata,
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
