@@ -235,7 +235,7 @@
 								<?php  
 								//Si pas connecter
 								}else{
-									echo "<a href='modules/not-connected/inscription.php' class='user-profile dropdown-toggle'>";
+									echo "<a href='not-connected/inscription.php' class='user-profile dropdown-toggle'>";
 									echo "<img src='../assets/images/loadpulseX60.gif' alt=''/>";
 									echo "<span class=' fa fa-angle-down'></span>";
 								echo "</a>";
@@ -342,7 +342,7 @@
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXX-X', 'auto');
+		ga('create', 'UA-77911480-1', 'auto');
 		ga('send', 'pageview');
 	</script>
 </body>
