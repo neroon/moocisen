@@ -122,15 +122,17 @@ $url = 'http://'.$_SERVER['SERVER_NAME'];
 $verifMail = emailExist();
 $verif = formValid();
 if($verifMail==0){
-	echo '<br>Mail inconnu';
+	//echo '<br>Mail inconnu';
+	header ("location: ../index.php?erreur=Mail inconnu");
 }else if($verif==1){
 	$urlResetPwd=updateIdResetPwd();
-	echo '<br>Url a envoyer = '.$url.'/moocisen/app/modules/not-connected/reset_password.php?id='.$urlResetPwd;
+	echo '<br>Url a envoyer = '.$url.'/moocisen/app/modules/not-connected/changerMdp.php?id='.$urlResetPwd;
 	sendEmail($urlResetPwd); // envoie de l'email
-	header ("location: ../index.php?ok=mdp envoye");
+	header ("location: ../index.php?ok=Mot de passe envoyé");
 }
 else{
-	echo '<br>wrong form';
+	//echo '<br>wrong form';
+	header ("location: #?erreur=Formulaire erreur");
 }
 
 ?>
