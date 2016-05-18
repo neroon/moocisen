@@ -162,7 +162,7 @@ var appData=window.App || {}; //variable globale
                     tabide.push($(this).val());
                 });
                 var jsontabide=JSON.stringify(tabide);
-                alert(jsontabide);
+                //alert(jsontabide);
 
 
                 //Requete Ajax sur wizard_ajax.php permettant de corrigé les réponse + insertion en bdd
