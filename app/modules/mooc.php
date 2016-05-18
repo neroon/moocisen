@@ -215,7 +215,8 @@
 									  
 										if ((isset($_SESSION['avatar'])) && (!empty($_SESSION['avatar']))){
 											$avatar=$_SESSION['avatar'];
-											echo '<img src="../'.$avatar.'" alt="">';
+											$str = str_replace('../', '', $avatar);
+											echo '<img src="../'.$str.'" alt="">';
 										}else{
 											echo '<img src="../assets/images/user.png" alt="">';
 										}

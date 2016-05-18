@@ -20,7 +20,7 @@ html{color:rgba(0,0,0, 0.87);font-size:1em;line-height:1.4}::-moz-selection{back
   width: 100%; /*  x0.30 */
   height: 0;
   padding-bottom: 55%; /* 9/16 x0.30 */
-  margin-bottom: 4.8em;
+  margin-bottom: 2.3em;
   overflow: hidden;
   position: relative;
 }
