@@ -14,6 +14,7 @@ Mooc Isen utilise les technologies suivantes:
 * PHP 5
 * MySQL
 * Serveur Apache 2
+* ChartJS
 
 
 ## Prérequis
