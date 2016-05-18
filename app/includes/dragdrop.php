@@ -1,5 +1,4 @@
 <?php
-
 	function exoDragDrop($idMooc,$idChap,$idExo,$bdd,$numeroExo)
 	{
 		try{
@@ -34,7 +33,5 @@
 		echo $e->errorMessage();
   		echo "->erreur afficheChapitreExos()";
 		}
-		
 	}
-
 ?>

@@ -15,14 +15,10 @@ function sessionValid(){
     return $verif;
 }
 
-
-
 $verifSession = sessionValid();
 if($verifSession == 1){
     //echo ("ok session valide");
 }else{
     header ("location: ../includes/logout.php?erreur=Probleme de session");
 }
-
-
 ?>

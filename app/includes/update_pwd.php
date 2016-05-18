@@ -41,12 +41,8 @@ function verifId(){
 	if($result==NULL){
 		$verif = 0; //L'id de reset password
 	}
-
-
 	return $verif;
 }
-
-
 
 //Met a jour l id pour le reset du mdp
 function updateIdResetPwd(){
@@ -82,8 +78,6 @@ function updateIdResetPwd(){
 	}
  }
 
-
-
 $verif = formValid();
 if(verifId()==0){
 	echo "->id n'existe pas (Lien déja utilisé)";
@@ -95,5 +89,4 @@ if(verifId()==0){
 else{
 	echo '<br>wrong form';
 }
-
 ?>

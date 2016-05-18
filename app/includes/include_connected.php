@@ -46,8 +46,7 @@
             ';
     }
   }
-
-
+  
   function afficheMyNavLink(){
     echo '
       <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -62,5 +61,4 @@
         <a class="mdl-navigation__link" href="faq.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>Aide & FAQ</a>
       </nav>';
   }
-
 ?>

@@ -3,7 +3,6 @@ include "connect.inc.php";  /// Connection bdd
 
 //echo "inscription.php";
 
-
 //ok=1   ko=0
 function formValid(){
 	$verif = 1;
@@ -66,8 +65,6 @@ function emailExist(){
 	return $verif;
 }
 
-
-
 function insertUsertoBDD(){
  	include "connect.inc.php";
  	$valSurname = $_POST['surname'];
@@ -92,30 +89,26 @@ function insertUsertoBDD(){
  }
 
 function startSession(){
- include "connect.inc.php";
- $email = $_POST['email'];
- try { 
-	$requete_prepare = $bdd->prepare("SELECT * FROM user WHERE email='$email'"); // on prépare notre req
-	$requete_prepare->execute();
-	$result = $requete_prepare->fetchAll( PDO::FETCH_ASSOC );
-	session_start();
-        $_SESSION['login'] 		= $result[0]['email'];
-        $_SESSION['pseudo'] 	= $result[0]['pseudo'];
-        $_SESSION['id_user'] 	= $result[0]['id_user'];
-        $_SESSION['email'] 		= $result[0]['email'];
-        $_SESSION['pays'] 		= $result[0]['pays'];
-        $_SESSION['grade'] 		= $result[0]['grade'];
-        $_SESSION['nom'] 		= $result[0]['nom'];
-        $_SESSION['prenom'] 	= $result[0]['prenom'];
+	include "connect.inc.php";
+	$email = $_POST['email'];
+	try { 
+		$requete_prepare = $bdd->prepare("SELECT * FROM user WHERE email='$email'"); // on prépare notre req
+		$requete_prepare->execute();
+		$result = $requete_prepare->fetchAll( PDO::FETCH_ASSOC );
+		session_start();
+			$_SESSION['login'] 		= $result[0]['email'];
+			$_SESSION['pseudo'] 	= $result[0]['pseudo'];
+			$_SESSION['id_user'] 	= $result[0]['id_user'];
+			$_SESSION['email'] 		= $result[0]['email'];
+			$_SESSION['pays'] 		= $result[0]['pays'];
+			$_SESSION['grade'] 		= $result[0]['grade'];
+			$_SESSION['nom'] 		= $result[0]['nom'];
+			$_SESSION['prenom'] 	= $result[0]['prenom'];
 	} catch (Exception $e) { 
 		echo $e->errorMessage();
   		echo "->erreur";
 	}
-
-
 }
-
-
 
 $verifMail = emailExist();
 $verif = formValid();
@@ -132,5 +125,4 @@ else{
 	echo '<br>wrong form';
 	header("Location: ../modules/not-connected/inscription.php?erreur= erreur formulaire");
 }
-
 ?>

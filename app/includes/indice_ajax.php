@@ -22,7 +22,6 @@ function insertFaitToBDDwithUpdate($score,$id_user,$id_exercice){
 	}
 }
 
-
 if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
     //ok session
     $id_user=$_SESSION['id_user'];
@@ -32,6 +31,4 @@ if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
 }else{
     echo '<br>test hors-ligne';
 }
-
-
 ?>

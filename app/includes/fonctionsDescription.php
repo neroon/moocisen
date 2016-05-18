@@ -10,8 +10,7 @@ $valid = 1;
 	echo'erreur methode GET';
 }
  
-function afficheClassementMooc($idMooc,$bdd)
-	{
+function afficheClassementMooc($idMooc,$bdd) {
 		try{
 			$findUser = $bdd->prepare('SELECT suivre.id_user,pseudo FROM suivre INNER JOIN user ON user.id_user=suivre.id_user WHERE id_mooc = "'.$idMooc.'"');
             $findUser->execute();

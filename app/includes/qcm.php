@@ -85,9 +85,6 @@
 				$tab = preg_split('[-]', $reponse);
 				//var_dump($lignesExo);
 
-				
-				
-				
 				 echo'<div class="form-group">
 					<h2 class="StepTitle center">'.$lignesQcm[$i]["question"].'</h2><br>';
 				
@@ -125,19 +122,12 @@
 
 				echo' </div><br>';
 				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
-
-			
-				
 				//}
 			}
-
-
 		}
 		catch (Exception $e) { 
 		echo $e->errorMessage();
   		echo "->erreur afficheChapitreExos()";
 		}
-		
 	}
-
 ?>

@@ -1,9 +1,9 @@
 <?php
-  session_start();
+	session_start();
 
-  if((isset($_SESSION['id_user']))) {
-    header ("location: modules/connected/catalogue.php");
-  }
+	if((isset($_SESSION['id_user']))) {
+		header ("location: modules/connected/catalogue.php");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

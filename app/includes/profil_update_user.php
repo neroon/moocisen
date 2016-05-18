@@ -84,8 +84,6 @@ function updateUser(){
 	}
  }
 
-
-
 //Valide que le formulaire
 $verif = formValid();
 $verifSession = sessionValid();
@@ -102,6 +100,4 @@ if($verifSession ==1){
 	echo '<br>aucune session';
 	header ("location: ../modules/connected/profil.php?erreur=Erreur session");
 }
-
-
 ?>

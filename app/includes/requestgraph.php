@@ -69,5 +69,4 @@ echo json_encode($all);
 }else{
 
 }
-
 ?>

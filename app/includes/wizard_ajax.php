@@ -9,16 +9,6 @@ $ide=$_POST["dataide"]; //id exo
 $tabide=$_POST["datatabide"]; //id tab des partie exo
 $malus=$_POST["datamalus"]; //id tab des partie exo
 
-/*
-$meschoix='["Monsieur Jeson Dupont","Jean Nicolas"]';
-$solutions='["Olivier Garnier,Olivier SCHULTZ,Victor Gerard,PERRICHON Guillaume",""]';
-*/
-//var_dump($saisie);
-/*$meschoix=str_replace('"',"",$meschoix);
-$solutions=str_replace('"',"",$solutions);
-$solutions=str_replace(',]',"]",$solutions);
-*/
-
 //Insert le score sur l'exercice (score basé sur l'algorithme de levenshtein)
 //Remarque : une fois le score rentré impossible de réécrire dessus avec cette fonction
 function insertFaitToBDD($score,$id_user,$id_exercice){
@@ -50,7 +40,6 @@ function insertFaitToBDDwithUpdate($score,$id_user,$id_exercice){
 	}
 }
 
-
 function insertFaitToBDDwithUpdateTabExo($score,$id_user,$tabide){
     include 'connect.inc.php'; //connexion bdd
     $tabide=json_decode($tabide);
@@ -69,7 +58,6 @@ function insertFaitToBDDwithUpdateTabExo($score,$id_user,$tabide){
         //echo "----".$tabide[$i];
     }
     echo "<br>->Sauvegarde du score<br>";
-    
 }
 
 function updateSuivreChap($id_user,$id_chap,$id_mooc){
@@ -105,10 +93,7 @@ function updateSuivreChap($id_user,$id_chap,$id_mooc){
         echo $e->errorMessage();
         echo "->erreur<br>";
     }
-
-
 }
-
 
 //Fonction permettant de calculer la similitude entre 2 chaines (algorithme de levenshtein)
 //Attention il y une limite pour la longueur de la chaine
@@ -207,9 +192,7 @@ function compareTab($strChoix, $strSoluce){
     }
 
     return $lePourcentage;
-
 }
-
 
 $lepourcentage=compareTab($meschoix,$solutions);
 echo '<br><br><br>Debug<br> les réponses sont :'.$solutions."<br>info débug : ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
@@ -235,21 +218,4 @@ if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))){
 }else{
     echo '<br>test hors-ligne';
 }
-
-
-
-
-/*
-echo '<br><br><br>Debug<br>';
-
-if($meschoix == $solutions){
-	echo '100% CORRECT <br> les réponses sont :'.$solutions."<br><br>info débug : ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
-}else if($lepourcentage>70){ 
-	//il a plus de 70% juste donc on affiche les bonnes réponses
-	echo $lepourcentage.'% CORRECT <br> les réponses sont :'.$solutions."<br><br>info débug ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
-}else{
-	echo $lepourcentage.'% CORRECT <br> les réponses sont : (avoir un score plus élevé)<br><br>info débug '.$idm."  ".$idc." --- ".$tabide." -solution ".$solutions." -choix".$meschoix;
-}
-exit();
-*/
 ?>

@@ -19,7 +19,6 @@ function sessionValid(){
 function insertLogtoBDD(){
  	include "connect.inc.php";
 
-
  	/* Récupération date est heure */
  	$date = date("d-m-Y");
 	$heure = date("H:i");
@@ -73,10 +72,5 @@ function insertLogtoBDD(){
 	
  }
 
-
-
-
-	insertLogtoBDD();
-
-
+insertLogtoBDD();
 ?>

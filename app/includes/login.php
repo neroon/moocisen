@@ -21,8 +21,6 @@ function formValid(){
 	}
 }
 
-
-
  function insertUsertoBDD(){
  	include "connect.inc.php";
  	$email = $_POST['email'];
@@ -39,7 +37,6 @@ function formValid(){
 	/*echo '--->'.$result[0]['email'];
 	echo '--->'.$valPassword;
 	var_dump($result);*/
-
 
 	if (empty($result)) {
   		header ("location: ../modules/not-connected/connexion.php?erreur=Aucun compte");
@@ -65,12 +62,7 @@ function formValid(){
 	}else{
 		header ("location: ../modules/not-connected/connexion.php?erreur=Erreur de saisie");
 	}
-	
-
  }
-
-
-
 
 $verif = formValid();
 if($verif==1){

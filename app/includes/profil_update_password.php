@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include "../includes/connect.inc.php";  /// Connection bdd
 
 
@@ -73,8 +74,6 @@ function verifId(){
 	return $verif;
 }
 
-
-
 //Met a jour l id pour le reset du mdp
 function updateIdResetPwd(){
  	include "../includes/connect.inc.php";
@@ -90,8 +89,6 @@ function updateIdResetPwd(){
   		echo "->erreur";
 	}
  }
-
-
 
 //Valide que le formulaire
 $verif = formValid();
@@ -119,6 +116,4 @@ if($verifSession==1){
 	echo '<br>aucune session';
 	header ("location: ../index.php?erreur=Erreur session");
 }
-
-
 ?>
