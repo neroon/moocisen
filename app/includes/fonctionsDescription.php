@@ -181,7 +181,7 @@ function getInfo3MDL(){
                         
                     </div>
                     <div class="mdl-grid portfolio-copy">
-                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction : '.$scope_nom.'</h3>
+                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">     '.$scope_nom.'</h3>
                         <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding">
                         <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">  <i class="material-icons">info_outline</i> Description : </h3>
                             <p>'.$scope_description.'</p>

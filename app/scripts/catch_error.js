@@ -31,7 +31,7 @@
                         timeout: 5000
                       };
                     notification.MaterialSnackbar.showSnackbar(data);
-            }, 1000);
+            }, 1500);
           }
 
           if(deco_var2!=='null'){
@@ -44,7 +44,7 @@
                         timeout: 5000
                       };
                     notification.MaterialSnackbar.showSnackbar(data);
-            }, 1000);
+            }, 1500);
           }
             
         });

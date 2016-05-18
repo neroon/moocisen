@@ -52,7 +52,7 @@
                         <h2 class="namesearch mdl-card__title-text">'.$lignes[$i]["nom_mooc"].'</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        '.$lignes[$i]["matiere"].'
+                        <b>'.$lignes[$i]["matiere"].'</b><br><br>
                         '.$lignes[$i]["description"].'
                     </div>
                     <div class="mdl-card__actions mdl-card--border">

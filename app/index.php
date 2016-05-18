@@ -124,8 +124,13 @@
         </button>
         </a>
       </li>
+
     </div>
   </div>
+    <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
 
   <!-- section 1 -->
   <section id="welcome" class="section section--welcome section--text-left section--rev section--align-image-bottom">
@@ -209,7 +214,10 @@
         </div>
       </div>
     </div>
+
   </section>
+
+
 
   <!-- footer -->
   <footer class="mdl-mega-footer">
@@ -295,6 +303,10 @@
   <!-- Custom Theme JavaScript -->
   <script src="scripts/not-connected/index.js"></script>
   <script src="scripts/not-connected/scroll-down-button.js"></script>
+
+
+    <!-- Custom Theme JavaScript -->
+  <script src="scripts/catch_error.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
