@@ -371,6 +371,10 @@
 	
 	<!-- Custom Theme JavaScript -->
     <script src="../../scripts/connected/admin.js"></script>
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../../scripts/catch_error.js"></script>
 	
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 	<script>

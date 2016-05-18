@@ -890,6 +890,9 @@
 	
 	<!-- Custom JS-->
 	<script src="../../scripts/connected/profil.js"></script>
+
+  <!-- Catch error -->
+  <script src="../../scripts/catch_error.js"></script>
 	
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 	<script>

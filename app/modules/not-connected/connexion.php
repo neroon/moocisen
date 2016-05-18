@@ -139,11 +139,10 @@
 	<p class="text-p"><a href="mdpOublie.php">Mot de passe oublié ?</a></p>
   </div>
 
-  <!-- snackbar -->
-   <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
-      <div class="mdl-snackbar__text"></div>
-      <button type="button" class="mdl-snackbar__action"></button>
-  </div>
+  <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
   
   </br></br></br></br>
   
@@ -231,6 +230,9 @@
 
   <!-- Custom Theme JavaScript -->
   <script src="../../scripts/not-connected/connexion.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="../../scripts/catch_error.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
