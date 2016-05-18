@@ -94,7 +94,7 @@ function sendEmail($urlLink){
        <title>Voici votre lien pour le nouveau mot de passe</title>
       </head>
       <body>
-       <p>Voici votre le lien pour le nouveau mot de passe</p>
+       <p>Voici votre lien pour le nouveau mot de passe</p>
        Email : '.$email_address.'<br>
        Lien: <a href='.$url.'/app/modules/not-connected/changerMdp.php?id='.$urlLink.'>'.$url.'/app/modules/not-connected/changerMdp.php?id='.$urlLink.'</a> <br>
        URL: '.$url.'/app/modules/not-connected/changerMdp.php?id='.$urlLink.'</a> <br>
