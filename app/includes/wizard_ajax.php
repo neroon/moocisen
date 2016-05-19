@@ -60,6 +60,65 @@ function insertFaitToBDDwithUpdateTabExo($score,$id_user,$tabide){
     echo "<br>->Sauvegarde du score<br>";
 }
 
+function unlockTrophyAdvancement($id_user,$id_mooc){
+     include 'connect.inc.php'; //connexion bdd
+
+     //Permet de récuperer l'avancement d'un mooc pour l'utilisateur courant
+
+    $avancementMooc = $bdd->query('SELECT avancement  AS avc FROM user INNER JOIN suivre ON user.id_user= suivre.id_user INNER JOIN mooc ON suivre.id_mooc=mooc.id_mooc WHERE user.id_user = "'.$id_user.'" AND mooc.id_mooc = "'.$id_mooc.'"');
+    $donnees6 = $avancementMooc->fetch();
+    $avancementMooc->closeCursor();
+
+
+    // Permet de récuperer le nombre de chapitre du MOOC
+
+    $nbChapitreMooc = $bdd->query('SELECT nb_chap FROM mooc WHERE id_mooc ="'.$id_mooc.'"');
+    $donnees7 = $nbChapitreMooc->fetch();
+    $nbChapitreMooc->closeCursor();
+
+
+    // Calcul du % d'avancement
+
+    $tab = Array();
+    $tab = preg_split('[-]', $donnees6["avc"]);
+    $avancement = sizeof($tab)-1;
+    $pourcentage = ceil($avancement/ $donnees7["nb_chap"]*100);
+
+    if($pourcentage>=30){
+        $nbSucces = 4; // nombre de succes par MOOC
+            $id_succes = $id_mooc*$nbSucces-($nbSucces-2);
+            try { 
+                $requete_prepare= $bdd->prepare("INSERT INTO `mooc`.`debloquer` (`date_obtention`, `id_succes`, `id_user`) VALUES (current_date, '$id_succes', '$id_user')");
+                $requete_prepare->execute();
+            } catch (Exception $e) { 
+                //echo $e->errorMessage();
+            }
+    }
+
+    if($pourcentage>=60){
+        $nbSucces = 4; // nombre de succes par MOOC
+            $id_succes = $id_mooc*$nbSucces-($nbSucces-3);
+            try { 
+                $requete_prepare= $bdd->prepare("INSERT INTO `mooc`.`debloquer` (`date_obtention`, `id_succes`, `id_user`) VALUES (current_date, '$id_succes', '$id_user')");
+                $requete_prepare->execute();
+            } catch (Exception $e) { 
+                //echo $e->errorMessage();
+            }
+    }
+
+    if($pourcentage==100){
+        $nbSucces = 4; // nombre de succes par MOOC
+            $id_succes = $id_mooc*$nbSucces-($nbSucces-4);
+            try { 
+                $requete_prepare= $bdd->prepare("INSERT INTO `mooc`.`debloquer` (`date_obtention`, `id_succes`, `id_user`) VALUES (current_date, '$id_succes', '$id_user')");
+                $requete_prepare->execute();
+            } catch (Exception $e) { 
+                //echo $e->errorMessage();
+            }
+    }
+
+}
+
 function updateSuivreChap($id_user,$id_chap,$id_mooc){
     include 'connect.inc.php'; //connexion bdd
     try { 
@@ -82,6 +141,8 @@ function updateSuivreChap($id_user,$id_chap,$id_mooc){
         $stringAvancement = $stringAvancement."-".$id_chap; //ajout du nouveau chapitre
     }
    // echo "avancement -> ".$stringAvancement;
+
+    unlockTrophyAdvancement($id_user,$id_mooc);
 
     try { 
         //$requete_prepare= $bdd->prepare("INSERT INTO suivre(avancement) VALUES '$stringAvancement' "); // on prépare notre requête

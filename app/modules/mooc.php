@@ -19,6 +19,9 @@
                 $requete_prepare= $bdd->prepare("INSERT INTO suivre(date_suivi,avancement,id_user,id_mooc) VALUES(current_date, 0,'$iduser', '$idM')"); // on prépare notre requête
                 $requete_prepare->execute();
                 //echo "->OK inscrition au mooc";
+
+                unlockSuccessInscription($bdd);
+
             } catch (Exception $e) { 
                 echo $e->errorMessage();
                 echo "->erreur";
@@ -29,12 +32,15 @@
     }
 
 
-    /** Function qui insere le score */
-    function insertSuccess($bdd, $id_succes){
-        if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user'])))
+    /** Function qui insere le succes lors de l'inscription au mooc*/
+    function unlockSuccessInscription($bdd){
+        if ((isset($_SESSION['id_user'])) && (!empty($_SESSION['id_user']))  && isset($_GET['idM']))
         {
             //session ok
             $myid=$_SESSION['id_user'];
+            $idMooc = $_GET['idM'];
+            $nbSucces = 4; // nombre de succes par MOOC
+            $id_succes = $idMooc*$nbSucces-($nbSucces-1);
             try { 
                 $requete_prepare= $bdd->prepare("INSERT INTO `mooc`.`debloquer` (`date_obtention`, `id_succes`, `id_user`) VALUES (current_date, '$id_succes', '$myid')"); // on prépare notre requête
                 $requete_prepare->execute();
