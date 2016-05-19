@@ -28,6 +28,7 @@
 			for($i = 0; $i < sizeof($lignesQcm) ; $i++)
 			{
 				$solution = $lignesQcm[$i]["solution"];
+				$solution=htmlentities($solution, ENT_QUOTES, "UTF-8");
 				$tabHint = preg_split('[-]', $solution);
 
 				for($itab = 0; $itab < sizeof($tabHint) ; $itab++)
@@ -40,13 +41,14 @@
 					$lowercase = strtolower($tabHint[$itab]);
 					if($lowercase == 'oui'){
 						$tabSolution[$numCaseTab]=$tabHint[$itab].$i; //rajoute $i si doublon
+
 						//print_r("+*".$tabSolution[$numCaseTab]);
 					}else if($lowercase == 'non'){
 						$tabSolution[$numCaseTab]=$tabHint[$itab].$i; //rajoute $i si doublon
 						//print_r("-*".$tabSolution[$numCaseTab]);
 					}
 					else{
-						$tabSolution[$numCaseTab]=$tabHint[$itab];
+						$tabSolution[$numCaseTab]=$tabHint[$itab].$i;
 						//print_r("-*".$tabSolution[$numCaseTab]);
 					}
 						
@@ -56,7 +58,8 @@
 			//var_dump($tabSolution);
 			//Type hidden qui correpond au reponse pour le qcm
 			//$temp = $tabSolution;
-			$temp = preg_replace("/\s+/","", $tabSolution );
+			$temp = preg_replace("/\s+/","", $tabSolution);
+			//$temp = preg_replace("/é/","xxx", $temp );
 			//print_r($temp);
 
 			//$tabSolution=implode(",",$tabSolution);
@@ -110,9 +113,10 @@
 										}
 									}
 									else{
+										$affichageetvalue = preg_replace("/\s+/","",$tab[$itab]);
 										echo '<div class="checkbox center">
 											<label class="hover">
-												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.preg_replace("/\s+/","",$tab[$itab]).'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
+												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.$affichageetvalue.$i.'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
 												'.$tab[$itab].'<br>
 											</label>
 										</div>';
