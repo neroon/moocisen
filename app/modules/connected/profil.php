@@ -641,7 +641,10 @@
                                         for($i = 0; $i<sizeof($resuTrophy); $i++){
 
                                             echo'<div class="col-md-3">';
-                                                if($resuTrophy[$i]["type_succes"]=="G"){
+                                                if($resuTrophy[$i]["type_succes"]=="P"){
+                                                    echo'<img src="../../assets/images/trophyP2.png" width="128" height="109" class="trophyUnlock" style="margin:auto;display:block">';
+                                                }
+                                                else if($resuTrophy[$i]["type_succes"]=="G"){
                                                     echo'<img src="../../assets/images/trophyG2.png" width="128" height="109" class="trophyUnlock" style="margin:auto;display:block">';
                                                 }
                                                 else if($resuTrophy[$i]["type_succes"]=="S"){
