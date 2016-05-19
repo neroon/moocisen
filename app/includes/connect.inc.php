@@ -10,7 +10,7 @@
     }
     catch(PDOException $e)
     {
-		echo "Erreur au niveau de la BDD (verifier si la BDD existe)";
+		echo "Erreur au niveau de la BDD (verifier si la BDD existe) voir includes/connect.inc.php pour configuration";
         exit();
     }
 ?>

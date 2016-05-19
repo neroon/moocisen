@@ -74,7 +74,7 @@ function insertUsertoBDD(){
 	$valPassword = md5($_POST['password']);
 	$valPays = $_POST['selectPays'];
 	$valJob = $_POST['selectJob'];
-	$linkAvatar = '../assets/images/profil/0user.png';
+	$linkAvatar = '../../assets/images/profil/0user.png';
 	try { 
 		//$requete_prepare= $bdd->prepare("INSERT INTO user(nom,prenom,pseudo,email,password,pays,grade) VALUES('$valSurname', '$valName', '$valPseudo', '$valEmail', '$valPassword', '$valPays', 1)"); // on prépare notre requête
 		$requete_prepare= $bdd->prepare("INSERT INTO user(nom,prenom,pseudo,email,password,pays,grade,avatar) VALUES('$valSurname', '$valName', '$valPseudo', '$valEmail', '$valPassword', '$valPays', 1, '$linkAvatar')"); // on prépare notre requête
@@ -104,6 +104,7 @@ function startSession(){
 			$_SESSION['grade'] 		= $result[0]['grade'];
 			$_SESSION['nom'] 		= $result[0]['nom'];
 			$_SESSION['prenom'] 	= $result[0]['prenom'];
+			$_SESSION['professeur'] = $result[0]['professeur'];
 	} catch (Exception $e) { 
 		echo $e->errorMessage();
   		echo "->erreur";
