@@ -136,6 +136,7 @@
   <!-- animate -->
   <link rel="stylesheet" href="../../assets/css/animate.css">
 	
+
   <!-- Your styles -->
   <link rel="stylesheet" href="../../styles/connected/description.css">
   
@@ -187,11 +188,11 @@
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid ">
                <!-- section -->
-                <div class="mdl-grid portfolio-max-width animated slideInUp">
-                    <div class="mdl-cell mdl-cell--2-col ">
+                <div class="mdl-grid portfolio-max-width">
+                    <div class="mdl-cell mdl-cell--2-col">
                        <!-- boite vide -->
                     </div>
-                   <div class="mdl-cell mdl-cell--7-col mdl-card mdl-shadow--4dp">
+                   <div class="mdl-cell mdl-cell--8-col mdl-card mdl-shadow--4dp">
                       <!-- boite -->
                        <?php
                             include '../../includes/fonctionsDescription.php'; //Utilisation ici de $_GET['idM']

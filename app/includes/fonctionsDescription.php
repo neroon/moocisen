@@ -168,6 +168,7 @@ function getInfo3MDL(){
 		$scope_prerequis = $lignes[0]["prerequis"];
 		$scope_duree = $lignes[0]["duree"];
 		$scope_note = $lignes[0]["note"];
+		$scope_linkyoutube= $lignes[0]["linkyoutube"];
 
 		echo '
 		
@@ -190,10 +191,24 @@ function getInfo3MDL(){
 						<h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline"> <i class="material-icons">alarm</i> Durée : </h3>
 						 <p>'.$scope_duree.'</p>
                         </div>
-                        <div class="mdl-cell mdl-cell--6-col">
-                            <img class="article-image" src="../../images/social.jpg" width="400px" border="0" alt="">
-                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">';
+
+                        if($scope_linkyoutube==null){
+                        	echo '<div class="mdl-cell mdl-cell--6-col">
+                            	<img class="article-image" src="../../images/social.jpg" width="400px" border="0" alt="">
+                        	</div>';
+                        }else{
+                        	echo '<div class="videocontainer" > 
+	            					<iframe src="'.$scope_linkyoutube.'" frameborder="0" allowfullscreen></iframe>
+	          					</div>';
+                        }
+	                        
+          				echo '</div>
                     </div>';
+
+                     /*<div class="mdl-cell mdl-cell--6-col">
+                            <img class="article-image" src="../../images/social.jpg" width="400px" border="0" alt="">
+                        </div>*/
 
             if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
 				echo'
