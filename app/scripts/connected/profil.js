@@ -88,6 +88,10 @@ $.validator.addMethod("mailRegex", function(value, element) {
         },
      }
     });
+
+function goMooc(idmooc){
+   location.href = "../mooc.php?idM="+idmooc+"&idC=0&numC=0";
+}
 	
 function callGraph(idmooc){
         //alert(idmooc);
@@ -98,7 +102,7 @@ function callGraph(idmooc){
                      dataType: 'json',
                      data: { data:idmooc },
                      success: function(data) {
-                        alert("success");
+                        //alert("success");
                         //console.log(data); // REGARDER DEBUG
                         console.log(data[0][0]["titre"]); // EXEMPLE
                         console.log(data[1][0]); // EXEMPLE
@@ -112,9 +116,6 @@ function callGraph(idmooc){
                             pourcentage[index] = elem;
                         })
                         
-                        //http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
-                        //http://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
-
                         //Get context with jQuery - using jQuery's .get() method.
                         $(".removechart").html('<canvas id="myChart" height="200" width="400" ></canvas>');
                         // reinit canvas
@@ -127,15 +128,17 @@ function callGraph(idmooc){
                         data: {
                             labels: titles,
                             datasets: [{
-                                label: '% de réussite',
+                                label: "% de réussite",
+                                backgroundColor: "rgba(26,187,156,0.4)",
                                 data: pourcentage
-                            }]
+                            }],
                         },
                         options: {
                             scales: {
                                 yAxes: [{
                                     ticks: {
-                                        beginAtZero:true
+                                        beginAtZero:true,
+                                        max:100
                                     }
                                 }]
                             }

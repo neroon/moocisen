@@ -111,7 +111,6 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         </br>
                         <div class="menu_section">
-                            <h2>  &nbsp&nbsp<i class='glyphicon glyphicon-sort-by-alphabet' style='color:white'></i> <span style='color:white'>Moocs inscription</span></h2>
                             <ul class="nav side-menu">
                             <?php
                                 try{
@@ -122,7 +121,7 @@
                                     $lignesMySub = $selectMySub->fetchAll();
                                     
                                     
-                                    for($i=0;$i<count($lignesMySub);$i++){
+                                   /* for($i=0;$i<count($lignesMySub);$i++){
                                         echo "
                                          <li><a><i class='glyphicon glyphicon-file'></i> ".$lignesMySub[$i]['nom_mooc']." <span class='fa fa-chevron-down'></span></a>
                                             <ul class='nav child_menu' style='display: none'>
@@ -133,7 +132,7 @@
                                             </ul>
                                         </li>";
                                         
-                                    }
+                                    }*/
                                 }catch (Exception $e) { 
                                     echo $e->errorMessage();
                                     echo "->erreur mes cours";
@@ -743,7 +742,7 @@
                                                     echo'<tr>
                                                         <td>#</td>
                                                         <td>
-                                                            <a href="">'.$donnees3[$i]['nom_mooc'].'</a>
+                                                            <a href="description.php?idM='.$donnees3[$i]['id_mooc'].'">'.$donnees3[$i]['nom_mooc'].'</a>
                                                             <br />
                                                             <small>Inscrit le '.$donnees3[$i]["date_suivi"].'</small>
                                                         </td>';
@@ -804,11 +803,13 @@
                                                         }
                                                         else{
                                                             echo $donnees5["total"];
+
+
                                                         }
                                                         echo'</p>
                                                         </td>
                                                         <td>
-                                                           <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Aller </button>
+                                                          <button onclick="goMooc(this.name);" type="button" name="'.$donnees3[$i]['id_mooc'].'" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward"></i> Aller </button>
                                                            <button onclick="callGraph(this.name);" type="button" name="'.$donnees3[$i]['id_mooc'].'" class="btn btn-success btn-xs"><i class="fa fa-bar-chart"></i> Statistiques </button>
                                                         </td>
                                                     </tr>';   
