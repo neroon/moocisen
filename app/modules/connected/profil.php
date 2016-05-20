@@ -683,11 +683,19 @@
         
                                          for($i = 0; $i<sizeof($resuTrophy1); $i++){
 
-                                            echo'<div class="col-md-3">
-                                                    <img src="../../assets/images/trophyG.png" width="128" height="109" class="trophyLock" style="margin:auto;display:block">
+                                            echo'<div class="col-md-3">';
+                                                  if($resuTrophy1[$i]["type_succes"] =="P"){
+                                                    echo'<img src="../../assets/images/trophyP2.png" width="128" height="109" class="trophyLock" style="margin:auto;display:block">';
+                                                  }
+                                                  else{
+                                                    echo'<img src="../../assets/images/trophyG.png" width="128" height="109" class="trophyLock" style="margin:auto;display:block">';
+                                                  }
+                                                  echo'  
                                                     <p class="text-center"><b>'.$resuTrophy1[$i]["nom_succes"].'</b></p>
                                                     <p class="text-center">'.$resuTrophy1[$i]["description_succes"].'</p> 
                                                 </div>';
+
+                                                // <p class="text-center">Type : '.$resuTrophy1[$i]["type_succes"].'</p>
                                         }
                                     ?> 
                                 </div>
