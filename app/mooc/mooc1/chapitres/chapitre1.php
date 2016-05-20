@@ -55,11 +55,10 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									</ol>
 									<p dir="ltr">
 										Mettre le nom et le prénom est indispensable, sauf si un CV anonyme est demandé. Si c’est le cas le recruteur aura soit la lettre de motivation soit votre
-										mail pour savoir qui vous êtes.
+										mail pour savoir qui vous êtes (de toute façon il vous verra en entretien).
 									</p>
 									<p dir="ltr">
-										Evitez de mettre la mention du nom avant le prénom. Le nom mis en capitale surtout pour ceux qui ont un nom qui peut être un prénom ou lorsque vos nom et
-										prénom sont à consonance étrangère méconnue.
+										En général, le prénom se met avant le nom. Ce dernier doit être mis en capitale surtout pour ceux qui ont un nom qui peut être un prénom ou lorsque vos nom et prénom sont à consonance étrangère méconnue.
 									</p>
 									<p dir="ltr">
 										Le nom et le prénom doit être placé en début de CV, plutôt en haut et à gauche ou en haut centré.
@@ -69,7 +68,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 										Exemple:
 									</p>
 									<p dir="ltr">
-										C’est bien de mettre : Patrick JACQUES, Olivier Lopez
+										C’est bien de mettre : Patrick JACQUES, Olivier Lopez (même si le nom écrit systématiquement en capital est mieux afin d’aider à la mémorisation).
 									</p>
 									<p dir="ltr">
 										Il faut éviter: Monsieur Patrick JACQUES, JACQUES Patrick, M. Olivier LOPEZ
@@ -86,19 +85,15 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 								<ol start="2">
 									<li dir="ltr">
 										<h2 dir="ltr">
-											Adresse
+											Adresse et mobilité
 										</h2>
 									</li>
 								</ol>
 								<p dir="ltr">
-									Cette information est indispensable mais moins prioritaire, en dehors de savoir où vous habitez par rapport au lieu de travail. Il y a un risque que votre
-									adresse peut être utilisée par un recruteur peu scrupuleux pour éliminer votre candidature si votre lieu de domicile est jugé trop éloigné de l'entreprise.
-									Pour éviter cela, si vous êtes mobile géographiquement, vous pouvez omettre votre adresse postale et la remplacer par « mobilité : régionale (à préciser),
+									Cette information est indispensable mais moins prioritaire (tout se fait souvent par internet, cela est moins vrai pour les administrations), en dehors de savoir où vous habitez par rapport au lieu de travail. Il y a un risque que votre
+									adresse peut être utilisée par un recruteur pour éliminer votre candidature si votre lieu de domicile est jugé trop éloigné de l'entreprise.
+									Pour diminuer ce risque, si vous êtes mobile géographiquement, spécifier votre niveau de mobilité: régionale (à préciser),
 									nationale, internationale.
-								</p>
-								<p dir="ltr">
-									Dans tous les cas, si vous ne mettez pas votre adresse, les premières actions sont traitées par téléphone ou mail sauf parfois pour vous informer (quand
-									ils le font) d'une fin de non-recevoir.
 								</p>
 								<p dir="ltr">
 									En ce qui concerne la mise en forme, il vaut mieux éviter de mettre la ville tout en capitale, peu d'intérêt d'attirer le regard.
@@ -147,7 +142,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									êtes étudiant, pensez à utiliser l’adresse mail de votre école.
 								</p>
 								<p dir="ltr">
-									Il vaut mieux éviter les pseudos et les adresses mails de type: «stardu62@yahoo.com » ou « laptiteloulou@gmail.com » qui feront au mieux sourire, au pire
+									Il faut éviter les pseudos et les adresses mails de type: «stardu62@yahoo.com » ou « laptiteloulou@gmail.com » qui feront au mieux sourire, au pire
 									fuir le recruteur. Votre professionnalisme risque de prendre un coup d’entrée de jeu. Faites attention aux providers qui sont souvent spammés (Hotmail ou
 									Yahoo par exemple).
 								</p>
@@ -297,20 +292,17 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 								<ol start="11">
 									<li dir="ltr">
 										<h2 dir="ltr">
-											Phrase d’accroche (optionnel)
+											Phrase d’accroche, titre du CV et objectifs (optionnel)
 										</h2>
 									</li>
 								</ol>
 								<p dir="ltr">
-									Elle doit traduire un objectif, une ambition, elle doit être le plus factuelle possible. Elle induit la façon dont sera lu votre cv par la suite. Le
-									recruteur va être influencé. Soit il arrête de lire, soit il va contrôler sa lecture en fonction de la phrase d'accroche
+									La phrase d’accroche doit traduire un objectif, une ambition, elle doit être le plus factuelle possible. Elle induit la façon dont sera lu votre CV par la suite. Le recruteur va être influencé. Soit il arrête de lire, soit il va contrôler sa lecture en fonction de la phrase d'accroche.
 								</p>
 								<p dir="ltr">
-									Comme votre lettre de motivation ne sera lue qu’après de sévères sélections sur les CV. Ne vous privez pas de préciser sur votre CV vos objectifs. C’est en
-									quelque sorte un préambule de votre lettre d’accompagnement et ce préambule peut pousser le recruteur à analyser d’avantage votre candidature. De plus en
-									plus de cabinets indexent les CV dans divers outils, certains étant de simples index de recherche full-texte et d’autres sont équipés d’analyse sémantique,
-									il vous faut donc utiliser dans votre CV le vocabulaire courant propre à votre secteur d’activité en évitant les acronymes et, si votre parcours
-									professionnel un peu pauvre ne le permet pas, le paragraphe souhait et objectifs, vous donne toutes latitudes pour le faire.
+									Le titre fut longtemps présenté comme facultatif. Aujourd’hui la majorité des recruteurs considèrent qu’il est indispensable. Il doit cependant être manié avec intelligence : un titre trop flou donne l’impression d’un projet professionnel pas très clair tandis qu’un titre trop précis peut fermer des portes.
+									Le titre indique généralement un poste mais il peut aussi prendre l’intitulé d’un département. Quand on manque d’expérience, cela a l’avantage de désigner les métiers vers lesquels on s’oriente tout en montrant qu’on est prêt à étudier différents degrés hiérarchiques. Il est également possible d’ajouter le secteur d’activité si celui-ci est déterminant. En fait, c’est à chacun de placer le curseur en fonction de ses ambitions et de son parcours. Toutefois, il faut bannir les intitulés trop généraux (par exemple : communication).
+
 								</p>
 								<p dir="ltr">
 									Les qualificatifs sur son CV ne doivent pas être choisis à la légère. LinkedIn a sorti les 10 mots les plus utilisés par ses membres. Les recruteurs se

@@ -30,7 +30,7 @@ if (isset($_GET['idM']) && isset($_GET['idC'])) {
 					    Un CV - Curriculum vitae est votre publicité, c’est votre reflet et il
 					    est capital. Il n'existe pas de CV miracle mais en revanche un CV mal conçu et mal utilisé fait toujours de gros dégâts, même si le candidat possède un
 					    excellent profil. Les recruteurs, submergés de candidatures et disposant de très peu de temps, sont obligés d'aller à l'essentiel. Résultat : de simples
-					    défauts dans la présentation du CV peuvent provoquer l'élimination d'un candidat. C’est pourquoi nous avons crée un MOOC “Comment réaliser un CV
+					    détails dans la présentation du CV peuvent provoquer l'élimination d'un candidat. C’est pourquoi nous avons crée un MOOC “Comment réaliser un CV
 					    d’ingénieur” qui vous permettra de créer votre propre CV et d’accéder au poste dont vous revez!
 					</p>
 					<p dir="ltr">
@@ -54,7 +54,7 @@ if (isset($_GET['idM']) && isset($_GET['idC'])) {
 					    <li dir="ltr">
 					        <p dir="ltr">
 					            Se faire connaître: envoyer un " message " qui vous soit fidèle et qui ne trompe pas son destinataire, c'est le rôle de votre CV : vous allez en
-					            travailler le contenu et la forme jusqu'à en être content et fier.
+					            travailler le contenu et la forme jusqu'à en être content et fier et donc bien savoir le défendre en entretien.
 					        </p>
 					    </li>
 					    <li dir="ltr">
@@ -62,7 +62,7 @@ if (isset($_GET['idM']) && isset($_GET['idC'])) {
 					            Connaître son " marché ": Identifier les entreprises qui recrutent dans votre métier. Répondre aux offres qui vous correspondent vraiment et qui
 					            correspondent à ce que vous voulez faire. Pour le recruteur: Le recruteur a aussi ses lubies sur le CV. Si c'est possible, recherchez des
 					            informations sur ces attendus. La lecture des sites internet permet de voir ce qui est important pour l'entreprise, la technique, les RH, les
-					            valeurs, etc.
+					            valeurs, etc. Et cela vous donnera aussi un aperçu de leur sémantique (vocabulaire utilisé) à intégrer intelligemment dans votre CV .
 					        </p>
 					    </li>
 					</ul>
