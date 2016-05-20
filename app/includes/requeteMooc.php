@@ -13,7 +13,7 @@
 	
 	function creationWizardStep($idMooc,$numChap,$idChap,$bdd) {
 		try{
-			
+			          
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
 
@@ -33,8 +33,6 @@
 								<a style="text-decoration:none; cursor:default;" href="#step-'.($ipart+1).' ">
 									<span class="step_no">'.($ipart+1).'</span>
 									<span class="step_descr">
-								n°'.($ipart+1).'<br />
-								<small>'.$tabPartie[$ipart].'</small>
 									</span>
 								</a>
 						</li>';
@@ -113,6 +111,7 @@
 					$id_chap_tiret = '-'.($i+1); //verifie la présence
 					//var_dump($stringAvancement);
 					//var_dump($id_chap_tiret);
+					$zero = 0;
 					if (strpos($stringAvancement, $id_chap_tiret) !== false) {
 						echo '<li><a style=""  ><i class="fa fa-check-circle"></i>'.$lignesChap[$i]["titre"].'<br><span class="fa fa-chevron-down"></span><br></a>';
 						$partie = $lignesChap[$i]["partie"];
@@ -121,8 +120,16 @@
 							//var_dump($lignesExo);
 							 echo' <ul class="nav child_menu" style="display: none">';
 									for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
-									{
-										echo '<li><a href="../../app/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
+									{	if($zero == 0)
+										{
+											echo '<li><a href="../../app/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].
+												'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';	
+												$zero++;
+										}
+										else{
+											echo'<li><a href="#">'.$tabPartie[$ipart].'</a></li>';	
+										}
+										
 									}
 							echo'</ul></li>';
 					}else{
@@ -133,8 +140,16 @@
 							//var_dump($lignesExo);
 							 echo' <ul class="nav child_menu" style="display: none">';
 									for($ipart = 0; $ipart < sizeof($tabPartie) ; $ipart++)
-									{
-										echo '<li><a href="../../app/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';
+									{	if($zero == 0)
+										{
+											echo '<li><a href="../../app/modules/mooc.php?idM='.$idMooc.'&amp;idC='.$lignesChap[$i]["id_chapitre"].
+												'&amp;numC='.$lignesChap[$i]["numero"].'"">'.$tabPartie[$ipart].'</a></li>';	
+												$zero++;
+										}
+										else{
+											echo'<li><a href="#">'.$tabPartie[$ipart].'</a></li>';	
+										}
+										
 									}
 							echo'</ul></li>';
 
