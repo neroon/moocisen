@@ -202,6 +202,8 @@ var appData=window.App || {}; //variable globale
                         $("#solucebox").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
                         $("#solucebox").append("<br>vos choix : <i>"+selected+"</i>"); //affiche les choix (full JQuery)
                         $("#solucebox").append("<br><b>"+jsondata+"</b>");//affiche le réponse de wizard_ajax.php
+						//echo '<button type="button" class="mysoluce btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
+						 //$("#solucebox").append('<button id="test" onClick="test()">test</button>');//affiche le réponse de wizard_ajax.php
                         /*
 						$("#solucebox").append("<br><b>Faux</b>, M. Clément GUIOL : il y a une mention “M.” avant le prénom");
 						$("#solucebox").append("<br><b>Vrai</b>, Olivier Garnier : le prénom est avant le nom; le nom n’a pas besoin d’être en lettres capitales, car ce ne peut pas être un prénom et il n’a pas de consonance étrangere");
@@ -259,6 +261,20 @@ var appData=window.App || {}; //variable globale
                 //$('.alert-danger').show();
             }
         });*/
+    });
+	$(".showmesoluce").hide();
+	
+	
+	/* INDICE */
+    $(".mysoluce").click(function(){
+        //var idmysoluce = $(this).val();
+      // var varmysoluce = $('input.'+idmysolucetrue).val(); //indice
+        alert('dddd');
+		//.show();
+
+		$(".showmesoluce").show();
+       // $("#soluceid").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
+        //$("#soluceid").append("<br>Indice : <i>"+varmysoluce+"</i>"); //affiche les choix (full JQuery)
     });
 
 /** datepicker */

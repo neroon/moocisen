@@ -68,6 +68,7 @@
 			/*if(isset($idMooc) && isset($_GET['idC'])){
 				echo "<input type='hidden' id='idm' name='idm' value='".$tabSolution."'/>";
 			}*/
+			
 			echo "<input type='hidden' id='idm' name='idm' value='".$idMooc."'/>";
 			echo "<input type='hidden' id='idc' name='idc' value='".$idChap."'/>";
 			echo "<input type='hidden' id='ide' name='ide' value='".$idExo."'/>";
@@ -118,11 +119,18 @@
 												'.$tab[$itab].'<br>
 											</label>
 										</div>';
+										
 										//echo 'sok';
 									}										
 								}
+								// echo'<div>correction : 
+												  // <p>'.$lignesQcm[$i]["correction_qcm"].'</p>
+											// </div><br>';
 				echo' </div><br>';
 				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
+				echo '<button type="button" class="mysoluce btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
+				echo "<input type='hidden' id='idmysolucetrue' name='idm' value='".$lignesQcm[0]["correction_qcm"]."'/>";
+				//echo "<div name='idm' class='showmesoluce'  value='".$lignesQcm[0]["correction_qcm"]."'/>".$lignesQcm[0]["correction_qcm"]."</div>";
 				//}
 			}
 		}
