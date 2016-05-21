@@ -20,6 +20,7 @@
 			$tabHint = array();
 			$tabSolution = array();
 			$numCaseTab=0; 
+			$tabIndiceQcm = array();
 			//echo "size".$lignesQcm;
 			//var_dump($lignesQcm);
 			for($i = 0; $i < sizeof($lignesQcm) ; $i++)
@@ -27,6 +28,8 @@
 				$solution = $lignesQcm[$i]["solution"];
 				$solution=htmlentities($solution, ENT_QUOTES, "UTF-8");
 				$tabHint = preg_split('[-]', $solution);
+
+				echo '<input type="hidden" id="indice" class="'.$i.$idExo.'" name="indice" value="' . htmlspecialchars(stripslashes($lignesQcm[$i]["indice_qcm"])). '" />'; //indice_qcm
 				for($itab = 0; $itab < sizeof($tabHint) ; $itab++)
 				{
 					//var_dump($tabHint);
@@ -122,7 +125,7 @@
 									}										
 								}
 				echo' </div><br>';
-				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
+				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$i.$idExo.'">Indice</button>'; // indice
 				//}
 			}
 		}
