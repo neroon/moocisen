@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 21 Mai 2016 à 19:13
+-- Généré le :  Sam 21 Mai 2016 à 19:26
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,6 +19,274 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `mooc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `chapitre`
+--
+
+CREATE TABLE IF NOT EXISTS `chapitre` (
+  `id_chapitre` int(11) NOT NULL AUTO_INCREMENT,
+  `numero` int(11) NOT NULL,
+  `titre` varchar(100) DEFAULT NULL,
+  `partie` varchar(8000) DEFAULT NULL,
+  `id_mooc` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_chapitre`),
+  KEY `FK_chapitre_id_mooc` (`id_mooc`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Contenu de la table `chapitre`
+--
+
+INSERT INTO `chapitre` (`id_chapitre`, `numero`, `titre`, `partie`, `id_mooc`) VALUES
+(1, 1, 'Identité', 'Nom et prénom-Adresse et Mobilité-Télephone-Mails-Date de naissance<br> et âge-Lieux de naissance <br> et nationalité-Réseaux sociaux-Mots qualificatifs-Photos', 1),
+(2, 2, 'Formation', 'Exercice 1-Exercice 2-Exercice 3', 1),
+(3, 3, 'Projets', 'Date-Intitulé-Fonction-Résultat/Objectifs-Nombres de personne par équipe', 1),
+(4, 1, 'Jonction PN', 'Jonction P-Jonction N-Jonction PN', 2),
+(5, 2, 'Equations insolite', 'Équation Type 1-Équation Type 2-Équation Type 3-Équation Type 4', 2),
+(6, 4, 'Compétences', 'Electronique-Informatique-Shes-Autres', 1),
+(7, 5, 'Langues', 'Type-Niveau-Certification-Année de pratique-Voyage', 1),
+(8, 6, 'Expériences professionnelles', 'Dates-Intitulé-fonction-Nom entreprise-Résultats/Objectifs-Références', 1),
+(9, 7, 'Expériences extra professionnelle', 'Date-Intitulé-Fonction-Nom entreprise/Associations-Résultats/Objectifs-Références', 1),
+(10, 8, 'Centre d''intérêts', 'Sport/Art-Niveau-Nombred''années-Compétition', 1),
+(11, 9, 'Autres informations', 'Format papier-Mots-clés-Vidéo CV-Carte de visite CV-CV en ligne-CV Européen-CV anglais-Autres CV étrangers', 1),
+(12, 1, 'Histoire', 'Chapitre introduction-Niveau 1-Niveau 2-Niveau 3', 4),
+(13, 2, 'Dual-Quizz', 'joueur 1-joueur 2', 4),
+(15, 3, 'Quizz-journalier', 'jour 1', 4),
+(17, 4, 'Entrainement', 'Prérequis', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `creer`
+--
+
+CREATE TABLE IF NOT EXISTS `creer` (
+  `date_creation` datetime DEFAULT NULL,
+  `id_mooc` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id_mooc`,`id_user`),
+  KEY `FK_creer_id_user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `creer`
+--
+
+INSERT INTO `creer` (`date_creation`, `id_mooc`, `id_user`) VALUES
+('2016-02-25 00:00:00', 1, 2),
+('2016-02-26 00:00:00', 2, 3),
+('2016-02-26 00:00:00', 2, 4),
+('2016-02-26 00:00:00', 3, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `debloquer`
+--
+
+CREATE TABLE IF NOT EXISTS `debloquer` (
+  `date_obtention` datetime DEFAULT NULL,
+  `id_succes` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id_succes`,`id_user`),
+  KEY `FK_debloquer_id_user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `debloquer`
+--
+
+INSERT INTO `debloquer` (`date_obtention`, `id_succes`, `id_user`) VALUES
+('2016-02-26 00:00:00', 1, 1),
+('2016-02-26 00:00:00', 2, 1),
+('2016-03-07 00:00:00', 3, 1),
+('2016-03-01 00:00:00', 3, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `dragdrop`
+--
+
+CREATE TABLE IF NOT EXISTS `dragdrop` (
+  `id_dragdrop` int(11) NOT NULL AUTO_INCREMENT,
+  `texte` varchar(8000) DEFAULT NULL,
+  `reponse_dd` varchar(8000) DEFAULT NULL,
+  `indice_dd` varchar(8000) DEFAULT NULL,
+  `id_exercice` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_dragdrop`),
+  KEY `FK_dragdrop_id_exercice` (`id_exercice`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `dragdrop`
+--
+
+INSERT INTO `dragdrop` (`id_dragdrop`, `texte`, `reponse_dd`, `indice_dd`, `id_exercice`) VALUES
+(1, 'C''est un test pour le drag & drop', 'Ca marche', 'devine', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `exercice`
+--
+
+CREATE TABLE IF NOT EXISTS `exercice` (
+  `id_exercice` int(11) NOT NULL AUTO_INCREMENT,
+  `numero` int(11) DEFAULT NULL,
+  `valeur_exo` int(11) DEFAULT NULL,
+  `id_chapitre` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_exercice`),
+  KEY `FK_exercice_id_chapitre` (`id_chapitre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+
+--
+-- Contenu de la table `exercice`
+--
+
+INSERT INTO `exercice` (`id_exercice`, `numero`, `valeur_exo`, `id_chapitre`) VALUES
+(1, 1, 100, 1),
+(4, 1, 100, 2),
+(5, 5, 100, 3),
+(6, 5, 100, 3),
+(7, 1, 100, 4),
+(8, 2, 100, 5),
+(9, 5, 100, 5),
+(10, 1, 100, 12),
+(11, 2, 10, 12),
+(12, 3, 100, 12),
+(13, 3, 100, 12),
+(14, 1, 100, 13),
+(16, 2, 100, 13),
+(18, 2, 100, 15),
+(19, 2, 100, 17),
+(20, 2, 100, 1),
+(21, 3, 100, 1),
+(22, 4, 100, 1),
+(23, 5, 100, 1),
+(24, 6, 100, 1),
+(25, 7, 100, 1),
+(26, 8, 100, 1),
+(27, 2, 100, 2),
+(28, 3, 100, 2),
+(29, 9, 100, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `faire`
+--
+
+CREATE TABLE IF NOT EXISTS `faire` (
+  `score` int(11) DEFAULT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_exercice` int(11) NOT NULL,
+  PRIMARY KEY (`id_user`,`id_exercice`),
+  KEY `FK_faire_id_exercice` (`id_exercice`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `faire`
+--
+
+INSERT INTO `faire` (`score`, `id_user`, `id_exercice`) VALUES
+(0, 1, 1),
+(50, 1, 7),
+(100, 1, 8),
+(100, 1, 9),
+(0, 1, 20),
+(0, 1, 21),
+(0, 1, 22),
+(0, 1, 23),
+(0, 1, 24),
+(0, 1, 25),
+(0, 1, 26),
+(0, 1, 29),
+(0, 6, 1),
+(33, 6, 5),
+(14, 6, 10),
+(0, 6, 14),
+(0, 6, 18),
+(0, 6, 19),
+(75, 8, 1),
+(100, 8, 5),
+(0, 8, 10),
+(50, 8, 14),
+(100, 8, 18),
+(100, 8, 19);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `log`
+--
+
+CREATE TABLE IF NOT EXISTS `log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) DEFAULT NULL,
+  `connect_time` varchar(50) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `ip` varchar(50) DEFAULT NULL,
+  `lien` varchar(100) DEFAULT NULL,
+  `dernierlien` varchar(300) DEFAULT NULL,
+  `pays` varchar(100) DEFAULT NULL,
+  `browser` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
+
+--
+-- Contenu de la table `log`
+--
+
+INSERT INTO `log` (`id`, `id_user`, `connect_time`, `email`, `ip`, `lien`, `dernierlien`, `pays`, `browser`) VALUES
+(24, 1, '10-03-2016 17:49', 'clement.guiol@gmail.com', '::1', 'http://localhost/moocisen/moocisen/application/includes/login.php', '/moocisen/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36'),
+(25, 1, '10-03-2016 17:49', 'clement.guiol@gmail.com', '::1', 'http://localhost/moocisen/moocisen/application/includes/login.php', '/moocisen/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36'),
+(26, 1, '13-03-2016 16:49', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.26 Safari/537.36'),
+(27, 1, '13-03-2016 17:56', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.26 Safari/537.36'),
+(28, 1, '13-03-2016 18:02', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.26 Safari/537.36'),
+(29, 1, '13-03-2016 18:14', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/application/includes/login.php', '/moocisen/application/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0'),
+(30, 6, '20-04-2016 18:30', 'etudiant@gmail.com', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(31, 2, '20-04-2016 22:44', 'jean-michel.rolland@isen.fr', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(32, 8, '20-04-2016 22:51', 'isenien@isen.fr', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(33, 8, '21-04-2016 08:32', 'isenien@isen.fr', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(34, 8, '21-04-2016 08:48', 'isenien@isen.fr', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(35, 8, '21-04-2016 09:51', 'isenien@isen.fr', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(36, 8, '22-04-2016 09:02', 'isenien@isen.fr', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(37, 8, '25-04-2016 14:54', 'isenien@isen.fr', '::1', 'http://localhost/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'),
+(38, 1, '20-05-2016 00:01', 'clement.guiol@gmail.com', '127.0.0.1', 'http://127.0.0.1/moocisen/app/includes/login.php', '/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.54 Safari/537.36'),
+(39, 1, '20-05-2016 10:02', 'clement.guiol@gmail.com', '::1', 'http://localhost/moocisen/moocisen/app/includes/login.php', '/moocisen/moocisen/app/includes/login.php', NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.54 Safari/537.36');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mooc`
+--
+
+CREATE TABLE IF NOT EXISTS `mooc` (
+  `id_mooc` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_mooc` varchar(100) DEFAULT NULL,
+  `matiere` varchar(100) DEFAULT NULL,
+  `description` varchar(8000) DEFAULT NULL,
+  `prerequis` varchar(100) DEFAULT NULL,
+  `duree` int(11) DEFAULT NULL,
+  `note` int(11) DEFAULT NULL,
+  `nb_chap` int(11) DEFAULT NULL,
+  `linkyoutube` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_mooc`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `mooc`
+--
+
+INSERT INTO `mooc` (`id_mooc`, `nom_mooc`, `matiere`, `description`, `prerequis`, `duree`, `note`, `nb_chap`, `linkyoutube`) VALUES
+(1, 'CV Ingénieur ISEN', 'SHES', 'Ce MOOC vous permettra de connaitre les codes pour la réalisation d''un CV pour un ingénieur, et plus particulièrement dans le monde du numérique pour une recherche de stage ou d''emploi.', 'Aucun', 35, 4, 7, 'https://www.youtube.com/embed/_r7bht-LgvU'),
+(2, 'Physique des solides', 'Physique quantique', 'Ce cours portera sur la physique des solides ', 'Aucun', 20, 5, 5, ''),
+(3, 'Initiation au SHELL', 'Informatique ', 'Ce cours vous permettra d''acquérir les bases du langage SHELL', 'Aucun', 20, 4, 6, ''),
+(4, 'Certification PMI', 'PMBD', 'Devenir un ingénieur manager', 'Aucun', 20, NULL, 4, '');
 
 -- --------------------------------------------------------
 
@@ -91,15 +359,154 @@ INSERT INTO `qcm` (`id_qcm`, `question`, `reponse_qcm`, `solution`, `indice_qcm`
 (49, 'Situation 4:<br><br>\r\nVous cherchez du travail sur Londres et vous habitez en France<br>\r\nSur votre CV vous allez mettre:', 'Nom ville / Nom pays / Mobilité internationale-\r\nMobilité nationale-\r\nNom ville / Mobilité nationale-\r\nMobilité régionale-\r\nAdresse ligne 1 / Adresse ligne 2 / Nom ville', 'Nom ville\r\nNom pays\r\nMobilité internationale\r\n', '46', '', 20),
 (50, 'Situation 5:<br><br>\r\nVous cherchez du travail en Bretagne et vous habitez en Normandie<br>\r\nSur votre CV vous allez mettre:', 'Nom ville / Nom pays / Mobilité internationale-\r\nMobilité nationale-\r\nNom ville / Mobilité nationale-\r\nMobilité régionale-\r\nAdresse ligne 1 / Adresse ligne 2 / Nom ville', 'Nom ville\r\nMobilité nationale\r\n\r\n', '456', '', 20);
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `succes`
+--
+
+CREATE TABLE IF NOT EXISTS `succes` (
+  `id_succes` int(11) NOT NULL AUTO_INCREMENT,
+  `type_succes` char(1) NOT NULL,
+  `nom_succes` varchar(100) DEFAULT NULL,
+  `description_succes` varchar(8000) DEFAULT NULL,
+  PRIMARY KEY (`id_succes`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Contenu de la table `succes`
+--
+
+INSERT INTO `succes` (`id_succes`, `type_succes`, `nom_succes`, `description_succes`) VALUES
+(1, 'B', 'Premier pas', 'S''inscire au MOOC "CV Ingénieur ISEN"'),
+(2, 'S', 'Novice', 'Terminer le MOOC "CV Ingénieur ISEN" à 30%'),
+(3, 'G', 'Expérimenté', 'Terminer le MOOC "CV Ingénieur ISEN" à 60%'),
+(4, 'P', 'Pro du CV', 'Terminer le MOOC "CV Ingénieur ISEN" à 100%'),
+(5, 'B', 'Bizut', 'S''inscrire au MOOC "Physique des solides"');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `suivre`
+--
+
+CREATE TABLE IF NOT EXISTS `suivre` (
+  `date_suivi` date DEFAULT NULL,
+  `avancement` varchar(100) DEFAULT '0',
+  `id_user` int(11) NOT NULL,
+  `id_mooc` int(11) NOT NULL,
+  PRIMARY KEY (`id_user`,`id_mooc`),
+  KEY `FK_suivre_id_mooc` (`id_mooc`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `suivre`
+--
+
+INSERT INTO `suivre` (`date_suivi`, `avancement`, `id_user`, `id_mooc`) VALUES
+('2016-02-26', '0-6-2-1', 1, 1),
+('2016-03-01', '0-3-1-2', 1, 2),
+('2016-03-07', '0-2', 1, 3),
+('2016-04-20', '0', 2, 4),
+('2016-04-20', '0-1-3', 6, 1),
+('2016-04-20', '0', 6, 3),
+('2016-04-20', '0-12-13-15-17', 6, 4),
+('2016-04-20', '0-1-3', 8, 1),
+('2016-04-20', '0-12-13-17-15', 8, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(100) DEFAULT NULL,
+  `prenom` varchar(100) DEFAULT NULL,
+  `pseudo` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `pays` varchar(100) DEFAULT NULL,
+  `statut` int(11) DEFAULT NULL,
+  `grade` int(11) DEFAULT NULL,
+  `professeur` int(11) DEFAULT NULL,
+  `reset_password` varchar(8000) DEFAULT NULL,
+  `avatar` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id_user`, `nom`, `prenom`, `pseudo`, `email`, `password`, `pays`, `statut`, `grade`, `professeur`, `reset_password`, `avatar`) VALUES
+(1, 'Guiol', 'Clément', 'CleMenTus', 'clement.guiol@gmail.com', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 0, NULL, '../assets/images/profil/0user.png'),
+(2, 'Rolland', 'Jean-Michel', 'JMR', 'jean-michel.rolland@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL),
+(3, 'Bescond', 'Marc', 'MB', 'marc.bescond@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL),
+(4, 'Patrone', 'Lionel', 'LP', 'lionel.patrone@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL),
+(5, 'Perony', 'Christine', 'CP', 'christine.perony@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'FR', 0, 0, 1, NULL, NULL),
+(6, 'etudiant', 'etudiant', 'etudiant', 'etudiant@gmail.com', '56eacb300613db3e0f6aaf821db223c0', 'france', NULL, NULL, NULL, 'salut', NULL),
+(7, 'etudiant', 'etudiant', 'etudiant', 'etudiant@gmail.com', '56eacb300613db3e0f6aaf821db223c0', 'france', NULL, NULL, NULL, 'salut', NULL),
+(8, 'Isenien', 'Isenien', 'Isenien', 'isenien@isen.fr', '56eacb300613db3e0f6aaf821db223c0', 'france', NULL, NULL, NULL, NULL, NULL),
+(9, 'Isenien', 'Isenien', 'Isenien', 'Isenien@isen.fr\r\n', '56eacb300613db3e0f6aaf821db223c0', 'france', NULL, NULL, NULL, NULL, NULL),
+(10, 'Kokorina', 'Slavyana', 'Slav', 'slavyana.kokorina@gmail.com', '6ff54b90931826a2f3433d668b68d194', 'FR', NULL, 1, NULL, NULL, '../assets/images/profil/0user.png');
+
 --
 -- Contraintes pour les tables exportées
 --
+
+--
+-- Contraintes pour la table `chapitre`
+--
+ALTER TABLE `chapitre`
+  ADD CONSTRAINT `FK_chapitre_id_mooc` FOREIGN KEY (`id_mooc`) REFERENCES `mooc` (`id_mooc`);
+
+--
+-- Contraintes pour la table `creer`
+--
+ALTER TABLE `creer`
+  ADD CONSTRAINT `FK_creer_id_mooc` FOREIGN KEY (`id_mooc`) REFERENCES `mooc` (`id_mooc`),
+  ADD CONSTRAINT `FK_creer_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+
+--
+-- Contraintes pour la table `debloquer`
+--
+ALTER TABLE `debloquer`
+  ADD CONSTRAINT `FK_debloquer_id_succes` FOREIGN KEY (`id_succes`) REFERENCES `succes` (`id_succes`),
+  ADD CONSTRAINT `FK_debloquer_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+
+--
+-- Contraintes pour la table `dragdrop`
+--
+ALTER TABLE `dragdrop`
+  ADD CONSTRAINT `FK_dragdrop_id_exercice` FOREIGN KEY (`id_exercice`) REFERENCES `exercice` (`id_exercice`);
+
+--
+-- Contraintes pour la table `exercice`
+--
+ALTER TABLE `exercice`
+  ADD CONSTRAINT `FK_exercice_id_chapitre` FOREIGN KEY (`id_chapitre`) REFERENCES `chapitre` (`id_chapitre`);
+
+--
+-- Contraintes pour la table `faire`
+--
+ALTER TABLE `faire`
+  ADD CONSTRAINT `FK_faire_id_exercice` FOREIGN KEY (`id_exercice`) REFERENCES `exercice` (`id_exercice`),
+  ADD CONSTRAINT `FK_faire_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Contraintes pour la table `qcm`
 --
 ALTER TABLE `qcm`
   ADD CONSTRAINT `FK_qcm_id_exercice` FOREIGN KEY (`id_exercice`) REFERENCES `exercice` (`id_exercice`);
+
+--
+-- Contraintes pour la table `suivre`
+--
+ALTER TABLE `suivre`
+  ADD CONSTRAINT `FK_suivre_id_mooc` FOREIGN KEY (`id_mooc`) REFERENCES `mooc` (`id_mooc`),
+  ADD CONSTRAINT `FK_suivre_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
