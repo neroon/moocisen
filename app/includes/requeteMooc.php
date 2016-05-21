@@ -11,11 +11,6 @@
 		
 	}
 	
-	function test()
-	{
-		alert('ton pere');
-	}
-	
 	function creationWizardStep($idMooc,$numChap,$idChap,$bdd) {
 		try{
 			          
