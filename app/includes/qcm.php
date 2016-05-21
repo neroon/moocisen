@@ -29,6 +29,7 @@
 				$solution=htmlentities($solution, ENT_QUOTES, "UTF-8");
 				$tabHint = preg_split('[-]', $solution);
 				echo '<input type="hidden" id="indice" class="'.$i.$idExo.'" name="indice" value="' . htmlspecialchars(stripslashes($lignesQcm[$i]["indice_qcm"])). '" />'; //indice_qcm
+				echo '<input type="input" id="explication" class="'.$i.$idExo.$idExo.'" name="explication" value="' . htmlspecialchars(stripslashes($lignesQcm[$i]["explication_qcm"])). '" />'; //explication_qcm
 				for($itab = 0; $itab < sizeof($tabHint) ; $itab++)
 				{
 					//var_dump($tabHint);
@@ -123,6 +124,7 @@
 								}
 				echo' </div><br>';
 				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$i.$idExo.'">Indice</button>'; // indice
+				echo '<button type="button" class="myexplication btn btn-round btn-success btn-xs" value="'.$i.$idExo.$idExo.'">Explication</button>'; // indice
 				//}
 			}
 		}
