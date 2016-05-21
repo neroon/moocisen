@@ -20,6 +20,7 @@
 			$tabHint = array();
 			$tabSolution = array();
 			$numCaseTab=0; 
+			$tabIndiceQcm = array();
 			//echo "size".$lignesQcm;
 			//var_dump($lignesQcm);
 			for($i = 0; $i < sizeof($lignesQcm) ; $i++)
@@ -27,6 +28,7 @@
 				$solution = $lignesQcm[$i]["solution"];
 				$solution=htmlentities($solution, ENT_QUOTES, "UTF-8");
 				$tabHint = preg_split('[-]', $solution);
+				echo '<input type="hidden" id="indice" class="'.$i.$idExo.'" name="indice" value="' . htmlspecialchars(stripslashes($lignesQcm[$i]["indice_qcm"])). '" />'; //indice_qcm
 				for($itab = 0; $itab < sizeof($tabHint) ; $itab++)
 				{
 					//var_dump($tabHint);
@@ -106,12 +108,10 @@
 										}
 									}
 									else{
-
 										$affichageetvalue=htmlspecialchars(stripslashes($tab[$itab]));
 										$affichageetvalue=htmlentities($affichageetvalue, ENT_QUOTES, "UTF-8");
 										$affichageetvalue = preg_replace("/\s+/","",$affichageetvalue);
 										$affichageetvalue = str_replace( ',', '',$affichageetvalue);
-
 										echo '<div class="checkbox center">
 											<label class="hover">
 												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.$affichageetvalue.$i.$idExo.'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
@@ -122,7 +122,7 @@
 									}										
 								}
 				echo' </div><br>';
-				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$idExo.'">Indice</button>'; // indice
+				echo '<button type="button" class="myindice btn btn-round btn-success btn-xs" value="'.$i.$idExo.'">Indice</button>'; // indice
 				//}
 			}
 		}
