@@ -194,8 +194,8 @@ function getInfo3MDL(){
                         <div class="mdl-cell mdl-cell--6-col">';
 
                         if($scope_linkyoutube==null){
-                        	echo '<div class="mdl-cell mdl-cell--6-col">
-                            	<img class="article-image" src="../../images/social.jpg" width="400px" border="0" alt="">
+                        	echo '<div class="">
+                            	<img class="article-image" src="../../images/social.jpg" width="80%" border="0" alt="">
                         	</div>';
                         }else{
                         	echo '<div class="videocontainer" > 

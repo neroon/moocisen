@@ -54,22 +54,20 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 										</li>
 									</ol>
 									<p dir="ltr">
-										Mettre le nom et le prénom est indispensable, sauf si un CV anonyme est demandé. Si c’est le cas le recruteur aura soit la lettre de motivation soit votre
-										mail pour savoir qui vous êtes.
+										Mettre le nom et le prénom est indispensable, sauf si un CV anonyme est demandé. Si c’est le cas le recruteur aura soit la lettre de motivation soit votre mail pour savoir qui vous êtes (de toute façon il vous verra en entretien).
 									</p>
 									<p dir="ltr">
-										Evitez de mettre la mention du nom avant le prénom. Le nom mis en capitale surtout pour ceux qui ont un nom qui peut être un prénom ou lorsque vos nom et
-										prénom sont à consonance étrangère méconnue.
+										En général, le prénom se met avant le nom. Ce dernier doit être mis en capitale surtout pour ceux qui ont un nom qui peut être un prénom ou lorsque vos nom et prénom sont à consonance étrangère méconnue.					
 									</p>
 									<p dir="ltr">
-										Le nom et le prénom doit être placé en début de CV, plutôt en haut et à gauche ou en haut centré.
+										Le nom et le prénom doit être placé en début de CV, plutôt en haut et à gauche ou en haut centré. 
 									</p>
 									<br/>
 									<p dir="ltr">
 										Exemple:
 									</p>
 									<p dir="ltr">
-										C’est bien de mettre : Patrick JACQUES, Olivier Lopez
+										C’est bien de mettre : Patrick JACQUES, Olivier Lopez (même si le nom écrit systématiquement en capital est mieux afin d’aider à la mémorisation).
 									</p>
 									<p dir="ltr">
 										Il faut éviter: Monsieur Patrick JACQUES, JACQUES Patrick, M. Olivier LOPEZ
@@ -86,19 +84,15 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 								<ol start="2">
 									<li dir="ltr">
 										<h2 dir="ltr">
-											Adresse
+											Adresse et mobilité
 										</h2>
 									</li>
 								</ol>
 								<p dir="ltr">
-									Cette information est indispensable mais moins prioritaire, en dehors de savoir où vous habitez par rapport au lieu de travail. Il y a un risque que votre
-									adresse peut être utilisée par un recruteur peu scrupuleux pour éliminer votre candidature si votre lieu de domicile est jugé trop éloigné de l'entreprise.
-									Pour éviter cela, si vous êtes mobile géographiquement, vous pouvez omettre votre adresse postale et la remplacer par « mobilité : régionale (à préciser),
+									Cette information est indispensable mais moins prioritaire (tout se fait souvent par internet, cela est moins vrai pour les administrations), en dehors de savoir où vous habitez par rapport au lieu de travail. Il y a un risque que votre
+									adresse peut être utilisée par un recruteur pour éliminer votre candidature si votre lieu de domicile est jugé trop éloigné de l'entreprise.
+									Pour diminuer ce risque, si vous êtes mobile géographiquement, spécifier votre niveau de mobilité: régionale (à préciser),
 									nationale, internationale.
-								</p>
-								<p dir="ltr">
-									Dans tous les cas, si vous ne mettez pas votre adresse, les premières actions sont traitées par téléphone ou mail sauf parfois pour vous informer (quand
-									ils le font) d'une fin de non-recevoir.
 								</p>
 								<p dir="ltr">
 									En ce qui concerne la mise en forme, il vaut mieux éviter de mettre la ville tout en capitale, peu d'intérêt d'attirer le regard.
@@ -147,7 +141,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									êtes étudiant, pensez à utiliser l’adresse mail de votre école.
 								</p>
 								<p dir="ltr">
-									Il vaut mieux éviter les pseudos et les adresses mails de type: «stardu62@yahoo.com » ou « laptiteloulou@gmail.com » qui feront au mieux sourire, au pire
+									Il faut éviter les pseudos et les adresses mails de type: «stardu62@yahoo.com » ou « laptiteloulou@gmail.com » qui feront au mieux sourire, au pire
 									fuir le recruteur. Votre professionnalisme risque de prendre un coup d’entrée de jeu. Faites attention aux providers qui sont souvent spammés (Hotmail ou
 									Yahoo par exemple).
 								</p>
@@ -200,11 +194,7 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									</li>
 								</ol>
 								<p dir="ltr">
-									Vous pouvez specifier votre nationalité si vous avez double nationalité. Il y a peu d'intérêt si votre nom sonne bien français.
-								</p>
-								<p dir="ltr">
-									Oui, si vous êtes étranger, ou si votre nom prête à confusion (si vous avez un nom aux résonances étrangères, tout en étant de nationalité française, par
-									exemple).
+									Vous pouvez spécifier votre nationalité si vous avez double nationalité. Ainsi que si vous êtes étranger, ou si votre nom prête à confusion (si vous avez un nom aux résonances étrangères, tout en étant de nationalité française, par exemple). Il y a peu d'intérêt si votre nom sonne bien français.
 								</p>
 								<ol start="8">
 									<li dir="ltr">
@@ -214,75 +204,22 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									</li>
 								</ol>
 								<p dir="ltr">
-									si les informations accessibles sont présentées de façons professionnelles. Pensez à mettre régulièrement à jour vos informations. Certains recruteurs
-									(30%) surfent sur les réseaux sociaux en quête d'informations, voir prennent contact avec vous via ces réseaux.
+									Vous pouvez mettre un lien vers votre réseau social mais que si les informations accessibles sont présentées de façon professionnelle. Pensez à mettre régulièrement à jour vos informations. Les réseaux utilisés par les recruteurs sont: LinkedIn, Viadeo, twitter, Facebook (professionnel). 
 								</p>
 								<p dir="ltr">
-									réseaux utilisés par les recruteurs : linkedin, viadéo, tweeter, à la rigueur facebook (professionnel), mettre les statistiques.
+									Généralement Viadeo est utilisé dans les métiers de la création, d’Internet et de la communication. LinkedIn est plutôt utilisé dans les métiers de l’industrie. 
+									En ce qui concerne votre compte Twitter et votre page Facebook, faites très attention à ce que ce soient des comptes professionnels où il n’y a pas de contenu de votre vie privé. 
 								</p>
 								<p dir="ltr">
-									Site internet: Si en cohérence avec ce que vous souhaitez mettre en avant. Vérifiez qu'il fonctionne bien. Le recruteur fera sûrement un clic dessus.
+									Vous pouvez mettre un lien vers votre site internet si c’est en cohérence avec ce que vous souhaitez mettre en avant. Vérifiez qu'il fonctionne bien car recruteur fera sûrement un clic dessus. 
 								</p>
 								<p dir="ltr">
-									Un lien vers son profil sur un réseau social ?
-								</p>
-								<p dir="ltr">
-									Il est judicieux de mentionner un lien vers sa page sur un réseau social si son contenu est à caractère strictement professionnel. Selon Dan Guez : « les
-									réseaux sociaux professionnels nous apportent un éclairage sur les relations et les contacts du candidat ». Ils ont d’ailleurs la cote parmi les
-									recruteurs. « Viadeo est beaucoup utilisé dans les métiers de la création, d’Internet et de la communication, alors que les professionnels de l’industrie
-									ont davantage recours à LinkedIn », précise Claire Romanet. Et les liens vers son compte Twitter ou sa page Facebook ? Là encore, ils peuvent apparaître
-									sur un CV à condition que leur contenu ne versent pas dans le perso.
-								</p>
-								<p dir="ltr">
-									Une référence immédiatement vérifiable
-								</p>
-								<p dir="ltr">
-									Le book d’un créatif, la galerie photo d’un photographe, les sites créés par un chef de projet web… Les expériences et réalisations professionnelles
-									peuvent être mises en relief grâce aux liens hypertextes. « Il s’agit là d’une démonstration par l’exemple, d’une référence immédiatement vérifiable qui
-									apporte une réelle valeur ajoutée à la candidature », explique Claire Romanet, fondatrice du cabinet Elaee.
-								</p>
-								<p dir="ltr">
-									Cet avis, bon nombre de recruteurs le partagent. En revanche, ils sont moins unanimes en ce qui concerne les liens renvoyant aux sites des anciens
-									employeurs. Selon Dan Guez, « le CV n’a pas vocation à faire la promo des entreprises pour lesquelles on a travaillé. » Pour Claire Romanet, ces liens
-									peuvent cependant apporter un complément d’information intéressant dans un secteur où il est difficile de connaître tous les acteurs.
-								</p>
-								<p dir="ltr">
-									Et qu’en est-il pour les liens renvoyant aux formations suivies ? Jugés inutiles par Claire Romanet, Dan Guez estime qu’« ils peuvent être intéressants
-									pour un étudiant en recherche de stage ou de contrat en alternance ».
-								</p>
-								<p dir="ltr">
-									Attention à votre e-réputation !
-								</p>
-								<p dir="ltr">
-									Quels que soient les liens mentionnés, tous doivent faire l’objet d’une scrupuleuse attention. Chacun d’entre eux se doit d’apporter une réelle valeur
-									ajoutée au CV et non le pénaliser. Un lien non valide, un blog d’humeur politique, un profil avec des commentaires acerbes ne feront que porter préjudice à
-									la candidature. « Le candidat doit s’assurer qu’aucun lien mentionné ne porte atteinte à sa e-réputation », conseille ainsi Claire Romanet.
-								</p>
-								<p dir="ltr">
-									Méfiance donc avec les blogs et les sites personnels, certains peuvent agrémenter la rubrique « divers » du CV mais à condition d’apporter une plus-value
-									et de ne pas être trop personnel. « Le renvoi vers un blog tenu durant un tour du monde me fournira des éléments intéressants concernant la patience, la
-									méticulosité, la maîtrise d’Internet du candidat », illustre Dan Guez.
-								</p>
-								<p dir="ltr">
-									Outil intéressant pour apporter la démonstration concrète de ses réalisations, le lien hypertexte doit être manié avec précaution et parcimonie. Car « trop
-									de liens tuent le lien », tranche Claire Romanet.
+									Faites attention à votre e-réputation! Chaque lien que vous mentionnez doit apporter une réelle valeur ajoutée au CV et non le pénaliser. Un lien non valide, un blog d’humeur politique, un profil avec des commentaires acerbes ne feront que porter préjudice à la candidature.
 								</p>
 								<br/>
-
 							</div>
 
 							<div class="box1" id="7">
-
-								<ol start="9">
-									<li dir="ltr">
-										<h2 dir="ltr">
-											Mobilité (optionnel)
-										</h2>
-									</li>
-								</ol>
-								<p dir="ltr">
-									Nationale ou internationale si vous en êtes sûr. Information pouvant être utile pour le recruteur
-								</p>
 								<ol start="10">
 									<li dir="ltr">
 										<h2 dir="ltr">
@@ -291,26 +228,58 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									</li>
 								</ol>
 								<p dir="ltr">
-									Il faut mettre que si c’est vrai. Spécifier les langues. Plus value évidente. Attention, le recruteur peut entamer le dialogue directement dans la langue
-									que vous maitrisez en dehors du Français
+									Vous pouvez mettre que vous êtes bilingue, trilingue (ou plus). Il faut bien spécifier les langues. Forcément le recruteur pourra très bien entamer le dialogue dans la langue que vous maitrisez en dehors du Français.
 								</p>
 								<ol start="11">
 									<li dir="ltr">
 										<h2 dir="ltr">
-											Phrase d’accroche (optionnel)
+											Phrase d’accroche, titre du CV et objectifs (optionnel) Partie 1
 										</h2>
 									</li>
 								</ol>
 								<p dir="ltr">
-									Elle doit traduire un objectif, une ambition, elle doit être le plus factuelle possible. Elle induit la façon dont sera lu votre cv par la suite. Le
-									recruteur va être influencé. Soit il arrête de lire, soit il va contrôler sa lecture en fonction de la phrase d'accroche
+									La phrase d’accroche doit traduire un objectif, une ambition, elle doit être le plus factuelle possible. Elle induit la façon dont sera lu votre CV par la suite. Le recruteur va être influencé. Soit il arrête de lire, soit il va contrôler sa lecture en fonction de la phrase d'accroche.
 								</p>
 								<p dir="ltr">
-									Comme votre lettre de motivation ne sera lue qu’après de sévères sélections sur les CV. Ne vous privez pas de préciser sur votre CV vos objectifs. C’est en
-									quelque sorte un préambule de votre lettre d’accompagnement et ce préambule peut pousser le recruteur à analyser d’avantage votre candidature. De plus en
-									plus de cabinets indexent les CV dans divers outils, certains étant de simples index de recherche full-texte et d’autres sont équipés d’analyse sémantique,
-									il vous faut donc utiliser dans votre CV le vocabulaire courant propre à votre secteur d’activité en évitant les acronymes et, si votre parcours
-									professionnel un peu pauvre ne le permet pas, le paragraphe souhait et objectifs, vous donne toutes latitudes pour le faire.
+									Le titre fut longtemps présenté comme facultatif. Aujourd’hui la majorité des recruteurs considèrent qu’il est indispensable. Il doit cependant être manié avec intelligence : un titre trop flou donne l’impression d’un projet professionnel pas très clair tandis qu’un titre trop précis peut fermer des portes.
+								</p>
+								<p dir="ltr">
+									Le titre indique généralement un poste mais il peut aussi prendre l’intitulé d’un département. Quand on manque d’expérience, cela a l’avantage de désigner les métiers vers lesquels on s’oriente tout en montrant qu’on est prêt à étudier différents degrés hiérarchiques. Il est également possible d’ajouter le secteur d’activité si celui-ci est déterminant. En fait, c’est à chacun de placer le curseur en fonction de ses ambitions et de son parcours. Toutefois, il faut bannir les intitulés trop généraux (par exemple : communication).
+								</p>
+								<p dir="ltr">
+									Exemple de titre de CV:
+								</p>
+								<ul>
+									<li dir="ltr">
+										<p dir="ltr">
+											Ingénieur électronique spécialisation téléphonie  - séjour en Chine de 2 ans
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Ingénieur en informatique - bilingue anglais - mobilité internationale
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Ingénieur en électronique - mobilité internationale - 15 ans d’expérience 
+										</p>
+									</li>
+								</ul>
+							</div>
+							<div class="box1" id="8">
+							<ol start="11">
+									<li dir="ltr">
+										<h2 dir="ltr">
+											Phrase d’accroche, titre du CV et objectifs (optionnel) Partie 2
+										</h2>
+									</li>
+								</ol>
+								<p dir="ltr">
+									La lecture du CV peut se faire avant ou après la lecture de la lettre de motivation, en règle générale, c’est cette dernière qui est lue en premier. C’est elle qui va donner du sens pour la lecture du CV, en précisant l’objet, les objectifs et les enjeux de la demande.  
+								</p>
+								<p dir="ltr">
+									Attention un CV n’est pas une lettre de motivation. Si cette dernière traduit le présent et le futur, le CV traduit le passé et le présent, ils se complètent donc. Donc pas de longue phrase explicative en début de CV, on doit rester sur une accroche qui donne envie de lire et rend curieux de la suite ou qui synthétise les éléments clés et spécifiques du CV.
 								</p>
 								<p dir="ltr">
 									Les qualificatifs sur son CV ne doivent pas être choisis à la légère. LinkedIn a sorti les 10 mots les plus utilisés par ses membres. Les recruteurs se
@@ -323,14 +292,133 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 								</p>
 								<br/>
 								<p dir="ltr">
-									Plutôt que de répéter les mêmes buzzwords, nous invitons nos membres à rendre compte de ce qu’ils ont accompli au travers de photos, de présentations ou
-									d’autres exemples afin d’apporter la preuve qu’ils sont effectivement "passionnés", "experts" et "créatifs". »
+									Ces mots ne donc pas des plus-values. Rappelez-vous d’un principe simple de communication, la méthode SOFA. Nous échangeons sur 4 niveaux :
 								</p>
+								<ul>
+									<li dir="ltr">
+										<p dir="ltr">
+											Sentiment
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Opinion
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Faits
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Actions
+										</p>
+									</li>
+								</ul>
+							</div>
+							<div class="box1" id="9">
+								<ol start="11">
+									<li dir="ltr">
+										<h2 dir="ltr">
+											Phrase d’accroche, titre du CV et objectifs (optionnel) Partie 3
+										</h2>
+									</li>
+								</ol>
+								<p dir="ltr">
+									Les deux premiers sont des interprétations issues de faits observés personnellement mais qui sont généralisés, réduits ou transformés et ne constituent pas de preuve de ce que l’on dit.
+								</p>
+								<p dir="ltr">
+									Ex : je suis motivé, dynamique et expert : qu’est-ce qui le prouve ?
+								</p>
+								<p dir="ltr">
+									Les deux derniers sont des informations factuelles qui vont justement induire chez l’auditeur des sentiments et opinions.
+								</p>
+								<p dir="ltr">
+									Ex : 20X1 : responsable de projet développement site commercial chez X (6 mois) pour le client Z avec une équipe de 5 ingénieurs. Projet réalisé avec 1 mois d’avance et un budget optimisé de 23%.
+								</p>
+								<p dir="ltr">
+									Le lecteur pourra déduire, que vous êtes motivé, dynamique et expert. 
+								</p>
+								<p dir="ltr">
+									Il faut privilégier les verbes d’action pour décrire ses missions passées : vous avez décidé, fixé, géré, dirigé, coordonné, organisé, formé, contrôler. Les recruteurs préfèrent des mots d’action pour définir l’expérience, les compétences et les réalisations. D'après l'étude de CareerBuilder, les recruteurs apprécieraient particulièrement les expressions : 
+								</p>
+								<ul>
+									<li dir="ltr">
+										<p dir="ltr">
+											Obtenu/réalisé
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Amélioré
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Formé, parrainé
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Managé
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Créé
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Résolu
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Portés volontaires
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Augmenter / réduire
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Idées
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Négocié
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Lancer, mettre en place
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Chiffre d’affaires / profits
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											En deçà du budget
+										</p>
+									</li>
+									<li dir="ltr">
+										<p dir="ltr">
+											Remporté / gagné
+										</p>
+									</li>
+								</ul>
 								<br/>
-
 							</div>
 
-							<div class="box1" id="8">
+							<div class="box1" id="10">
 
 								<ol start="12">
 									<li dir="ltr">
@@ -340,31 +428,25 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									</li>
 								</ol>
 								<p dir="ltr">
-									Votre photo doit donner envie de vous rencontrer, sourire, netteté, contraste, vêtement professionnel, attitude ouverte, couleurs. (évitez les scans de
-									photo d'identité, les vieilles photos …). Elément fortement sujet à émotion donc à interprétation. Mieux vaut ne pas afficher de photo du tout que
-									d’insérer un portrait livide, décalé, voir raté sur votre CV.
+									La photo est un élément fortement sujet à émotion donc à interprétation. Votre photo doit donc donner envie de vous rencontrer, donc sourire, netteté, contraste, vêtement professionnel, attitude ouverte et couleurs sont de mises. 
 								</p>
 								<p dir="ltr">
-									Concrètement, se mettre en avant sur son CV en ligne commence par présenter une bonne photo. Les profils avec photo ont 14 fois plus de chances d’être
-									consultés. Bien sûr, sourire professionnel et tenue adéquate sont de mise.
+									Concrètement, se mettre en avant sur son CV en ligne commence par présenter une bonne photo. Les profils avec photo ont 14 fois plus de chances d’être consultés. Si vous avez rencontré des recruteurs par exemple sur un forum ou dans un salon professionnel, elle peut être un moyen pour eux de vous reconnaître.  
 								</p>
 								<p dir="ltr">
-									Cependant, si vous avez rencontré des recruteurs par exemple sur un forum ou dans un salon professionnel, elle peut être un moyen pour eux de vous
-									reconnaître.
+									La photo n’est pas obligatoire dans un CV, surtout si elle ne vous met pas en valeur ou manque de professionnalisme. Mieux vaut ne pas afficher de photo du tout que d’insérer un portrait livide, décalé, voir raté sur votre CV. Evitez de mettre les scans de photo d'identité, les vieilles photos, les photos de soirées, de vacances ou de famille, qui manquent de pertinence et de maturité.
 								</p>
 								<p dir="ltr">
-									La photo n’est pas obligatoire dans un CV, surtout si elle ne vous met pas en valeur ou manque de professionnalisme. Evitez les photos de soirées, de
-									vacances ou de famille, qui manquent de pertinence et de maturité.
+									Préférez des photos dans des contextes professionnels. Une photo en décolleté est également à proscrire, miser sur l’atout physique dans une candidature est une faute de goût et révèle un manque flagrant d’arguments professionnels.
 								</p>
 								<p dir="ltr">
-									Préférez des photos dans des contextes professionnels. Une photo en décolleté est également à proscrire, miser sur l’atout physique dans une candidature
-									est une faute de goût et révèle un manque flagrant d’arguments professionnels.
+									Enfin, vous postuler pour un poste d’ingénieur. Si c’est dans le développement web, la photo a moins d’importance qui si vous postulez sur un poste d’ingénieur d’affaires. La fréquence du contact avec le client souligne la différence sur la prise en compte de la photo.
 								</p>
 								<br/>
 
 							</div>
 
-							<div class="box1" id="9">
+							<div class="box1" id="11">
 
 								<ol start="13">
 									<li dir="ltr">
@@ -374,46 +456,36 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									</li>
 								</ol>
 								<p dir="ltr">
-									Sexe: attention risque de discrimination à l'embauche si spécifiée (le prénom indique le sexe en général sinon ce sera la surprise pour le recruteur). Lui
-									faire la surprise lors de l'entretien
+									Il y a certaines choses qu’il vaut mieux éviter de mettre dans un CV: sexe, situation familiale, religion, et bien sur les fausses informations.
 								</p>
 								<br/>
 								<p dir="ltr">
-									Situation familiale: Ce n'est plus comme avant, les situations sont nombreuses (célibataire, marié, pacsé, compagnon, divorcé …) et aucune ne traduit votre
-									mobilité réelle.
+									Si vous mentionnez votre sexe, attention au risque de discrimination à l'embauche si spécifiée. Puis dans la plupart des cas votre prénom indique le sexe en général sinon ce sera la surprise pour le recruteur, donc ce n’est pas la peine de le préciser en plus. 
 								</p>
 								<p dir="ltr">
-									Les mensonges: Il peut être tentant, pour les candidats, d'« embellir » leur CV, à coup de faux diplômes, de compétences surévaluées ou de hobbies
-									trafiqués. Selon une étude de Verifdiploma,
-									<a href="http://www.terrafemina.com/emploi-a-carrieres/actu/articles/26253-quels-sont-les-mensonges-les-plus-courants-sur-un-cv-.html">
-										26% des candidats n'hésiteraient d'ailleurs pas à mentir sur leur CV
-									</a>
-									. Pourtant, ces petits arrangements avec la vérité peuvent leur coûter cher en leur faisant manquer le poste de leurs rêves si le recruteur vient à
-									découvrir la supercherie.
+									En ce qui concerne votre situation familiale, ce n'est plus comme avant, les situations sont nombreuses (célibataire, marié, pacsé, compagnon, divorcé …) et aucune ne traduit votre mobilité réelle. 
 								</p>
+								<p dir="ltr">
+									Parfois il peut être tentant, pour les candidats, d'« embellir » leur CV, à coup de faux diplômes, de compétences surévaluées ou de hobbies trafiqués. Pourtant, ces petits arrangements avec la vérité peuvent vous coûter cher en vous faisant manquer le poste de vos rêves si le recruteur vient à découvrir la supercherie.
+								</p>
+
 								<br/>
 
 							</div>
 
-							<div class="box1" id="10">
+							<div class="box1" id="12">
 
 								<ol start="14">
 									<li dir="ltr">
 										<h2 dir="ltr">
-											Titre du CV
+											Récapitulatif du chapitre
 										</h2>
 									</li>
 								</ol>
 								<p dir="ltr">
-									Le titre fut longtemps présenté comme facultatif. Aujourd’hui la majorité des recruteurs considèrent qu’il est indispensable. Il doit cependant être manié
-									avec intelligence : un titre trop flou donne l’impression d’un projet professionnel pas très clair tandis qu’un titre trop précis peut fermer des portes.
+									
 								</p>
 								<p>
-									Le titre indique généralement un poste (directeur administratif et financier) mais il peut aussi prendre l’intitulé d’un département (Direction
-									administrative et financière). Quand on manque d’expérience, cela a l’avantage de désigner les métiers vers lesquels on s’oriente tout en montrant qu’on
-									est prêt à étudier différents degrés hiérarchiques. Il est également possible d’ajouter le secteur d’activité si celui-ci est déterminant. En fait, c’est à
-									chacun de placer le curseur en fonction de ses ambitions et de son parcours. Toutefois, il faut bannir les intitulés trop généraux (par exemple :
-									communication).
 								</p>
 								<br/>
 

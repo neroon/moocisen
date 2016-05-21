@@ -6940,9 +6940,9 @@ p {
 
 /* Avoir des vidéos responsive (+flash)*/
 .videocontainer{
-    width: 70%; /*  x0.30 */
+    width: 90%; /*  x0.30 */
     height: 0;
-    padding-bottom: 39.25%; /* 9/16 x0.30 */
+    padding-bottom: 50.25%; /* 9/16 x0.30 */
     overflow: hidden;
     position: relative;
     float: none;

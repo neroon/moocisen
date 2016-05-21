@@ -31,11 +31,6 @@ for($i=0;$i<sizeof($resuTitreMooc);$i++){
 		
 // Permet de calculer le score maximal possible en fonction des exercices réalisés par l'utilisateur pour ce MOOC
 
-/*$scoreTotalMooc = $bdd->query('SELECT sum(valeur_exo) AS total FROM mooc INNER JOIN chapitre ON mooc.id_mooc = chapitre.id_mooc INNER JOIN exercice ON chapitre.id_chapitre=exercice.id_chapitre WHERE mooc.id_mooc = "'.$donnees3[$i]["id_mooc"].'" AND id_exercice IN(SELECT id_exercice FROM faire WHERE id_user="'.$_SESSION["id_user"].'")');
-$donnees5 = $scoreTotalMooc->fetch();
-$scoreTotalMooc->closeCursor();*/
-
-
 for($i=0;$i<sizeof($resuTitreMooc);$i++){
 	 $scoreMaxMooc = $bdd->query('SELECT sum(valeur_exo) AS total FROM mooc INNER JOIN chapitre ON mooc.id_mooc = chapitre.id_mooc INNER JOIN exercice ON chapitre.id_chapitre=exercice.id_chapitre WHERE mooc.id_mooc = "'.$idMooc.'" AND chapitre.id_chapitre="'.$resuTitreMooc[$i]["id_chapitre"].'" AND id_exercice IN(SELECT id_exercice FROM faire WHERE id_user= "'.$_SESSION["id_user"].'")');  
 		$donnees2 = $scoreMaxMooc->fetch();
