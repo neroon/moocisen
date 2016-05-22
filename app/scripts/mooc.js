@@ -269,7 +269,7 @@ var appData=window.App || {}; //variable globale
         var varmysoluce = $('input.'+idmysoluce).val(); //indice
         //malus=10;
         $("#indicebox").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
-        $("#indicebox").append("<br>Indice : <i>"+varmysoluce+"</i>"); //affiche les choix (full JQuery)
+        $("#indicebox").append("<br>Explication : <i>"+varmysoluce+"</i>"); //affiche les choix (full JQuery)
 
     });
 
