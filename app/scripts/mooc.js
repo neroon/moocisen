@@ -115,7 +115,7 @@ var appData=window.App || {}; //variable globale
         malus=0;
 
 
-
+ $(".myexplication").hide(); 
         //  Wizard 
          $(document).ready(function () {
             //$("#solucebox").html('okok');
@@ -202,6 +202,7 @@ var appData=window.App || {}; //variable globale
                         $("#solucebox").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
                         $("#solucebox").append("<br>vos choix : <i>"+selected+"</i>"); //affiche les choix (full JQuery)
                         $("#solucebox").append("<br><b>"+jsondata+"</b>");//affiche le réponse de wizard_ajax.php
+                        $(".myexplication").show(); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
                         /*
 						$("#solucebox").append("<br><b>Faux</b>, M. Clément GUIOL : il y a une mention “M.” avant le prénom");
 						$("#solucebox").append("<br><b>Vrai</b>, Olivier Garnier : le prénom est avant le nom; le nom n’a pas besoin d’être en lettres capitales, car ce ne peut pas être un prénom et il n’a pas de consonance étrangere");
