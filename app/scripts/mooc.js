@@ -204,17 +204,17 @@ var appData=window.App || {}; //variable globale
                         $("#solucebox").append("<br><b>"+jsondata+"</b>");//affiche le réponse de wizard_ajax.php
                         $(".myexplication").show(); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
                         /*
-						$("#solucebox").append("<br><b>Faux</b>, M. Clément GUIOL : il y a une mention “M.” avant le prénom");
-						$("#solucebox").append("<br><b>Vrai</b>, Olivier Garnier : le prénom est avant le nom; le nom n’a pas besoin d’être en lettres capitales, car ce ne peut pas être un prénom et il n’a pas de consonance étrangere");
-						$("#solucebox").append("<br><b>Faux</b>, Madame Olivia : Serre il y a une mention “Madame” avant le prénom");
-						$("#solucebox").append("<br><b>Faux</b>, Mme Odette Dupont : il y a une mention “Mme” avant le prénom");
+						$("#solucebox").append("<br><b>Faux</b>, M. Clément GUIOL : il y a une mention ?M.? avant le prénom");
+						$("#solucebox").append("<br><b>Vrai</b>, Olivier Garnier : le prénom est avant le nom; le nom n?a pas besoin d?être en lettres capitales, car ce ne peut pas être un prénom et il n?a pas de consonance étrangere");
+						$("#solucebox").append("<br><b>Faux</b>, Madame Olivia : Serre il y a une mention ?Madame? avant le prénom");
+						$("#solucebox").append("<br><b>Faux</b>, Mme Odette Dupont : il y a une mention ?Mme? avant le prénom");
 						$("#solucebox").append("<br><b>Vrai</b>, Olivier SCHULTZ : le prénom est avant le nom et le nom est en capitale");
-						$("#solucebox").append("<br><b>Vrai</b>, Victor Gerard : le prénom est avant le nom; le nom n’a pas besoin d’être en lettres capitales, car ce ne peut pas être un prénom et il n’a pas de consonance étrangere.");
+						$("#solucebox").append("<br><b>Vrai</b>, Victor Gerard : le prénom est avant le nom; le nom n?a pas besoin d?être en lettres capitales, car ce ne peut pas être un prénom et il n?a pas de consonance étrangere.");
 						$("#solucebox").append("<br><b>Faux</b>, Slavyana Kokorina : le nom et le prénom a une consonance étrangere, il faut mettre le nom en majuscule");
-						$("#solucebox").append("<br><b>Faux</b>, Monsieur Jeson Dupont : il y a une mention “Monsieur” avant le prenom");
+						$("#solucebox").append("<br><b>Faux</b>, Monsieur Jeson Dupont : il y a une mention ?Monsieur? avant le prenom");
 						$("#solucebox").append("<br><b>Faux</b>, Jean Nicolas : il faut mettre le nom en lettres capitales, car ce nom peut être un prénom");
 						$("#solucebox").append("<br><b>Faux</b>, PERRICHON Guillaume : le nom est avant le prénom");
-						$("#solucebox").append("<br><b>Vrai</b>, Clément DAVID : le prénom est bien avant le nom et le nom est en lettres capitales car c’est un nom qui peut être un prénom");
+						$("#solucebox").append("<br><b>Vrai</b>, Clément DAVID : le prénom est bien avant le nom et le nom est en lettres capitales car c?est un nom qui peut être un prénom");
                         */
 
 
@@ -253,7 +253,6 @@ var appData=window.App || {}; //variable globale
             success: function(data) {
                 var jsondata=data;  //jsondata c'est le callback de wizard.jss
                 alert (data);
-
             },
             error: function(json) {
                 alert('false');

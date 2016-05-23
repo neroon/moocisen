@@ -4,7 +4,6 @@
 	{
 		$selectChap = $bdd->prepare("SELECT * FROM mooc");
 		$selectChap->execute();
-
 		$lignesChap = $selectChap->fetchAll();
 		
 		echo'<h2><a style="text-decoration:none; color:white;" href="../../app/modules/mooc.php?idM='.$idMooc.'">'.$lignesChap[$idMooc-1]["nom_mooc"].'</a></h2>';
@@ -16,7 +15,6 @@
 			          
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
-
 			$lignesChap = $selectChap->fetchAll();
 			if(sizeof($lignesChap) == 0){
 			echo 'Aucun chapitre présent';
@@ -78,7 +76,6 @@
 	{
 		//var_dump($idMooc);
 		$stringAvancement=''; //contient les chapitre fais par un user
-
 		if ((isset($_SESSION['login'])) && (!empty($_SESSION['login']))){
 			$user=$_SESSION['id_user'];
 			//var_dump($user);
@@ -94,13 +91,10 @@
 		        echo "->erreur<br>";
 		    }
 		}
-
 		try{
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
-
 			$lignesChap = $selectChap->fetchAll();
-
 			if(sizeof($lignesChap) == 0){
 				echo 'Aucun chapitre présent';
 			}
@@ -144,7 +138,6 @@
 										
 									}
 							echo'</ul></li>';
-
 					}
 				}
 			}
@@ -162,7 +155,6 @@
 			
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
-
 			$lignesChap = $selectChap->fetchAll();
 			
 				echo '<h2> '.$lignesChap[$numChap-1]["titre"].' </h2>';
@@ -213,7 +205,6 @@
 		try{
 			$selectChap = $bdd->prepare("SELECT * FROM chapitre WHERE id_mooc = $idMooc");
 			$selectChap->execute();
-
 			$lignesChap = $selectChap->fetchAll();
 			
 			$selectExo = $bdd->prepare("SELECT * FROM exercice WHERE id_chapitre = $idChap");
