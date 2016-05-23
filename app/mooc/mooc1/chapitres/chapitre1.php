@@ -483,10 +483,43 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 									</li>
 								</ol>
 								<p dir="ltr">
-									
+									Nous pouvons résumer le chapitre en 12 points essentiels suivants:
 								</p>
-								<p>
-								</p>
+								<ol>
+									<li>
+										Le <b>nom</b> est mis en capitale lorsque le nom peut être un <b>prénom</b> ou lorsqu’ils sont à consonance étrangère.
+									</li>
+									<li>
+										Dans tous les cas pensez à mettre votre <b>mobilité</b>: régionale, nationale, internationale.
+									</li>
+									<li>
+										Mettre le <b>numéro de téléphone</b>portable est très conseillé. Si vous mettez plusieurs numéros de téléphone (on considère que 2 numéros c’est largement suffisant), placer le principal en premier.
+									</li>
+									<li>
+										<b>L’adresse mail</b> doit être professionnelle du type : nom.prenom@gmail.com. Evitez les boites mails Yahoo et Hotmail.
+									</li>
+									<li>
+										<b>La date de naissance</b> est sous la forme jj/mm/aaaa. Il est très conseillé de mettre l’âge entre les parenthèses et ne pas oublier à rectifier chaque année.
+									</li>
+									<li>
+										<b>Le lieu de naissance</b> et la <b>nationalité</b> sont à mettre si votre nom est à consonance étrangère. Cela peut aussi indiquer une mobilité géographique intéressante.
+									</li>
+									<li>
+										Vous pouvez mettre le lien vers les <b>réseaux</b> sociaux suivants : Twitter, Facebook, Linkedin, Viadéo à conditions que ce sont les comptes professionnels qui ne contiennent pas les éléments de votre vie privée.
+									</li>
+									<li>
+										Il est vivement conseillé à mettre que vous êtes <b>bilingue</b> (voir même trilingue).
+									</li>
+									<li>
+										<b>La phrase d’accroche</b> traduit un objectif, une ambition. <b>Le titre de votre CV</b> doit indiquer un poste ou l’intitulé d’un département. Vous pouvez mettre un élément qui peut vous démarquer (mobilité, bilingue, etc.). N’oubliez pas à mettre les <b>objectifs</b> en utilisant les bons qualificatifs.  
+									</li>
+									<li>
+										La <b>photo</b> n’est pas obligatoire. Si vous la mettez elle doit être prise dans le contexte professionnel.
+									</li>
+									<li>
+										<b>Evitez</b> de mentionner votre sexe, situation familiale et les mensonges.
+									</li>
+								</ol>
 								<br/>
 
 							</div>
