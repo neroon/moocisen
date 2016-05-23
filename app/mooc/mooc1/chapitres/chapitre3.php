@@ -15,7 +15,7 @@ $idChap;
 ?>
 
 <script>
-		var nbClickMax=3;
+		var nbClickMax=5;
         var nbClick=0;
     
         function compter()
@@ -132,18 +132,27 @@ $idChap;
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content" style="overflow:auto;" >
-					<p> Cliquez sur les erreurs de ce CV pour marquer des points, attention à ne pas cliquer de partout sinon vous en perdrez.<br> Il y a 3 erreurs et vous disposez de 3 clics. A vous de jouer !<p>
+					<p> Cliquez sur les erreurs de ce CV pour marquer des points, attention à ne pas cliquer de partout sinon vous en perdrez.<br> Il y a 5 erreurs et vous disposez de 5 clics. A vous de jouer !<p>
 					<br>
-                	<img  id="fauxcv" src="../mooc/mooc1/chapitres/images/fauxcv.png" usemap="#map1" onclick="diminueScore();compter();"> 
+                	<img  style="text-align:center;" id="fauxcv" src="../mooc/mooc1/chapitres/images/fauxcv2.png" usemap="#map1" onclick="diminueScore();compter();"> 
     				<map name="map1">
-        				<area style="text-decoration:none; cursor:default;" id="identite" shape="rect" coords="22,24,305,180"  onclick="augmenteScore(this.id);compter();"/>
-        				<area style="text-decoration:none; cursor:default;" id="blonde" shape="rect" coords="881,6,1063,156" onclick="augmenteScore(this.id);compter();" />
+
+        				<area style="text-decoration:none; cursor:default;" shape="rect" coords="27,15,153,149" onclick="augmenteScore(this.id);compter();" />
+
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="172,39,374,57" onclick="augmenteScore(this.id);compter();" />
+
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="172,137,337,152" onclick="augmenteScore(this.id);compter();" />
+
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="18,560,135,575" onclick="augmenteScore(this.id);compter();" />
+
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="207,189,523,203" onclick="augmenteScore(this.id);compter();" />
+
     				</map>
 
     <div>
     	<br>
         <p>Score : <span id="score">0</span></p>
-        <p>Tentatives restantes : <span id="tentative">3</span></p>
+        <p>Tentatives restantes : <span id="tentative">5</span></p>
         
     </div>    	
 				</div>
