@@ -21,11 +21,21 @@
 			$tabSolution = array();
 			$numCaseTab=0; 
 			$tabIndiceQcm = array();
+
+
+			for($i = 0; $i < 60; $i++)
+			{
+				$tabRandArray[$i] = rand(1, 8000);
+				//echo ','.$tabRandArray[$i];
+			}
+
+
 			//echo "size".$lignesQcm;
 			//var_dump($lignesQcm);
 			for($i = 0; $i < sizeof($lignesQcm) ; $i++)
 			{
 				$solution = $lignesQcm[$i]["solution"];
+
 				$solution=htmlentities($solution, ENT_QUOTES, "UTF-8");
 				$tabHint = preg_split('[-]', $solution);
 				echo '<input type="hidden" id="indice" class="'.$i.$idExo.'" name="indice" value="' . htmlspecialchars(stripslashes($lignesQcm[$i]["indice_qcm"])). '" />'; //indice_qcm
@@ -37,16 +47,20 @@
 					//echo "**".$tabHint[$itab];
 					//print_r("**".$tabHint[$itab]);
 					//obligatoire si plusieurs reponse de meme nom
+					//echo "<br>".$tabHint[$itab]."<br>";
+					$valint = intval($tabHint[$itab]);
+					var_dump($valint );
+					$ez  = $tabRandArray[$valint];
 					$lowercase = strtolower($tabHint[$itab]);
 					if($lowercase == 'oui'){
-						$tabSolution[$numCaseTab]=$tabHint[$itab].$i.$idExo; //rajoute $i si doublon
+						$tabSolution[$numCaseTab]=$ez.$i.$idExo; //rajoute $i si doublon
 						//print_r("+*".$tabSolution[$numCaseTab]);
 					}else if($lowercase == 'non'){
-						$tabSolution[$numCaseTab]=$tabHint[$itab].$i.$idExo; //rajoute $i si doublon
+						$tabSolution[$numCaseTab]=$ez.$i.$idExo; //rajoute $i si doublon
 						//print_r("-*".$tabSolution[$numCaseTab]);
 					}
 					else{
-						$tabSolution[$numCaseTab]=$tabHint[$itab].$i.$idExo;
+						$tabSolution[$numCaseTab]=$ez.$i.$idExo;
 						//print_r("-*".$tabSolution[$numCaseTab]);
 					}
 						
@@ -95,7 +109,7 @@
 										{
 										echo'<div class="ck-button">
 											   <label>
-												  <input type="checkbox" name="'.$tab[$itab].$i.$idExo.'" value="" style="display:none;"><span>'.$tab[$itab].'</span> 
+												  <input type="checkbox" name="'.$tabRandArray[$itab].$i.$idExo.'" value="" style="display:none;"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div>';
 										}
@@ -103,7 +117,7 @@
 										{
 										echo'<div class="ck-button">
 											   <label>
-												  <input type="checkbox"name="'.$tab[$itab].$i.$idExo.'" value="" style="display:none;"><span>'.$tab[$itab].'</span> 
+												  <input type="checkbox"name="'.$tabRandArray[$itab].$i.$idExo.'" value="" style="display:none;"><span>'.$tab[$itab].'</span> 
 											   </label>
 											</div><br>';
 										}
@@ -115,7 +129,7 @@
 										$affichageetvalue = str_replace( ',', '',$affichageetvalue);
 										echo '<div class="checkbox center">
 											<label class="hover">
-												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.$affichageetvalue.$i.$idExo.'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
+												<div class="icheckbox_flat-green checked hover" style="position: relative;"><input type="checkbox" name="'.$tabRandArray[$itab].$i.$idExo.'" class="flat"  style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> 
 												'.$tab[$itab].'<br>
 											</label>
 										</div>';
