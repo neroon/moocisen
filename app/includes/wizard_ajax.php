@@ -142,12 +142,13 @@ function updateSuivreChap($id_user,$id_chap,$id_mooc){
     }
    // echo "avancement -> ".$stringAvancement;
 
-    unlockTrophyAdvancement($id_user,$id_mooc);
-
     try { 
         //$requete_prepare= $bdd->prepare("INSERT INTO suivre(avancement) VALUES '$stringAvancement' "); // on prépare notre requête
         $requete_prepare= $bdd->prepare("UPDATE suivre SET avancement='$stringAvancement' WHERE id_user = '$id_user' AND id_mooc = '$id_mooc'"); // on prépare notre requête
         $requete_prepare->execute();
+
+        unlockTrophyAdvancement($id_user,$id_mooc);
+        
         //var_dump($requete_prepare);
         echo "->updateSuivreChap<br>";
     } catch (Exception $e) { 
