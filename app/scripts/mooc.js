@@ -182,40 +182,11 @@ var appData=window.App || {}; //variable globale
                         //var jsondata=$.parseJSON(data);  //jsondata c'est le callback de wizard.jss
                         var jsondata=data;  //jsondata c'est le callback de wizard.jss
                         appData=jsondata;
-                        ///console.log("jsondata-->"+jsondata);
-                        //$("#solucebox").prepend("Voici vos choix : "+jsondata+"<br> Les réponse de l'exo: "+jsonsoluce); 
-                        //car les array ne sont pas pareil
-                        //good
-                       /* jsondata=jsondata.replace(/"/g,"",jsondata); //remplace les " par rien
-                        jsonsoluce=jsonsoluce.replace(/"/g,"",jsonsoluce);
-                        jsonsoluce=jsonsoluce.replace(/,]/g,"]",jsonsoluce);*/
 
-                        //ne pas oublier le <div id='solucebox'></div> dans chapitre (mooc/chapitre/..)
-                        //$("#solucebox").html(""); //Ré
-                        //$("#solucebox").append("Voici vos choix : "+jsondata+"<br> Les réponse de l'exo: "+jsonsoluce); 
-                        /*$("#solucebox").append("Callback"+jsondata); 
-                        if(jsondata==jsonsoluce){
-                            $("#solucebox").append("<br><b>CORRECT</b>"); 
-                        }else{
-                             $("#solucebox").append("<br><b>FAUX</b>"); 
-                        }*/
                         $("#solucebox").html(""); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
-                        $("#solucebox").append("<br>vos choix : <i>"+selected+"</i>"); //affiche les choix (full JQuery)
+                       // $("#solucebox").append("<br>vos choix : <i>"+selected+"</i>"); //affiche les choix (full JQuery)
                         $("#solucebox").append("<br><b>"+jsondata+"</b>");//affiche le réponse de wizard_ajax.php
                         $(".myexplication").show(); //Refresh ne pas oublier le div (généré par modeles/qcm.php)
-                        /*
-						$("#solucebox").append("<br><b>Faux</b>, M. Clément GUIOL : il y a une mention ?M.? avant le prénom");
-						$("#solucebox").append("<br><b>Vrai</b>, Olivier Garnier : le prénom est avant le nom; le nom n?a pas besoin d?être en lettres capitales, car ce ne peut pas être un prénom et il n?a pas de consonance étrangere");
-						$("#solucebox").append("<br><b>Faux</b>, Madame Olivia : Serre il y a une mention ?Madame? avant le prénom");
-						$("#solucebox").append("<br><b>Faux</b>, Mme Odette Dupont : il y a une mention ?Mme? avant le prénom");
-						$("#solucebox").append("<br><b>Vrai</b>, Olivier SCHULTZ : le prénom est avant le nom et le nom est en capitale");
-						$("#solucebox").append("<br><b>Vrai</b>, Victor Gerard : le prénom est avant le nom; le nom n?a pas besoin d?être en lettres capitales, car ce ne peut pas être un prénom et il n?a pas de consonance étrangere.");
-						$("#solucebox").append("<br><b>Faux</b>, Slavyana Kokorina : le nom et le prénom a une consonance étrangere, il faut mettre le nom en majuscule");
-						$("#solucebox").append("<br><b>Faux</b>, Monsieur Jeson Dupont : il y a une mention ?Monsieur? avant le prenom");
-						$("#solucebox").append("<br><b>Faux</b>, Jean Nicolas : il faut mettre le nom en lettres capitales, car ce nom peut être un prénom");
-						$("#solucebox").append("<br><b>Faux</b>, PERRICHON Guillaume : le nom est avant le prénom");
-						$("#solucebox").append("<br><b>Vrai</b>, Clément DAVID : le prénom est bien avant le nom et le nom est en lettres capitales car c?est un nom qui peut être un prénom");
-                        */
 
 
  

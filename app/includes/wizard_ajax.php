@@ -17,7 +17,7 @@ function insertFaitToBDD($score,$id_user,$id_exercice){
 		$requete_prepare= $bdd->prepare("INSERT INTO faire(score,id_user,id_exercice) VALUES('$score', '$id_user', '$id_exercice')"); // on prépare notre requête
 		$requete_prepare->execute();
 		//var_dump($requete_prepare);
-		echo "->Sauvegarde du score<br>";
+	//	echo "->Sauvegarde du score<br>";
 
 	} catch (Exception $e) { 
   		echo $e->errorMessage();
@@ -33,7 +33,7 @@ function insertFaitToBDDwithUpdate($score,$id_user,$id_exercice){
 		$requete_prepare= $bdd->prepare("INSERT INTO faire(score,id_user,id_exercice) VALUES('$score', '$id_user', '$id_exercice') ON DUPLICATE KEY UPDATE score='$score',id_user='$id_user',id_exercice='$id_exercice'"); // on prépare notre requête
 		$requete_prepare->execute();
 		//var_dump($requete_prepare);
-		echo "->Sauvegarde du score<br>";
+	//	echo "->Sauvegarde du score<br>";
 	} catch (Exception $e) { 
   		echo $e->errorMessage();
   		echo "->erreur<br>";
@@ -50,14 +50,14 @@ function insertFaitToBDDwithUpdateTabExo($score,$id_user,$tabide){
             $requete_prepare= $bdd->prepare("INSERT INTO faire(score,id_user,id_exercice) VALUES('$score', '$id_user', '$id_exercice') ON DUPLICATE KEY UPDATE score='$score',id_user='$id_user',id_exercice='$id_exercice'"); // on prépare notre requête
             $requete_prepare->execute();
             //var_dump($requete_prepare);
-            echo ".";
+            //echo ".";
         } catch (Exception $e) { 
             echo $e->errorMessage();
             echo "->erreur<br>";
         }
         //echo "----".$tabide[$i];
     }
-    echo "<br>->Sauvegarde du score<br>";
+   // echo "<br>->Sauvegarde du score<br>";
 }
 
 function unlockTrophyAdvancement($id_user,$id_mooc){
@@ -150,7 +150,7 @@ function updateSuivreChap($id_user,$id_chap,$id_mooc){
         unlockTrophyAdvancement($id_user,$id_mooc);
         
         //var_dump($requete_prepare);
-        echo "->updateSuivreChap<br>";
+      //  echo "->updateSuivreChap<br>";
     } catch (Exception $e) { 
         echo $e->errorMessage();
         echo "->erreur<br>";
@@ -251,13 +251,13 @@ function compareTab($strChoix, $strSoluce){
     if($lePourcentage<0){
         $lePourcentage=0;
     }
-     echo '<br>score inseré :'.$lePourcentage;
+     echo '<br>score inseré : '.$lePourcentage;
 
     return $lePourcentage;
 }
 
 $lepourcentage=compareTab($meschoix,$solutions);
-echo '<br><br><br>Debug<br> les réponses sont :'.$solutions."<br>info débug : ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
+//echo '<br><br><br>Debug<br> les réponses sont :'.$solutions."<br>info débug : ".$idm." ".$idc."  ".$tabide." -solution ".$solutions." -choix".$meschoix;
 
 //Calcul du %
 $lepourcentage=intval($lepourcentage); //Cast en entier

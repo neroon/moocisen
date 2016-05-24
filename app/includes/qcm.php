@@ -49,7 +49,7 @@
 					//obligatoire si plusieurs reponse de meme nom
 					//echo "<br>".$tabHint[$itab]."<br>";
 					$valint = intval($tabHint[$itab]);
-					var_dump($valint );
+					//var_dump($valint );
 					$ez  = $tabRandArray[$valint];
 					$lowercase = strtolower($tabHint[$itab]);
 					if($lowercase == 'oui'){
