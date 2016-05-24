@@ -543,7 +543,8 @@ if(isset($_GET['idM']) && isset($_GET['idC'])) {
 						</div>
 						<div class="x_content">
 							<div class="videocontainer lg6"> 
-	                         <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" ></iframe>
+	                         <!--<iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" ></iframe>-->
+	                         <iframe width="560" height="315" src="https://www.youtube.com/embed/_r7bht-LgvU" frameborder="0" allowfullscreen></iframe>
 	                        </div>
 						</div>
 					</div>

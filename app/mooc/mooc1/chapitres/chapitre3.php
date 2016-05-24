@@ -246,7 +246,8 @@ $idChap;
 					</div>
 					<div class="x_content">
 						<div class="videocontainer lg6"> 
-                         <iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" ></iframe>
+                         <!--<iframe src="https://www.youtube.com/embed/lX7kYDRIZO4" frameborder="0" ></iframe>-->
+                         <iframe width="560" height="315" src="https://www.youtube.com/embed/_r7bht-LgvU" frameborder="0" allowfullscreen></iframe>
                         </div>
 					</div>
 				</div>
@@ -309,7 +310,7 @@ $idChap;
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content" style="overflow:auto;" >
-					<p> Cliquez sur les erreurs de ce CV pour marquer des points, attention à ne pas cliquer de partout sinon vous en perdrez.<br> Il y a 5 erreurs et vous disposez de 5 clics. A vous de jouer !<p>
+					<p> <b>Cliquez sur les erreurs de ce CV pour marquer des points, attention à ne pas cliquer de partout sinon vous en perdrez.<br> Il y a 5 erreurs et vous disposez de 5 clics. A vous de jouer !</b><p>
 					<br>
                 	<img style="margin:0 auto; display:block;" id="fauxcv" src="../mooc/mooc1/chapitres/images/fauxcv2.png" usemap="#map1" onclick="diminueScore();compter();"> 
     				<map name="map1">

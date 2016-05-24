@@ -72,6 +72,9 @@ if (isset($_GET['idM']) && isset($_GET['idC'])) {
 					    veille sur les sites d'emploi …). Il faut faciliter la vie au recruteur pour qu'il trouve la perle rare qu'il recherche. Rappelez-vous qu'il a aussi peur
 					    que vous, il ne faut pas qu'il se trompe vis-à-vis du demandeur.
 					</p>
+					<p dir="ltr">
+					<b>Pour accéder au cours, appuyer sur un des chapitres dans la barre de gauche</b>
+					</p>
 					<div>
 					    <br/>
 					</div>
