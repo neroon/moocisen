@@ -37,7 +37,8 @@ $idChap;
 			            },
 			            success: function(data) {
 			                var ndata=data;  //jsondata c'est le callback de wizard.jss
-			                alert (ndata);
+			               //alert (ndata);
+			               alert ("votre score est "+scoreGlobal);
 			            },
 			            error: function(json) {
 			                alert('false');

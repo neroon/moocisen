@@ -19,6 +19,7 @@
         try { 
             $requete_prepare= $bdd->prepare("INSERT INTO faire(score,id_user,id_exercice) VALUES('$scoreGlobal', '$id_user', '$id_exercice') ON DUPLICATE KEY UPDATE score='$scoreGlobal',id_user='$id_user',id_exercice='$id_exercice'"); // on prépare notre requête
             $requete_prepare->execute();
+            //echo "Votre score est de ".$scoreGlobal;
             //var_dump($requete_prepare);
         //  echo "->Sauvegarde du score<br>";
         } catch (Exception $e) { 
