@@ -17,6 +17,7 @@ $idChap;
 <script>
 		var nbClickMax=5;
         var nbClick=0;
+        var scoreGlobal;
     
         function compter()
         {
@@ -26,7 +27,25 @@ $idChap;
             document.getElementById("tentative").innerHTML =nbTentativesrestantes;
             if(nbClick>=nbClickMax)
             {
-                alert('Nombre de clic maximum atteint');
+               // alert('Nombre de clic maximum atteint');
+               // 
+                $.ajax({
+			            url: '../includes/cv_interactif.php',
+			            type: 'POST', 
+			            data: {
+			                scoreGlobal: scoreGlobal, //la solution
+			            },
+			            success: function(data) {
+			                var ndata=data;  //jsondata c'est le callback de wizard.jss
+			                alert (ndata);
+			            },
+			            error: function(json) {
+			                alert('false');
+			                //$('.alert-danger').show();
+			            }
+			        });
+
+               	//scoreGlobal;
                 // On désactive les clics sur les areas
                 $( "area" ).each(function() {
                     $(this).attr("onclick","inutile()");
@@ -44,6 +63,7 @@ $idChap;
         function augmenteScore(title){
             var score = parseInt(document.getElementById("score").innerHTML);
             score = score+20;
+            scoreGlobal=score;
             document.getElementById("score").innerHTML =score;
             $("#"+title).attr("onclick","dejaTrouve()");
         }
@@ -61,6 +81,7 @@ $idChap;
             var score = parseInt(document.getElementById("score").innerHTML);
             if(score>=20){
                 score=score-20;
+                scoreGlobal=score;
             }
             document.getElementById("score").innerHTML =score;
         }
