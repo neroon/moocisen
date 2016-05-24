@@ -290,18 +290,18 @@ $idChap;
 				<div class="x_content" style="overflow:auto;" >
 					<p> Cliquez sur les erreurs de ce CV pour marquer des points, attention à ne pas cliquer de partout sinon vous en perdrez.<br> Il y a 5 erreurs et vous disposez de 5 clics. A vous de jouer !<p>
 					<br>
-                	<img  style="text-align:center;" id="fauxcv" src="../mooc/mooc1/chapitres/images/fauxcv2.png" usemap="#map1" onclick="diminueScore();compter();"> 
+                	<img style="margin:0 auto; display:block;" id="fauxcv" src="../mooc/mooc1/chapitres/images/fauxcv2.png" usemap="#map1" onclick="diminueScore();compter();"> 
     				<map name="map1">
 
-        				<area style="text-decoration:none; cursor:default;" shape="rect" coords="27,15,153,149" onclick="augmenteScore(this.id);compter();" />
+        				<area style="text-decoration:none; cursor:default;" shape="rect" coords="28,8,154,146" onclick="augmenteScore(this.id);compter();" />
 
-    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="172,39,374,57" onclick="augmenteScore(this.id);compter();" />
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="172,35,375,54" onclick="augmenteScore(this.id);compter();" />
 
-    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="172,137,337,152" onclick="augmenteScore(this.id);compter();" />
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="203,183,531,201" onclick="augmenteScore(this.id);compter();" />
 
-    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="18,560,135,575" onclick="augmenteScore(this.id);compter();" />
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="170,132,334,148" onclick="augmenteScore(this.id);compter();" />
 
-    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="207,189,523,203" onclick="augmenteScore(this.id);compter();" />
+    					<area style="text-decoration:none; cursor:default;" shape="rect" coords="13,552,141,572" onclick="augmenteScore(this.id);compter();" />
 
     				</map>
 
