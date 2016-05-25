@@ -122,13 +122,13 @@
             <nav class="sidebar-nav">
               <ul>
                   <li class="js-scroll-spy-link" data-scroll-spy-group="sidebar" data-scroll-spy-target="categorie1">
-                    <a href="#categorie1" data-scroll-to="categorie1" data-g-event="TOC" data-g-label="categorie1">Catégorie 1</a>
+                    <a href="#categorie1" data-scroll-to="categorie1" data-g-event="TOC" data-g-label="categorie1">Découverte de la plateforme MOOC ISEN</a>
                   </li>
                   <li class="js-scroll-spy-link" data-scroll-spy-group="sidebar" data-scroll-spy-target="categorie2">
-                    <a href="#categorie2" data-scroll-to="categorie2" data-g-event="TOC" data-g-label="categorie2">Catégorie 2</a>
+                    <a href="#categorie2" data-scroll-to="categorie2" data-g-event="TOC" data-g-label="categorie2">Les cours / MOOC sur MOOC ISEN</a>
                   </li>
                   <li class="js-scroll-spy-link" data-scroll-spy-group="sidebar" data-scroll-spy-target="categorie3">
-                    <a href="#categorie3" data-scroll-to="categorie3" data-g-event="TOC" data-g-label="categorie3">Catégorie 3</a>
+                    <a href="#categorie3" data-scroll-to="categorie3" data-g-event="TOC" data-g-label="categorie3">Évaluation, attestation, certificat, diplôme</a>
                   </li>
               </ul>
             </nav>
@@ -138,269 +138,171 @@
 
             <section class="question__section js-scroll-spy-target categorie1" data-scroll-spy-group="sidebar" data-scroll-spy-section="categorie1">
               <a id="categorie1" class="question__anchor"></a>
-              <h4 class="faq-section__title">Catégorie 1</h4>
+              <h4 class="faq-section__title">Découverte de la plateforme MOOC ISEN</h4>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="0:1">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Pourquoi suivre des cours sur MOOC’ISEN ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="0:1">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    MOOC’ISEN propose des MOOC de qualité puisqu’ils sont fourni par l’ISEN (L’institut Supérieur de L’Electronique et du Numérique) une école d’ingénieur reconnue en France 
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="0:2">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Comment faire pour m’inscrire sur MOOC’ISEN ? </h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="0:2">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorsque vous arrivez sur la page d’accueil, vous pourrez voir le bouton « Inscription » qui se trouve dans le menu en haut de la page, cliquez dessus et vous serez amené à remplir un formulaire, une fois ce formulaire rempli correctement vous serez inscrit au site et directement connecté à votre compte.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="0:3">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Comment puis-je changer mes informations sur MOOC’ISEN ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="0:3">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Pour cela il faudra vous rendre sur votre page de profil par le biais du menu latéral gauche, une fois arrivé, allez à la section « Modifier mon profil ». Vos informations seront déjà complétées, il ne vous reste plus qu’à changer ce que vous voulez, taper votre email dans le champ associé et confirmer.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="0:4">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Comment suivre un cours sur MOOC’ISEN ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="0:4">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Pour suivre un cours il vous suffit d’aller dans le « catalogue » des MOOC, une fois dedans vous verrez la liste des MOOC disponibles, si l’un d’eux vous intéresse, cliquez sur « Description », vous verrez une description plus détaillée de ce dernier. Enfin s’il vous intéresse vraiment cliquez sur le bouton « Inscription au cours ». 
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="0:5">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Ais-je besoin d’être inscrit pour suivre un cours ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="0:5">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    L’inscription n’est pas obligatoire pour suivre des cours sur MOOC’ISEN, néanmoins si vous ne possédez pas de compte, vous ne pourrez pas sauvegarder votre progression, vos scores et accéder à vos statistiques via la page profil.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
             </section>
 
             <section class="question__section js-scroll-spy-target categorie2" data-scroll-spy-group="sidebar" data-scroll-spy-section="categorie2">
               <a id="categorie2" class="question__anchor"></a>
-              <h4 class="faq-section__title">Catégorie 2</h4>
+              <h4 class="faq-section__title">Les cours / MOOC sur MOOC ISEN</h4>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="1:1">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Vos cours sont-ils exclusivement en français ? </h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="1:1">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    A ce jour, le site ne contient que des MOOC en français, peut-être d’autres langues viendront s’ajouter par la suite, mais si c’est le cas nous vous en tiendrons informé.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="1:2">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Suivre un cours, combien ça coute ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="1:2">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Les cours disponibles sur MOOC’ISEN sont tous et totalement gratuit pour tous.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="1:3">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Puis-je accéder aux cours à tout moment ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="1:3">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Les cours sont disponibles à tout moment et sans limite de durée.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="1:4">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Y a-t-il une certification à la clef ? </h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="1:4">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Pour le moment aucune certification n’est disponible, mais après tout on ne travaille pas toujours pour avoir une récompense.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="1:5">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Comment puis-je réinitialiser mon mot de passe sur MOOC’ISEN ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="1:5">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Si vous avez oublié votre mot de passe pour vous connecter, il vous suffit de cliquer sur « Mot de passe oublié », vous recevrez alors un email avec un lien qui vous permettra de réinitialiser votre mot de passe.
                     </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                   </div>
                 </div>
             </section>
               
             <section class="question__section js-scroll-spy-target categorie3" data-scroll-spy-group="sidebar" data-scroll-spy-section="categorie3">
               <a id="categorie3" class="question__anchor"></a>
-              <h4 class="faq-section__title">Catégorie 3</h4>
+              <h4 class="faq-section__title">Évaluation, attestation, certificat, diplôme</h4>
 
                 <div class="question">
                   <div class="question__question control js-toggle" data-toggle-target="2:1">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
+                    <h5>Comment puis-je consulter mon score, mon avancement et mes statistiques sur un MOOC ?</h5>
                     <span class="question__arrow">
                       <i class="material-icons question__icon">&#xE313;</i>
                     </span>
                   </div>
                   <div class="question__answer" aria-expanded="false" data-toggle-id="2:1">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Pour cela il faudra vous rendre sur votre page de profil par le biais du menu latéral gauche, une fois arrivé, allez à la section « Mes cours ». Vous pourrez ainsi voir les cours où vous êtes inscrit, ainsi que les scores réalisés et votre pourcentage d’avancement.
                     </p> 
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="question">
-                  <div class="question__question control js-toggle" data-toggle-target="2:2">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
-                    <span class="question__arrow">
-                      <i class="material-icons question__icon">&#xE313;</i>
-                    </span>
-                  </div>
-                  <div class="question__answer" aria-expanded="false" data-toggle-id="2:2">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="question">
-                  <div class="question__question control js-toggle" data-toggle-target="2:3">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
-                    <span class="question__arrow">
-                      <i class="material-icons question__icon">&#xE313;</i>
-                    </span>
-                  </div>
-                  <div class="question__answer" aria-expanded="false" data-toggle-id="2:3">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="question">
-                  <div class="question__question control js-toggle" data-toggle-target="2:4">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
-                    <span class="question__arrow">
-                      <i class="material-icons question__icon">&#xE313;</i>
-                    </span>
-                  </div>
-                  <div class="question__answer" aria-expanded="false" data-toggle-id="2:4">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="question">
-                  <div class="question__question control js-toggle" data-toggle-target="2:5">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h5>
-                    <span class="question__arrow">
-                      <i class="material-icons question__icon">&#xE313;</i>
-                    </span>
-                  </div>
-                  <div class="question__answer" aria-expanded="false" data-toggle-id="2:5">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Pour voir vos statistiques sur ce MOOC il vous suffit de cliquer sur le bouton pour le cours de votre choix, le graphe s’afficherait dans la section « Statistiques » juste en dessous. Vous pourrez y trouver votre pourcentage de réussite pour chaque chapitre 
                     </p>
                   </div>
                 </div>
