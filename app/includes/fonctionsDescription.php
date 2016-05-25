@@ -189,7 +189,7 @@ function getInfo3MDL(){
                         <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">  <i class="material-icons">extension</i> Prérequis : </h3>
                         	 <p>'.$scope_prerequis.'</p>
 						<h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline"> <i class="material-icons">alarm</i> Durée : </h3>
-						 <p>'.$scope_duree.'</p>
+						 <p>'.$scope_duree.' heures</p>
                         </div>
                         <div class="mdl-cell mdl-cell--6-col">';
 
