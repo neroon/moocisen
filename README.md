@@ -4,7 +4,7 @@ Olivier Colombies - Anthony Berthelot - Clement Guiol - Kokorina Slavyana - Perr
 
 ## Summary
 
-MoocIsen is a project carried out by students of [ISEN-Toulon] (http://www.isen.fr/).
+MoocIsen is a project carried out by students of [ISEN-Toulon](http://www.isen.fr/).
 
 The goal of this project was to create an online learning platform that provides free access to online courses (mathematics, physics, social sciences,etc) offered by professors and students of ISEN Brest-Rennes, Fez, Lille, Nimes and Aix-Marseille/Nîmes/Toulon.
 
