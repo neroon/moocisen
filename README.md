@@ -59,4 +59,4 @@ This does not mean that other browsers or previous versions of browsers do not w
 
 MIT License
 
-Copyright (c) 2018 ISEN Inc
+Copyright (c) 2016 ISEN Inc
