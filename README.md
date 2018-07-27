@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.com/olivierschultz/moocisen.svg?branch=master)](https://travis-ci.com/olivierschultz/moocisen)
 [![License](https://img.shields.io/:license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Folivierschultz%2Fmoocisen.svg?type=small)](https://app.fossa.io/projects/git%2Bgithub.com%2Folivierschultz%2Fmoocisen?ref=badge_small)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Folivierschultz%2Fmooc-isen.svg?type=small)](https://app.fossa.io/projects/git%2Bgithub.com%2Folivierschultz%2Fmooc-isen?ref=badge_small)
 
 # MoocIsen - Online learning platform for ISEN's students
 
@@ -66,3 +65,5 @@ This does not mean that other browsers or previous versions of browsers do not w
 MIT License
 
 Copyright (c) 2016 ISEN Inc
+
+
