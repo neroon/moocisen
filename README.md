@@ -1,45 +1,38 @@
-#![MOOC](http://orientation.blog.lemonde.fr/files/2013/04/MOOCbetterwordbubble.png)
+# MoocIsen - Online learning platform for ISEN's students
 
-## Presensation
+Olivier Colombies - Anthony Berthelot - Clement Guiol - Kokorina Slavyana - Perrichon Guillaume - Olivier Schultz
 
-Mooc Isen est un projet réalisé par des étudiants de l'[ISEN-Toulon](http://www.isen.fr/).
+## Summary
 
-Mooc Isen permet de consulter gratuitement des cours en ligne proposés par les professeurs et étudiants de l'ISEN Brest-Rennes, Fès, Lille, Nimes et Aix-Marseille/Nîmes/Toulon.
+MoocIsen is a project carried out by students of [ISEN-Toulon] (http://www.isen.fr/).
 
-Mooc Isen utilise les technologies suivantes:
+The goal of this project was to create an online learning platform that provides free access to online courses (mathematics, physics, social sciences,etc) offered by professors and students of ISEN Brest-Rennes, Fez, Lille, Nimes and Aix-Marseille/Nîmes/Toulon.
 
-* HTML5 / CSS3
-* JavaScript
-* jQuery 1.9.1
-* PHP 5
-* MySQL
-* Serveur Apache 2
-* ChartJS
+In this project, we developed an user-friendly, interactive and free online platform.
 
+## Requirements
 
-## Prérequis
+* A web server with PHP 5.2 Recommended: Apache2
+* Apache `mod_rewrite` module, installed and enabled
+* A MySQL database with phpMyAdmin
 
-* Un serveur web avec PHP 5.2 Recommandé: Apache2
-* Le module `mod_rewrite` de Apache, installé et activé
-* Une base de données MySQL avec phpMyAdmin
+## Quickstart
 
-
-## Installation
-
-1. Importer le fichier `mooc.sql` dans MySQL. La base de données sera créé automatiquement.
-
+1- Import the `mooc.sql` file into MySQL. The database will be created automatically
+2- Start an Apache2 Server
+3- Run `index.php`
 
 ## Features
 
-| Feature                                | Summary                                                                                                                                                                                                                                                     |
+| Features                                | Summary                                                                                                                                                                                                                                                     |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Responsive boilerplate 				 | Un responsive boilerplate optimisé pour les applications web multi écrans |
-| Material Design Lite                   | Material Design de Google Android adapté pour les applications web 		 |
+| Responsive boilerplate 				 | A responsive boilerplate optimized for multi-screen web applications |
+| Material Design Lite                   | Material Design from Google Android adapted for web applications 		 |
 
 
 ## Browser Support
 
-Nous supportons les navigateurs suivants :
+We support the following browsers:
 
 * Chrome
 * Edge
@@ -48,20 +41,21 @@ Nous supportons les navigateurs suivants :
 * Opera
 * Internet Explorer 9+
 
-Cela ne veut pas dire que les autres navigateurs ou les versions antérieurs des navigateurs ne fonctionnent pas, mais que l'application web est optimisée pour les navigateurs listés ci-dessus.
+This does not mean that other browsers or previous versions of browsers do not work, but that the web application is optimized for the browsers listed above.
 
-## Docs
+## Docs and Recipe
 
-* [phpDocumentor2](https://github.com/neroon/moocisen/blob/master/docs/phpDocumentor2.md) - Generation de la documentation
-* [File Appendix](https://github.com/neroon/moocisen/blob/master/docs/file-appendix.md) - Fonctionnalitée de chaque fichiers
-* [Utilisé Material Design Lite](https://github.com/neroon/moocisen/blob/master/docs/mdl.md) - Material Design Lite
-* [Guide de déploiement](https://github.com/neroon/moocisen/blob/master/docs/deploy.md) -  Deploiement avec un serveur Apache
+* [phpDocumentor2](https://github.com/olivierschultz/moocisen/blob/master/docs/phpDocumentor2.md) - Generation of documentation
+* [File Appendix](https://github.com/olivierschultz/moocisen/blob/master/docs/file-appendix.md) - What do the different files here do?
+* [Material Design Lite](https://github.com/olivierschultz/moocisen/blob/master/docs/mdl.md) - Material Design Lite
+* [Deployment guide](https://github.com/olivierschultz/moocisen/blob/master/docs/deploy.md) -  Deploying with an Apache server
 
-## Insipiration
+## Inspiration
 
-Inspirer de [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
+* [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/) - Free Online Classes & Nanodegrees
+* [Udacity](https://eu.udacity.com/) -  Boilerplate for web development
 
 ## Licence
 
-Apache 2.0  
+MIT
 Copyright 2016 ISEN Inc
