@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/:license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 # MoocIsen - Online learning platform for ISEN's students
 
 Olivier Colombies - Anthony Berthelot - Clement Guiol - Kokorina Slavyana - Perrichon Guillaume - Olivier Schultz
