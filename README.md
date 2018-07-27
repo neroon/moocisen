@@ -55,7 +55,8 @@ This does not mean that other browsers or previous versions of browsers do not w
 * [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/) - Free Online Classes & Nanodegrees
 * [Udacity](https://eu.udacity.com/) -  Boilerplate for web development
 
-## Licence
+## License
 
-MIT
-Copyright 2016 ISEN Inc
+MIT License
+
+Copyright (c) 2018 ISEN Inc
