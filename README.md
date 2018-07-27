@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/olivierschultz/mooc-isen.svg?branch=master)](https://travis-ci.org/olivierschultz/mooc-isen)
 [![License](https://img.shields.io/:license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Folivierschultz%2Fmooc-isen.svg?type=small)](https://app.fossa.io/projects/git%2Bgithub.com%2Folivierschultz%2Fmooc-isen?ref=badge_small)
 
