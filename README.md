@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/:license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Folivierschultz%2Fmoocisen.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Folivierschultz%2Fmoocisen?ref=badge_shield)
 
 # MoocIsen - Online learning platform for ISEN's students
 
@@ -62,3 +63,6 @@ This does not mean that other browsers or previous versions of browsers do not w
 MIT License
 
 Copyright (c) 2016 ISEN Inc
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Folivierschultz%2Fmoocisen.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Folivierschultz%2Fmoocisen?ref=badge_large)
