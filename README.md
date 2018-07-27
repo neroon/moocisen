@@ -14,18 +14,6 @@ The goal of this project was to create an online learning platform that provides
 
 In this project, we developed an user-friendly, interactive and free online platform.
 
-## Requirements
-
-* A web server with PHP 5.2 Recommended: Apache2
-* Apache `mod_rewrite` module, installed and enabled
-* A MySQL database with phpMyAdmin
-
-## Quickstart
-
-1- Import the `mooc.sql` file into MySQL. The database will be created automatically
-2- Start an Apache2 Server
-3- Run `index.php`
-
 ## Features
 
 | Features                                | Summary                                                                                                                                                                                                                                                     |
@@ -46,6 +34,20 @@ We support the following browsers:
 * Internet Explorer 9+
 
 This does not mean that other browsers or previous versions of browsers do not work, but that the web application is optimized for the browsers listed above.
+
+## Requirements
+
+* A web server with PHP 5.2 Recommended: Apache2
+* Apache `mod_rewrite` module, installed and enabled
+* A MySQL database with phpMyAdmin
+
+## Quickstart
+
+1- Import the `mooc.sql` file into MySQL. The database will be created automatically
+
+2- Start an Apache2 Server
+
+3- Run `index.php`
 
 ## Docs and Recipe
 
