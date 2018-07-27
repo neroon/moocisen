@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/olivierschultz/moocisen.svg?branch=master)](https://travis-ci.com/olivierschultz/moocisen)
 [![License](https://img.shields.io/:license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # MoocIsen - Online learning platform for ISEN's students
